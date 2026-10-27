@@ -1,0 +1,19 @@
+# Gradle & build outputs
+.gradle/
+build/
+bin/
+gen/
+out/
+
+# IDE metadata
+.idea/
+*.iml
+
+# Local configuration & signing keys
+local.properties
+*.keystore
+*.key
+ant.properties
+
+# OS files
+.DS_Store

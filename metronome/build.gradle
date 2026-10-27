@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application' version '8.9.0'
+}
+
+def keystoreProps = new Properties()
+def keystorePropsFile = rootProject.file('ant.properties')
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+
+android {
+    namespace = 'com.eggwall.metronome'
+    compileSdk = 36
+    buildToolsVersion = '36.0.0'
+
+    defaultConfig {
+        applicationId = 'com.eggwall.metronome'
+        minSdk = 19
+        targetSdk = 36
+        versionCode = 1
+        versionName = '1.0'
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+        test {
+            java.srcDirs = ['test']
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile rootProject.file(keystoreProps.getProperty('key.store', 'release-keystore.key'))
+            storePassword keystoreProps.getProperty('key.store.password')
+            keyAlias keystoreProps.getProperty('key.alias')
+            keyPassword keystoreProps.getProperty('key.alias.password')
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig = signingConfigs.debug
+        }
+        release {
+            signingConfig = rootProject.file(keystoreProps.getProperty('key.store', 'release-keystore.key')).exists() ? signingConfigs.release : signingConfigs.debug
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-project.txt'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
