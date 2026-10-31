@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">फ़्रेटबोर्ड</string>
+    <string name="header_title">फ़्रेटबोर्ड</string>
+    <string name="tab_scales">स्केल</string>
+    <string name="tab_chords">कॉर्ड्स</string>
+    <string name="tab_finder">फ़ाइंडर</string>
+    <string name="tab_1_scales">1: स्केल</string>
+    <string name="tab_2_chords">2: कॉर्ड्स</string>
+    <string name="tab_3_finder">3: फ़ाइंडर</string>
+    <string name="play_scale">▶ स्केल</string>
+    <string name="play_strum">▶ स्ट्रम</string>
+    <string name="key_prefix">की: </string>
+    <string name="position_header">पोजीशन</string>
+    <string name="all_neck">पूरा नेक</string>
+    <string name="frets_0_15">फ़्रेट 0–15</string>
+    <string name="lbl_intervals">लेबल: R/3/5</string>
+    <string name="lbl_notes">लेबल: स्वर</string>
+    <string name="lbl_degrees">लेबल: डिग्री</string>
+    <string name="hand_righty">हाथ: दायां</string>
+    <string name="hand_lefty">हाथ: बायां</string>
+    <string name="quiz_off">क्विज़: बंद</string>
+    <string name="quiz_note">क्विज़: स्वर</string>
+    <string name="quiz_intv">क्विज़: अंतराल</string>
+    <string name="scale_dorian">डोरियन मोड ▾</string>
+    <string name="scale_min_pent">माइनर पेंटाटोनिक ▾</string>
+    <string name="scale_blues">ब्लूज़ स्केल ▾</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">फ़्रेटबोर्ड एक्सप्लोरर — त्वरित गाइड</string>
+    <string name="help_sec1_title">1. तीन अन्वेषण मोड</string>
+    <string name="help_sec1_body">1: स्केल (16 स्केल + 5 CAGED बॉक्स), 2: कॉर्ड्स (12 कॉर्ड क्वालिटी और CAGED वॉइसिंग), और 3: कॉर्ड फ़ाइंडर (किसी भी फ़्रेट को टैप कर कस्टम कॉर्ड पहचानें) के बीच स्विच करें।</string>
+    <string name="help_sec2_title">2. ऑडियो सिंथेसिस और स्ट्रमिंग</string>
+    <string name="help_sec2_body">Karplus-Strong गिटार नोट बजाने के लिए किसी भी फ़्रेट पर टैप करें, या सक्रिय कॉर्ड/स्केल सुनने के लिए शीर्ष बार में ▶ पर टैप करें।</string>
+    <string name="help_sec3_title">3. हार्मोनिक रंग संकेत</string>
+    <string name="help_sec3_body">रूट (R) = अंबर-लाल | तीसरा (3/b3) = पन्ना हरा | पांचवां (5) = रॉयल ब्लू | सातवां (7/b7) = बैंगनी | ब्लू नोट (b5) = सुनहरा | अन्य स्वर = स्लेट।</string>
+    <string name="help_sec4_title">4. लेबल, ट्यूनिंग और लेफ़्टी मोड</string>
+    <string name="help_sec4_body">इंटरवल (R, 3, 5), स्वर नाम और डिग्री के बीच बदलें, 6 गिटार ट्यूनिंग (स्टैंडर्ड, Drop D, DADGAD, Eb, Open G, Open D) चुनें, या बाएं हाथ के लिए फ़्लिप करें।</string>
+    <string name="help_sec5_title">5. फ़्रेटबोर्ड महारत क्विज़</string>
+    <string name="help_sec5_body">सभी 6 तारों पर अपनी फ़्रेटबोर्ड पकड़ परखने के लिए \'नोट क्विज़\' या \'इंटरवल क्विज़\' चालू करें।</string>
+</resources>

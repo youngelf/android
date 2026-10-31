@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Odak</string>
+    <string name="working_dnd">ÇALIŞMA: RAHATSIZ ETMEYİN</string>
+    <string name="short_break_relax">KISA MOLA: DİNLENİN</string>
+    <string name="long_break_rest">UZUN MOLA: DERİN DİNLENME</string>
+    <string name="paused_stopped">DURAKLATILDI</string>
+    <string name="ready_to_focus">ODAKLANMAYA HAZIR</string>
+    <string name="reset">SIFIRLA</string>
+    <string name="skip_btn">ATLA &gt;&gt;</string>
+    <string name="start_focus">ODAK BAŞLAT</string>
+    <string name="resume">DEVAM ET</string>
+    <string name="bg_sound">Arka plan sesi</string>
+    <string name="amb_off">KAPALI</string>
+    <string name="amb_soft_tick">YUMUŞAK TIK</string>
+    <string name="amb_rain">YAĞMUR</string>
+    <string name="amb_brown_noise">KAHVE GÜRÜLTÜ</string>
+    <string name="duration_presets">SÜRE AYARLARI (ODAK / KISA / UZUN)</string>
+    <string name="all_time_total">TOPLAM SÜRE</string>
+    <string name="current_session">MEVCUT OTURUM</string>
+    <string name="focus_session">ODAK OTURUMU</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">POMODORO ODAK ZAMANLAYICI VE İŞ TAKİBİ</string>
+    <string name="help_sec1_title">1. 4 POMODORO DÖNGÜSÜ</string>
+    <string name="help_sec1_body">• 1 Pomodoro boyunca (varsayılan 25 dk) kesintisiz odaklanın.\n• Dinlenmek için Kısa Mola (5 dk) verin.\n• Tamamlanan her 4 Odak oturumundan sonra Uzun Mola (15 dk) verin.</string>
+    <string name="help_sec2_title">2. DOKUNMATİK VE KLAVYE / D-PAD KONTROLLERİ</string>
+    <string name="help_sec2_body">• Merkez Kadran / BAŞLAT\'a dokunun (veya BOŞLUK / ENTER): Başlat veya Duraklat.\n• -5dk / -1dk / +1dk / +5dk\'ya dokunun (veya YUKARI / AŞAĞI): Süreyi ayarlayın.\n• Hazır Ayarlara dokunun (P tuşu): Klasik, Derin Çalışma, Stüdyo ve Sprint.\n• Ortam Seslerine dokunun (M tuşu): Yumuşak Tik, Yağmur veya Kahverengi Gürültü.\n• Aşama atlamak için ATLA &gt;&gt; (N); başa sarmak için SIFIRLA (R).</string>
+    <string name="help_sec3_title">3. OTOMATİK ÇALIŞMA SAATİ İSTATİSTİĞİ</string>
+    <string name="help_sec3_body">• Aktif bir Odak Oturumunda geçirilen her saniye otomatik olarak Bugün ve Tüm Zamanlar toplamına kaydedilir.</string>
+</resources>

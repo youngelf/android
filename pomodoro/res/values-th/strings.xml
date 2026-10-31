@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">โพโมโดโรโฟกัส</string>
+    <string name="working_dnd">กำลังโฟกัส: ห้ามรบกวน</string>
+    <string name="short_break_relax">พักสั้น: ผ่อนคลาย</string>
+    <string name="long_break_rest">พักยาว: พักผ่อนเต็มที่</string>
+    <string name="paused_stopped">หยุดชั่วคราว</string>
+    <string name="ready_to_focus">พร้อมโฟกัส</string>
+    <string name="reset">รีเซ็ต</string>
+    <string name="skip_btn">ข้าม &gt;&gt;</string>
+    <string name="start_focus">เริ่มโฟกัส</string>
+    <string name="resume">ทำต่อ</string>
+    <string name="bg_sound">เสียงบรรยากาศพื้นหลัง</string>
+    <string name="amb_off">ปิด</string>
+    <string name="amb_soft_tick">เสียงเข็มเดินเบาๆ</string>
+    <string name="amb_rain">เสียงฝน</string>
+    <string name="amb_brown_noise">บราวน์นอยส์</string>
+    <string name="duration_presets">พรีเซ็ตเวลา (โฟกัส / พักสั้น / พักยาว)</string>
+    <string name="all_time_total">รวมทั้งหมด</string>
+    <string name="current_session">เซสชันปัจจุบัน</string>
+    <string name="focus_session">ช่วงโฟกัส</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_title">นาฬิกาจับเวลาโฟกัสโพโมโดโรและบันทึกงาน</string>
+    <string name="help_sec1_title">1. วงจร 4 โพโมโดโร</string>
+    <string name="help_sec1_body">• โฟกัสอย่างต่อเนื่อง 1 โพโมโดโร (ค่าเริ่มต้น 25 นาที)\n• พักสั้น (5 นาที) เพื่อผ่อนคลายและเติมพลัง\n• ทุกๆ การโฟกัสครบ 4 รอบ ให้พักยาว (15 นาที)</string>
+    <string name="help_sec2_title">2. การควบคุมด้วยการแตะและคีย์บอร์ด / D-Pad</string>
+    <string name="help_sec2_body">• แตะหน้าปัดกลาง / ปุ่มเริ่ม (หรือ SPACE / ENTER): เริ่มหรือหยุดชั่วคราว\n• แตะ -5m / -1m / +1m / +5m (หรือลูกศรขึ้น/ลง): ปรับระยะเวลา\n• แตะพรีเซ็ต (ปุ่ม P): สลับโหมดคลาสสิก งานเชิงลึก สตูดิโอ และสปรินต์\n• แตะเสียงบรรยากาศ (ปุ่ม M): สลับเสียงเข็มเดินเบาๆ เสียงฝน หรือบราวน์นอยส์\n• แตะ \'ข้าม &gt;&gt;\' (N) เพื่อข้ามช่วง หรือ \'รีเซ็ต\' (R) เพื่อเริ่มใหม่</string>
+    <string name="help_sec3_title">3. ระบบบันทึกชั่วโมงทำงานอัตโนมัติ</string>
+    <string name="help_sec3_body">• ทุกวินาทีในรอบโฟกัสจะถูกบันทึกสะสมในสถิติ \'วันนี้\' และ \'รวมทั้งหมด\' โดยอัตโนมัติ</string>
+</resources>

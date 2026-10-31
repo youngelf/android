@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">साइटरीड</string>
+    <string name="header_title">साइटरीड</string>
+    <string name="play">चलाएं</string>
+    <string name="stop">रोकें</string>
+    <string name="sound">ध्वनि</string>
+    <string name="muted">म्यूट</string>
+    <string name="new_piece">नया अभ्यास</string>
+    <string name="hint_on">संकेत: चालू</string>
+    <string name="hint_off">संकेत: बंद</string>
+    <string name="mode_etude">मोड: एट्यूड</string>
+    <string name="mode_quiz">मोड: क्विज़</string>
+    <string name="mode_flow">मोड: फ़्लो</string>
+    <string name="got_it">समझ गया</string>
+    <string name="close">बंद करें</string>
+    <string name="help_title">साइट-रीड — ट्रेबल क्लेफ़ और गिटार गाइड</string>
+    <string name="help_sec1_title">1. ट्रेबल क्लेफ़ स्वरलिपि</string>
+    <string name="help_sec1_body">स्वचालित लेजर लाइनों के साथ मानक गिटार ट्रेबल स्टाफ़। सुनहरा कॉलम सक्रिय लक्ष्य स्वर को हाइलाइट करता है।</string>
+    <string name="help_sec2_title">2. की सिग्नेचर और नेक पोजीशन</string>
+    <string name="help_sec2_body">5 गिटार नेक पोजीशन (ओपन, पोजीशन 2, 5, 7, 9) और 24 अभ्यासों में 7 मेजर कीज़ (C, G, D, A, E, F, Bb) में अभ्यास करें।</string>
+    <string name="help_sec3_title">3. इंटरैक्टिव फ़्रेटबोर्ड और अभ्यास मोड</string>
+    <string name="help_sec3_body">प्रत्येक स्वर को पढ़ने के लिए 6-स्ट्रिंग गिटार नेक पर सही तार और फ़्रेट को टैप करें। \'अभ्यास\' मोड संकेत दिखाता है; \'क्विज़\' मोड संकेत छिपाता है; \'फ़्लो\' मोड बीट के साथ आगे बढ़ता है।</string>
+    <string name="help_sec4_title">4. ऑडियो सिंथ और अभ्यास प्लेबैक</string>
+    <string name="help_sec4_body">चुने गए BPM पर 2-बार अभ्यास सुनने के लिए \'चलाएं\' टैप करें, या गिटार सिंथेसिस टॉगल करने के लिए \'ध्वनि / म्यूट\' पर टैप करें।</string>
+</resources>

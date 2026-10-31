@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fokus Pomodoro</string>
+    <string name="working_dnd">FOKUS KERJA: JANGAN GANGGU</string>
+    <string name="short_break_relax">ISTIRAHAT PENDEK: RILEKS</string>
+    <string name="long_break_rest">ISTIRAHAT PANJANG: PULIHKAN</string>
+    <string name="paused_stopped">DIJEDA: TIMER BERHENTI</string>
+    <string name="ready_to_focus">SIAP UNTUK FOKUS</string>
+    <string name="reset">RESET</string>
+    <string name="skip_btn">LEWATI &gt;&gt;</string>
+    <string name="start_focus">MULAI FOKUS</string>
+    <string name="resume">LANJUTKAN</string>
+    <string name="bg_sound">Suara latar</string>
+    <string name="amb_off">MATI</string>
+    <string name="amb_soft_tick">DETAK HALUS</string>
+    <string name="amb_rain">HUJAN</string>
+    <string name="amb_brown_noise">DERAU COKELAT</string>
+    <string name="duration_presets">PRESET DURASI (KERJA / PENDEK / PANJANG)</string>
+    <string name="all_time_total">TOTAL KESELURUHAN</string>
+    <string name="current_session">SESI SAAT INI</string>
+    <string name="focus_session">SESI FOKUS</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">TIMER FOKUS POMODORO &amp; PELACAK KERJA</string>
+    <string name="help_sec1_title">1. SIKLUS 4-POMODORO</string>
+    <string name="help_sec1_body">• Fokus tanpa gangguan selama 1 Pomodoro (standar 25 mnt).\n• Ambil Istirahat Singkat (5 mnt) untuk bersantai.\n• Setiap 4 sesi Fokus selesai, ambil Istirahat Panjang (15 mnt).</string>
+    <string name="help_sec2_title">2. KONTROL SENTUH &amp; KEYBOARD / D-PAD</string>
+    <string name="help_sec2_body">• Ketuk Dial Tengah / MULAI (atau SPASI / ENTER): Mulai atau Jeda.\n• Ketuk -5m / -1m / +1m / +5m (atau panah ATAS / BAWAH): Atur durasi.\n• Ketuk Preset (atau tombol P): Klasik, Kerja Mendalam, Studio, dan Sprint.\n• Ketuk Suara Ambient (atau tombol M): Detak Halus, Hujan, atau Derau Cokelat.\n• Ketuk LEWATI &gt;&gt; (N) untuk lompat fase; RESET (R) untuk mengulang.</string>
+    <string name="help_sec3_title">3. TELEMETRI JAM KERJA OTOMATIS</string>
+    <string name="help_sec3_body">• Setiap detik yang dihabiskan dalam Sesi Fokus aktif dicatat secara otomatis ke total Hari Ini &amp; Sepanjang Waktu.</string>
+</resources>

@@ -1,0 +1,1 @@
+Opanuj czytanie rytmu, podział wartości nutowych i metrum nieparzyste dzięki aplikacji Trener Rytmu (Rhythm Trainer). Odtwarza każdy zapisany rytm czystym tonem 440 Hz po 4-miarowym nabiciu. Obsługuje całe nuty, półnuty, ćwierćnuty, ósemki, szesnastki i pauzy, 5 oznaczeń metrum (4/4, 3/4, 2/2, 5/4, 7/4) oraz interaktywny Tryb Edycji. 100% offline i bez reklam.

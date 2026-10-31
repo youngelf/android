@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sommeil Paisible</string>
+    <string name="cloudDesc">nuage de pluie (bruit blanc)</string>
+    <string name="noteDesc">note de musique</string>
+    <string name="playing_music">Lecture audio en cours</string>
+</resources>

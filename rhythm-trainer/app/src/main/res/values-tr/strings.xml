@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ritim Eğitmeni</string>
+    <string name="subtitle_440">Tek Frekanslı Müzikal Ritim Çalışması (440 Hz)</string>
+    <string name="edit_mode">Düzenleme</string>
+    <string name="done_editing">Bitti</string>
+    <string name="play">Oynat</string>
+    <string name="pause">Duraklat</string>
+    <string name="loop">Döngü</string>
+    <string name="edit_btn">Düzenle</string>
+    <string name="ready_hint">Çalmaya hazır. 4..3..2..1 ön sayım ve ritim için Oynat\'a basın.</string>
+    <string name="add_bar">Ölçü Ekle</string>
+    <string name="remove_bar">Ölçü Sil</string>
+    <string name="randomize">Rastgele</string>
+    <string name="quarter_notes">Dörtlük Notalar</string>
+    <string name="exit_edit_mode">Düzenlemeden Çık</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">Ritim Eğitmeni — Hızlı Kılavuz</string>
+    <string name="help_sec1_title">1. Ölçü Birimleri ve Tempo</string>
+    <string name="help_sec1_body">Sol üstten 4/4, 3/4, 2/2, 5/4 veya 7/4 ölçüyü seçin, kaydırıcıyla BPM\'i 40–200 arasında ayarlayın ve sürekli çalışma için Döngü\'yü açın.</string>
+    <string name="help_sec2_title">2. 4 Vuruşluk Ön Sayım ve 440 Hz Çalma</string>
+    <string name="help_sec2_body">4..3..2..1 metronom ön sayımını ve ardından senkronize imleç takibiyle 440 Hz referans tonunda çalınan ritmi duymak için Oynat\'a basın.</string>
+    <string name="help_sec3_title">3. Etkileşimli Ritim Düzenleyici ve Rastgele Üretici</string>
+    <string name="help_sec3_body">Düzenleme Modu için Düzenle\'ye dokunun. Partisyondaki herhangi bir nota veya susa dokunup Birlik, İkilik, Dörtlük, Sekizlik veya Onaltılık değer 할당하세요. Ölçü ekleyin/silin (1–4) veya Rastgele\'ye dokunun.</string>
+</resources>

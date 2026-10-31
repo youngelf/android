@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">لوحة الفريت</string>
+    <string name="header_title">الفريت</string>
+    <string name="tab_scales">سلالم</string>
+    <string name="tab_chords">أوتار</string>
+    <string name="tab_finder">كاشف</string>
+    <string name="tab_1_scales">1: سلالم</string>
+    <string name="tab_2_chords">2: أوتار</string>
+    <string name="tab_3_finder">3: كاشف</string>
+    <string name="play_scale">▶ سلم</string>
+    <string name="play_strum">▶ عزف</string>
+    <string name="key_prefix">مفتاح: </string>
+    <string name="position_header">الموضع</string>
+    <string name="all_neck">كل العنق</string>
+    <string name="frets_0_15">فريت 0–15</string>
+    <string name="lbl_intervals">تسمية: R/3/5</string>
+    <string name="lbl_notes">تسمية: نغمات</string>
+    <string name="lbl_degrees">تسمية: درجات</string>
+    <string name="hand_righty">اليد: يمين</string>
+    <string name="hand_lefty">اليد: يسار</string>
+    <string name="quiz_off">اختبار: إيقاف</string>
+    <string name="quiz_note">اختبار: نغمة</string>
+    <string name="quiz_intv">اختبار: مسافة</string>
+    <string name="scale_dorian">مقام دوريان ▾</string>
+    <string name="scale_min_pent">خماسي صغير ▾</string>
+    <string name="scale_blues">سلم البلوز ▾</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_title">مستكشف لوحة الفريت — دليل سريع</string>
+    <string name="help_sec1_title">1. ثلاثة أوضاع للاستكشاف</string>
+    <string name="help_sec1_body">بدّل بين 1: السلالم (16 سلماً + 5 صناديق CAGED)، و2: الأوتار (12 نوعاً مع وضعيات CAGED)، و3: كاشف الأوتار (انقر على أي فريت لتحديد اسم الوتر).</string>
+    <string name="help_sec2_title">2. التوليف الصوتي والعزف</string>
+    <string name="help_sec2_body">انقر على أي فريت لعزف نغمة جيتار بنمذجة Karplus-Strong، أو انقر على ▶ في الشريط العلوي لعزف الوتر أو الاستماع إلى السلم.</string>
+    <string name="help_sec3_title">3. دليل الألوان التوافقية</string>
+    <string name="help_sec3_body">الأساس (R) = كهرماني | الثالثة = زمردي | الخامسة = أزرق ملكي | السابعة = أرجواني | نغمة البلوز (b5) = ذهبي | نغمة السلم = رمادي.</string>
+    <string name="help_sec4_title">4. التسميات، الضبط، ووضع اليد اليسرى</string>
+    <string name="help_sec4_body">بدّل بين المسافات (R, 3, 5) وأسماء النغمات والدرجات، واختر من بين 6 أنواع ضبط للجيتار أو اعكس لوحة الفريت للعازفين باليد اليسرى.</string>
+    <string name="help_sec5_title">5. اختبار إتقان لوحة الفريت</string>
+    <string name="help_sec5_body">فعّل اختبار النغمات أو المسافات لاختبار حفظك لجميع الأوتار الستة مع تتبع النتيجة مباشرة.</string>
+</resources>

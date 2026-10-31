@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">หลับสบาย</string>
+    <string name="cloudDesc">ก้อนเมฆ (ไวท์นอยส์)</string>
+    <string name="noteDesc">ตัวโน้ตดนตรี</string>
+    <string name="playing_music">กำลังเล่นเพลง</string>
+</resources>

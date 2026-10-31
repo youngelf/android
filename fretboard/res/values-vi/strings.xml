@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cần Đàn Guitar</string>
+    <string name="header_title">CẦN ĐÀN</string>
+    <string name="tab_scales">Âm giai</string>
+    <string name="tab_chords">Hợp âm</string>
+    <string name="tab_finder">Tìm kiếm</string>
+    <string name="tab_1_scales">1: Âm giai</string>
+    <string name="tab_2_chords">2: Hợp âm</string>
+    <string name="tab_3_finder">3: Tìm kiếm</string>
+    <string name="play_scale">▶ Âm giai</string>
+    <string name="play_strum">▶ Quạt chả</string>
+    <string name="key_prefix">Giọng: </string>
+    <string name="position_header">THẾ TAY</string>
+    <string name="all_neck">TOÀN CẦN</string>
+    <string name="frets_0_15">Phím 0–15</string>
+    <string name="lbl_intervals">Nhãn: R/3/5</string>
+    <string name="lbl_notes">Nhãn: Nốt</string>
+    <string name="lbl_degrees">Nhãn: Bậc</string>
+    <string name="hand_righty">Tay: Thuận phải</string>
+    <string name="hand_lefty">Tay: Thuận trái</string>
+    <string name="quiz_off">Đố: Tắt</string>
+    <string name="quiz_note">Đố: Nốt</string>
+    <string name="quiz_intv">Đố: Quãng</string>
+    <string name="scale_dorian">Điệu Dorian ▾</string>
+    <string name="scale_min_pent">Ngũ cung Thứ ▾</string>
+    <string name="scale_blues">Âm giai Blues ▾</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_title">KHÁM PHÁ CẦN ĐÀN — HƯỚNG DẪN NHANH</string>
+    <string name="help_sec1_title">1. BA CHẾ ĐỘ KHÁM PHÁ</string>
+    <string name="help_sec1_body">Chuyển đổi giữa 1: Âm giai (16 âm giai + 5 hộp CAGED), 2: Hợp âm (12 tính chất hợp âm với thế bấm CAGED), và 3: Tìm kiếm (chạm phím đàn để nhận diện hợp âm).</string>
+    <string name="help_sec2_title">2. TỔNG HỢP ÂM THANH &amp; RẢI HỢP ÂM</string>
+    <string name="help_sec2_body">Chạm bất kỳ phím nào trên cần đàn 6 dây để gảy nốt guitar Karplus-Strong, hoặc chạm ▶ ở thanh trên cùng để quạt hợp âm hay nghe âm giai.</string>
+    <string name="help_sec3_title">3. CHÚGIẢI MÀU SẮC QUÃNG</string>
+    <string name="help_sec3_body">Chủ âm (R) = Đỏ hổ phách | Quãng 3 = Xanh ngọc | Quãng 5 = Xanh lam | Quãng 7 = Tím | Nốt Blues (b5) = Vàng | Nốt âm giai = Xám.</string>
+    <string name="help_sec4_title">4. NHÃN HIỂN THỊ, DÂY ĐÀN &amp; CHẾ ĐỘ TAY TRÁI</string>
+    <string name="help_sec4_body">Chuyển đổi giữa Quãng (R, 3, 5), Tên nốt và Bậc, chọn 6 kiểu lên dây (Chuẩn, Drop D, DADGAD, Giáng nửa cung, Open G, Open D) hoặc lật cần đàn cho người thuận tay trái.</string>
+    <string name="help_sec5_title">5. ĐỐ VUI LÀM CHỦ CẦN ĐÀN</string>
+    <string name="help_sec5_body">Bật Đố Nốt hoặc Đố Quãng để kiểm tra trí nhớ cần đàn trên cả 6 dây với bảng điểm trực tiếp.</string>
+</resources>

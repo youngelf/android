@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ギター指板</string>
+    <string name="header_title">指板ナビ</string>
+    <string name="tab_scales">スケール</string>
+    <string name="tab_chords">コード</string>
+    <string name="tab_finder">検索</string>
+    <string name="tab_1_scales">1: スケール</string>
+    <string name="tab_2_chords">2: コード</string>
+    <string name="tab_3_finder">3: 検索</string>
+    <string name="play_scale">▶ スケール</string>
+    <string name="play_strum">▶ ストローク</string>
+    <string name="key_prefix">キー: </string>
+    <string name="position_header">ポジション</string>
+    <string name="all_neck">全指板</string>
+    <string name="frets_0_15">0–15 フレット</string>
+    <string name="lbl_intervals">表示: R/3/5</string>
+    <string name="lbl_notes">表示: 音名</string>
+    <string name="lbl_degrees">表示: 度数</string>
+    <string name="hand_righty">利き手: 右</string>
+    <string name="hand_lefty">利き手: 左</string>
+    <string name="quiz_off">クイズ: 切</string>
+    <string name="quiz_note">クイズ: 音名</string>
+    <string name="quiz_intv">クイズ: 音程</string>
+    <string name="scale_dorian">ドリアン・モード ▾</string>
+    <string name="scale_min_pent">マイナー・ペンタトニック ▾</string>
+    <string name="scale_blues">ブルース・スケール ▾</string>
+    <string name="close">閉じる</string>
+    <string name="got_it">了解</string>
+    <string name="help_title">指板エクスプローラー — クイックガイド</string>
+    <string name="help_sec1_title">1. 3つの探索モード</string>
+    <string name="help_sec1_body">1: スケール（16スケール＋5つのCAGEDボックス）、2: コード（12種類のコードクオリティとCAGEDボイシング）、3: コード検索（任意のフレットをタップしてコード名を自動判定）を切り替えられます。</string>
+    <string name="help_sec2_title">2. ギター音源シンセシスとストローク再生</string>
+    <string name="help_sec2_body">6弦指板の任意のフレットをタップすると Karplus-Strong ギター音が鳴ります。上部の ▶ ボタンでコードストロークまたはスケール試聴ができます。</string>
+    <string name="help_sec3_title">3. ハーモニック・カラー凡例</string>
+    <string name="help_sec3_body">ルート音 (R) = アンバー | 3度 (3/b3) = エメラルド | 5度 (5) = ロイヤルブルー | 7度 (7/b7) = パープル | ブルーノート (b5) = ゴールド | 経過音 = スレート。</string>
+    <string name="help_sec4_title">4. ラベル表示・変則チューニング・左利きモード</string>
+    <string name="help_sec4_body">フレット表示を度数(R, 3, 5)・音名・運指で切り替えたり、6種類のギターチューニング（レギュラー、Drop D、DADGAD、半音下げ、Open G、Open D）や左利き反転に対応しています。</string>
+    <string name="help_sec5_title">5. 指板マスター・クイズ</string>
+    <string name="help_sec5_body">「音名クイズ」または「度数クイズ」に切り替えて、全6弦でのフレット把握力をスコア付きでトレーニングできます。</string>
+</resources>

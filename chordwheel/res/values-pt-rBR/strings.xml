@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Círculo de Quintas</string>
+    <string name="lock">TRAVAR</string>
+    <string name="key_prefix">TOM </string>
+    <string name="sevenths">7ªs</string>
+    <string name="triads">TRÍADES</string>
+    <string name="tap_swipe">TOCAR / DESLIZAR</string>
+    <string name="voicing_1">&lt; 1/3 Aberto/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Pestana Mi (6c) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Pestana Lá (5c) &gt;</string>
+    <string name="loop_play">&gt; LOOP</string>
+    <string name="loop_pause">|| PAUSA</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESETS</string>
+    <string name="close">FECHAR</string>
+    <string name="func_tonic_maj">Tônica Maior</string>
+    <string name="func_subdominant">Subdominante</string>
+    <string name="func_dominant">Dominante</string>
+    <string name="func_rel_min">Relativo Menor</string>
+    <string name="func_supertonic">Supertônica Men</string>
+    <string name="func_mediant">Mediante Menor</string>
+    <string name="func_leading_dim">Sensível Diminuta</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_guide_title">COMO FUNCIONA O CÍRCULO DE QUINTAS</string>
+    <string name="help_guide_sec1_title">1. A RODA E OS ANÉIS HARMÔNICOS</string>
+    <string name="help_guide_sec1_body">Externo = 12 acordes Maiores | Interno = 12 Menores relativos | Centro = Tom e vii° dim. Ouro = Tônica (I/vi), Azul = Subdominante (IV/ii), Verde = Dominante (V/iii).</string>
+    <string name="help_guide_sec2_title">2. TOM: GIRAR vs. TRAVADO</string>
+    <string name="help_guide_sec2_body">Destravado, tocar em um acorde gira o tom ativo e transpõe o loop. Toque em TRAVAR no canto superior direito para fixar o tom e testar qualquer acorde.</string>
+    <string name="help_guide_sec3_title">3. NOTAS DO ACORDE E GRAUS DA ESCALA</string>
+    <string name="help_guide_sec3_body">Mostra as notas do acorde e os graus na tonalidade ativa (ex.: C = 1-3-5). Toque em TRÍADES / 7ªs para alternar acordes com sétima de 4 notas.</string>
+    <string name="help_guide_sec4_title">4. BRAÇO DO VIOLÃO E ALTO-FALANTE</string>
+    <string name="help_guide_sec4_body">Toque em \'&lt; 1/3 Aberto/CAGED &gt;\' ou deslize para alternar 3 posições no braço. Deslize pelas 6 cordas ou toque no ícone verde de alto-falante para dedilhar.</string>
+    <string name="help_guide_sec5_title">5. LOOPER DE 4 COMPASSOS E PRESETS</string>
+    <string name="help_guide_sec5_body">Toque em \'&gt; LOOP\' para tocar os 4 compassos, \'+PROG\' para inserir o acorde ativo no espaço destacado, ou \'PRESETS\' para carregar progressões clássicas.</string>
+    <string name="help_presets_title">PRESETS DE PROGRESSÃO E GUIA</string>
+    <string name="help_looper_play">&gt; TOCAR LOOPER AUTOMÁTICO DE 4 COMPASSOS</string>
+    <string name="help_looper_pause">|| PAUSAR LOOPER AUTOMÁTICO DE 4 COMPASSOS</string>
+    <string name="help_presets_touch">TOQUE: Tocar/Arrastar Roda | Deslizar Cordas | Deslizar Barra Voicing</string>
+    <string name="help_presets_keys">TECLAS: DPAD=Roda  A=Dedilhar  B=7ªs  L1/R1=Voicing  X=+Prog  SEL=Travar</string>
+</resources>

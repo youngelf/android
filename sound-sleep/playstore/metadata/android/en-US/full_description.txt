@@ -1,0 +1,25 @@
+Turn your phone or tablet into a calm, zero-glare bedside clock and soothing sleep sound machine with Sound Sleep — Bedside Night Clock & White Noise. Engineered specifically to sit on a nightstand all night without lighting up your bedroom or damaging your OLED/LCD display, Sound Sleep combines a large, readable time readout on a pure black background with one-tap white noise and custom sleep music playback.
+
+Unlike complex sleep-tracking apps that require accounts, subscriptions, cloud connectivity, or bright multi-tabbed menus in the middle of the night, Sound Sleep launches straight into an ultra-dark, immersive fullscreen view designed for effortless eyes-half-closed operation.
+
+ALL-NIGHT BEDSIDE CLOCK WITH IMMERSIVE FULLSCREEN
+• High-Contrast Pure Black Display: Renders the current time in a large, clean 120dp h:mm format over a true #000000 black background—emitting minimal light in a dark bedroom while remaining instantly legible across the room.
+• True Immersive Fullscreen: Automatically hides the Android status bar, title bar, and on-screen navigation buttons (Home, Back, Recents) so no bright system chrome disturbs your sleep.
+• Always-On Nightstand Mode: Keeps the display awake while visible on screen so you can check the time at a glance without fumbling for power buttons at 3:00 AM.
+• Smart Swipe-Up Ignore: Intelligently filters out accidental bottom-up navigation swipes so exiting to the Home screen or switching apps never accidentally triggers audio playback.
+
+AUTOMATIC OLED BURN-IN PROTECTION & PROGRESSIVE DIMMING
+• 10-Minute Smooth Drift: Every 10 minutes, the clock digits and control icons smoothly animate to new random coordinates on the screen to prevent pixel burn-in and image retention on OLED, AMOLED, and LCD panels.
+• Mirrored Icon Separation: The top Music Note icon and bottom Rain Cloud icon automatically mirror each other horizontally across opposite sides of the screen for balanced visual separation.
+• Progressive Overnight Dimming: Control icons start at a gentle translucent level and progressively dim further every 10 minutes until the screen is as dark as possible overnight. A single touch anywhere immediately restores icon visibility.
+
+EYES-CLOSED HALF-SCREEN TOUCH CONTROLS FOR WHITE NOISE & SLEEP MUSIC
+The entire screen is divided into two giant, invisible touch zones so you never have to hunt for tiny buttons in the dark:
+• Bottom Half (Rain Cloud Icon — White Noise): Tap anywhere on the bottom half of the screen to loop continuous, soothing white noise bundled inside the app—ideal for masking street traffic, hotel hallway noise, tinnitus, or household sounds.
+• Top Half (Music Note Icon — Sleep Music): Tap anywhere on the top half of the screen to play shuffled tracks from your device's Music/sleeping folder (discovered automatically via Android MediaStore), or fall back seamlessly to the bundled gentle looping lullaby jingle.
+• Tap Again for Silence: When either audio mode is active, its icon transforms into a clear Pause (||) symbol. Tap the active half a second time to stop playback and return to complete silence.
+
+RELIABLE BACKGROUND PLAYBACK & PRIVACY-FIRST DESIGN
+• Foreground Media Service & Wake Lock: Audio playback runs inside a dedicated Android Media Playback Service with audio-focus management and a partial CPU wake lock, ensuring your white noise or sleep music plays reliably all night.
+• Portrait & Landscape Support: Adapts smoothly whether your phone or tablet rests vertically on a charging pad or horizontally on a bedside dock.
+• 100% Offline & Private: Requests zero internet permissions, collects zero personal data, contains zero ads or analytics SDKs, and is licensed under Apache 2.0.

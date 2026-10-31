@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренажёр риффов</string>
+    <string name="cat_pentatonic">ПЕНТАТОНИКА</string>
+    <string name="cat_legato">ЛЕГАТО/АРП</string>
+    <string name="cat_alt_pick">ПЕРЕМЕН. ШТРИХ</string>
+    <string name="cat_blues_rock">БЛЮЗ/РОК</string>
+    <string name="cat_spider">ПАУК</string>
+    <string name="cat_jazz">ДЖАЗ СЕПТ.</string>
+    <string name="play">ПУСК</string>
+    <string name="pause">ПАУЗА</string>
+    <string name="ladder_static">ЛЕСТНИЦА: ФИКС</string>
+    <string name="loop_full_bar">ЦИКЛ: ВЕСЬ ТАКТ</string>
+    <string name="loop_beat_1">ЦИКЛ: 1-Я ДОЛЯ</string>
+    <string name="finger_1">1: УКАЗАТ.</string>
+    <string name="finger_2">2: СРЕДНИЙ</string>
+    <string name="finger_3">3: БЕЗЫМ.</string>
+    <string name="finger_4">4: МИЗИНЕЦ</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="help_tab_howto">КАК ПОЛЬЗОВАТЬСЯ</string>
+    <string name="help_tab_jazz">ДЖАЗ-СЕПТ И СКОРОСТЬ</string>
+    <string name="help_t0_sec1_title">1. ВЫБОР КАТЕГОРИИ И ФРАЗЫ (ЛИКА)</string>
+    <string name="help_t0_sec1_body">Изучайте 33 упражнения: пентатоника, легато, переменный штрих, блюз/рок, упражнения «паук» и джазовые септарпеджио.</string>
+    <string name="help_t0_sec2_title">2. 6-СТРУННЫЙ ТАБ-СЕКВЕНСОР</string>
+    <string name="help_t0_sec2_body">Нажмите на любой шаг табулатуры, чтобы прослушать ноту, узнать палец левой руки (1=Указ. .. 4=Мизинец) и штрих (D=Вниз, U=Вверх, H=Хаммер, P=Пулл, /=Слайд).</string>
+    <string name="help_t0_sec3_title">3. ИНТЕРАКТИВНЫЙ ИНСПЕКТОР ГРИФА</string>
+    <string name="help_t0_sec3_body">Нажмите на любую струну/лад на увеличенном 8-ладовом грифе, чтобы сыграть ноту через 12-голосный синтезатор Karplus-Strong.</string>
+    <string name="help_t0_sec4_title">4. ТРАНСПОНИРОВАНИЕ В ЛЮБУЮ ТОНАЛЬНОСТЬ</string>
+    <string name="help_t0_sec4_body">Нажимайте «ТОН», чтобы транспонировать все 33 упражнения по грифу от E до Eb.</string>
+    <string name="help_t1_sec1_title">1. ЛЕСТНИЦА УСКОРЕНИЯ BPM</string>
+    <string name="help_t1_sec1_body">Нажмите «ЛЕСТНИЦА» для автоувеличения темпа (+2, +5 или +10 BPM) каждые 2, 4 или 8 тактов.</string>
+    <string name="help_t1_sec2_title">2. ЦИКЛ ОТДЕЛЬНОЙ ДОЛИ</string>
+    <string name="help_t1_sec2_body">Переключайте «ЦИКЛ» между «ВЕСЬ ТАКТ» и «ТОЛЬКО 1 ДОЛЯ» для отработки сложных групп из 4 нот.</string>
+    <string name="help_t1_sec3_title">3. ДЖАЗОВЫЕ СЕПТАРПЕДЖИО (ЛИКИ #26–#33)</string>
+    <string name="help_t1_sec3_body">Показывает диатонические ступени (Imaj7..viim7b5) и интервалы аккордовых тонов (1, 3, b3, 5, b5, 7, b7) с аккомпанементом.</string>
+</resources>

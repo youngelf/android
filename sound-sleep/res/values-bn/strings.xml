@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">প্রশান্ত ঘুম</string>
+    <string name="cloudDesc">মেঘ (হোয়াইট নয়েজ)</string>
+    <string name="noteDesc">মিউজিক নোট</string>
+    <string name="playing_music">মিউজিক চলছে</string>
+</resources>

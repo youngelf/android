@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">五度圈和弦轮</string>
+    <string name="lock">锁定</string>
+    <string name="key_prefix">调式 </string>
+    <string name="sevenths">七和弦</string>
+    <string name="triads">三和弦</string>
+    <string name="tap_swipe">点击 / 滑动</string>
+    <string name="voicing_1">&lt; 1/3 开放/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 E型横按 (6弦) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 A型横按 (5弦) &gt;</string>
+    <string name="loop_play">&gt; 循环</string>
+    <string name="loop_pause">|| 暂停</string>
+    <string name="add_prog">+进行</string>
+    <string name="presets">预设</string>
+    <string name="close">关闭</string>
+    <string name="func_tonic_maj">主音大三和弦</string>
+    <string name="func_subdominant">下属和弦</string>
+    <string name="func_dominant">属和弦</string>
+    <string name="func_rel_min">关系小调</string>
+    <string name="func_supertonic">上主音小和弦</string>
+    <string name="func_mediant">中音小和弦</string>
+    <string name="func_leading_dim">导音减和弦</string>
+    <string name="got_it">明白了</string>
+    <string name="help_guide_title">五度圈和弦轮使用指南</string>
+    <string name="help_guide_sec1_title">1. 五度圈转盘与和声环</string>
+    <string name="help_guide_sec1_body">外圈 = 12个大三和弦 | 内圈 = 12个关系小和弦 | 中心 = 调式与导音减三和弦(vii°)。颜色：金色=主功能(I/vi)，蓝色=下属功能(IV/ii)，绿色=属功能(V/iii)。</string>
+    <string name="help_guide_sec2_title">2. 调式旋转 vs. 调式锁定</string>
+    <string name="help_guide_sec2_body">未锁定时，点击任意和弦会旋转当前主调并自动移调4小节循环；点击右上角“锁定”可固定当前调式，自由试听任意和弦在该调中的功能。</string>
+    <string name="help_guide_sec3_title">3. 和弦组成音与音阶级数</string>
+    <string name="help_guide_sec3_body">实时显示当前调式下的和弦组成音与音阶级数（如C大调中 C = 1-3-5，F = 4-6-8）。点击“三和弦 / 七和弦”即可切换四声部七和弦。</string>
+    <string name="help_guide_sec4_title">4. 吉他指板把位与扫弦试听</string>
+    <string name="help_guide_sec4_body">点击“&lt; 1/3 开放/CAGED &gt;”或左右滑动可切换3种吉他按法（开放/6弦E型横按/5弦A型横按）。在琴弦上滑动或点击右侧绿色扬声器图标即可扫弦发声。</string>
+    <string name="help_guide_sec5_title">5. 四小节自动伴奏循环与经典预设</string>
+    <string name="help_guide_sec5_body">点击“&gt; 循环”自动播放4小节和弦进行，点击“+进行”将当前和弦填入高亮槽位，或点击“预设”加载经典流行/爵士/布鲁斯和弦走向。</string>
+    <string name="help_presets_title">和弦进行预设与操作指南</string>
+    <string name="help_looper_play">&gt; 播放 4 小节自动扫弦循环</string>
+    <string name="help_looper_pause">|| 暂停 4 小节自动扫弦循环</string>
+    <string name="help_presets_touch">触控：点击/拖动五度圈转盘 | 滑动琴弦扫弦 | 左右滑动把位栏切换按法</string>
+    <string name="help_presets_keys">按键：方向键=旋转  A=扫弦  B=七和弦  L1/R1=把位  X=+进行  SEL=锁定</string>
+</resources>

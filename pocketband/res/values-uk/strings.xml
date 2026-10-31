@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Кишеньковий бенд</string>
+    <string name="band_title">Бенд</string>
+    <string name="play">ПУСК</string>
+    <string name="stop">СТОП</string>
+    <string name="fill">ЗБИВКА</string>
+    <string name="auto_on">АВТО:УВІМК</string>
+    <string name="auto_off">АВТО:ВИМК</string>
+    <string name="rst">СКИД</string>
+    <string name="key">ТОНАЛЬНІСТЬ</string>
+    <string name="tempo">ТЕМП</string>
+    <string name="drums">УДАРНІ</string>
+    <string name="bass">БАС</string>
+    <string name="chords">АКОРДИ</string>
+    <string name="on">УВІМК</string>
+    <string name="mute">ВИМК</string>
+    <string name="prog_grid_header">СІТКА АКОРДІВ (ТОРКНІТЬСЯ ТАКТУ ДЛЯ ПРОСЛУХОВУВАННЯ)</string>
+    <string name="step_seq">СЕКВЕНСОР</string>
+    <string name="style_blues">Блюз-шаффл 4/4 ▾</string>
+    <string name="prog_12bar">12-тактовий блюз ▾</string>
+    <string name="legend_right">ЗОЛ=Тон  ЗЕЛ=Акорд  РОЖ=Блюз  БЛАК=Гама</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">Band — КОРОТКИЙ ПОСІБНИК І КЕРУВАННЯ</string>
+    <string name="help_sec1_title">1. СТИЛІ АКОМПАНЕМЕНТУ, ПРОГРЕСІЇ ТА ТОНАЛЬНІСТЬ</string>
+    <string name="help_sec1_body">Натисніть на Стиль, Прогресію або Тональність у верхній панелі для відкриття списку, або використовуйте - / + для зміни темпу.</string>
+    <string name="help_sec2_title">2. ІНТЕРАКТИВНА СІТКА ТАКТІВ</string>
+    <string name="help_sec2_body">Натисніть на будь-яку картку такту в сітці, щоб прослухати акорд і вибрати одну з 22 діатонічних, септ- та джазових гармоній.</string>
+    <string name="help_sec3_title">3. 5-ДОРІЖКОВИЙ КРОКОВИЙ СЕКВЕНСОР</string>
+    <string name="help_sec3_body">Натискайте комірки Бочки, Малого та Хета для перемикання ВИМК -&gt; УВІМК -&gt; АКЦЕНТ. Комірки Баса змінюють ступінь: Пауза (.) -&gt; Тоніка (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. МІКШЕР, ЗБИВКИ ТА 12-ЛАДОВА КАРТА СОЛО</string>
+    <string name="help_sec4_body">Перемикайте УДАРНІ / БАС / АКОРДИ або натискайте % для гучності. «ЗБИВКА» додає барабанний брейк, «СКИД.» повертає початковий грув. Солюйте по 12-ладовому грифу: ЗОЛОТИЙ = Тоніка ключа, ЗЕЛЕНИЙ = Тоніка акорду.</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ポモドーロ集中タイマー</string>
+    <string name="working_dnd">集中作業中：応答不可</string>
+    <string name="short_break_relax">小休憩：リラックス</string>
+    <string name="long_break_rest">長休憩：しっかり休息</string>
+    <string name="paused_stopped">一時停止中</string>
+    <string name="ready_to_focus">集中セッション準備完了</string>
+    <string name="reset">リセット</string>
+    <string name="skip_btn">スキップ &gt;&gt;</string>
+    <string name="start_focus">集中スタート</string>
+    <string name="resume">再開</string>
+    <string name="bg_sound">環境サウンド (BGM)</string>
+    <string name="amb_off">オフ</string>
+    <string name="amb_soft_tick">ソフトティック</string>
+    <string name="amb_rain">雨音</string>
+    <string name="amb_brown_noise">ブラウンノイズ</string>
+    <string name="duration_presets">時間プリセット（集中 / 短休憩 / 長休憩）</string>
+    <string name="all_time_total">累計トータル</string>
+    <string name="current_session">現在のセッション</string>
+    <string name="focus_session">集中セッション</string>
+    <string name="close">閉じる</string>
+    <string name="got_it">了解</string>
+    <string name="help_title">ポモドーロ集中タイマー＆作業時間トラッカー</string>
+    <string name="help_sec1_title">1. 4ポモドーロ・サイクルの仕組み</string>
+    <string name="help_sec1_body">• 1ポモドーロ（標準25分）の間、中断せず目の前の作業に集中します。\n• 短い休憩（5分）をとってリフレッシュします。\n• 集中セッションを4回完了するごとに長い休憩（15分）をとります。</string>
+    <string name="help_sec2_title">2. タッチ＆キーボード／十字キー操作</string>
+    <string name="help_sec2_body">• 中央ダイヤルまたは「開始」ボタンをタップ（Space / Enter）：開始・一時停止。\n• -5m / -1m / +1m / +5m をタップ（上下矢印キー）：時間を微調整。\n• プリセットをタップ（Pキー）：標準・ディープ・スタジオ・スプリントを切替。\n• 環境音をタップ（Mキー）：ソフトティック・雨音・ブラウンノイズを切替。\n• 「スキップ &gt;&gt;」（N）で次のフェーズへ移動、「リセット」（R）で最初に戻します。</string>
+    <string name="help_sec3_title">3. 作業時間の自動記録と統計</string>
+    <string name="help_sec3_body">• アクティブな集中セッションで経過したすべての秒数は、「今日の実績」および「累計実績」に自動記録されます。</string>
+</resources>

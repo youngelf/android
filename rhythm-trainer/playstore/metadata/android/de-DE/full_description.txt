@@ -1,0 +1,13 @@
+Meistern Sie das Rhythmuslesen, Notenwerte und Taktarten mit Rhythmus-Trainer: Musikalischer Rhythmus-Notationseditor & Player. Entwickelt für Instrumentalisten, Sänger, Schlagzeuger, Musikschüler und Lehrkräfte, trennt Rhythmus-Trainer die reine Rhythmik von Tonhöhenwechseln, indem jeder notierte Rhythmus nach einem 4-Schlag-Einzähler auf einem klaren 440-Hz-Kammerton wiedergegeben wird.
+
+STANDARD-RHYTHMUSNOTATION & UNGERADE TAKTARTEN
+• Komplette Noten- & Pausenpalette: Ganze, Halbe, Viertel-, Achtel- und Sechzehntelnoten sowie alle entsprechenden Pausenwerte.
+• 5 integrierte Taktarten: 4/4, 3/4, 2/2, 5/4 und 7/4 mit automatischer Taktprüfung.
+
+INTERAKTIVER TAKT-EDITOR
+• Wechseln Sie in den Bearbeitungsmodus, um Noten- und Pausenwerte zuzuweisen, Takte hinzuzufügen oder Zufallsrhythmen zu erzeugen.
+
+4-SCHLAG-EINZÄHLER & PRÄZISE 440-Hz-WIEDERGABE
+• 4..3..2..1-Klick-Einzähler vor Beginn des Rhythmus.
+• Gehaltener 440-Hz-Ton über die exakte Dauer jeder Note und exakte Stille bei jeder Pause.
+• 100 % offline, keine Berechtigungen und keine Werbung.

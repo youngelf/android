@@ -76,7 +76,9 @@ public class PocketBandActivity extends Activity {
     }
 
     private void applyDemoIntentIfPresent(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
         if (intent == null || mView == null) return;
+        mView.invalidate();
         if (!intent.hasExtra("demo_style")
                 && !intent.hasExtra("demo_help")
                 && !intent.hasExtra("demo_key")) {

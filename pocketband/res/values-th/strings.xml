@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">พ็อกเก็ตแบนด์</string>
+    <string name="band_title">วงดนตรี</string>
+    <string name="play">เล่น</string>
+    <string name="stop">หยุด</string>
+    <string name="fill">ลูกส่ง</string>
+    <string name="auto_on">ออโต้:เปิด</string>
+    <string name="auto_off">ออโต้:ปิด</string>
+    <string name="rst">รีเซ็ต</string>
+    <string name="key">คีย์</string>
+    <string name="tempo">ความเร็ว</string>
+    <string name="drums">กลอง</string>
+    <string name="bass">เบส</string>
+    <string name="chords">คอร์ด</string>
+    <string name="on">เปิด</string>
+    <string name="mute">ปิดเสียง</string>
+    <string name="prog_grid_header">ตารางทางเดินคอร์ด (แตะห้องเพลงเพื่อฟังเสียง)</string>
+    <string name="step_seq">ซีเควนเซอร์</string>
+    <string name="style_blues">บลูส์ชัฟเฟิล 4/4 ▾</string>
+    <string name="prog_12bar">บลูส์ 12 ห้อง ▾</string>
+    <string name="legend_right">ทอง=คีย์  เขียว=คอร์ด  ชมพู=บลูโน้ต  ฟ้า=สเกล</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_title">Band — คู่มือฉบับย่อและการควบคุม</string>
+    <string name="help_sec1_title">1. สไตล์แบ็กกิ้ง ทางคอร์ด และคีย์</string>
+    <string name="help_sec1_body">แตะชื่อสไตล์ ทางคอร์ด หรือคีย์ที่แถบด้านบนเพื่อเปิดเมนูเลือก หรือกดปุ่ม - / + ที่ช่อง TEMPO เพื่อปรับความเร็ว</string>
+    <string name="help_sec2_title">2. ตารางห้องคอร์ดแบบโต้ตอบ</string>
+    <string name="help_sec2_body">แตะการ์ดห้องเพลงใดก็ได้ในตารางคอร์ดเพื่อฟังเสียงคอร์ดและเปลี่ยนคอร์ดจาก 22 ฮาร์โมนีไดอาโทนิก เซเว่นथ์ และแจ๊ส</string>
+    <string name="help_sec3_title">3. สเต็ปซีเควนเซอร์ 5 แทร็ก</string>
+    <string name="help_sec3_body">แตะช่องกระเดื่อง สแนร์ หรือไฮแฮทเพื่อสลับ ปิด -&gt; เปิด -&gt; เน้นเสียง แตะช่องเบสเพื่อเปลี่ยนขั้นคู่เสียง: หยุด (.) -&gt; รูท (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8</string>
+    <string name="help_sec4_title">4. มิกเซอร์ ลูกส่งกลอง และแผนที่สเกลโซโล่ 12 เฟรต</string>
+    <string name="help_sec4_body">เปิด/ปิดเสียง กลอง / เบส / คอร์ด หรือแตะ % เพื่อปรับความดัง แตะ \'ลูกส่ง\' เพื่อใส่ลูกส่งกลองในห้องถัดไป โซโล่ตามคอกีตาร์ 12 เฟรต: สีทอง = รูทของคีย์, สีเขียว = รูทของคอร์ดปัจจุบัน</string>
+</resources>

@@ -1,59 +1,21 @@
-# Privacy Policy — Circle of Fifths (`com.eggwall.chordwheel`)
+# Privacy Policy — ChordWheel — Circle of Fifths & Guitar Looper (`com.eggwall.chordwheel`)
 
-**Effective Date:** October 23, 2026  
-**Application Name:** Circle of Fifths  
-**Package Name:** `com.eggwall.chordwheel`  
-**Developer:** Eggwall (`com.eggwall`)
+**Effective Date:** October 27, 2026  
+**Developer:** Eggwall / Vikram Aggarwal
 
----
+## 1. Overview
+**ChordWheel — Circle of Fifths & Guitar Looper** (`com.eggwall.chordwheel`) is an offline-first Android application. We respect your privacy completely: the application does **not** collect, transmit, store on external servers, sell, or share any personal data, device identifiers, location data, or usage analytics.
 
-## 1. Summary: Zero Data Collection
+## 2. Data Collection & Permissions
+- **No Personal Data Collected:** The app does not ask for your name, email address, phone number, account credentials, or payment details.
+- **No Internet or Network Access:** The app requests **zero** network permissions (`android.permission.INTERNET` is not requested in `AndroidManifest.xml`). All audio synthesis, music theory rendering, and interactive features run 100% locally on your device.
+- **No Third-Party SDKs or Ads:** The app contains no advertising SDKs, no crash-reporting trackers, and no third-party analytics libraries.
 
-**Circle of Fifths** is a completely offline, standalone music-theory and guitar-chord application.
+## 3. Local Device Storage
+User preferences and practice state (such as selected key, tempo, preset, or session statistics) are stored strictly locally on your device using Android's standard sandboxed `SharedPreferences`. You can clear this local data at any time via **Android Settings → Apps → ChordWheel → Storage → Clear Data** or by uninstalling the application.
 
-- **We do NOT collect, transmit, store on external servers, or share any personal data, device identifiers, usage analytics, crash reports, location data, microphone audio, or telemetry of any kind.**
-- **We do NOT bundle any third-party SDKs, advertising networks, or analytics libraries.**
-- **The application requests ZERO Android runtime or install-time permissions.**
+## 4. Children's Privacy
+Because the application collects no personal information of any kind and operates entirely offline, it is safe for users of all ages and complies with COPPA and GDPR requirements.
 
-Every claim in this privacy policy can be verified directly in the open source code linked below.
-
----
-
-## 2. Technical Verification in Source Code
-
-### A. Zero Android Permissions (`AndroidManifest.xml`)
-The application manifest ([`AndroidManifest.xml`](AndroidManifest.xml#L1-L20)) declares **zero `<uses-permission>` tags** — in particular, it does **not** request `android.permission.INTERNET`, `ACCESS_NETWORK_STATE`, `RECORD_AUDIO`, `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, or `AD_ID`. Because the app lacks the `INTERNET` permission, the Android operating system kernel prevents the application from opening any network sockets.
-
-### B. Zero Third-Party Libraries (`build.gradle`)
-As shown in [`build.gradle`](build.gradle#L61-L63), the production APK/AAB has **zero external runtime dependencies**. The only dependency in the project is `junit:junit:4.13.2` scoped exclusively to local JVM unit testing (`testImplementation`).
-
-### C. Local-Only Musical State Persistence (`SharedPreferences`)
-To restore your last selected musical key, chord, voicing index, and 4-bar chord progression when you reopen the app, Circle of Fifths saves a small set of integer and boolean musical preferences locally on your device using Android's private application sandbox (`Context.MODE_PRIVATE`) in [`ChordWheelView.java` (`loadState()` and `saveState()`, lines 184–218)](src/com/eggwall/chordwheel/ChordWheelView.java#L184-L218):
-
-| Key Name | Type | Purpose |
-| :--- | :--- | :--- |
-| `key_sector` | `int` (`0..11`) | Currently active key signature on the Circle of Fifths |
-| `cur_sector` | `int` (`0..11`) | Currently selected chord sector on the wheel |
-| `cur_ring` | `int` (`0..2`) | Currently selected ring (`0 = Major`, `1 = Minor`, `2 = vii°`) |
-| `key_locked` | `boolean` | Whether the `LOCK` mode toggle is active |
-| `seventh_mode` | `boolean` | Whether `TRIADS` (`false`) or `7THS` (`true`) mode is active |
-| `voicing_idx` | `int` (`0..2`) | Selected guitar voicing shape (`Open/CAGED`, `E-Barre`, `A-Barre`) |
-| `preset_idx` | `int` (`0..4`) | Last selected 4-bar progression preset index |
-| `prog_sec_0..3`, `prog_rng_0..3`, `prog_7th_0..3` | `int` / `boolean` | The 4 chords queued in the progression looper bar |
-
-This data never leaves your device and can be erased at any time by clearing the app's storage in Android Settings or uninstalling the application.
-
-### D. On-Device Real-Time Audio Synthesis (`GuitarSynthEngine.java`)
-All guitar chord strums and string plucks are synthesized mathematically in memory on your device using a Karplus-Strong physical-modeling algorithm and played through the standard Android `AudioTrack` output stream ([`GuitarSynthEngine.java` lines 174–260](src/com/eggwall/chordwheel/GuitarSynthEngine.java#L174-L260)). The app never accesses your device's microphone or records audio.
-
----
-
-## 3. Children's Privacy
-
-Because **Circle of Fifths** collects no personal or device information from any user, it is safe for users of all ages and complies with the Children's Online Privacy Protection Act (COPPA) and the EU General Data Protection Regulation (GDPR).
-
----
-
-## 4. Changes to This Policy
-
-If future versions of the application ever change how data is handled, this [`PRIVACY_POLICY.md`](PRIVACY_POLICY.md) file will be updated in the source repository alongside the corresponding code changes prior to release.
+## 5. Contact
+If you have any questions about this Privacy Policy, you may inspect the open-source source code included with this distribution or contact the developer through the Google Play Store listing page.

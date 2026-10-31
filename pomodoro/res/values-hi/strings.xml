@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">पोमोडोरो फ़ोकस</string>
+    <string name="working_dnd">कार्य प्रगति पर: कृपया व्यवधान न डालें</string>
+    <string name="short_break_relax">छोटा ब्रेक: आराम करें</string>
+    <string name="long_break_rest">लंबा ब्रेक: गहरा विश्राम</string>
+    <string name="paused_stopped">रुका हुआ: टाइमर बंद</string>
+    <string name="ready_to_focus">फ़ोकस के लिए तैयार</string>
+    <string name="reset">रीसेट</string>
+    <string name="skip_btn">छोड़ें &gt;&gt;</string>
+    <string name="start_focus">फ़ोकस शुरू करें</string>
+    <string name="resume">जारी रखें</string>
+    <string name="bg_sound">पृष्ठभूमि ध्वनि</string>
+    <string name="amb_off">बंद</string>
+    <string name="amb_soft_tick">हल्की टिक</string>
+    <string name="amb_rain">बारिश</string>
+    <string name="amb_brown_noise">ब्राउन नॉइज़</string>
+    <string name="duration_presets">अवधि प्रीसेट (कार्य / छोटा / लंबा)</string>
+    <string name="all_time_total">कुल समय</string>
+    <string name="current_session">वर्तमान सत्र</string>
+    <string name="focus_session">फ़ोकस सत्र</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">पोमोडोरो फ़ोकस टाइमर और कार्य ट्रैकर</string>
+    <string name="help_sec1_title">1. 4-पोमोडोरो चक्र</string>
+    <string name="help_sec1_body">• 1 पोमोडोरो (डिफ़ॉल्ट 25 मिनट) के लिए बिना रुकावट ध्यान केंद्रित करें।\n• आराम करने के लिए छोटा ब्रेक (5 मिनट) लें।\n• हर 4 पूर्ण फ़ोकस सत्रों के बाद एक लंबा ब्रेक (15 मिनट) लें।</string>
+    <string name="help_sec2_title">2. टच और कीबोर्ड / डी-पैड नियंत्रण</string>
+    <string name="help_sec2_body">• केंद्र डायल / \'प्रारंभ करें\' पर टैप करें (या SPACE / ENTER): शुरू या विराम।\n• -5m / -1m / +1m / +5m पर टैप करें (या ऊपर/नीचे तीर): अवधि समायोजित करें।\n• प्रीसेट टैप करें (P कुंजी): क्लासिक, डीप वर्क, स्टूडियो और स्प्रिंट बदलें।\n• परिवेश ध्वनि टैप करें (M कुंजी): टिक-टिक, बारिश या ब्राउन नॉइज़ बदलें।\n• चरण बदलने के लिए \'छोड़ें &gt;&gt;\' (N) और रीवाइंड के लिए \'रीसेट\' (R) टैप करें।</string>
+    <string name="help_sec3_title">3. स्वचालित कार्य-घंटे टेलीमेट्री</string>
+    <string name="help_sec3_body">• सक्रिय फ़ोकस सत्र में बिताया गया प्रत्येक सेकंड स्वचालित रूप से \'आज\' और \'कुल समय\' में दर्ज होता है।</string>
+</resources>

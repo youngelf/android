@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lingkaran Kuint</string>
+    <string name="lock">KUNCI</string>
+    <string name="key_prefix"> NADA </string>
+    <string name="sevenths">AKOR 7</string>
+    <string name="triads">TRIAD</string>
+    <string name="tap_swipe">KETUK / GESER</string>
+    <string name="voicing_1">&lt; 1/3 Terbuka/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Barre E (6snr) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Barre A (5snr) &gt;</string>
+    <string name="loop_play">&gt; ULANG</string>
+    <string name="loop_pause">|| JEDA</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESET</string>
+    <string name="close">TUTUP</string>
+    <string name="func_tonic_maj">Tonika Mayor</string>
+    <string name="func_subdominant">Subdominan</string>
+    <string name="func_dominant">Dominan</string>
+    <string name="func_rel_min">Minor Relatif</string>
+    <string name="func_supertonic">Supertonika Minor</string>
+    <string name="func_mediant">Median Minor</string>
+    <string name="func_leading_dim"> Nada Peka Dim</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_guide_title">CARA KERJA LINGKARAN KUINT</string>
+    <string name="help_guide_sec1_title">1. RODA &amp; CINCIN HARMONIK</string>
+    <string name="help_guide_sec1_body">Luar = 12 akor Mayor | Dalam = 12 Minor Relatif | Pusat = Nada Dasar &amp; vii° dim. Emas = Tonika (I/vi), Biru = Subdominan (IV/ii), Hijau = Dominan (V/iii).</string>
+    <string name="help_guide_sec2_title">2. PUTAR NADA DASAR vs. KUNCI (LOCK)</string>
+    <string name="help_guide_sec2_body">Saat tidak dikunci, mengetuk akor akan memutar nada dasar aktif dan mentransposisi loop. Ketuk KUNCI di kanan atas untuk membekukan nada dasar.</string>
+    <string name="help_guide_sec3_title">3. NADA AKOR &amp; DERAJAT SKALA</string>
+    <string name="help_guide_sec3_body">Menampilkan nada akor dan derajat skala pada nada dasar aktif (mis. C = 1-3-5). Ketuk TRIAD / AKOR 7 untuk beralih ke akor सात (7th) 4-nada.</string>
+    <string name="help_guide_sec4_title">4. FRETBOARD GITAR &amp; SPEAKER</string>
+    <string name="help_guide_sec4_body">Ketuk \'&lt; 1/3 Terbuka/CAGED &gt;\' atau geser untuk mengganti 3 posisi akor gitar. Geser melintasi senar atau ketuk ikon Speaker hijau untuk menggenjreng.</string>
+    <string name="help_guide_sec5_title">5. LOOPER 4-BAR &amp; PRESET</string>
+    <string name="help_guide_sec5_body">Ketuk \'&gt; ULANG\' untuk memutar progresi 4-bar, \'+PROG\' untuk memasukkan akor aktif ke slot, atau \'PRESET\' untuk memuat progresi klasik.</string>
+    <string name="help_presets_title">PRESET PROGRESI &amp; PANDUAN</string>
+    <string name="help_looper_play">&gt; PUTAR LOOPER GENJRENG OTOMATIS 4-BAR</string>
+    <string name="help_looper_pause">|| JEDA LOOPER GENJRENG OTOMATIS 4-BAR</string>
+    <string name="help_presets_touch">SENTUH: Ketuk/Geser Roda | Geser Senar untuk Genjreng | Geser Bar Voicing</string>
+    <string name="help_presets_keys">TOMBOL: DPAD=Roda  A=Genjreng  B=7th  L1/R1=Voicing  X=+Prog  SEL=Kunci</string>
+</resources>

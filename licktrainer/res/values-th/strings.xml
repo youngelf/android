@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ฝึกริฟฟ์กีตาร์</string>
+    <string name="cat_pentatonic">เพนทาโทนิก</string>
+    <string name="cat_legato">เลกาโต/อาร์เพจจิโอ</string>
+    <string name="cat_alt_pick">ดีดสลับขึ้นลง</string>
+    <string name="cat_blues_rock">บลูส์/ร็อก</string>
+    <string name="cat_spider">ฝึกนิ้วสไปเดอร์</string>
+    <string name="cat_jazz">แจ๊สคอร์ด 7</string>
+    <string name="play">เล่น</string>
+    <string name="pause">หยุดชั่วคราว</string>
+    <string name="ladder_static">ขั้นความเร็ว: คงที่</string>
+    <string name="loop_full_bar">ลูป: เต็มห้อง</string>
+    <string name="loop_beat_1">ลูป: จังหวะที่ 1</string>
+    <string name="finger_1">1: นิ้วชี้</string>
+    <string name="finger_2">2: นิ้วกลาง</string>
+    <string name="finger_3">3: นิ้วนาง</string>
+    <string name="finger_4">4: นิ้วก้อย</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_tab_howto">วิธีใช้งาน</string>
+    <string name="help_tab_jazz">แจ๊สคอร์ด 7 และฝึกความเร็ว</string>
+    <string name="help_t0_sec1_title">1. เลือกหมวดหมู่และลูกโซโล่ (Lick)</string>
+    <string name="help_t0_sec1_body">เลือกฝึก 33 แบบฝึกหัด ครอบคลุมเพนทาโทนิก เลกาโต ปิกกิ้งสลับ บลูส์/ร็อก วอร์มอัปสไปเดอร์ และอาร์เพจจิโอแจ๊สคอร์ด 7</string>
+    <string name="help_t0_sec2_title">2. ซีเควนเซอร์แท็บกีตาร์ 6 สาย</string>
+    <string name="help_t0_sec2_body">แตะคอลัมน์จังหวะบนตารางแท็บเพื่อฟังเสียงโน้ต ดูนิ้วมือซ้าย (1=ชี้ .. 4=ก้อย) และสัญลักษณ์การดีด (D=ดีดลง, U=ดีดขึ้น, H=แฮมเมอร์, P=พูลออฟ, /=สไลด์)</string>
+    <string name="help_t0_sec3_title">3. มุมมองคอกีตาร์แบบโต้ตอบ</string>
+    <string name="help_t0_sec3_body">แตะสายหรือเฟรตใดก็ได้บนคอกีตาร์ขยาย 8 เฟรตเพื่อดีดเสียงนั้นผ่านซินธ์ Karplus-Strong 12 วอยซ์</string>
+    <string name="help_t0_sec4_title">4. เปลี่ยนคีย์ได้ทุกคีย์</string>
+    <string name="help_t0_sec4_body">แตะปุ่ม \'คีย์\' เพื่อย้ายคีย์แบบฝึกหัดทั้ง 33 เพลงบนคอกีตาร์ตั้งแต่ E ถึง Eb</string>
+    <string name="help_t1_sec1_title">1. บันไดไต่ความเร็ว BPM อัตโนมัติ</string>
+    <string name="help_t1_sec1_body">แตะ \'บันได\' เพื่อเพิ่ม BPM อัตโนมัติ (+2, +5 หรือ +10 BPM) ทุกๆ 2, 4 หรือ 8 ห้องเพลง</string>
+    <string name="help_t1_sec2_title">2. การวนลูปเฉพาะจังหวะ</string>
+    <string name="help_t1_sec2_body">สลับลูประหว่าง \'เต็มห้อง\' และ \'เฉพาะจังหวะที่ 1\' เพื่อแยกฝึกกลุ่มโน้ต 4 ตัวที่ยากก่อนเชื่อมทั้ง 16 สเต็ป</string>
+    <string name="help_t1_sec3_title">3. อาร์เพจจิโอแจ๊สคอร์ด 7 (ลิค #26–#33)</string>
+    <string name="help_t1_sec3_body">แสดงเลขโรมันไดอาโทนิก (Imaj7..viim7b5) และขั้นคู่เสียงในคอร์ด (1, 3, b3, 5, b5, 7, b7) พร้อมเสียงคอร์ดแบ็กกิ้ง</string>
+</resources>

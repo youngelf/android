@@ -1,0 +1,6 @@
+Xây dựng vốn câu solo guitar, kỹ thuật phím đàn sạch sẽ và tốc độ với LickTrainer: Tab Guitar & Huấn Luyện Tốc Độ. Kết hợp 33 câu lick guitar thuộc 6 thể loại (Blues, Rock, Jazz/Bebop, Country, Neo-Soul/Funk, Shred/Metal) cùng tab 6 dây cuộn đồng bộ, cần đàn 15 ngăn trực tiếp và Thang Tăng Tốc BPM tự động.
+
+TÍNH NĂNG CHÍNH
+• Hiển thị rõ Hammer-On (H), Pull-Off (P), Slide, Bend (b), Vibrato (~) và dịch giọng sang 12 tông.
+• Tự động tăng +2 hoặc +5 BPM sau mỗi N vòng lặp, lặp đoạn A–B, trống/metronome đi kèm và âm thanh guitar 44,1 kHz.
+• Giữ sáng màn hình khi tập, 100% ngoại tuyến và không quảng cáo.

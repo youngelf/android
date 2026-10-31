@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketBand</string>
+    <string name="band_title">Band</string>
+    <string name="play">AVVIA</string>
+    <string name="stop">STOP</string>
+    <string name="fill">FILL</string>
+    <string name="auto_on">AUTO:ON</string>
+    <string name="auto_off">AUTO:OFF</string>
+    <string name="rst">RST</string>
+    <string name="key">TONALITÀ</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">BATTERIA</string>
+    <string name="bass">BASSO</string>
+    <string name="chords">ACCORDI</string>
+    <string name="on">ATTIVO</string>
+    <string name="mute">MUTO</string>
+    <string name="prog_grid_header">GRIGLIA ACCORDI (TOCCA UNA BATTUTA PER ASCOLTARE)</string>
+    <string name="step_seq">SEQUENCER</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">Blues 12 Battute ▾</string>
+    <string name="legend_right">ORO=Ton.  VERDE=Acc.  ROSA=Blue  CIANO=Scala</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">Band — GUIDA RAPIDA E COMANDI</string>
+    <string name="help_sec1_title">1. STILI DI ACCOMPAGNAMENTO, PROGRESSIONI E TONALITÀ</string>
+    <string name="help_sec1_body">Tocca Stile, Progressione o Tonalità nella barra in alto per aprire il menu a tendina, oppure usa - / + su TEMPO per regolare la velocità.</string>
+    <string name="help_sec2_title">2. BATTUTE DI ACCORDI INTERATTIVE</string>
+    <string name="help_sec2_body">Tocca qualsiasi battuta nella griglia per ascoltare l\'accordo e scorrere 22 armonie diatoniche, di settima di dominante, minori 7 e jazz.</string>
+    <string name="help_sec3_title">3. STEP SEQUENCER A 5 TRACCE</string>
+    <string name="help_sec3_body">Tocca le celle Cassa, Rullante o Charleston per alternare OFF -&gt; ON -&gt; ACCENTO. Tocca le celle Basso per cambiare grado: Pausa (.) -&gt; Fond. (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MIXER, FILL E MAPPA SCALA SOLO 12 TASTI</string>
+    <string name="help_sec4_body">Attiva/silenzia BATTERIA / BASSO / ACCORDI o tocca % per cambiare volume. Tocca FILL per prenotare un fill di batteria, o RST per ripristinare il groove. Improvvisa sul manico: ORO = Tonica, VERDE = Fondamentale dell\'accordo.</string>
+</resources>

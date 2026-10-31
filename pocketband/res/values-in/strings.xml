@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketBand</string>
+    <string name="band_title">Band</string>
+    <string name="play">MULAI</string>
+    <string name="stop">BERHENTI</string>
+    <string name="fill">FILL</string>
+    <string name="auto_on">AUTO:NYALA</string>
+    <string name="auto_off">AUTO:MATI</string>
+    <string name="rst">RST</string>
+    <string name="key">NADA DASAR</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">DRUM</string>
+    <string name="bass">BASS</string>
+    <string name="chords">AKOR</string>
+    <string name="on">AKTIF</string>
+    <string name="mute">BISU</string>
+    <string name="prog_grid_header">GRID PROGRESI AKOR (KETUK BAR UNTUK MENDENGAR)</string>
+    <string name="step_seq">SEKUENSER</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">Blues 12-Bar ▾</string>
+    <string name="legend_right">EMAS=Nada  HIJAU=Akor  PINK=Blue  SIAN=Skala</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">Band — PANDUAN CEPAT &amp; KONTROL</string>
+    <string name="help_sec1_title">1. GAYA IRINGAN, PROGRESI &amp; NADA DASAR</string>
+    <string name="help_sec1_body">Ketuk Gaya, Progresi, atau Nada Dasar di bilah atas untuk membuka menu pilihan, atau gunakan - / + pada TEMPO.</string>
+    <string name="help_sec2_title">2. BAR AKOR INTERAKTIF</string>
+    <string name="help_sec2_body">Ketuk kartu Bar mana saja pada kisi progresi untuk mendengarkan akor dan memilih dari 22 harmoni diatonis, dominan 7th, minor 7th, dan jazz.</string>
+    <string name="help_sec3_title">3. STEP SEQUENCER 5-TRACK</string>
+    <string name="help_sec3_body">Ketuk sel Kick, Snare, atau Hi-Hat untuk mengubah OFF -&gt; ON -&gt; AKSEN. Ketuk sel Bass untuk mengubah derajat akor: Istirahat (.) -&gt; Nada Dasar (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MIXER, FILL DRUM &amp; PETA SKALA SOLO 12-FRET</string>
+    <string name="help_sec4_body">Aktifkan/bisukan DRUM / BASS / AKOR atau ketuk % untuk mengatur volume. Ketuk FILL untuk mengisi variasi drum di bar berikutnya, atau RST untuk reset. Berimprovisasi di leher 12-fret: EMAS = Nada Dasar, HIJAU = Akor Aktif.</string>
+</resources>

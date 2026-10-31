@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Métronome</string>
+    <string name="header_title">MÉTRONOME DE PRÉCISION</string>
+    <string name="tap_tempo">TAP TEMPO</string>
+    <string name="time_signature">SIGNATURE RYTHMIQUE</string>
+    <string name="subdivision">SUBDIVISION</string>
+    <string name="stealth_drop">SILENCE ALÉATOIRE %</string>
+    <string name="speed_trainer">ACCÉLÉRATEUR</string>
+    <string name="start_metronome">▶   DÉMARRER MÉTRONOME</string>
+    <string name="stop_metronome">■   ARRÊTER MÉTRONOME</string>
+    <string name="steady_click"> CLIC RÉGULIER</string>
+    <string name="close">FERMER</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_title">MÉTRONOME DE PRÉCISION • GUIDE RAPIDE</string>
+    <string name="help_sec1_title">1. HORLOGE ULTRA-PRÉCISE ET KITS SONORES</string>
+    <string name="help_sec1_body">Synthétiseur PCM 44,1 kHz avec gigue &lt;0,03 ms. Touchez « KIT » en haut à droite pour alterner entre V90, Woodblock, Rimshot ou Sinus.</string>
+    <string name="help_sec2_title">2. SPHÈRES D\'ACCENTUATION DES TEMPS</string>
+    <string name="help_sec2_body">Touchez n\'importe quel cercle numéroté (1..12) pour alterner entre ACCENT (Corail), NORMAL (Cyan), SOUS-ACCENT (Ambre) et MUET.</string>
+    <string name="help_sec3_title">3. CADRAN BPM ET TAP TEMPO</string>
+    <string name="help_sec3_body">Faites glisser l\'anneau BPM circulaire, utilisez -5 / -1 / +1 / +5, ou touchez « TAP TEMPO » en rythme pour détecter le tempo d\'un morceau.</string>
+    <string name="help_sec4_title">4. SILENCE FURTIF % ET COACH DE VITESSE</string>
+    <string name="help_sec4_body">SILENCE % joue 4 mesures complètes puis coupe aléatoirement des clics pour tester votre tempo interne. COACH VITESSE augmente automatiquement le BPM toutes les 4 mesures (+2 / +4 / +5).</string>
+</resources>

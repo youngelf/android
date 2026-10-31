@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Luyện Tiết Tấu</string>
+    <string name="subtitle_440">Luyện tiết tấu âm nhạc tần số đơn (440 Hz)</string>
+    <string name="edit_mode">Chỉnh sửa</string>
+    <string name="done_editing">Xong</string>
+    <string name="play">Phát</string>
+    <string name="pause">Tạm dừng</string>
+    <string name="loop">Lặp</string>
+    <string name="edit_btn">Sửa</string>
+    <string name="ready_hint">Sẵn sàng. Nhấn Phát để đếm nhịp 4..3..2..1 trước khi vào tiết tấu.</string>
+    <string name="add_bar">Thêm Ô Nhịp</string>
+    <string name="remove_bar">Xóa Ô Nhịp</string>
+    <string name="randomize">Ngẫu nhiên</string>
+    <string name="quarter_notes">Nốt Đen</string>
+    <string name="exit_edit_mode">Thoát Chỉnh Sửa</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_title">Luyện Tiết Tấu — Hướng Dẫn Nhanh</string>
+    <string name="help_sec1_title">1. Số Chỉ Nhịp &amp; Tốc Độ</string>
+    <string name="help_sec1_body">Chọn nhịp 4/4, 3/4, 2/2, 5/4 hoặc 7/4 ở góc trên trái, kéo thanh trượt chỉnh từ 40 đến 200 BPM và bật Lặp để luyện tập liên tục.</string>
+    <string name="help_sec2_title">2. Đếm Nhịp 4..3..2..1 &amp; Phát Âm 440 Hz</string>
+    <string name="help_sec2_body">Nhấn Phát để nghe nhịp đếm 4..3..2..1 tiếp nối bằng tiết tấu phát trên âm chuẩn 440 Hz rõ ràng cùng con trỏ chạy theo từng nốt.</string>
+    <string name="help_sec3_title">3. Trình Biên Tập Tiết Tấu &amp; Tạo Ngẫu Nhiên</string>
+    <string name="help_sec3_body">Chạm Sửa để vào Chế độ Chỉnh sửa. Chạm nốt hoặc dấu lặng bất kỳ trên bản nhạc rồi chọn Tròn, Trắng, Đen, Móc đơn hoặc Móc kép. Thêm/xóa ô nhịp (1–4) hoặc chạm Ngẫu nhiên để tạo bài mới.</string>
+</resources>

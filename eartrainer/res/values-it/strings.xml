@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ear Trainer</string>
+    <string name="mode_intervals">INTERVALLI</string>
+    <string name="mode_chords">ACCORDI</string>
+    <string name="mode_solfege">SOLFEGGIO</string>
+    <string name="mode_melodic">MELODICO</string>
+    <string name="tier_easy">FACILE</string>
+    <string name="tier_medium">MEDIO</string>
+    <string name="tier_all_12">TUTTI 12</string>
+    <string name="replay">RIASCOLTA</string>
+    <string name="root_note">NOTA BASE</string>
+    <string name="style">STILE</string>
+    <string name="hint_minus_2">AIUTO (-2)</string>
+    <string name="next">AVANTI &gt;&gt;</string>
+    <string name="skip">SALTA &gt;&gt;</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">STUDIO EAR TRAINER — GUIDA RAPIDA</string>
+    <string name="help_sec1_title">1. QUATTRO MODALITÀ DI ESERCIZIO (Pulsante MODO in alto)</string>
+    <string name="help_sec1_body">• INTERVALLI: 12 intervalli cromatici (m2..P8) ascendenti, discendenti, armonici o misti.\n• ACCORDI: 12 qualità di triadi e settime (Maggiore, Minore, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFEGGIO: Gradi cromatici (Ra..Do\') su cadenza I-IV-V-I o nota fondamentale.\n• MELODICO: Cellule melodiche di 3 note e cadenze armoniche (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. REGOLA DEI 3 TENTATIVI E ASCOLTO COMPARATIVO</string>
+    <string name="help_sec2_body">• Hai 3 tentativi per domanda. Usa INDIZIO (-2) per eliminare due opzioni errate.\n• Una volta svelata la risposta, tocca QUALSIASI pad per ascoltare e confrontare intervalli o accordi sulla tastiera della chitarra e sul pianoforte!</string>
+    <string name="help_sec3_title">3. PIANOFORTE E MANICO DI CHITARRA INTERATTIVI</string>
+    <string name="help_sec3_body">Tocca qualsiasi tasto del pianoforte a 2 ottave o corda/tasto sul manico a 6 corde in qualsiasi momento per suonare le note e verificare gli intervalli a orecchio.</string>
+</resources>

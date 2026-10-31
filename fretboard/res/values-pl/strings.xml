@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gryf Gitary</string>
+    <string name="header_title">GRYF</string>
+    <string name="tab_scales">Skale</string>
+    <string name="tab_chords">Akordy</string>
+    <string name="tab_finder">Szukaj</string>
+    <string name="tab_1_scales">1: Skale</string>
+    <string name="tab_2_chords">2: Akordy</string>
+    <string name="tab_3_finder">3: Szukaj</string>
+    <string name="play_scale">▶ Skala</string>
+    <string name="play_strum">▶ Bicze</string>
+    <string name="key_prefix">Ton.: </string>
+    <string name="position_header">POZYCJA</string>
+    <string name="all_neck">CAŁY GRYF</string>
+    <string name="frets_0_15">Progi 0–15</string>
+    <string name="lbl_intervals">Etyk: P/3/5</string>
+    <string name="lbl_notes">Etyk: Nuty</string>
+    <string name="lbl_degrees">Etyk: Stop.</string>
+    <string name="hand_righty">Ręka: Prawa</string>
+    <string name="hand_lefty">Ręka: Lewa</string>
+    <string name="quiz_off">Quiz: Wył.</string>
+    <string name="quiz_note">Quiz: Nuta</string>
+    <string name="quiz_intv">Quiz: Int.</string>
+    <string name="scale_dorian">Skala dorycka ▾</string>
+    <string name="scale_min_pent">Pentatonika molowa ▾</string>
+    <string name="scale_blues">Skala bluesowa ▾</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">EKSPLORATOR GRYFU — SZYBKI PRZEWODNIK</string>
+    <string name="help_sec1_title">1. TRZY TRYBY EKSPLORACJI</string>
+    <string name="help_sec1_body">Przełączaj między 1: Skale (16 skal + 5 boksów CAGED), 2: Akordy (12 typów z przewrotami CAGED) oraz 3: Szukaj (dotknij dowolnego progu, aby rozpoznać akord).</string>
+    <string name="help_sec2_title">2. SYNTEZA AUDIO I ODSŁUCH</string>
+    <string name="help_sec2_body">Dotknij dowolnego progu, aby zagrać dźwięk gitary Karplus-Strong, lub dotknij ▶ na górnym pasku, aby zagrać akord lub skalę.</string>
+    <string name="help_sec3_title">3. LEGENDA KOLORÓW INTERWAŁÓW</string>
+    <string name="help_sec3_body">pryma (R) = Bursztynowy | Tercja (3/b3) = Szmaragdowy | Kwinta (5) = Niebieski | Septyma (7/b7) = Fioletowy | Blue Note (b5) = Złoty.</string>
+    <string name="help_sec4_title">4. ETYKIETY, STROJENIA I TRYB LEWORĘCZNY</string>
+    <string name="help_sec4_body">Przełączaj między interwałami (R, 3, 5), nazwami dźwięków i stopniami, wybieraj spośród 6 strojów gitary oraz włączaj widok dla leworęcznych.</string>
+    <string name="help_sec5_title">5. QUIZ ZNAJOMOŚCI GRYFU</string>
+    <string name="help_sec5_body">Włącz Quiz Dźwięków lub Interwałów, aby sprawdzić znajomość wszystkich 6 strun z licznikiem punktów.</string>
+</resources>

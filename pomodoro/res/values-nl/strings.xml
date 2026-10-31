@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Focus</string>
+    <string name="working_dnd">FOCUS: NIET STOREN</string>
+    <string name="short_break_relax">KORTE PAUZE: ONTSPAN</string>
+    <string name="long_break_rest">LANGE PAUZE: DIEPE RUST</string>
+    <string name="paused_stopped">GEPAUZEERD: TIMER GESTOPT</string>
+    <string name="ready_to_focus">KLAAR VOOR FOCUS</string>
+    <string name="reset">RESET</string>
+    <string name="skip_btn">OVERSLAAN &gt;&gt;</string>
+    <string name="start_focus">START FOCUS</string>
+    <string name="resume">HERVATTEN</string>
+    <string name="bg_sound">Achtergrondgeluid</string>
+    <string name="amb_off">UIT</string>
+    <string name="amb_soft_tick">ZACHTE TIK</string>
+    <string name="amb_rain">REGEN</string>
+    <string name="amb_brown_noise">BRUINE RUIS</string>
+    <string name="duration_presets">TIJDSDUUR PRESETS (FOCUS / KORT / LANG)</string>
+    <string name="all_time_total">TOTAAL ALLERTIJDEN</string>
+    <string name="current_session">HUIDIGE SESSIE</string>
+    <string name="focus_session">FOCUSSESSIE</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_title">POMODORO FOCUSTIMER &amp; WERKTRACKER</string>
+    <string name="help_sec1_title">1. DE 4-POMODORO-CYCLUS</string>
+    <string name="help_sec1_body">• Werk 1 Pomodoro lang ononderbroken geconcentreerd (standaard 25 min).\n• Neem een Korte Pauze (5 min) om te ontspannen.\n• Neem na elke 4 voltooide Focussessies een Lange Pauze (15 min).</string>
+    <string name="help_sec2_title">2. TOUCH- &amp; TOETSENBORD- / D-PAD-BEDIENING</string>
+    <string name="help_sec2_body">• Tik op de Wijzerplaat / START (of SPATIE / ENTER): Start of Pauze.\n• Tik op -5m / -1m / +1m / +5m (of PIJL OMHOOG / OMLAAG): Pas de duur aan.\n• Tik op Presets (of P-toets): Klassiek, Deep Work, Studio en Sprint.\n• Tik op Omgevingsgeluid (of M-toets): Zachte Tik, Regen of Bruine Ruis.\n• Tik op OVERSLAAN &gt;&gt; (N) voor volgende fase; RESET (R) om te herstarten.</string>
+    <string name="help_sec3_title">3. AUTOMATISCHE WERKUREN-TELEMETRIE</string>
+    <string name="help_sec3_body">• Elke seconde in een actieve Focussessie wordt automatisch bijgehouden onder Vandaag en Totaal.</string>
+</resources>

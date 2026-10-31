@@ -1,0 +1,24 @@
+Lock in rock-solid timing, master complex odd meters and polyrhythms, and build effortless playing speed with Metronome — Precision Pendulum & Speed Coach. Engineered from the ground up for serious instrumentalists, drummers, guitarists, pianists, and ensemble musicians, this metronome runs on a sample-accurate 44.1 kHz PCM audio synthesis engine that eliminates the timing jitter of standard mobile timers.
+
+Whether you are practicing classical repertoire, shedding progressive rock odd time signatures, internalizing 3-against-2 or 5-against-4 polyrhythms, or testing your internal clock with muted bars, Metronome delivers studio-grade precision and high-visibility visual feedback.
+
+SAMPLE-ACCURATE 44.1 kHz TIMING & VISUAL PENDULUM
+• Zero-Jitter Audio Engine: Every click, accent, and subdivision is calculated at the individual audio sample level at 44.1 kHz so the groove never drifts, even during long practice sessions.
+• High-Contrast Pendulum & Beat Matrix: Follow the smooth, physics-inspired swinging pendulum arm and high-visibility beat LEDs from across the music stand or drum kit.
+• Tap Tempo & Fine BPM Controls: Tap in any groove on the fly or use the -5, -1, +1, and +5 BPM steppers across a wide 20 BPM to 260 BPM range, complete with traditional Italian tempo markings (Largo, Adagio, Andante, Moderato, Allegro, Presto).
+
+12 TIME SIGNATURES, ODD METERS & 6 SUBDIVISIONS
+• Standard & Odd Time Signatures: Switch effortlessly between 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, and odd meters including 5/4, 5/8, 7/4, 7/8, 11/8, and 13/8.
+• Interactive Per-Beat Accent Sequencer: Tap any beat column to cycle between STRONG ACCENT, NORMAL BEAT, SUB-ACCENT, and MUTE to program custom clave patterns, asymmetric Balkan/prog groupings (such as 2+2+3 or 3+3+2), or backbeat grooves.
+• 6 Rhythmic Subdivisions: Quarter notes, Eighth notes, Triplets, Sixteenth notes, Dotted Eighths (Swing/Shuffle), and Quintuplets.
+
+DUAL-RING POLYRHYTHM GENERATOR
+• Hear and See Cross-Rhythms: Activate Polyrhythm Mode to layer two independent rhythmic cycles simultaneously—including 3:2, 4:3, 5:3, 5:4, 7:4, and custom ratios—with distinct left/right pitch timbres and synchronized visual beat rings.
+
+SPEED COACH & BAR DROPPER (MUTED-BAR TRAINER)
+• Automated Speed Trainer: Automatically increment the tempo by +1 to +5 BPM every N bars so you can gradually push difficult passages past your target tempo without noticing the jumps.
+• Bar Dropper (Internal Clock Test): Play 3 bars audible and mute 1 bar (or customize N bars on / M bars muted) to verify whether you rush or drag when the reference click disappears—the ultimate drill for studio and live tightness.
+
+5 DISTINCT CLICK TIMBRES & STAGE-READY DESIGN
+• Choose from Mechanical Woodblock, Classic Pendulum Click, Studio Cowbell, Electronic Beep, and Drum Kit Rimshot voices to cut through any acoustic or amplified instrument.
+• Keeps the screen awake while running, adapts seamlessly to Portrait and Landscape orientations, requires zero permissions, and operates 100% offline with zero ads.

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diepe Slaap</string>
+    <string name="cloudDesc">regenwolk (witte ruis)</string>
+    <string name="noteDesc">muzieknoot</string>
+    <string name="playing_music">Muziek wordt afgespeeld</string>
+</resources>

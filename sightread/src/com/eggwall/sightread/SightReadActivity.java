@@ -71,7 +71,9 @@ public class SightReadActivity extends Activity {
     }
 
     private void applyDemoExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
         if (intent == null || mView == null) return;
+        mView.invalidate();
         boolean hasDemo = intent.hasExtra("demo_help")
                 || intent.hasExtra("demo_clef")
                 || intent.hasExtra("demo_key")

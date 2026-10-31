@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rhythm Trainer</string>
+    <string name="subtitle_440">Single-Frequency Musical Rhythm Practice (440 Hz)</string>
+    <string name="edit_mode">Edit Mode</string>
+    <string name="done_editing">Done Editing</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="loop">Loop</string>
+    <string name="edit_btn">Edit</string>
+    <string name="ready_hint">Ready to play. Press Play for a 4..3..2..1 click count-in followed by the rhythm.</string>
+    <string name="add_bar">Add Bar</string>
+    <string name="remove_bar">Remove Bar</string>
+    <string name="randomize">Randomize</string>
+    <string name="quarter_notes">Quarter Notes</string>
+    <string name="exit_edit_mode">Exit Edit Mode</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_title">Rhythm Trainer — Quick Guide</string>
+    <string name="help_sec1_title">1. Time Signatures &amp; Tempo</string>
+    <string name="help_sec1_body">Choose 4/4, 3/4, 2/2, 5/4, or 7/4 time from the top-left selector, adjust BPM from 40 to 200 with the slider, and toggle Loop for continuous practice.</string>
+    <string name="help_sec2_title">2. 4-Beat Count-In &amp; 440 Hz Playback</string>
+    <string name="help_sec2_body">Press Play to hear a 4..3..2..1 metronome count-in followed by the rhythm played on a clear 440 Hz reference tone with synchronized beat-cursor tracking.</string>
+    <string name="help_sec3_title">3. Interactive Rhythm Editor &amp; Randomizer</string>
+    <string name="help_sec3_body">Tap Edit to enter Edit Mode. Tap any note or rest on the score, then assign Whole, Half, Quarter, Eighth, or Sixteenth notes and rests. Add/remove bars (1–4 measures) or tap Randomize to generate fresh sight-reading rhythms.</string>
+</resources>

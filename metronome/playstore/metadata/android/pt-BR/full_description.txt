@@ -1,0 +1,7 @@
+Desenvolva um tempo impecável, domine compassos ímpares e polirritmias e aumente sua velocidade com Metrônomo: Pêndulo de Precisão e Treinador de Velocidade. Baseado em um motor de áudio PCM a 44,1 kHz com precisão de amostra (zero jitter).
+
+DESTAQUES
+• Pêndulo visual de alto contraste, Tap Tempo e ajustes de 20 a 260 BPM.
+• 12 fórmulas de compasso (4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8, 13/8) e 6 subdivisões com editor de acentos por tempo (FORTE, NORMAL, SUB, MUDO).
+• Gerador de Polirritmia de anel duplo (3:2, 4:3, 5:3, 5:4, 7:4), Treinador de Velocidade (+BPM a cada N compassos) e Compassos Mudos (Bar Dropper).
+• 5 timbres de clique, mantém a tela acesa, 100% offline e sem anúncios.

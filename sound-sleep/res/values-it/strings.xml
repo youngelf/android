@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sonno Profondo</string>
+    <string name="cloudDesc">nuvola di pioggia (rumore bianco)</string>
+    <string name="noteDesc">nota musicale</string>
+    <string name="playing_music">Riproduzione musicale in corso</string>
+</resources>

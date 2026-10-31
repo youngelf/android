@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Помодоро Фокус</string>
+    <string name="working_dnd">РОБОТА: НЕ ТУРБУВАТИ</string>
+    <string name="short_break_relax">КОРОТКА ПЕРЕРВА: ВІДПОЧИНОК</string>
+    <string name="long_break_rest">ДОВГА ПЕРЕРВА: ВІДНОВЛЕННЯ</string>
+    <string name="paused_stopped">ПАУЗА: ТАЙМЕР ЗУПИНЕНО</string>
+    <string name="ready_to_focus">ГОТОВИЙ ДО ФОКУСУ</string>
+    <string name="reset">СКИДАННЯ</string>
+    <string name="skip_btn">ДАЛІ &gt;&gt;</string>
+    <string name="start_focus">ПОЧАТИ ФОКУС</string>
+    <string name="resume">ПРОДОВЖИТИ</string>
+    <string name="bg_sound">Фоновий звук</string>
+    <string name="amb_off">ВИМК</string>
+    <string name="amb_soft_tick">М\'ЯКИЙ ТІК</string>
+    <string name="amb_rain">ДОЩ</string>
+    <string name="amb_brown_noise">БРОУН. ШУМ</string>
+    <string name="duration_presets">ПРЕСЕТИ ЧАСУ (РОБОТА / КОРОТКА / ДОВГА)</string>
+    <string name="all_time_total">УСЬОГО ЗА ВЕСЬ ЧАС</string>
+    <string name="current_session">ПОТОЧНА СЕСІЯ</string>
+    <string name="focus_session">ФОКУС-СЕСІЯ</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">ТАЙМЕР ПОМОДОРО ТА ОБЛІК РОБОЧОГО ЧАСУ</string>
+    <string name="help_sec1_title">1. ЦИКЛ ІЗ 4 ПОМОДОРО</string>
+    <string name="help_sec1_body">• Зосередьтеся без відволікань на 1 Помодоро (за замовчуванням 25 хв).\n• Зробіть коротку перерву (5 хв) для відпочинку.\n• Кожні 4 завершені сесії Фокусу робіть довгу перерву (15 хв).</string>
+    <string name="help_sec2_title">2. СЕНСОРНЕ ТА КЛАВІАТУРНЕ КЕРУВАННЯ</string>
+    <string name="help_sec2_body">• Натисніть на циферблат / СТАРТ (або ПРОБІЛ / ENTER): старт або пауза.\n• Натисніть -5хв / -1хв / +1хв / +5хв (або стрілки ВГОРУ / ВНИЗ): змінити час.\n• Натисніть Пресети (клавіша P): Класика, Глибока робота, Студія, Спринт.\n• Натисніть Фоновий звук (клавіша M): Цокання, Дощ або Коричневий шум.\n• «ПРОПУСТИТИ &gt;&gt;» (N) — наступна фаза; «СКИНУТИ» (R) — спочатку.</string>
+    <string name="help_sec3_title">3. АВТОМАТИЧНИЙ ОБЛІК РОБОЧИХ ГОДИН</string>
+    <string name="help_sec3_body">• Кожна секунда активної сесії Фокусу автоматично зберігається у статистику «Сьогодні» та «За весь час».</string>
+</resources>

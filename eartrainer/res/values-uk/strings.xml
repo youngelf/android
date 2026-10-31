@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренування слуху</string>
+    <string name="mode_intervals">ІНТЕРВАЛИ</string>
+    <string name="mode_chords">АКОРДИ</string>
+    <string name="mode_solfege">СОЛЬФЕДЖІО</string>
+    <string name="mode_melodic">МЕЛОДИКА</string>
+    <string name="tier_easy">ЛЕГКО</string>
+    <string name="tier_medium">СЕРЕДНЬО</string>
+    <string name="tier_all_12">УСІ 12</string>
+    <string name="replay">ПОВТОР</string>
+    <string name="root_note">ТОНІКА</string>
+    <string name="style">СТИЛЬ</string>
+    <string name="hint_minus_2">ПІДКАЗКА</string>
+    <string name="next">ДАЛІ &gt;&gt;</string>
+    <string name="skip">ПРОПУСК &gt;&gt;</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">СТУДІЯ СОЛЬФЕДЖІО — КОРОТКИЙ ПОСІБНИК</string>
+    <string name="help_sec1_title">1. ЧОТИРИ РЕЖИМИ ТРЕНУВАННЯ (Кнопка РЕЖИМ ліворуч угорі)</string>
+    <string name="help_sec1_body">• ІНТЕРВАЛИ: 12 хроматичних інтервалів (m2..P8) вгору, вниз, гармонічно або змішано.\n• АКОРДИ: 12 типів тризвуків і септакордів (мажор, мінор, зм., зв., sus2/4, Dom7, Maj7, m7).\n• СОЛЬФЕДЖІО: Хроматичні ступені (Ra..Do\') на тлі каденції I-IV-V-I або тоніки.\n• МЕЛОДІЇ: 3-нотні мотиви та гармонічні звороти (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. ПРАВИЛО 3 СПРОБ І ПОРІВНЯЛЬНЕ ПРОСЛУХОВУВАННЯ</string>
+    <string name="help_sec2_body">• У вас є 3 спроби на запитання. Кнопка «ПІДКАЗКА (-2)» прибирає два неправильні варіанти.\n• Після відкриття відповіді натискайте БУДЬ-ЯКУ з 12 кнопок для порівняльного прослуховування на грифі та піаніно!</string>
+    <string name="help_sec3_title">3. ІНТЕРАКТИВНЕ ПІАНІНО ТА ГРИФ ГІТАРИ</string>
+    <string name="help_sec3_body">У будь-який момент натискайте клавіші 2-октавного піаніно або струни/лади на 6-струнному грифі, щоб зіграти ноти.</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">সাইটরিড</string>
+    <string name="header_title">সাইটরিড</string>
+    <string name="play">চালান</string>
+    <string name="stop">থামুন</string>
+    <string name="sound">শব্দ</string>
+    <string name="muted">মিউট</string>
+    <string name="new_piece">নতুন অনুশীলন</string>
+    <string name="hint_on">ইঙ্গিত: চালু</string>
+    <string name="hint_off">ইঙ্গিত: বন্ধ</string>
+    <string name="mode_etude">মোড: এটিউড</string>
+    <string name="mode_quiz">মোড: কুইজ</string>
+    <string name="mode_flow">মোড: ফ্লো</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="close">বন্ধ</string>
+    <string name="help_title">সাইট-রিড — ট্রেবল ক্লেফ ও গিটার গাইড</string>
+    <string name="help_sec1_title">1. ট্রেবল ক্লেফ স্বরলিপি</string>
+    <string name="help_sec1_body">স্বয়ংক্রিয় লেজার লাইনসহ স্ট্যান্ডার্ড গিটার ট্রেবল স্টাফ। সোনালী কলামটি বর্তমান লক্ষ্য নোটকে চিহ্নিত করে।</string>
+    <string name="help_sec2_title">2. কী সিগনেচার ও নেক পজিশন</string>
+    <string name="help_sec2_body">৫টি গিটার নেক পজিশন (ওপেন, পজিশন ২, ৫, ৭, ৯) এবং ২৪টি অনুশীলনে ৭টি মেজর কী-তে (C, G, D, A, E, F, Bb) অনুশীলন করুন।</string>
+    <string name="help_sec3_title">3. ইন্টারঅ্যাক্টিভ ফ্রেটবোর্ড ও অনুশীলন মোড</string>
+    <string name="help_sec3_body">প্রতিটি নোট পড়তে ৬-তারের গিটার নেকে সঠিক তার ও ফ্রেটে ট্যাপ করুন। \'অনুশীলন\' মোড ফ্রেটবোর্ড ইঙ্গিত দেখায়; \'কুইজ\' মোড ইঙ্গিত লুকিয়ে রাখে; \'ফ্লো\' মোড তালের সাথে স্বয়ংক্রিয়ভাবে এগোয়।</string>
+    <string name="help_sec4_title">4. অডিও সিন্থ ও অনুশীলন প্লেব্যাক</string>
+    <string name="help_sec4_body">নির্বাচিত BPM-এ ২-বারের অনুশীলন শুনতে \'চালান\' ট্যাপ করুন, অথবা গিটার সিন্থেসিস চালু/বন্ধ করতে \'শব্দ / মিউট\' ট্যাপ করুন।</string>
+</resources>

@@ -51,6 +51,12 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
     private BandTheory.BarChord[] mBars;
     private boolean mShowHelp = false;
 
+    private static final int DROPDOWN_NONE  = 0;
+    private static final int DROPDOWN_STYLE = 1;
+    private static final int DROPDOWN_PROG  = 2;
+    private static final int DROPDOWN_KEY   = 3;
+    private int mActiveDropdown = DROPDOWN_NONE;
+
     /* Touch Hit Regions */
     private final RectF mBtnHelp = new RectF();
     private final RectF mBtnPlay = new RectF();
@@ -58,14 +64,27 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
     private final RectF mBtnAutoFill = new RectF();
     private final RectF mBtnReset = new RectF();
 
-    private final RectF mBtnStylePrev = new RectF(), mBtnStyleNext = new RectF();
-    private final RectF mBtnProgPrev  = new RectF(), mBtnProgNext  = new RectF();
-    private final RectF mBtnKeyPrev   = new RectF(), mBtnKeyNext   = new RectF();
+    private final RectF mBtnStyleDropdown = new RectF();
+    private final RectF mBtnProgDropdown  = new RectF();
+    private final RectF mBtnKeyDropdown   = new RectF();
+    private final RectF mDropdownPanelRect = new RectF();
+    private final RectF[] mStyleDropdownRects = new RectF[BandTheory.STYLES.length];
+    private final RectF[] mProgDropdownRects  = new RectF[BandTheory.PROGRESSION_PRESETS.length];
+    private final RectF[] mKeyDropdownRects   = new RectF[BandTheory.NOTE_NAMES.length];
+
     private final RectF mBtnBpmPrev   = new RectF(), mBtnBpmNext   = new RectF();
 
     private final RectF mBtnMuteDrums  = new RectF(), mBtnVolDrums  = new RectF();
     private final RectF mBtnMuteBass   = new RectF(), mBtnVolBass   = new RectF();
     private final RectF mBtnMuteChords = new RectF(), mBtnVolChords = new RectF();
+    private final RectF mHelpModalRect = new RectF();
+    private final RectF mHelpCloseRect = new RectF();
+    private final RectF mHelpViewportRect = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     private RectF[] mBarRects = new RectF[0];
     private final RectF[][] mStepRects = new RectF[BandTheory.NUM_TRACKS][BandTheory.MAX_STEPS];
@@ -81,6 +100,15 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             for (int s = 0; s < BandTheory.MAX_STEPS; s++) {
                 mStepRects[t][s] = new RectF();
             }
+        }
+        for (int i = 0; i < mStyleDropdownRects.length; i++) {
+            mStyleDropdownRects[i] = new RectF();
+        }
+        for (int i = 0; i < mProgDropdownRects.length; i++) {
+            mProgDropdownRects[i] = new RectF();
+        }
+        for (int i = 0; i < mKeyDropdownRects.length; i++) {
+            mKeyDropdownRects[i] = new RectF();
         }
         loadPrefs();
         mEngine.setStepListener(this);
@@ -103,6 +131,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mBpm = Math.max(40, Math.min(240, bpm));
         mSwingPct = st.swingPct;
         mShowHelp = showHelp;
+        mActiveDropdown = DROPDOWN_NONE;
         loadBarsFromProgression(mProgIdx);
         pushStateToEngine();
         mEngine.setPosition(barIdx, stepIdx);
@@ -187,7 +216,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         float pad = Math.max(8f, Math.min(w, h) * 0.014f);
         boolean landscape = w > h;
 
-        float topH = Math.max(54f, h * (landscape ? 0.115f : 0.072f));
+        float topH = Math.max(46f, h * (landscape ? 0.095f : 0.058f));
         drawHeaderBar(c, pad, pad, w - 2 * pad, topH);
 
         float contentTop = pad * 2 + topH;
@@ -196,8 +225,8 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         if (landscape) {
             float leftW = (w - pad * 3) * 0.48f;
             float rightW = (w - pad * 3) - leftW;
-            float ctrlH = contentH * 0.34f;
-            float mixH = contentH * 0.17f;
+            float ctrlH = contentH * 0.31f;
+            float mixH = contentH * 0.18f;
             float progH = contentH - ctrlH - mixH - pad * 2;
 
             drawSelectorStrip(c, pad, contentTop, leftW, ctrlH);
@@ -210,10 +239,10 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             drawStepSequencer(c, rightX, contentTop, rightW, seqH);
             drawFretboardGuide(c, rightX, contentTop + seqH + pad, rightW, fretH);
         } else {
-            float ctrlH = contentH * 0.165f;
-            float mixH  = contentH * 0.088f;
-            float progH = contentH * 0.225f;
-            float seqH  = contentH * 0.265f;
+            float ctrlH = contentH * 0.150f;
+            float mixH  = contentH * 0.092f;
+            float progH = contentH * 0.230f;
+            float seqH  = contentH * 0.268f;
             float fretH = contentH - ctrlH - mixH - progH - seqH - pad * 4;
 
             float y = contentTop;
@@ -228,6 +257,10 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             drawFretboardGuide(c, pad, y, w - 2 * pad, fretH);
         }
 
+        if (mActiveDropdown != DROPDOWN_NONE) {
+            drawDropdownModal(c, w, h, landscape);
+        }
+
         if (mShowHelp) {
             drawHelpModal(c, w, h);
         }
@@ -235,55 +268,70 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
 
     private void drawHeaderBar(Canvas c, float x, float y, float w, float h) {
         drawCard(c, x, y, x + w, y + h, COL_PANEL, COL_BORDER);
-        float btnH = h * 0.74f;
-        float btnY = y + (h - btnH) * 0.5f;
+        float helpH = h * 0.44f;
+        float helpY = y + (h - helpH) * 0.5f;
 
-        // Top-left [?] button
-        float helpW = btnH * 1.1f;
-        mBtnHelp.set(x + 8f, btnY, x + 8f + helpW, btnY + btnH);
+        // Smaller, less prominent top-left [?] button
+        float helpW = helpH;
+        mBtnHelp.set(x + 8f, helpY, x + 8f + helpW, helpY + helpH);
         drawPillButton(c, mBtnHelp, "?", mShowHelp ? COL_GOLD : COL_CARD,
-                mShowHelp ? 0xFF101420 : COL_GOLD, btnH * 0.48f);
+                mShowHelp ? 0xFF101420 : COL_DIM, helpH * 0.48f);
 
-        // Title & active chord readout
+        // Right transport buttons: smaller in height (STOP, FILL, AUTO:ON, RST)
+        float btnH = h * 0.56f;
+        float btnY = y + (h - btnH) * 0.5f;
+        float rightEdge = x + w - 8f;
+        float bW = Math.min(w * 0.132f, h * 1.55f);
+        float gap = 6f;
+
+        mBtnReset.set(rightEdge - bW * 0.82f, btnY, rightEdge, btnY + btnH);
+        rightEdge = mBtnReset.left - gap;
+        mBtnAutoFill.set(rightEdge - bW * 0.98f, btnY, rightEdge, btnY + btnH);
+        rightEdge = mBtnAutoFill.left - gap;
+        mBtnFill.set(rightEdge - bW * 0.82f, btnY, rightEdge, btnY + btnH);
+        rightEdge = mBtnFill.left - gap;
+        mBtnPlay.set(rightEdge - bW * 0.98f, btnY, rightEdge, btnY + btnH);
+
+        // Title & active chord readout (bounded so it never overlaps the right transport buttons)
+        float textX = mBtnHelp.right + 10f;
+        float availTextW = Math.max(40f, mBtnPlay.left - textX - 10f);
         int curBar = mEngine.getCurBar();
         int curStep = mEngine.getCurStep();
         BandTheory.BarChord curBc = (mBars != null && curBar < mBars.length) ? mBars[curBar] : null;
         String chordLbl = BandTheory.formatChordLabel(mKeyPc, curBc);
-        String title = "POCKETBAND";
+        String title = AppI18n.tr("Band");
         mTextPaint.setColor(COL_TEXT);
-        mTextPaint.setTextSize(btnH * 0.42f);
+        float titleTs = h * 0.34f;
+        mTextPaint.setTextSize(titleTs);
+        float titleW = mTextPaint.measureText(title);
+        if (titleW > availTextW && titleW > 0f) {
+            mTextPaint.setTextSize(titleTs * (availTextW / titleW));
+        }
         mTextPaint.setTextAlign(Paint.Align.LEFT);
-        c.drawText(title, mBtnHelp.right + 12f, y + h * 0.45f, mTextPaint);
+        AppI18n.drawText(c, title, textX, y + h * 0.45f, mTextPaint);
 
         mMonoPaint.setColor(COL_CYAN);
-        mMonoPaint.setTextSize(btnH * 0.32f);
+        float subTs = h * 0.25f;
+        mMonoPaint.setTextSize(subTs);
         mMonoPaint.setTextAlign(Paint.Align.LEFT);
         String sub = chordLbl + " (" + BandTheory.formatChordNotes(mKeyPc, curBc)
                 + ")  BAR " + (curBar + 1) + "/" + mBars.length + "  BEAT " + ((curStep / 2) + 1);
-        c.drawText(sub, mBtnHelp.right + 12f, y + h * 0.82f, mMonoPaint);
-
-        // Right transport buttons: PLAY/STOP, FILL, AUTO-FILL, RESET
-        float rightEdge = x + w - 8f;
-        float bW = Math.min(w * 0.135f, btnH * 1.95f);
-        float gap = 6f;
-
-        mBtnReset.set(rightEdge - bW * 0.85f, btnY, rightEdge, btnY + btnH);
-        rightEdge = mBtnReset.left - gap;
-        mBtnAutoFill.set(rightEdge - bW * 0.95f, btnY, rightEdge, btnY + btnH);
-        rightEdge = mBtnAutoFill.left - gap;
-        mBtnFill.set(rightEdge - bW * 0.85f, btnY, rightEdge, btnY + btnH);
-        rightEdge = mBtnFill.left - gap;
-        mBtnPlay.set(rightEdge - bW * 1.05f, btnY, rightEdge, btnY + btnH);
+        sub = AppI18n.tr(sub);
+        float subW = mMonoPaint.measureText(sub);
+        if (subW > availTextW && subW > 0f) {
+            mMonoPaint.setTextSize(subTs * (availTextW / subW));
+        }
+        AppI18n.drawText(c, sub, textX, y + h * 0.82f, mMonoPaint);
 
         boolean playing = mEngine.isPlaying();
         drawPillButton(c, mBtnPlay, playing ? "STOP" : "PLAY",
-                playing ? COL_EMERALD : COL_PINK, 0xFF081018, btnH * 0.34f);
+                playing ? COL_EMERALD : COL_PINK, 0xFF081018, btnH * 0.42f);
         boolean fillQ = mEngine.isFillQueued();
         drawPillButton(c, mBtnFill, "FILL",
-                fillQ ? COL_ORANGE : COL_CARD, fillQ ? 0xFF081018 : COL_ORANGE, btnH * 0.33f);
+                fillQ ? COL_ORANGE : COL_CARD, fillQ ? 0xFF081018 : COL_ORANGE, btnH * 0.40f);
         drawPillButton(c, mBtnAutoFill, mAutoFill ? "AUTO:ON" : "AUTO:OFF",
-                mAutoFill ? 0xFF1E3A5F : COL_CARD, mAutoFill ? COL_CYAN : COL_DIM, btnH * 0.28f);
-        drawPillButton(c, mBtnReset, "RST", COL_CARD, COL_DIM, btnH * 0.32f);
+                mAutoFill ? 0xFF1E3A5F : COL_CARD, mAutoFill ? COL_CYAN : COL_DIM, btnH * 0.35f);
+        drawPillButton(c, mBtnReset, "RST", COL_CARD, COL_DIM, btnH * 0.40f);
     }
 
     private void drawSelectorStrip(Canvas c, float x, float y, float w, float h) {
@@ -293,47 +341,102 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
 
         BandTheory.StylePreset st = BandTheory.STYLES[mStyleIdx];
         BandTheory.ProgressionPreset pr = BandTheory.PROGRESSION_PRESETS[mProgIdx];
-        String keyStr = BandTheory.NOTE_NAMES[mKeyPc] + " (" + st.beatsPerBar + "/4)";
-        String bpmStr = mBpm + " BPM  SWG " + mSwingPct + "%";
+        String keyStr = BandTheory.NOTE_NAMES[mKeyPc] + " " + st.beatsPerBar + "/4 \u25BE";
+        String bpmStr = mBpm + " bpm";
 
-        drawStepperCell(c, x, y, cellW, cellH,
-                "BACKING STYLE", st.name, COL_GOLD, mBtnStylePrev, mBtnStyleNext);
-        drawStepperCell(c, x + cellW + gap, y, cellW, cellH,
-                "PROGRESSION", pr.shortLabel, COL_CYAN, mBtnProgPrev, mBtnProgNext);
-        drawStepperCell(c, x, y + cellH + gap, cellW, cellH,
-                "KEY SIGNATURE", keyStr, COL_EMERALD, mBtnKeyPrev, mBtnKeyNext);
+        // Top row: full-cell dropdown buttons (no < or > buttons, no sub-labels, larger text)
+        mBtnStyleDropdown.set(x, y, x + cellW, y + cellH);
+        mBtnProgDropdown.set(x + cellW + gap, y, x + cellW * 2f + gap, y + cellH);
+        drawDropdownTriggerCell(c, mBtnStyleDropdown, st.name + " \u25BE",
+                COL_GOLD, mActiveDropdown == DROPDOWN_STYLE);
+        drawDropdownTriggerCell(c, mBtnProgDropdown, pr.shortLabel + " \u25BE",
+                COL_CYAN, mActiveDropdown == DROPDOWN_PROG);
+
+        // Bottom row: KEY (tappable dropdown, no left/right arrows) and TEMPO (- and + buttons)
+        mBtnKeyDropdown.set(x, y + cellH + gap, x + cellW, y + cellH * 2f + gap);
+        drawKeyDropdownCell(c, mBtnKeyDropdown, "KEY", keyStr,
+                COL_EMERALD, mActiveDropdown == DROPDOWN_KEY);
         drawStepperCell(c, x + cellW + gap, y + cellH + gap, cellW, cellH,
-                "TEMPO / FEEL", bpmStr, COL_ORANGE, mBtnBpmPrev, mBtnBpmNext);
+                "TEMPO", bpmStr, COL_ORANGE, mBtnBpmPrev, mBtnBpmNext);
+    }
+
+    private void drawDropdownTriggerCell(
+            Canvas c, RectF rect, String value, int accentCol, boolean isOpen) {
+        value = AppI18n.tr(value);
+        int bg = isOpen ? 0xFF233252 : COL_PANEL;
+        int border = isOpen ? accentCol : COL_BORDER;
+        drawCard(c, rect.left, rect.top, rect.right, rect.bottom, bg, border);
+
+        mTextPaint.setTextAlign(Paint.Align.CENTER);
+        mTextPaint.setColor(accentCol);
+        float availW = Math.max(20f, rect.width() - 20f);
+        float valTs = rect.height() * 0.44f;
+        mTextPaint.setTextSize(valTs);
+        float mW = mTextPaint.measureText(value);
+        if (mW > availW && mW > 0f) {
+            valTs = valTs * (availW / mW);
+            mTextPaint.setTextSize(valTs);
+        }
+        AppI18n.drawText(c, value, rect.centerX(), rect.centerY() + valTs * 0.35f, mTextPaint);
+    }
+
+    private void drawKeyDropdownCell(
+            Canvas c, RectF rect, String label, String value, int accentCol, boolean isOpen) {
+        label = AppI18n.tr(label);
+        value = AppI18n.tr(value);
+        int bg = isOpen ? 0xFF233252 : COL_PANEL;
+        int border = isOpen ? accentCol : COL_BORDER;
+        drawCard(c, rect.left, rect.top, rect.right, rect.bottom, bg, border);
+
+        float cx = rect.centerX();
+        float h = rect.height();
+        float availW = Math.max(20f, rect.width() - 16f);
+
+        mTextPaint.setTextAlign(Paint.Align.CENTER);
+        mTextPaint.setColor(COL_DIM);
+        mTextPaint.setTextSize(h * 0.22f);
+        AppI18n.drawText(c, label, cx, rect.top + h * 0.33f, mTextPaint);
+
+        mTextPaint.setColor(accentCol);
+        float valTs = h * 0.38f;
+        mTextPaint.setTextSize(valTs);
+        float mW = mTextPaint.measureText(value);
+        if (mW > availW && mW > 0f) {
+            mTextPaint.setTextSize(valTs * (availW / mW));
+        }
+        AppI18n.drawText(c, value, cx, rect.top + h * 0.77f, mTextPaint);
     }
 
     private void drawStepperCell(
             Canvas c, float x, float y, float w, float h,
             String label, String value, int accentCol, RectF prevOut, RectF nextOut) {
+        label = AppI18n.tr(label);
+        value = AppI18n.tr(value);
         drawCard(c, x, y, x + w, y + h, COL_PANEL, COL_BORDER);
         float btnW = Math.min(h * 0.82f, w * 0.19f);
         float pad = 5f;
         prevOut.set(x + pad, y + pad, x + pad + btnW, y + h - pad);
         nextOut.set(x + w - pad - btnW, y + pad, x + w - pad, y + h - pad);
 
-        drawPillButton(c, prevOut, "<", COL_CARD, accentCol, h * 0.38f);
-        drawPillButton(c, nextOut, ">", COL_CARD, accentCol, h * 0.38f);
+        drawPillButton(c, prevOut, "-", COL_CARD, accentCol, h * 0.42f);
+        drawPillButton(c, nextOut, "+", COL_CARD, accentCol, h * 0.42f);
 
         float cx = x + w * 0.5f;
         float availMidW = Math.max(20f, nextOut.left - prevOut.right - 10f);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         mTextPaint.setColor(COL_DIM);
-        float lblTs = Math.min(h * 0.22f, availMidW * 0.11f);
+        float lblTs = Math.min(h * 0.22f, availMidW * 0.15f);
         mTextPaint.setTextSize(lblTs);
-        c.drawText(label, cx, y + h * 0.34f, mTextPaint);
+        AppI18n.drawText(c, label, cx, y + h * 0.33f, mTextPaint);
 
         mTextPaint.setColor(accentCol);
-        float valTs = h * 0.31f;
+        float valTs = h * 0.36f;
         mTextPaint.setTextSize(valTs);
         float mW = mTextPaint.measureText(value);
         if (mW > availMidW && mW > 0f) {
             mTextPaint.setTextSize(valTs * (availMidW / mW));
         }
-        c.drawText(value, cx, y + h * 0.74f, mTextPaint);
+        AppI18n.drawText(c, value, cx, y + h * 0.77f, mTextPaint);
     }
 
     private void drawMixerStrip(Canvas c, float x, float y, float w, float h) {
@@ -356,9 +459,9 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         muteOut.set(x + pad, y + pad, x + pad + muteW, y + h - pad);
         volOut.set(muteOut.right + 4f, y + pad, x + w - pad, y + h - pad);
 
-        drawPillButton(c, muteOut, active ? name + " ON" : name + " MUTE",
-                active ? col : COL_CARD, active ? 0xFF081018 : COL_DIM, h * 0.29f);
-        drawPillButton(c, volOut, volPct + "%", COL_CARD, active ? col : COL_DIM, h * 0.29f);
+        drawTwoLinePillButton(c, muteOut, name, active ? "ON" : "MUTE",
+                active ? col : COL_CARD, active ? 0xFF081018 : COL_DIM);
+        drawPillButton(c, volOut, volPct + "%", COL_CARD, active ? col : COL_DIM, h * 0.30f);
     }
 
     private void drawChordProgression(Canvas c, float x, float y, float w, float h) {
@@ -372,7 +475,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_DIM);
         mTextPaint.setTextSize(Math.min(headerH * 0.46f, w * 0.023f));
-        c.drawText("CHORD PROGRESSION GRID (TAP BAR TO AUDITION)", x + 10f, y + headerH * 0.72f, mTextPaint);
+        AppI18n.drawText(c, "CHORD PROGRESSION GRID (TAP BAR TO AUDITION)", x + 10f, y + headerH * 0.72f, mTextPaint);
 
         // 16-segment / bar-beat LED strip along top-right of progression card
         int totalBeats = 16;
@@ -416,17 +519,17 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
 
             mTextPaint.setTextAlign(Paint.Align.LEFT);
             mTextPaint.setColor(isCur ? COL_EMERALD : COL_DIM);
-            mTextPaint.setTextSize(cellH * 0.25f);
-            c.drawText("BAR " + (i + 1), bx + 7f, by + cellH * 0.30f, mTextPaint);
+            mTextPaint.setTextSize(cellH * 0.27f);
+            AppI18n.drawText(c, String.valueOf(i + 1), bx + 8f, by + cellH * 0.31f, mTextPaint);
 
             mTextPaint.setTextAlign(Paint.Align.RIGHT);
             mTextPaint.setColor(COL_GOLD);
-            c.drawText(bc.roman, bx + cellW - 7f, by + cellH * 0.30f, mTextPaint);
+            AppI18n.drawText(c, bc.roman, bx + cellW - 7f, by + cellH * 0.30f, mTextPaint);
 
             mTextPaint.setTextAlign(Paint.Align.CENTER);
             mTextPaint.setColor(COL_TEXT);
             mTextPaint.setTextSize(cellH * 0.44f);
-            c.drawText(BandTheory.formatChordLabel(mKeyPc, bc), bx + cellW * 0.5f, by + cellH * 0.76f, mTextPaint);
+            AppI18n.drawText(c, BandTheory.formatChordLabel(mKeyPc, bc), bx + cellW * 0.5f, by + cellH * 0.76f, mTextPaint);
 
             // Beat progress dots inside active bar
             if (isCur) {
@@ -460,7 +563,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_DIM);
         mTextPaint.setTextSize(Math.min(headerH * 0.48f, labelW * 0.16f));
-        c.drawText("STEP SEQ", x + pad, y + headerH * 0.76f, mTextPaint);
+        AppI18n.drawText(c, "STEP SEQ", x + pad, y + headerH * 0.76f, mTextPaint);
 
         // Step header labels: 1 & 2 & 3 & 4 &
         mMonoPaint.setTextAlign(Paint.Align.CENTER);
@@ -469,7 +572,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             float sx = x + pad + labelW + s * (cellW + stepGap) + cellW * 0.5f;
             String lbl = (s % 2 == 0) ? String.valueOf((s / 2) + 1) : "&";
             mMonoPaint.setColor(s == curStep ? COL_GOLD : COL_DIM);
-            c.drawText(lbl, sx, y + headerH * 0.80f, mMonoPaint);
+            AppI18n.drawText(c, lbl, sx, y + headerH * 0.80f, mMonoPaint);
         }
 
         for (int t = 0; t < BandTheory.NUM_TRACKS; t++) {
@@ -477,7 +580,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             mTextPaint.setTextAlign(Paint.Align.LEFT);
             mTextPaint.setColor(t == BandTheory.TRK_BASS ? COL_CYAN : COL_TEXT);
             mTextPaint.setTextSize(cellH * 0.44f);
-            c.drawText(BandTheory.TRACK_NAMES[t], x + pad, ry + cellH * 0.66f, mTextPaint);
+            AppI18n.drawTextFit(c, BandTheory.TRACK_NAMES[t], x + pad, ry + cellH * 0.66f, mTextPaint, labelW - 6f);
 
             for (int s = 0; s < BandTheory.MAX_STEPS; s++) {
                 if (s >= spb) {
@@ -530,14 +633,14 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_GOLD);
         mTextPaint.setTextSize(Math.min(headerH * 0.44f, w * 0.022f));
-        c.drawText("SOLO SCALE: " + BandTheory.NOTE_NAMES[mKeyPc] + " " + st.scaleName,
+        AppI18n.drawText(c, "SOLO SCALE: " + BandTheory.NOTE_NAMES[mKeyPc] + " " + st.scaleName,
                 x + pad, y + headerH * 0.74f, mTextPaint);
 
         // Legend on right
         mTextPaint.setTextAlign(Paint.Align.RIGHT);
         mTextPaint.setColor(COL_DIM);
         mTextPaint.setTextSize(Math.min(headerH * 0.38f, w * 0.019f));
-        c.drawText("GOLD=Key  GRN=Chord  PINK=Blue  CYN=Scale", x + w - pad, y + headerH * 0.74f, mTextPaint);
+        AppI18n.drawText(c, "GOLD=Key  GRN=Chord  PINK=Blue  CYN=Scale", x + w - pad, y + headerH * 0.74f, mTextPaint);
 
         float neckLeft = x + pad + w * 0.045f;
         float neckRight = x + w - pad;
@@ -556,9 +659,9 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
 
             if (f == 0 || f == 3 || f == 5 || f == 7 || f == 9 || f == 12) {
                 mMonoPaint.setColor(COL_DIM);
-                mMonoPaint.setTextSize(headerH * 0.48f);
+                mMonoPaint.setTextSize(headerH * 0.30f);
                 mMonoPaint.setTextAlign(Paint.Align.CENTER);
-                c.drawText(String.valueOf(f), fx, y + h - 4f, mMonoPaint);
+                AppI18n.drawText(c, String.valueOf(f), fx, y + h - 5f, mMonoPaint);
             }
         }
 
@@ -574,7 +677,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             mMonoPaint.setColor(COL_TEXT);
             mMonoPaint.setTextSize(strH * 0.55f);
             mMonoPaint.setTextAlign(Paint.Align.CENTER);
-            c.drawText(BandTheory.GTR_STR_LABELS[s], x + pad + w * 0.018f, sy + strH * 0.18f, mMonoPaint);
+            AppI18n.drawText(c, BandTheory.GTR_STR_LABELS[s], x + pad + w * 0.018f, sy + strH * 0.18f, mMonoPaint);
 
             for (int f = 0; f <= 12; f++) {
                 int cls = BandTheory.classifyScaleFret(st, mKeyPc, curBc, s, f);
@@ -591,7 +694,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
                 mMonoPaint.setColor(0xFF081018);
                 mMonoPaint.setTextSize(noteR * 1.05f);
                 mMonoPaint.setTextAlign(Paint.Align.CENTER);
-                c.drawText(BandTheory.NOTE_NAMES[pc], fx, sy + noteR * 0.36f, mMonoPaint);
+                AppI18n.drawText(c, BandTheory.NOTE_NAMES[pc], fx, sy + noteR * 0.36f, mMonoPaint);
             }
         }
     }
@@ -601,50 +704,161 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mPaint.setColor(0xD8050811);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = w * 0.88f;
-        float mh = h * 0.80f;
+        float mw = w * 0.90f;
+        float mh = h * 0.84f;
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
+        mHelpModalRect.set(mx, my, mx + mw, my + mh);
         drawCard(c, mx, my, mx + mw, my + mh, COL_PANEL, COL_GOLD);
 
-        float pad = mw * 0.045f;
-        float y = my + mh * 0.09f;
+        float pad = Math.max(14f, mw * 0.03f);
+        float hdrH = Math.max(44f, mh * 0.105f);
+        float closeW = Math.max(96f, mw * 0.18f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        drawPillButton(c, mHelpCloseRect, AppI18n.str(getContext(), R.string.close),
+                0xFF3A1E24, 0xFFF85149, (hdrH - 6f) * 0.42f);
+
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_GOLD);
-        mTextPaint.setTextSize(mh * 0.052f);
-        c.drawText("POCKETBAND — QUICK GUIDE & CONTROLS", mx + pad, y, mTextPaint);
+        mTextPaint.setTextSize(Math.min(hdrH * 0.48f, 24f));
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
+                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mTextPaint,
+                mHelpCloseRect.left - (mx + pad + 12f));
 
-        String[] lines = {
-            "1. BACKING STYLES & PROGRESSIONS:",
-            "   Use < / > on BACKING STYLE (Blues, Rock, Jazz, Bossa, Funk, Country, Reggae)",
-            "   or PROGRESSION to switch 12-bar / 8-bar / 4-bar chord loops instantly.",
-            "2. INTERACTIVE CHORD BARS:",
-            "   Tap any Bar card in the Chord Progression Grid to audition the chord and",
-            "   cycle through 22 diatonic, dominant 7th, minor 7th, and jazz harmonies.",
-            "3. 5-TRACK STEP SEQUENCER:",
-            "   Tap Kick, Snare, Closed Hat, Open Hat/Ride cells to toggle OFF -> ON -> ACCENT.",
-            "   Tap Bass cells to cycle chord degrees: Rest (.) -> Root (R) -> 3 -> 5 -> 6 -> b7 -> 8.",
-            "4. MIXER, FILLS & 12-FRET SOLO SCALE MAP:",
-            "   Toggle DRUMS / BASS / CHORDS mutes or tap % to cycle volume levels.",
-            "   Tap FILL to queue a drum fill on the next bar, or RST to restore default groove.",
-            "   Solo over the 12-fret guitar neck: GOLD = Key Root, GREEN = Active Chord Root."
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title),
+            AppI18n.str(ctx, R.string.help_sec4_title)
         };
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body),
+            AppI18n.str(ctx, R.string.help_sec4_body)
+        };
+        int[] titleCols = { COL_GOLD, COL_CYAN, COL_EMERALD, COL_GOLD };
 
-        y += mh * 0.065f;
-        float lineStep = mh * 0.054f;
-        for (String line : lines) {
-            boolean header = line.startsWith("1.") || line.startsWith("2.")
-                    || line.startsWith("3.") || line.startsWith("4.");
-            mTextPaint.setColor(header ? COL_CYAN : COL_TEXT);
-            mTextPaint.setTextSize(mh * (header ? 0.036f : 0.031f));
-            c.drawText(line, mx + pad, y, mTextPaint);
-            y += lineStep;
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 12f);
+        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
+        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mHelpViewportRect, titles, bodies, titleCols,
+                COL_TEXT, COL_CARD, 0xFF283448, COL_GOLD,
+                titleSz, bodySz, mHelpScrollY, mTextPaint, mPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
+    }
+
+    private void drawDropdownModal(Canvas c, int w, int h, boolean landscape) {
+        float topY = (mActiveDropdown == DROPDOWN_KEY)
+                ? (mBtnKeyDropdown.bottom + 6f)
+                : (mBtnStyleDropdown.bottom + 6f);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(0xC0050811);
+        c.drawRect(0, topY, w, h, mPaint);
+
+        float pad = Math.max(10f, w * 0.02f);
+        int cols = 2;
+        if (mActiveDropdown == DROPDOWN_STYLE) {
+            int count = BandTheory.STYLES.length;
+            int rows = (count + cols - 1) / cols;
+            float panelW = landscape ? Math.min(w * 0.62f, 820f) : (w - 2 * pad);
+            float headerH = 38f;
+            float gap = 8f;
+            float maxAvailH = (h - topY - pad) - headerH - (rows + 1) * gap - 6f;
+            float cellH = Math.min(maxAvailH / rows,
+                    landscape ? Math.max(40f, h * 0.080f) : Math.max(54f, h * 0.048f));
+            float panelH = headerH + rows * cellH + (rows + 1) * gap + 6f;
+            float panelX = pad;
+
+            mDropdownPanelRect.set(panelX, topY, panelX + panelW, topY + panelH);
+            drawCard(c, mDropdownPanelRect.left, mDropdownPanelRect.top,
+                    mDropdownPanelRect.right, mDropdownPanelRect.bottom, COL_PANEL, COL_GOLD);
+
+            mTextPaint.setTextAlign(Paint.Align.LEFT);
+            mTextPaint.setColor(COL_GOLD);
+            mTextPaint.setTextSize(20f);
+            AppI18n.drawText(c, "SELECT BACKING STYLE", panelX + 14f, topY + 28f, mTextPaint);
+
+            float gridTop = topY + headerH + 4f;
+            float cellW = (panelW - (cols + 1) * gap) / cols;
+            for (int i = 0; i < count; i++) {
+                int r = i / cols;
+                int col = i % cols;
+                float cx = panelX + gap + col * (cellW + gap);
+                float cy = gridTop + r * (cellH + gap);
+                mStyleDropdownRects[i].set(cx, cy, cx + cellW, cy + cellH);
+                boolean sel = (mStyleIdx == i);
+                drawPillButton(c, mStyleDropdownRects[i], BandTheory.STYLES[i].name,
+                        sel ? COL_GOLD : COL_CARD, sel ? 0xFF081018 : COL_TEXT, cellH * 0.36f);
+            }
+        } else if (mActiveDropdown == DROPDOWN_PROG) {
+            int count = BandTheory.PROGRESSION_PRESETS.length;
+            int rows = (count + cols - 1) / cols;
+            float panelW = landscape ? Math.min(w * 0.62f, 820f) : (w - 2 * pad);
+            float cellH = landscape ? Math.max(46f, h * 0.088f) : Math.max(58f, h * 0.052f);
+            float headerH = 38f;
+            float gap = 8f;
+            float panelH = headerH + rows * cellH + (rows + 1) * gap + 6f;
+            float panelX = pad;
+
+            mDropdownPanelRect.set(panelX, topY, panelX + panelW, topY + panelH);
+            drawCard(c, mDropdownPanelRect.left, mDropdownPanelRect.top,
+                    mDropdownPanelRect.right, mDropdownPanelRect.bottom, COL_PANEL, COL_CYAN);
+
+            mTextPaint.setTextAlign(Paint.Align.LEFT);
+            mTextPaint.setColor(COL_CYAN);
+            mTextPaint.setTextSize(20f);
+            AppI18n.drawText(c, "SELECT CHORD PROGRESSION", panelX + 14f, topY + 28f, mTextPaint);
+
+            float gridTop = topY + headerH + 4f;
+            float cellW = (panelW - (cols + 1) * gap) / cols;
+            for (int i = 0; i < count; i++) {
+                int r = i / cols;
+                int col = i % cols;
+                float cx = panelX + gap + col * (cellW + gap);
+                float cy = gridTop + r * (cellH + gap);
+                mProgDropdownRects[i].set(cx, cy, cx + cellW, cy + cellH);
+                boolean sel = (mProgIdx == i);
+                drawPillButton(c, mProgDropdownRects[i], BandTheory.PROGRESSION_PRESETS[i].shortLabel,
+                        sel ? COL_CYAN : COL_CARD, sel ? 0xFF081018 : COL_TEXT, cellH * 0.36f);
+            }
+        } else if (mActiveDropdown == DROPDOWN_KEY) {
+            int keyCols = 4;
+            int count = BandTheory.NOTE_NAMES.length;
+            int rows = (count + keyCols - 1) / keyCols;
+            float panelW = landscape ? Math.min(w * 0.52f, 680f) : (w - 2 * pad);
+            float headerH = 38f;
+            float gap = 8f;
+            float maxAvailH = (h - topY - pad) - headerH - (rows + 1) * gap - 6f;
+            float cellH = Math.min(maxAvailH / rows,
+                    landscape ? Math.max(44f, h * 0.088f) : Math.max(56f, h * 0.050f));
+            float panelH = headerH + rows * cellH + (rows + 1) * gap + 6f;
+            float panelX = pad;
+
+            mDropdownPanelRect.set(panelX, topY, panelX + panelW, topY + panelH);
+            drawCard(c, mDropdownPanelRect.left, mDropdownPanelRect.top,
+                    mDropdownPanelRect.right, mDropdownPanelRect.bottom, COL_PANEL, COL_EMERALD);
+
+            mTextPaint.setTextAlign(Paint.Align.LEFT);
+            mTextPaint.setColor(COL_EMERALD);
+            mTextPaint.setTextSize(20f);
+            AppI18n.drawText(c, "SELECT KEY", panelX + 14f, topY + 28f, mTextPaint);
+
+            float gridTop = topY + headerH + 4f;
+            float cellW = (panelW - (keyCols + 1) * gap) / keyCols;
+            for (int i = 0; i < count; i++) {
+                int r = i / keyCols;
+                int col = i % keyCols;
+                float cx = panelX + gap + col * (cellW + gap);
+                float cy = gridTop + r * (cellH + gap);
+                mKeyDropdownRects[i].set(cx, cy, cx + cellW, cy + cellH);
+                boolean sel = (mKeyPc == i);
+                drawPillButton(c, mKeyDropdownRects[i], BandTheory.NOTE_NAMES[i],
+                        sel ? COL_EMERALD : COL_CARD, sel ? 0xFF081018 : COL_TEXT, cellH * 0.40f);
+            }
         }
-
-        mTextPaint.setTextAlign(Paint.Align.CENTER);
-        mTextPaint.setColor(COL_GOLD);
-        mTextPaint.setTextSize(mh * 0.036f);
-        c.drawText("TAP ANYWHERE TO CLOSE", mx + mw * 0.5f, my + mh - mh * 0.045f, mTextPaint);
     }
 
     private void drawCard(Canvas c, float l, float t, float r, float b, int fillCol, int strokeCol) {
@@ -657,7 +871,38 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         c.drawRoundRect(l, t, r, b, 10f, 10f, mPaint);
     }
 
+    private void drawTwoLinePillButton(
+            Canvas c, RectF rect, String line1, String line2, int bgCol, int fgCol) {
+        line1 = AppI18n.tr(line1);
+        line2 = AppI18n.tr(line2);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(bgCol);
+        c.drawRoundRect(rect, 8f, 8f, mPaint);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(1.8f);
+        mPaint.setColor(fgCol);
+        c.drawRoundRect(rect, 8f, 8f, mPaint);
+
+        mTextPaint.setColor(fgCol);
+        mTextPaint.setTextAlign(Paint.Align.CENTER);
+        float maxW = Math.max(10f, rect.width() - 10f);
+
+        float ts1 = rect.height() * 0.31f;
+        mTextPaint.setTextSize(ts1);
+        float mW1 = mTextPaint.measureText(line1);
+        if (mW1 > maxW && mW1 > 0f) {
+            ts1 = ts1 * (maxW / mW1);
+            mTextPaint.setTextSize(ts1);
+        }
+        AppI18n.drawText(c, line1, rect.centerX(), rect.centerY() - rect.height() * 0.07f, mTextPaint);
+
+        float ts2 = rect.height() * 0.28f;
+        mTextPaint.setTextSize(ts2);
+        AppI18n.drawText(c, line2, rect.centerX(), rect.centerY() + rect.height() * 0.33f, mTextPaint);
+    }
+
     private void drawPillButton(Canvas c, RectF rect, String label, int bgCol, int fgCol, float textSize) {
+        label = AppI18n.tr(label);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(bgCol);
         c.drawRoundRect(rect, 8f, 8f, mPaint);
@@ -676,19 +921,84 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             mTextPaint.setTextSize(ts);
         }
         mTextPaint.setTextAlign(Paint.Align.CENTER);
-        c.drawText(label, rect.centerX(), rect.centerY() + ts * 0.35f, mTextPaint);
+        AppI18n.drawText(c, label, rect.centerX(), rect.centerY() + ts * 0.35f, mTextPaint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) {
-            return super.onTouchEvent(event);
-        }
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (mShowHelp) {
-            mShowHelp = false;
+            if (action == MotionEvent.ACTION_DOWN) {
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mHelpCloseRect.contains(x, y) || !mHelpModalRect.contains(x, y)) {
+                    mShowHelp = false;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > 10f) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
+            }
+            return true;
+        }
+
+        if (action != MotionEvent.ACTION_DOWN) {
+            return super.onTouchEvent(event);
+        }
+        if (mActiveDropdown != DROPDOWN_NONE) {
+            if (mActiveDropdown == DROPDOWN_STYLE) {
+                for (int i = 0; i < mStyleDropdownRects.length; i++) {
+                    if (mStyleDropdownRects[i].contains(x, y)) {
+                        applyStyleDefaults(i);
+                        mActiveDropdown = DROPDOWN_NONE;
+                        invalidate();
+                        return true;
+                    }
+                }
+            } else if (mActiveDropdown == DROPDOWN_PROG) {
+                for (int i = 0; i < mProgDropdownRects.length; i++) {
+                    if (mProgDropdownRects[i].contains(x, y)) {
+                        mProgIdx = i;
+                        loadBarsFromProgression(mProgIdx);
+                        pushStateToEngine();
+                        mActiveDropdown = DROPDOWN_NONE;
+                        invalidate();
+                        return true;
+                    }
+                }
+            } else if (mActiveDropdown == DROPDOWN_KEY) {
+                for (int i = 0; i < mKeyDropdownRects.length; i++) {
+                    if (mKeyDropdownRects[i].contains(x, y)) {
+                        mKeyPc = i;
+                        pushStateToEngine();
+                        mActiveDropdown = DROPDOWN_NONE;
+                        invalidate();
+                        return true;
+                    }
+                }
+            }
+            if (mBtnStyleDropdown.contains(x, y)) {
+                mActiveDropdown = (mActiveDropdown == DROPDOWN_STYLE) ? DROPDOWN_NONE : DROPDOWN_STYLE;
+            } else if (mBtnProgDropdown.contains(x, y)) {
+                mActiveDropdown = (mActiveDropdown == DROPDOWN_PROG) ? DROPDOWN_NONE : DROPDOWN_PROG;
+            } else if (mBtnKeyDropdown.contains(x, y)) {
+                mActiveDropdown = (mActiveDropdown == DROPDOWN_KEY) ? DROPDOWN_NONE : DROPDOWN_KEY;
+            } else {
+                mActiveDropdown = DROPDOWN_NONE;
+            }
             invalidate();
             return true;
         }
@@ -720,29 +1030,18 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             invalidate();
             return true;
         }
-        if (mBtnStylePrev.contains(x, y)) {
-            applyStyleDefaults(mStyleIdx - 1);
+        if (mBtnStyleDropdown.contains(x, y)) {
+            mActiveDropdown = DROPDOWN_STYLE;
             invalidate();
             return true;
         }
-        if (mBtnStyleNext.contains(x, y)) {
-            applyStyleDefaults(mStyleIdx + 1);
+        if (mBtnProgDropdown.contains(x, y)) {
+            mActiveDropdown = DROPDOWN_PROG;
             invalidate();
             return true;
         }
-        if (mBtnProgPrev.contains(x, y) || mBtnProgNext.contains(x, y)) {
-            int d = mBtnProgNext.contains(x, y) ? 1 : -1;
-            int n = BandTheory.PROGRESSION_PRESETS.length;
-            mProgIdx = ((mProgIdx + d) % n + n) % n;
-            loadBarsFromProgression(mProgIdx);
-            pushStateToEngine();
-            invalidate();
-            return true;
-        }
-        if (mBtnKeyPrev.contains(x, y) || mBtnKeyNext.contains(x, y)) {
-            int d = mBtnKeyNext.contains(x, y) ? 1 : -1;
-            mKeyPc = ((mKeyPc + d) % 12 + 12) % 12;
-            pushStateToEngine();
+        if (mBtnKeyDropdown.contains(x, y)) {
+            mActiveDropdown = DROPDOWN_KEY;
             invalidate();
             return true;
         }

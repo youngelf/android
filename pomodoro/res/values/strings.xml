@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Pomodoro Focus</string>
+    <string name="working_dnd">WORKING: DO NOT DISTURB</string>
+    <string name="short_break_relax">SHORT BREAK: RELAX &amp; RECHARGE</string>
+    <string name="long_break_rest">LONG BREAK: DEEP REST</string>
+    <string name="paused_stopped">PAUSED: TIMER STOPPED</string>
+    <string name="ready_to_focus">READY TO FOCUS</string>
+    <string name="reset">RESET</string>
+    <string name="skip_btn">SKIP &gt;&gt;</string>
+    <string name="start_focus">START FOCUS</string>
+    <string name="resume">RESUME</string>
+    <string name="bg_sound">Background sound</string>
+    <string name="amb_off">OFF</string>
+    <string name="amb_soft_tick">SOFT TICK</string>
+    <string name="amb_rain">RAIN</string>
+    <string name="amb_brown_noise">BROWN NOISE</string>
+    <string name="duration_presets">DURATION PRESETS (WORK / SHORT / LONG)</string>
+    <string name="all_time_total">ALL-TIME TOTAL</string>
+    <string name="current_session">CURRENT SESSION</string>
+    <string name="focus_session">FOCUS SESSION</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_title">POMODORO FOCUS TIMER &amp; WORK TRACKER</string>
+    <string name="help_sec1_title">1. THE 4-POMODORO CYCLE</string>
+    <string name="help_sec1_body">• Focus without interruption for 1 Pomodoro (default 25m).\n• Take a Short Break (5m) to relax and recharge.\n• Every 4 completed Focus sessions, take a Long Break (15m).</string>
+    <string name="help_sec2_title">2. TOUCH &amp; KEYBOARD / D-PAD CONTROLS</string>
+    <string name="help_sec2_body">• Tap Center Dial / START button (or SPACE / ENTER): Start or Pause.\n• Tap -5m / -1m / +1m / +5m (or UP / DOWN arrows): Adjust phase duration.\n• Tap Presets (or P key): Cycle Classic, Deep Work, Studio, and Sprint.\n• Tap Ambient Soundscapes (or M key): Toggle Soft Tick, Rain, or Brown Noise.\n• Tap SKIP &gt;&gt; (or N key) to jump phases; RESET (or R key) to rewind.</string>
+    <string name="help_sec3_title">3. AUTOMATIC WORK-HOURS TELEMETRY</string>
+    <string name="help_sec3_body">• Every second spent in an active Focus Session is logged to Today &amp; All-Time totals automatically.</string>
 </resources>

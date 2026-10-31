@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">রিদম ট্রেইনার</string>
+    <string name="subtitle_440">একক-ফ্রিকোয়েন্সি মিউজিক্যাল রিদম অনুশীলন (440 Hz)</string>
+    <string name="edit_mode">এডিট মোড</string>
+    <string name="done_editing">সম্পাদনা শেষ</string>
+    <string name="play">চালান</string>
+    <string name="pause">বিরতি</string>
+    <string name="loop">লুপ</string>
+    <string name="edit_btn">এডিট</string>
+    <string name="ready_hint">প্রস্তুত। ৪..৩..২..১ কাউন্ট-ইন এবং রিদম শুনতে চালান চাপুন।</string>
+    <string name="add_bar">বার যোগ করুন</string>
+    <string name="remove_bar">বার সরান</string>
+    <string name="randomize">র‍্যান্ডম</string>
+    <string name="quarter_notes">কোয়ার্টার নোট</string>
+    <string name="exit_edit_mode">এডিট মোড ত্যাগ</string>
+    <string name="close">বন্ধ</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_title">রিদম ট্রেইনার — দ্রুত গাইড</string>
+    <string name="help_sec1_title">1. টাইম সিগনেচার ও টেম্পো</string>
+    <string name="help_sec1_body">উপরে বাম দিক থেকে 4/4, 3/4, 2/2, 5/4 বা 7/4 বেছে নিন, স্লাইডার দিয়ে ৪০ থেকে ২০০ BPM ঠিক করুন এবং \'লুপ\' চালু করুন।</string>
+    <string name="help_sec2_title">2. ৪-বিট কাউন্ট-ইন এবং 440 Hz প্লেব্যাক</string>
+    <string name="help_sec2_body">৪..৩..২..১ কাউন্ট-ইন এবং সিঙ্ক্রোনাইজড কার্সারসহ স্পষ্ট 440 Hz রেফারেন্স টোনে রিদম শুনতে \'চালান\' চাপুন।</string>
+    <string name="help_sec3_title">3. ইন্টারঅ্যাক্টিভ রিদম এডিটর ও র‍্যান্ডমাইজার</string>
+    <string name="help_sec3_body">এডিট মোডে যেতে \'এডিট\' ট্যাপ করুন। স্বরলিপির যেকোনো নোট বা বিরতিতে ট্যাপ করে পূর্ণ, অর্ধ, কোয়ার্টার, অষ্টম বা ষোড়শ নোট নির্বাচন করুন। বার যোগ/বিয়োগ করুন (১–৪) বা \'র‍্যান্ডম\' ট্যাপ করুন।</string>
+</resources>

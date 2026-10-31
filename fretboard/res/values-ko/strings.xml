@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">기타 프렛보드</string>
+    <string name="header_title">프렛보드</string>
+    <string name="tab_scales">스케일</string>
+    <string name="tab_chords">코드</string>
+    <string name="tab_finder">코드 찾기</string>
+    <string name="tab_1_scales">1: 스케일</string>
+    <string name="tab_2_chords">2: 코드</string>
+    <string name="tab_3_finder">3: 코드 찾기</string>
+    <string name="play_scale">▶ 스케일</string>
+    <string name="play_strum">▶ 스트럼</string>
+    <string name="key_prefix">조성: </string>
+    <string name="position_header">포지션</string>
+    <string name="all_neck">전체 지판</string>
+    <string name="frets_0_15">0–15 프렛</string>
+    <string name="lbl_intervals">표시: R/3/5</string>
+    <string name="lbl_notes">표시: 음이름</string>
+    <string name="lbl_degrees">표시: 도수</string>
+    <string name="hand_righty">손잡이: 오른손</string>
+    <string name="hand_lefty">손잡이: 왼손</string>
+    <string name="quiz_off">퀴즈: 끔</string>
+    <string name="quiz_note">퀴즈: 음이름</string>
+    <string name="quiz_intv">퀴즈: 음정</string>
+    <string name="scale_dorian">도리안 모드 ▾</string>
+    <string name="scale_min_pent">마이너 펜타토닉 ▾</string>
+    <string name="scale_blues">블루스 스케일 ▾</string>
+    <string name="close">닫기</string>
+    <string name="got_it">확인</string>
+    <string name="help_title">프렛보드 익스플로러 — 빠른 가이드</string>
+    <string name="help_sec1_title">1. 3가지 지판 탐색 모드</string>
+    <string name="help_sec1_body">1: 스케일(16개 음계 + 5개 CAGED 박스), 2: 코드(12개 화음 성질 및 CAGED 보이싱), 3: 코드 찾기(프렛을 탭해 줄을 고정/뮤트하고 화음 이름 자동 식별) 모드를 전환하세요.</string>
+    <string name="help_sec2_title">2. 물리 모델링 기타 신스 및 스트럼 청음</string>
+    <string name="help_sec2_body">6현 지판의 프렛을 탭하면 Karplus-Strong 기타 현악 음이 연주되며, 상단 바의 ▶ 버튼을 탭하면 활성 코드를 스트럼하거나 스케일을 연속 재생합니다.</string>
+    <string name="help_sec3_title">3. 음정 색상 범례</string>
+    <string name="help_sec3_body">근음(R) = 호박색 | 3도(3/b3) = 에메랄드 | 5도(5) = 로열 블루 | 7도(7/b7) = 보라색 | 블루노트(b5) = 금색 | 경과음 = 슬레이트 회색.</string>
+    <string name="help_sec4_title">4. 표기 전환, 6가지 튜닝 및 왼손잡이 모드</string>
+    <string name="help_sec4_body">음정(R, 3, 5), 음이름, 운지 번호 표기를 전환하고, 6가지 기타 튜닝(스탠다드, Drop D, DADGAD, 반음 다운, 오픈 G, 오픈 D) 및 왼손잡이 지판 반전을 지원합니다.</string>
+    <string name="help_sec5_title">5. 프렛보드 음이름 &amp; 음정 퀴즈</string>
+    <string name="help_sec5_body">\'음이름 퀴즈\' 또는 \'음정 퀴즈\'를 켜서 6현 전체에서 목표 음과 음정을 찾는 실력을 실시간 점수로 테스트하세요.</string>
+</resources>

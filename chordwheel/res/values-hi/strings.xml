@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">कॉर्ड व्हील</string>
+    <string name="lock">लॉक</string>
+    <string name="key_prefix">की </string>
+    <string name="sevenths">7वें</string>
+    <string name="triads">ट्रायड</string>
+    <string name="tap_swipe">टैप / स्वाइप</string>
+    <string name="voicing_1">&lt; 1/3 ओपन/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 E-बार (6तार) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 A-बार (5तार) &gt;</string>
+    <string name="loop_play">&gt; लूप</string>
+    <string name="loop_pause">|| विराम</string>
+    <string name="add_prog">+प्रोग</string>
+    <string name="presets">प्रीसेट</string>
+    <string name="close">बंद करें</string>
+    <string name="func_tonic_maj">टॉनिक मेजर</string>
+    <string name="func_subdominant">सबडोमिनेंट</string>
+    <string name="func_dominant">डोमिनेंट</string>
+    <string name="func_rel_min">रिलेटिव माइनर</string>
+    <string name="func_supertonic">सुपरटॉनिक माइनर</string>
+    <string name="func_mediant">मीडिएंट माइनर</string>
+    <string name="func_leading_dim">लीडिंग-टोन डिम</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_guide_title">सर्कल ऑफ़ फ़िफ़्थ्स कैसे काम करता है</string>
+    <string name="help_guide_sec1_title">1. व्हील और हार्मोनिक रिंग्स</string>
+    <string name="help_guide_sec1_body">बाहरी रिंग = 12 मेजर कॉर्ड्स | भीतरी रिंग = 12 रिलेटिव माइनर | केंद्र = की और vii° डिम। सुनहरा = टॉनिक (I/vi), नीला = सबडोमिनेंट (IV/ii), हरा = डोमिनेंट (V/iii)।</string>
+    <string name="help_guide_sec2_title">2. की रोटेट बनाम की लॉक (LOCK)</string>
+    <string name="help_guide_sec2_body">अनलॉक होने पर किसी कॉर्ड को टैप करने से सक्रिय की घूमती है और 4-बार लूप ट्रांसपोज़ होता है। की को स्थिर रखने के लिए ऊपर दाईं ओर \'लॉक\' टैप करें।</string>
+    <string name="help_guide_sec3_title">3. कॉर्ड स्वर और स्केल डिग्री</string>
+    <string name="help_guide_sec3_body">सक्रिय की में कॉर्ड के स्वर और स्केल डिग्री दिखाता है (जैसे C = 1-3-5)। 4-स्वर वाले सेवंथ कॉर्ड्स के लिए \'ट्रायड / 7वें\' पर टैप करें।</string>
+    <string name="help_guide_sec4_title">4. गिटार फ़्रेटबोर्ड और स्पीकर</string>
+    <string name="help_guide_sec4_body">3 गिटार वॉइसिंग बदलने के लिए \'&lt; 1/3 ओपन/CAGED &gt;\' टैप करें या स्वाइप करें। स्ट्रम करने के लिए तारों पर उंगली फेरें या हरे स्पीकर आइकन पर टैप करें।</string>
+    <string name="help_guide_sec5_title">5. 4-बार लूपर और प्रीसेट</string>
+    <string name="help_guide_sec5_body">4-बार प्रोग्रेशन चलाने के लिए \'&gt; लूप\' टैप करें, सक्रिय कॉर्ड डालने के लिए \'+प्रोग\' टैप करें, या क्लासिक प्रोग्रेशन के लिए \'प्रीसेट\' टैप करें।</string>
+    <string name="help_presets_title">प्रोग्रेशन प्रीसेट और गाइड</string>
+    <string name="help_looper_play">&gt; 4-बार ऑटो-स्ट्रम लूपर चलाएं</string>
+    <string name="help_looper_pause">|| 4-बार ऑटो-स्ट्रम लूपर रोकें</string>
+    <string name="help_presets_touch">टच: व्हील टैप/ड्रैग करें | स्ट्रम के लिए तार स्वाइप करें | वॉइसिंग बार स्वाइप करें</string>
+    <string name="help_presets_keys">बटन: DPAD=व्हील  A=स्ट्रम  B=7वें  L1/R1=वॉइसिंग  X=+प्रोग  SEL=लॉक</string>
+</resources>

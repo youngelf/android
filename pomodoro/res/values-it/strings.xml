@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Focus</string>
+    <string name="working_dnd">LAVORO: NON DISTURBARE</string>
+    <string name="short_break_relax">PAUSA BREVE: RILASSATI</string>
+    <string name="long_break_rest">PAUSA LUNGA: RIPOSO</string>
+    <string name="paused_stopped">IN PAUSA: TIMER FERMO</string>
+    <string name="ready_to_focus">PRONTO PER CONCENTRARTI</string>
+    <string name="reset">AZZERA</string>
+    <string name="skip_btn">SALTA &gt;&gt;</string>
+    <string name="start_focus">AVVIA FOCUS</string>
+    <string name="resume">RIPRENDI</string>
+    <string name="bg_sound">Suono di sottofondo</string>
+    <string name="amb_off">OFF</string>
+    <string name="amb_soft_tick">TICCHETTIO</string>
+    <string name="amb_rain">PIOGGIA</string>
+    <string name="amb_brown_noise">RUMORE MARRONE</string>
+    <string name="duration_presets">PRESET DURATA (LAVORO / BREVE / LUNGA)</string>
+    <string name="all_time_total">TOTALE GENERALE</string>
+    <string name="current_session">SESSIONE ATTUALE</string>
+    <string name="focus_session">SESSIONE FOCUS</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">TIMER POMODORO E TRACCIAMENTO LAVORO</string>
+    <string name="help_sec1_title">1. IL CICLO DI 4 POMODORI</string>
+    <string name="help_sec1_body">• Concentrati senza interruzioni per 1 Pomodoro (25 min predefiniti).\n• Fai una Pausa Breve (5 min) per rilassarti e ricaricarti.\n• Ogni 4 sessioni di Focus completate, fai una Pausa Lunga (15 min).</string>
+    <string name="help_sec2_title">2. COMANDI TOUCH E TASTIERA / D-PAD</string>
+    <string name="help_sec2_body">• Tocca il Quadrante Centrale / AVVIA (o SPAZIO / INVIO): Avvia o Pausa.\n• Tocca -5m / -1m / +1m / +5m (o frecce SU / GIÙ): Regola la durata.\n• Tocca i Preset (o tasto P): Alterna Classico, Deep Work, Studio e Sprint.\n• Tocca i Suoni Ambientali (o tasto M): Ticchettio, Pioggia o Rumore Marrone.\n• Tocca SALTA &gt;&gt; (N) per passare alla fase successiva; RESET (R) per riavvolgere.</string>
+    <string name="help_sec3_title">3. TELEMETRIA AUTOMATICA DELLE ORE DI LAVORO</string>
+    <string name="help_sec3_body">• Ogni secondo trascorso in una sessione di Focus attiva viene registrato automaticamente nei totali di Oggi e Totale.</string>
+</resources>

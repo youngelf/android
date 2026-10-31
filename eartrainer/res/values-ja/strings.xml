@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">イヤートレーナー</string>
+    <string name="mode_intervals">音程 (インターバル)</string>
+    <string name="mode_chords">コード</string>
+    <string name="mode_solfege">ソルフェージュ</string>
+    <string name="mode_melodic">メロディ</string>
+    <string name="tier_easy">初級</string>
+    <string name="tier_medium">中級</string>
+    <string name="tier_all_12">全12音</string>
+    <string name="replay">もう一度</string>
+    <string name="root_note">ルート音</string>
+    <string name="style">スタイル</string>
+    <string name="hint_minus_2">ヒント (-2)</string>
+    <string name="next">次へ &gt;&gt;</string>
+    <string name="skip">スキップ &gt;&gt;</string>
+    <string name="close">閉じる</string>
+    <string name="got_it">了解</string>
+    <string name="help_title">イヤートレーナー・スタジオ — クイックガイド</string>
+    <string name="help_sec1_title">1. 4つのトレーニングモード（左上のモードボタンで切替）</string>
+    <string name="help_sec1_body">• 音程 (INTERVALS)：短2度〜完全8度までの12半音程を上昇・下降・和音・ミックスで出題。\n• コード (CHORDS)：三和音・七和音の全12種類（長・短・減・増・sus2/4・7・M7・m7）。\n• ソルフェージュ (SOLFEGE)：I-IV-V-I カデンツまたはルート音基準での階名聴音。\n• メロディ (MELODIC)：3音モチーフと3コード進行（I-IV-V、ii-V-I）の聴き取り。</string>
+    <string name="help_sec2_title">2. 3回回答ルールと比較試聴モード</string>
+    <string name="help_sec2_body">• 1問につき3回まで回答可能。「ヒント(-2)」で誤答を2つ消去できます。\n• 正解表示後は12個のパッドを自由にタップして、現在のルート音に対する各音程・コードの響きをギター指板＆ピアノ鍵盤上で比較試聴できます！</string>
+    <string name="help_sec3_title">3. インタラクティブ・ピアノ＆ギター指板</string>
+    <string name="help_sec3_body">2オクターブのピアノ鍵盤や6弦ギター指板の任意のフレットをいつでもタップして音を鳴らし、耳で音程を確認できます。</string>
+</resources>

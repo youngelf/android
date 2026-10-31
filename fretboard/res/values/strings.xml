@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fretboard</string>
+    <string name="header_title">FRETBOARD</string>
+    <string name="tab_scales">Scales</string>
+    <string name="tab_chords">Chords</string>
+    <string name="tab_finder">Finder</string>
+    <string name="tab_1_scales">1: Scales</string>
+    <string name="tab_2_chords">2: Chords</string>
+    <string name="tab_3_finder">3: Finder</string>
+    <string name="play_scale">▶ Scale</string>
+    <string name="play_strum">▶ Strum</string>
+    <string name="key_prefix">Key: </string>
+    <string name="position_header">POSITION</string>
+    <string name="all_neck">ALL NECK</string>
+    <string name="frets_0_15">Frets 0–15</string>
+    <string name="lbl_intervals">Lbl: R/3/5</string>
+    <string name="lbl_notes">Lbl: Notes</string>
+    <string name="lbl_degrees">Lbl: Deg</string>
+    <string name="hand_righty">Hand: Righty</string>
+    <string name="hand_lefty">Hand: Lefty</string>
+    <string name="quiz_off">Quiz: Off</string>
+    <string name="quiz_note">Quiz: Note</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Dorian Mode ▾</string>
+    <string name="scale_min_pent">Minor Pentatonic ▾</string>
+    <string name="scale_blues">Blues Scale ▾</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_title">FRETBOARD EXPLORER — QUICK GUIDE</string>
+    <string name="help_sec1_title">1. THREE EXPLORATION MODES</string>
+    <string name="help_sec1_body">Switch between 1: Scales (16 scales + 5 CAGED boxes), 2: Chords (12 chord qualities with movable CAGED voicings), and 3: Chord Finder (tap any fret to lock/mute strings and identify custom chords).</string>
+    <string name="help_sec2_title">2. AUDIO SYNTHESIS &amp; STRUMMING</string>
+    <string name="help_sec2_body">Tap any fret on the 6-string neck to pluck a Karplus-Strong guitar note, or tap ▶ in the top bar to strum the active chord or audition the scale.</string>
+    <string name="help_sec3_title">3. HARMONIC COLOR LEGEND</string>
+    <string name="help_sec3_body">Root = Amber-Red | 3rd (3/b3) = Emerald Green | 5th = Royal Blue | 7th (7/b7) = Purple | Blue Note (b5) = Gold | Scale Tone = Slate.</string>
+    <string name="help_sec4_title">4. LABELS, TUNINGS &amp; LEFTY MODE</string>
+    <string name="help_sec4_body">Cycle fret markers between Intervals (R, 3, 5), Note Names, and Scale Degrees, switch across 6 guitar tunings (Standard, Drop D, DADGAD, Eb, Open G, Open D), or flip for left-handed players.</string>
+    <string name="help_sec5_title">5. FRETBOARD MASTERY QUIZ</string>
+    <string name="help_sec5_body">Toggle Note Quiz or Interval Quiz to test your fretboard recall across all 6 strings with live score tracking.</string>
 </resources>

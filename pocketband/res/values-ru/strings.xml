@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Карманный бэнд</string>
+    <string name="band_title">Бэнд</string>
+    <string name="play">ПУСК</string>
+    <string name="stop">СТОП</string>
+    <string name="fill">СБИВКА</string>
+    <string name="auto_on">АВТО:ВКЛ</string>
+    <string name="auto_off">АВТО:ВЫКЛ</string>
+    <string name="rst">СБР</string>
+    <string name="key">ТОНАЛЬНОСТЬ</string>
+    <string name="tempo">ТЕМП</string>
+    <string name="drums">УДАРНЫЕ</string>
+    <string name="bass">БАС</string>
+    <string name="chords">АККОРДЫ</string>
+    <string name="on">ВКЛ</string>
+    <string name="mute">ВЫКЛ</string>
+    <string name="prog_grid_header">СЕТКА АККОРДОВ (НАЖМИТЕ НА ТАКТ ДЛЯ ПРОСЛУШИВАНИЯ)</string>
+    <string name="step_seq">СЕКВЕНСОР</string>
+    <string name="style_blues">Блюз-шаффл 4/4 ▾</string>
+    <string name="prog_12bar">12-тактовый блюз ▾</string>
+    <string name="legend_right">ЗОЛ=Тон  ЗЕЛ=Аккорд  РОЗ=Блюз  ГОЛ=Гамма</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="help_title">Band — КРАТКОЕ РУКОВОДСТВО И УПРАВЛЕНИЕ</string>
+    <string name="help_sec1_title">1. СТИЛИ АККОМПАНЕМЕНТА, ПРОГРЕССИИ И ТОНАЛЬНОСТЬ</string>
+    <string name="help_sec1_body">Нажмите на Стиль, Прогрессию или Тональность в верхней панели для открытия списка, либо используйте - / + для изменения темпа.</string>
+    <string name="help_sec2_title">2. ИНТЕРАКТИВНАЯ СЕТКА ТАКТОВ</string>
+    <string name="help_sec2_body">Нажмите на любую карточку такта в сетке, чтобы прослушать аккорд и выбрать одну из 22 диатонических, септ- и джазовых гармоний.</string>
+    <string name="help_sec3_title">3. 5-ДОРОЖЕЧНЫЙ ШАГОВЫЙ СЕКВЕНСОР</string>
+    <string name="help_sec3_body">Нажимайте ячейки Бочки, Малого и Хэта для переключения ВЫКЛ -&gt; ВКЛ -&gt; АКЦЕНТ. Ячейки Баса меняют ступень аккорда: Пауза (.) -&gt; Тоника (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. МИКШЕР, СБИВКИ И 12-ЛАДОВАЯ КАРТА СОЛО</string>
+    <string name="help_sec4_body">Переключайте УДАРНЫЕ / БАС / АККОРДЫ или нажимайте % для громкости. «СБИВКА» добавляет барабанный брейк, «СБРОС» возвращает исходный грув. Солируйте по 12-ладовому грифу: ЗОЛОТОЙ = Тоника ключа, ЗЕЛЁНЫЙ = Тоника аккорда.</string>
+</resources>

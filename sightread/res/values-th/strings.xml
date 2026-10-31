@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ฝึกอ่านโน้ตแผ่น</string>
+    <string name="header_title">อ่านโน้ต</string>
+    <string name="play">เล่น</string>
+    <string name="stop">หยุด</string>
+    <string name="sound">เปิดเสียง</string>
+    <string name="muted">ปิดเสียง</string>
+    <string name="new_piece">แบบฝึกหัดใหม่</string>
+    <string name="hint_on">คำใบ้: เปิด</string>
+    <string name="hint_off">คำใบ้: ปิด</string>
+    <string name="mode_etude">โหมด: เอチュด์</string>
+    <string name="mode_quiz">โหมด: ทดสอบ</string>
+    <string name="mode_flow">โหมด: ต่อเนื่อง</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="close">ปิด</string>
+    <string name="help_title">ฝึกอ่านโน้ต — คู่มือกุญแจซอลและกีตาร์</string>
+    <string name="help_sec1_title">1. โน้ตบรรทัดห้าเส้นกุญแจซอล</string>
+    <string name="help_sec1_body">บรรทัดห้าเส้นกุญแจซอลมาตรฐานสำหรับกีตาร์พร้อมเส้นน้อยอัตโนมัติ แถบสีทองจะไฮไลต์โน้ตเป้าหมายปัจจุบัน</string>
+    <string name="help_sec2_title">2. เครื่องหมายประจำหลักกุญแจและตำแหน่งคอ</string>
+    <string name="help_sec2_body">ฝึกใน 7 คีย์เมเจอร์ (C, G, D, A, E, F, Bb) ครอบคลุม 5 ตำแหน่งคอกีตาร์ (สายเปิด, เฟรต 2, 5, 7, 9) และ 24 แบบฝึกหัด</string>
+    <string name="help_sec3_title">3. คอกีตาร์โต้ตอบและโหมดฝึกซ้อม</string>
+    <string name="help_sec3_body">แตะสายและเฟรตที่ตรงกับโน้ตบนคอกีตาร์ 6 สาย โหมด \'แบบฝึก\' จะแสดงจุดบอกใบ้ โหมด \'ทดสอบ\' จะซ่อนคำใบ้ และโหมด \'ต่อเนื่อง\' จะเลื่อนตามจังหวะอัตโนมัติ</string>
+    <string name="help_sec4_title">4. ซินธ์เสียงกีตาร์และการเล่นเพลงตัวอย่าง</string>
+    <string name="help_sec4_body">แตะ \'เล่น\' เพื่อฟังแบบฝึกหัด 2 ห้องที่ความเร็ว BPM ที่เลือก หรือแตะ \'เปิดเสียง / ปิดเสียง\' ด้านบนเพื่อเปิด/ปิดเสียงกีตาร์</string>
+</resources>

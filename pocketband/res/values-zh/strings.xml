@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">口袋乐队</string>
+    <string name="band_title">伴奏乐队</string>
+    <string name="play">播放</string>
+    <string name="stop">停止</string>
+    <string name="fill">加花</string>
+    <string name="auto_on">自动:开</string>
+    <string name="auto_off">自动:关</string>
+    <string name="rst">重置</string>
+    <string name="key">调式 (KEY)</string>
+    <string name="tempo">速度 (TEMPO)</string>
+    <string name="drums">鼓组</string>
+    <string name="bass">贝斯</string>
+    <string name="chords">和弦</string>
+    <string name="on">开启</string>
+    <string name="mute">静音</string>
+    <string name="prog_grid_header">和弦进行网格（点击小节试听并切换和弦）</string>
+    <string name="step_seq">步进音序器</string>
+    <string name="style_blues">布鲁斯摇摆 4/4 ▾</string>
+    <string name="prog_12bar">12小节布鲁斯 ▾</string>
+    <string name="legend_right">金=主音  绿=和弦根音  粉=蓝调音  青=音阶</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">口袋乐队 — 快速指南与操作控制</string>
+    <string name="help_sec1_title">1. 伴奏风格、和弦走向与调号</string>
+    <string name="help_sec1_body">点击顶部栏的“伴奏风格”、“和弦进行”或“调号”即可打开下拉列表快速切换；点击速度栏的 - / + 按钮可微调伴奏 BPM。</string>
+    <string name="help_sec2_title">2. 交互式和弦小节网格</string>
+    <string name="help_sec2_body">点击和弦进行网格中的任意小节卡片即可试听和弦，并在22种自然音阶和弦、属七、小七与爵士扩展和声之间循环切换。</string>
+    <string name="help_sec3_title">3. 五轨步进音序器 (鼓组与贝斯)</string>
+    <string name="help_sec3_body">点击底鼓、军鼓、闭镲或开镲/叮叮镲格子可在“关闭 -&gt; 普通 -&gt; 重音”之间切换；点击贝斯格子可循环切换和弦音级：休止(.) -&gt; 根音(R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 高八度(8)。</string>
+    <string name="help_sec4_title">4. 分轨混音器、鼓加花与 12 品即兴音阶图</string>
+    <string name="help_sec4_body">可独立开关“鼓组 / 贝斯 / 和弦”声部或点击百分比调节音量；点击“加花”在下一小节触发鼓组过门，点击“重置”恢复默认律动。底部12品指板实时高亮即兴音阶：金色=调式主音，绿色=当前和弦根音。</string>
+</resources>

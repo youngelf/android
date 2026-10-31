@@ -118,6 +118,12 @@ public class ChordWheelView extends View {
     private final RectF mModalLoopBtnRect = new RectF();
     private final RectF[] mModalPresetRects = new RectF[5];
     private final RectF mModalCloseRect   = new RectF();
+    private final RectF mGuideViewportRect = new RectF();
+    private float mGuideScrollY = 0.0f;
+    private float mGuideMaxScrollY = 0.0f;
+    private float mGuideTouchStartY = 0.0f;
+    private float mGuideLastTouchY = 0.0f;
+    private boolean mGuideDragging = false;
 
     /* Fretboard String Touch/Strum State */
     private final float[] mStringX = new float[6];
@@ -642,7 +648,7 @@ public class ChordWheelView extends View {
         mTextPaint.setColor(COL_GOLD);
         float nameX = x + 6.0f * u;
         float nameBaseline = y + titleSize + 3.0f * u;
-        canvas.drawText(mResolved.chordName, nameX, nameBaseline, mTextPaint);
+        AppI18n.drawText(canvas, mResolved.chordName, nameX, nameBaseline, mTextPaint);
         float nameW = mTextPaint.measureText(mResolved.chordName);
 
         /* Roman Numeral Function Pill */
@@ -674,16 +680,16 @@ public class ChordWheelView extends View {
         /* Function Description & Spelled Chord Notes + Scale Degree Numbers in Key */
         mTextPaint.setTextSize(9.2f * u);
         mTextPaint.setColor(COL_TEXT_MUTED);
-        canvas.drawText(mResolved.funcDesc, nameX, y + h * 0.60f, mTextPaint);
+        AppI18n.drawText(canvas, mResolved.funcDesc, nameX, y + h * 0.60f, mTextPaint);
 
         float notesY = y + h * 0.88f;
         mTextPaint.setTextSize(10.6f * u);
         mTextPaint.setColor(COL_TEXT_SUB);
-        canvas.drawText(mResolved.notesStr, nameX, notesY, mTextPaint);
+        AppI18n.drawText(canvas, mResolved.notesStr, nameX, notesY, mTextPaint);
 
         float notesW = mTextPaint.measureText(mResolved.notesStr);
         mTextPaint.setColor(COL_SKY_LIGHT);
-        canvas.drawText("   (" + mResolved.degreesStr + ")", nameX + notesW, notesY, mTextPaint);
+        AppI18n.drawText(canvas, "   (" + mResolved.degreesStr + ")", nameX + notesW, notesY, mTextPaint);
     }
 
     private void drawGuitarFretboardCard(Canvas canvas, float x, float y, float w, float h, float u) {
@@ -697,12 +703,12 @@ public class ChordWheelView extends View {
 
         mTextPaint.setTextSize(9.0f * u);
         mTextPaint.setColor(0xFF7DD3FC);
-        canvas.drawText("< " + mVoicing.label + " >", x + 8.0f * u, y + 2.0f * u + hdrH * 0.72f, mTextPaint);
+        AppI18n.drawText(canvas, "< " + mVoicing.label + " >", x + 8.0f * u, y + 2.0f * u + hdrH * 0.72f, mTextPaint);
 
-        String swipeHint = "TAP / SWIPE";
+        String swipeHint = AppI18n.tr("TAP / SWIPE");
         mTextPaint.setColor(COL_GOLD);
         float swW = mTextPaint.measureText(swipeHint);
-        canvas.drawText(swipeHint, x + w - swW - 8.0f * u, y + 2.0f * u + hdrH * 0.72f, mTextPaint);
+        AppI18n.drawText(canvas, swipeHint, x + w - swW - 8.0f * u, y + 2.0f * u + hdrH * 0.72f, mTextPaint);
 
         /* Compute base fret (1 unless max fretted > 4) */
         int minFret = 99, maxFret = 0;
@@ -752,7 +758,7 @@ public class ChordWheelView extends View {
             mTextPaint.setTextSize(9.0f * u);
             mTextPaint.setColor(COL_GOLD);
             float fw = mTextPaint.measureText(frStr);
-            canvas.drawText(frStr, gridLeft - fw - 4.0f * u, gridTop + fretDy * 0.65f, mTextPaint);
+            AppI18n.drawText(canvas, frStr, gridLeft - fw - 4.0f * u, gridTop + fretDy * 0.65f, mTextPaint);
 
             mFillPaint.setColor(COL_TEXT_MUTED);
             canvas.drawRect(gridLeft, gridTop, gridLeft + gridW, gridTop + 1.2f * u, mFillPaint);
@@ -941,11 +947,12 @@ public class ChordWheelView extends View {
 
         mModalCloseRect.set(mx + mw - 50.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
         drawPill(canvas, mModalCloseRect, 0xFF7F1D1D, 0xFFF87171, u);
-        drawCenteredText(canvas, mModalCloseRect, "CLOSE", 8.5f * u, 0xFFFFFFFF);
+        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 8.5f * u, 0xFFFFFFFF);
 
         mTextPaint.setTextSize(10.2f * u);
         mTextPaint.setColor(COL_TEXT_MAIN);
-        canvas.drawText("PROGRESSION PRESETS & GUIDE", mx + 10.0f * u, my + 16.0f * u, mTextPaint);
+        AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_title),
+                mx + 10.0f * u, my + 16.0f * u, mTextPaint, mModalCloseRect.left - (mx + 16.0f * u));
 
         /* Auto-Looper Start/Stop Button inside Modal */
         float py = my + hdrH + 6.0f * u;
@@ -955,7 +962,8 @@ public class ChordWheelView extends View {
         int lBdr  = mLoopPlaying ? 0xFF6EE7B7 : COL_SKY;
         drawPill(canvas, mModalLoopBtnRect, lFill, lBdr, u);
         drawCenteredText(canvas, mModalLoopBtnRect,
-                mLoopPlaying ? "|| PAUSE 4-BAR AUTO-STRUM LOOPER" : "> PLAY 4-BAR AUTO-STRUM LOOPER",
+                mLoopPlaying ? AppI18n.str(getContext(), R.string.help_looper_pause)
+                             : AppI18n.str(getContext(), R.string.help_looper_play),
                 9.2f * u, 0xFFFFFFFF);
 
         /* 5 Tappable Progression Preset Rows */
@@ -969,18 +977,22 @@ public class ChordWheelView extends View {
             int pBdr  = sel ? COL_GOLD : 0xFF334462;
             drawPill(canvas, mModalPresetRects[i], pFill, pBdr, u);
             drawCenteredText(canvas, mModalPresetRects[i],
-                    MusicTheory.PRESETS[i].name, 9.0f * u, sel ? COL_SEL_BDR : COL_TEXT_SUB);
+                    MusicTheory.PRESETS[i].name, 9.0f * uxOrU(u), sel ? COL_SEL_BDR : COL_TEXT_SUB);
         }
 
         /* Touch & Gesture Quick Summary Footer */
         float footY = mModalPresetRects[4].bottom + 6.0f * u;
         mTextPaint.setTextSize(8.2f * u);
         mTextPaint.setColor(COL_SKY_LIGHT);
-        canvas.drawText("TOUCH: Tap/Drag Wheel | Swipe Strings to Strum | Swipe Voicing Bar",
-                mx + 10.0f * u, footY + 9.0f * u, mTextPaint);
+        AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_touch),
+                mx + 10.0f * u, footY + 9.0f * u, mTextPaint, mw - 20.0f * u);
         mTextPaint.setColor(COL_TEXT_MUTED);
-        canvas.drawText("KEYS: DPAD=Wheel  A=Strum  B=7ths  L1/R1=Voicing  X=+Prog  SEL=Lock",
-                mx + 10.0f * u, footY + 20.0f * u, mTextPaint);
+        AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_keys),
+                mx + 10.0f * u, footY + 20.0f * u, mTextPaint, mw - 20.0f * u);
+    }
+
+    private float uxOrU(float u) {
+        return u;
     }
 
     private void drawGuideModal(Canvas canvas, int w, int h) {
@@ -1003,55 +1015,38 @@ public class ChordWheelView extends View {
         mFillPaint.setColor(0xFF1C273C);
         canvas.drawRect(mTmpRect, mFillPaint);
 
-        mModalCloseRect.set(mx + mw - 50.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
+        mModalCloseRect.set(mx + mw - 56.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
         drawPill(canvas, mModalCloseRect, 0xFF7F1D1D, 0xFFF87171, u);
-        drawCenteredText(canvas, mModalCloseRect, "CLOSE", 8.5f * u, 0xFFFFFFFF);
+        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 8.5f * u, 0xFFFFFFFF);
 
         mTextPaint.setTextSize(10.0f * u);
         mTextPaint.setColor(COL_TEXT_MAIN);
-        canvas.drawText("HOW CIRCLE OF FIFTHS WORKS", mx + 10.0f * u, my + 16.0f * u, mTextPaint);
+        AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_guide_title),
+                mx + 10.0f * u, my + 16.0f * u, mTextPaint, mModalCloseRect.left - (mx + 16.0f * u));
 
+        Context ctx = getContext();
         String[] titles = {
-            "1. THE WHEEL & HARMONIC RINGS",
-            "2. KEY: ROTATE vs. KEY: LOCKED",
-            "3. CHORD NOTES & SCALE NUMBERS",
-            "4. GUITAR FRETBOARD & SPEAKER",
-            "5. 4-BAR LOOPER & PRESETS"
+            AppI18n.str(ctx, R.string.help_guide_sec1_title),
+            AppI18n.str(ctx, R.string.help_guide_sec2_title),
+            AppI18n.str(ctx, R.string.help_guide_sec3_title),
+            AppI18n.str(ctx, R.string.help_guide_sec4_title),
+            AppI18n.str(ctx, R.string.help_guide_sec5_title)
         };
-        String[] lines1 = {
-            "Outer = 12 Major chords | Inner = 12 Relative Minors | Hub = Key & vii dim.",
-            "ROTATE shifts the active key (and transposes your loop) when you tap a chord.",
-            "Shows chord notes and scale degrees in the active key (e.g. C = 1-3-5,",
-            "Tap '< 1/3 Open/CAGED >' or swipe left/right to cycle 3 guitar voicings.",
-            "Tap '> LOOP' to play the 4-bar progression, '+PROG' to insert the active"
-        };
-        String[] lines2 = {
-            "Colors: Gold = Tonic (I/vi), Blue = Subdominant (IV/ii), Green = Dominant (V/iii).",
-            "LOCKED freezes the key so you can audition any chord's role in that key.",
-            "F = 4-6-8 in Key of C). Tap TRIADS / 7THS to toggle 4-note 7th chords.",
-            "Drag across the strings or tap the green Speaker icon on the right to strum.",
-            "chord into the highlighted slot, or 'PRESETS' to load classic progressions."
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_guide_sec1_body),
+            AppI18n.str(ctx, R.string.help_guide_sec2_body),
+            AppI18n.str(ctx, R.string.help_guide_sec3_body),
+            AppI18n.str(ctx, R.string.help_guide_sec4_body),
+            AppI18n.str(ctx, R.string.help_guide_sec5_body)
         };
         int[] titleCols = { COL_GOLD, COL_GREEN, COL_SKY_LIGHT, COL_GOLD, COL_EMERALD };
 
-        float rowTop = my + hdrH + 5.0f * u;
-        float rowH = (mh - hdrH - 9.0f * u) / 5.0f;
-
-        for (int i = 0; i < 5; i++) {
-            float ry = rowTop + i * rowH;
-            mTmpRect.set(mx + 6.0f * u, ry, mx + mw - 6.0f * u, ry + rowH - 2.0f * u);
-            drawCard(canvas, mTmpRect, 0xFF151E30, 0xFF283753, u);
-
-            mTextPaint.setTextSize(8.3f * u);
-            mTextPaint.setColor(titleCols[i]);
-            canvas.drawText(titles[i], mx + 11.0f * u, ry + 10.0f * u, mTextPaint);
-
-            mTextPaint.setTextSize(7.6f * u);
-            mTextPaint.setColor(COL_TEXT_SUB);
-            canvas.drawText(lines1[i], mx + 11.0f * u, ry + 20.0f * u, mTextPaint);
-            mTextPaint.setColor(COL_TEXT_MUTED);
-            canvas.drawText(lines2[i], mx + 11.0f * u, ry + 29.2f * u, mTextPaint);
-        }
+        mGuideViewportRect.set(mx + 6.0f * u, my + hdrH + 5.0f * u, mx + mw - 6.0f * u, my + mh - 6.0f * u);
+        mGuideMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                canvas, mGuideViewportRect, titles, bodies, titleCols,
+                COL_TEXT_SUB, 0xFF151E30, 0xFF283753, COL_SKY,
+                9.0f * u, 8.2f * u, mGuideScrollY, mTextPaint, mFillPaint);
+        mGuideScrollY = Math.max(0.0f, Math.min(mGuideScrollY, mGuideMaxScrollY));
     }
 
     /* =========================================================================
@@ -1076,21 +1071,28 @@ public class ChordWheelView extends View {
     }
 
     private void drawCenteredText(Canvas canvas, RectF box, String text, float textSize, int color) {
+        text = AppI18n.tr(text);
         mTextPaint.setTextSize(textSize);
         mTextPaint.setColor(color);
         float tw = mTextPaint.measureText(text);
+        float maxW = Math.max(8.0f, box.width() - 6.0f);
+        if (tw > maxW && tw > 0.0f) {
+            mTextPaint.setTextSize(textSize * (maxW / tw));
+            tw = mTextPaint.measureText(text);
+        }
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
         float tx = box.centerX() - tw * 0.5f;
         float ty = box.centerY() - (fm.ascent + fm.descent) * 0.5f;
-        canvas.drawText(text, tx, ty, mTextPaint);
+        AppI18n.drawText(canvas, text, tx, ty, mTextPaint);
     }
 
     private void drawTextAtPoint(Canvas canvas, String text, float cx, float cy, float textSize, int color) {
+        text = AppI18n.tr(text);
         mTextPaint.setTextSize(textSize);
         mTextPaint.setColor(color);
         float tw = mTextPaint.measureText(text);
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-        canvas.drawText(text, cx - tw * 0.5f, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+        AppI18n.drawText(canvas, text, cx - tw * 0.5f, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
     }
 
     /* =========================================================================
@@ -1104,11 +1106,25 @@ public class ChordWheelView extends View {
 
         if (mShowGuide) {
             if (action == MotionEvent.ACTION_DOWN) {
+                mGuideTouchStartY = y;
+                mGuideLastTouchY = y;
+                mGuideDragging = false;
                 if (mModalCloseRect.contains(x, y) || !mModalBoxRect.contains(x, y)) {
                     mShowGuide = false;
                     invalidate();
-                    return true;
                 }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mGuideLastTouchY - y;
+                if (Math.abs(y - mGuideTouchStartY) > mTouchSlop) {
+                    mGuideDragging = true;
+                }
+                if (mGuideDragging && mGuideMaxScrollY > 0.0f) {
+                    mGuideScrollY = Math.max(0.0f, Math.min(mGuideMaxScrollY, mGuideScrollY + dy));
+                    mGuideLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mGuideDragging = false;
             }
             return true;
         }

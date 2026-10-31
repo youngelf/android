@@ -1,0 +1,19 @@
+Erschließen Sie das gesamte 6-saitige Gitarrengriffbrett mit Fretboard Explorer: Gitarrenskalen & Akkorde. Entwickelt für Einsteiger, Fortgeschrittene und Profis, zeigt Fretboard Explorer Tonleitern, Kirchentonarten (Modes), CAGED-Boxen, verschiebbare Akkordgriffe, alternative Stimmungen und eine umgekehrte Akkorderkennung auf einem interaktiven 15-Bund-Griffbrett mit Echtzeit-Karplus-Strong-Gitarrensynthese.
+
+DREI INTEGRIERTE GITARREN-WERKZEUGE
+1. SKALEN- & MODUS-EXPLORER
+• 14 essenzielle Tonleitern & Modi: Dur (Ionisch), Natürlich Moll (Äolisch), Dorisch, Phrygisch, Lydisch, Mixolydisch, Lokrisch, Moll-Pentatonik, Dur-Pentatonik, Blues-Skala, Harmonisch Moll, Melodisch Moll, Phrygisch-Dominant und Ganztonleiter.
+• Alle 12 Tonarten über schnelle Dropdown-Menüs wählbar.
+• 5 CAGED-Lagen + Ganzer-Hals-Ansicht.
+
+2. VERSCHIEBBARE AKKORDBIBLIOTHEK
+• 12 Akkordqualitäten: Dur, Moll, Dominant-7, Maj7, m7, m7b5, dim7, Sus2, Sus4, Add9, Maj6 und m6.
+• 5 CAGED-Voicings pro Akkord mit Fingerzahlen (1–4), Barré-Anzeige und akustischer Vorschau.
+
+3. INTERAKTIVER AKKORD-FINDER
+• Tippen Sie beliebige Bünde auf den 6 Saiten an, um sofort den exakten Akkordnamen (inklusive Slash-Chords), die Intervallformel und die Töne zu bestimmen.
+
+6 STIMMUNGEN, LINKSHÄNDER-MODUS & GRIFFBRETT-QUIZ
+• Integrierte Stimmungen: Standard E, Drop D, Eb-Standard, D-Standard, Open G und DADGAD.
+• Umschaltbare Beschriftungen (Intervalle, Notennamen, Stufen), Rechtshänder/Linkshänder-Spiegelung und Griffbrett-Quiz.
+• Hoch- und Querformat, 100 % offline, keine Berechtigungen und keine Werbung.

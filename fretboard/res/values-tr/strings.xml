@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gitar Klavyesi</string>
+    <string name="header_title">KLAVYE</string>
+    <string name="tab_scales">Gamlar</string>
+    <string name="tab_chords">Akorlar</string>
+    <string name="tab_finder">Bulucu</string>
+    <string name="tab_1_scales">1: Gamlar</string>
+    <string name="tab_2_chords">2: Akorlar</string>
+    <string name="tab_3_finder">3: Bulucu</string>
+    <string name="play_scale">▶ Gam</string>
+    <string name="play_strum">▶ Ritim</string>
+    <string name="key_prefix">Ton: </string>
+    <string name="position_header">POZİSYON</string>
+    <string name="all_neck">TÜM SAP</string>
+    <string name="frets_0_15">Perde 0–15</string>
+    <string name="lbl_intervals">Etk: K/3/5</string>
+    <string name="lbl_notes">Etk: Notalar</string>
+    <string name="lbl_degrees">Etk: Derece</string>
+    <string name="hand_righty">El: Sağlak</string>
+    <string name="hand_lefty">El: Solak</string>
+    <string name="quiz_off">Test: Kapalı</string>
+    <string name="quiz_note">Test: Nota</string>
+    <string name="quiz_intv">Test: Aralık</string>
+    <string name="scale_dorian">Dorian Modu ▾</string>
+    <string name="scale_min_pent">Minör Pentatonik ▾</string>
+    <string name="scale_blues">Blues Gamı ▾</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">KLAVYE KAŞİFİ — HIZLI KILAVUZ</string>
+    <string name="help_sec1_title">1. ÜÇ KEŞİF MODU</string>
+    <string name="help_sec1_body">1: Gamlar (16 gam + 5 CAGED kutusu), 2: Akorlar (12 akor kalitesi ve CAGED pozisyonları) ve 3: Bulucu (özel akorları tanımlamak için perdelere dokunun) arasında geçiş yapın.</string>
+    <string name="help_sec2_title">2. SES SENTEZİ VE ÇALMA</string>
+    <string name="help_sec2_body">Karplus-Strong gitar notası çalmak için herhangi bir perdeye dokunun veya akoru/gamı dinlemek için üst çubuktaki ▶ düğmesine dokunun.</string>
+    <string name="help_sec3_title">3. ARMONİK RENK AÇIKLAMASI</string>
+    <string name="help_sec3_body">Kök Ses (R) = Kehribar | 3\'lü = Zümrüt Yeşili | 5\'li = Kraliyet Mavisi | 7\'li = Mor | Mavi Nota (b5) = Altın | Geçiş Notaları = Gri.</string>
+    <string name="help_sec4_title">4. ETİKETLER, AKORTLAR VE SOLAK MODU</string>
+    <string name="help_sec4_body">Aralıklar (R, 3, 5), Nota Adları ve Dereceler arasında geçiş yapın, 6 gitar akordunu (Standart, Drop D, DADGAD, Eb, Açık G, Açık D) seçin veya solak modunu açın.</string>
+    <string name="help_sec5_title">5. KLAVYE USTALIK TESTİ</string>
+    <string name="help_sec5_body">Tüm 6 telde klavye bilginizi canlı skor takibiyle ölçmek için Nota Testi veya Aralık Testini açın.</string>
+</resources>

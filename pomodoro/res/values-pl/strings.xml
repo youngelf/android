@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Skupienie</string>
+    <string name="working_dnd">PRACA: NIE PRZESZKADZAĆ</string>
+    <string name="short_break_relax">KRÓTKA PRZERWA: ODPOCZNIJ</string>
+    <string name="long_break_rest">DŁUGA PRZERWA: REGENERACJA</string>
+    <string name="paused_stopped">WSTRZYMANO: LICZNIK STOP</string>
+    <string name="ready_to_focus">GOTOWY DO PRACY</string>
+    <string name="reset">RESET</string>
+    <string name="skip_btn">POMIŃ &gt;&gt;</string>
+    <string name="start_focus">START PRACY</string>
+    <string name="resume">WZNÓW</string>
+    <string name="bg_sound">Dźwięk w tle</string>
+    <string name="amb_off">WYŁ.</string>
+    <string name="amb_soft_tick">CICHY TIK</string>
+    <string name="amb_rain">DESZCZ</string>
+    <string name="amb_brown_noise">SZUM BRUNATNY</string>
+    <string name="duration_presets">PRESETY CZASU (PRACA / KRÓTKA / DŁUGA)</string>
+    <string name="all_time_total">SUMA CAŁKOWITA</string>
+    <string name="current_session">BIEŻĄCA SESJA</string>
+    <string name="focus_session">SESJA PRACY</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">TIMER POMODORO I LICZNIK PRACY</string>
+    <string name="help_sec1_title">1. CYKL 4 POMODORO</string>
+    <string name="help_sec1_body">• Skup się bez przerw przez 1 Pomodoro (domyślnie 25 min).\n• Zrób Krótką Przerwę (5 min) na odpoczynek.\n• Co 4 ukończone sesje Skupienia zrób Długą Przerwę (15 min).</string>
+    <string name="help_sec2_title">2. STEROWANIE DOTYKIEM I KLAWIATURĄ / D-PADEM</string>
+    <string name="help_sec2_body">• Dotknij Tarczy / START (lub SPACJA / ENTER): Start lub Pauza.\n• Dotknij -5m / -1m / +1m / +5m (lub strzałki GÓRA / DÓŁ): Zmień czas trwania.\n• Dotknij Presetów (klawisz P): Klasyczny, Praca Głęboka, Studio i Sprint.\n• Dotknij Dźwięków Tła (klawisz M): Ciche tykanie, Deszcz lub Szum brązowy.\n• Dotknij POMIŃ &gt;&gt; (N), aby przejść dalej; RESETUJ (R), aby cofnąć.</string>
+    <string name="help_sec3_title">3. AUTOMATYCZNY POMIAR CZASU PRACY</string>
+    <string name="help_sec3_body">• Każda sekunda spędzona w aktywnej sesji Skupienia jest automatycznie zapisywana w statystykach Dziś i Łącznie.</string>
+</resources>

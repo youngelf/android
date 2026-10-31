@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LickTrainer</string>
+    <string name="cat_pentatonic">PENTATONIC</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">ALT PICK</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">SPIDER</string>
+    <string name="cat_jazz">JAZZ 7THS</string>
+    <string name="play">PLAY</string>
+    <string name="pause">PAUSE</string>
+    <string name="ladder_static">LADDER: STATIC</string>
+    <string name="loop_full_bar">LOOP: FULL BAR</string>
+    <string name="loop_beat_1">LOOP: BEAT 1 ONLY</string>
+    <string name="finger_1">1: INDEX</string>
+    <string name="finger_2">2: MIDDLE</string>
+    <string name="finger_3">3: RING</string>
+    <string name="finger_4">4: PINKY</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_tab_howto">HOW TO USE</string>
+    <string name="help_tab_jazz">JAZZ 7THS &amp; SPEED</string>
+    <string name="help_t0_sec1_title">1. SELECT CATEGORY &amp; LICK</string>
+    <string name="help_t0_sec1_body">Browse 33 exercises across Pentatonic, Legato, Alternate Picking, Blues/Rock, Spider Warmups, and Jazz 7th Arpeggios.</string>
+    <string name="help_t0_sec2_title">2. 6-STRING TAB SEQUENCER</string>
+    <string name="help_t0_sec2_body">Tap any step column on the tablature grid to audition that note, inspect its left-hand finger (1=Index .. 4=Pinky), and check the picking badge (D=Down, U=Up, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. INTERACTIVE NECK INSPECTOR</string>
+    <string name="help_t0_sec3_body">Tap any string/fret on the zoomed 8-fret guitar neck to pluck that pitch directly through the 12-voice Karplus-Strong synth.</string>
+    <string name="help_t0_sec4_title">4. TRANSPOSE TO ANY KEY</string>
+    <string name="help_t0_sec4_body">Tap KEY to shift all 33 exercises across the fretboard from E to Eb.</string>
+    <string name="help_t1_sec1_title">1. SPEED-BUILDER BPM LADDER</string>
+    <string name="help_t1_sec1_body">Tap LADDER to auto-increment BPM (+2, +5, or +10 BPM) every 2, 4, or 8 bars so your picking speed builds effortlessly.</string>
+    <string name="help_t1_sec2_title">2. SUB-RANGE LOOPING</string>
+    <string name="help_t1_sec2_body">Toggle LOOP between FULL BAR and BEAT 1 ONLY to isolate difficult 4-note picking cells before linking the full 16-step phrase.</string>
+    <string name="help_t1_sec3_title">3. JAZZ 7THS (LICKS #26–#33)</string>
+    <string name="help_t1_sec3_body">Displays diatonic Roman numerals (Imaj7..viim7b5) and chord-tone intervals (1, 3, b3, 5, b5, 7, b7) with synthesized backing chords.</string>
 </resources>

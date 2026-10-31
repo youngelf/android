@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">القراءة الوهلية</string>
+    <string name="header_title">قراءة النوتة</string>
+    <string name="play">تشغيل</string>
+    <string name="stop">إيقاف</string>
+    <string name="sound">صوت</string>
+    <string name="muted">مكتوم</string>
+    <string name="new_piece">مقطوعة جديدة</string>
+    <string name="hint_on">تلميح: مفعل</string>
+    <string name="hint_off">تلميح: معطل</string>
+    <string name="mode_etude">الوضع: دراسة</string>
+    <string name="mode_quiz">الوضع: اختبار</string>
+    <string name="mode_flow">الوضع: متواصل</string>
+    <string name="got_it">حسناً</string>
+    <string name="close">إغلاق</string>
+    <string name="help_title">القراءة الوهلية — دليل مفتاح صول والجيتار</string>
+    <string name="help_sec1_title">1. التدوين بمفتاح صول</string>
+    <string name="help_sec1_body">مدرج جيتار قياسي بمفتاح صول مع خطوط إضافية تلقائية. العمود الذهبي يبرز النغمة المستهدفة الحالية.</string>
+    <string name="help_sec2_title">2. دلائل المقامات ومواضع العنق</string>
+    <string name="help_sec2_body">تدرّب في 7 مقامات كبيرة (C, G, D, A, E, F, Bb) عبر 5 مواضع على عنق الجيتار (مفتوح، الموضع 2، 5، 7، 9) و24 دراسة متدرجة.</string>
+    <string name="help_sec3_title">3. لوحة الفريت التفاعلية وأوضاع التدريب</string>
+    <string name="help_sec3_body">انقر على الوتر والفريت المطابقين مباشرة على عنق الجيتار لقراءة كل نغمة. يعرض وضع «دراسة» تلميحات على الفريت، ويخفيها وضع «اختبار»، ويتقدم وضع «متواصل» تلقائياً مع النقر.</string>
+    <string name="help_sec4_title">4. التوليف الصوتي وتشغيل الدراسة</string>
+    <string name="help_sec4_body">انقر على «تشغيل» لسماع الدراسة ذات المازورتين بالسرعة المحددة، أو انقر على «صوت / صامت» في الأعلى لتبديل صوت الجيتار.</string>
+</resources>

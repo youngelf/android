@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">五线谱视奏教练</string>
+    <string name="header_title">五线谱视奏</string>
+    <string name="play">播放</string>
+    <string name="stop">停止</string>
+    <string name="sound">声音</string>
+    <string name="muted">静音</string>
+    <string name="new_piece">换一首练习</string>
+    <string name="hint_on">提示: 开</string>
+    <string name="hint_off">提示: 关</string>
+    <string name="mode_etude">模式: 练习曲</string>
+    <string name="mode_quiz">模式: 测验</string>
+    <string name="mode_flow">模式: 连续视奏</string>
+    <string name="got_it">明白了</string>
+    <string name="close">关闭</string>
+    <string name="help_title">五线谱视奏 — 高音谱号与吉他指板指南</string>
+    <string name="help_sec1_title">1. 标准吉他高音谱号五线谱</string>
+    <string name="help_sec1_body">采用标准吉他高音谱表（实音低八度 8vb），自动绘制加线。金色高亮列指示当前需要弹奏的目标音符。</string>
+    <string name="help_sec2_title">2. 七大调号与五个指板把位</string>
+    <string name="help_sec2_body">支持在 7 个常用大调（C、G、D、A、E、F、Bb）、5 个吉他指板把位（开放把位、第 2、5、7、9 把位）及 24 首分级练习曲中自由切换。</string>
+    <string name="help_sec3_title">3. 交互式指板作答与三大练习模式</string>
+    <string name="help_sec3_body">直接在 6 弦玫瑰木吉他指板上点击对应的琴弦与品格完成识谱。“练习曲”模式显示指板提示点；“测验”模式隐藏提示考察纯正视奏；“跟弹”模式随节拍器自动推进。</string>
+    <string name="help_sec4_title">4. 吉他音源合成与练习曲示范播放</string>
+    <string name="help_sec4_body">点击底部“播放”按钮可按设定 BPM 聆听 2 小节练习曲完整示范；点击顶部栏“声音 / 静音”可随时开关实时吉他音频合成。</string>
+</resources>

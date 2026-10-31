@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Máy Đếm Nhịp</string>
+    <string name="header_title">MÁY ĐẾM NHỊP CHÍNH XÁC</string>
+    <string name="tap_tempo">CHẠM NHỊP</string>
+    <string name="time_signature">SỐ CHỈ NHỊP</string>
+    <string name="subdivision">CHIA NHỎ NHỊP</string>
+    <string name="stealth_drop">TỶ LỆ ẨN NHỊP %</string>
+    <string name="speed_trainer">LUYỆN TĂNG TỐC</string>
+    <string name="start_metronome">▶   BẮT ĐẦU ĐẾM NHỊP</string>
+    <string name="stop_metronome">■   DỪNG ĐẾM NHỊP</string>
+    <string name="steady_click"> NHỊP ĐỀU</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_title">MÁY ĐẾM NHỊP CHÍNH XÁC • HƯỚNG DẪN</string>
+    <string name="help_sec1_title">1. XUNG NHỊP CHÍNH XÁC &amp; BỘ ÂM THANH</string>
+    <string name="help_sec1_body">Bộ tổng hợp PCM 44,1 kHz với độ trễ &lt;0,03 ms. Chạm \'ÂM\' ở góc trên phải để đổi giữa V90, Mõ gỗ, Gõ vành trống hoặc Sóng sin.</string>
+    <string name="help_sec2_title">2. VÒNG TRÒN NHẤN PHÁCH</string>
+    <string name="help_sec2_body">Chạm vào vòng tròn phách được đánh số (1..12) để đổi giữa NHẤN MẠNH (San hô), THƯỜNG (Xanh lơ), NHẤN PHỤ (Hổ phách) và CÂM.</string>
+    <string name="help_sec3_title">3. VÒNG XOAY BPM &amp; GÕ NHỊP (TAP TEMPO)</string>
+    <string name="help_sec3_body">Kéo vòng BPM tròn, dùng các nút -5 / -1 / +1 / +5, hoặc chạm liên tục vào \'GÕ NHỊP\' để bắt đúng tốc độ của bất kỳ bài hát nào.</string>
+    <string name="help_sec4_title">4. TỶ LỆ TẮT PHÁCH ẨN &amp; HUẤN LUYỆN TỐC ĐỘ</string>
+    <string name="help_sec4_body">TẮT ẨN % phát đủ 4 ô nhịp đầu để giữ nhịp, sau đó ngẫu nhiên tắt tiếng phách để rèn nhịp nội tại. LUYỆN TỐC ĐỘ tự động tăng BPM sau mỗi 4 ô nhịp (+2 / +4 / +5).</string>
+</resources>

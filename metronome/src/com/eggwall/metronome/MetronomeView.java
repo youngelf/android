@@ -67,6 +67,13 @@ public final class MetronomeView extends View {
     private final RectF[] mGridCardRects = new RectF[4]; // TimeSig, Subdiv, Drop%, Trainer
     private final RectF mBtnPlay = new RectF();
     private final RectF mModalCloseRect = new RectF();
+    private final RectF mModalCardRect = new RectF();
+    private final RectF mModalViewportRect = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     private boolean mShowHelpModal = false;
     private boolean mDraggingDial = false;
@@ -444,36 +451,48 @@ public final class MetronomeView extends View {
         mPaint.setColor(0xD8050811);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = Math.min(w - dp(28f), dp(460f));
-        float mh = Math.min(h - dp(36f), dp(420f));
-        RectF card = new RectF((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
+        float mw = Math.min(w - dp(24f), dp(520f));
+        float mh = Math.min(h - dp(28f), dp(480f));
+        mModalCardRect.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
+        RectF card = mModalCardRect;
         drawRoundCard(c, card, dp(18f), COL_CARD, COL_CYAN, dp(2f));
 
-        drawCenteredText(c, "PRECISION METRONOME • QUICK GUIDE",
-                card.centerX(), card.top + dp(28f), dp(15f), COL_CYAN);
+        String titleText = AppI18n.str(getContext(), R.string.help_title);
+        mTextPaint.setTextSize(dp(15f));
+        mTextPaint.setColor(COL_CYAN);
+        mTextPaint.setTextAlign(Paint.Align.CENTER);
+        Paint.FontMetrics fm = mTextPaint.getFontMetrics();
+        AppI18n.drawTextFit(c, titleText, card.centerX(), card.top + dp(26f) - (fm.ascent + fm.descent) * 0.5f,
+                mTextPaint, card.width() - dp(28f));
 
-        String[] lines = {
-            "• SAMPLE-ACCURATE CLOCK: 44.1 kHz PCM synthesizer with <0.03 ms jitter.",
-            "• BEAT ACCENT ORBS: Tap any numbered beat circle (1..12) to cycle",
-            "  between ACCENT (Coral), NORMAL (Cyan), SUB-ACCENT (Amber), & MUTE.",
-            "• BPM DIAL & TAP TEMPO: Drag the circular BPM ring, use -5/-1/+1/+5,",
-            "  or tap 'TAP TEMPO' repeatedly to match any live song's groove.",
-            "• 4-BAR LOCK-IN & DROP %: Plays 4 full bars to lock in your timing,",
-            "  then randomly silences clicks to train your internal rhythm clock.",
-            "• SPEED TRAINER: Automatically steps up BPM every 4 bars (+2/+4/+5).",
-            "• SOUND KITS: Tap 'KIT' in the top right for V90, Woodblock, Rim, or Sine."
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title),
+            AppI18n.str(ctx, R.string.help_sec4_title)
         };
-        float ly = card.top + dp(64f);
-        float stepY = (card.height() - dp(122f)) / lines.length;
-        for (String line : lines) {
-            drawLeftText(c, line, card.left + dp(18f), ly, dp(11.5f), COL_TEXT);
-            ly += stepY;
-        }
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body),
+            AppI18n.str(ctx, R.string.help_sec4_body)
+        };
+        int[] titleCols = { COL_CYAN, COL_CORAL, COL_AMBER, COL_EMERALD };
 
-        mModalCloseRect.set(card.centerX() - dp(90f), card.bottom - dp(46f),
-                card.centerX() + dp(90f), card.bottom - dp(12f));
+        mModalCloseRect.set(card.centerX() - dp(96f), card.bottom - dp(44f),
+                card.centerX() + dp(96f), card.bottom - dp(10f));
         drawRoundCard(c, mModalCloseRect, dp(10f), COL_CYAN, COL_TEXT, dp(1f));
-        drawCenteredText(c, "GOT IT • RESUME", mModalCloseRect.centerX(), mModalCloseRect.centerY(), dp(12.5f), COL_BG_TOP);
+        drawCenteredText(c, AppI18n.str(ctx, R.string.got_it),
+                mModalCloseRect.centerX(), mModalCloseRect.centerY(), dp(12.5f), COL_BG_TOP);
+
+        mModalViewportRect.set(card.left + dp(12f), card.top + dp(46f),
+                card.right - dp(12f), mModalCloseRect.top - dp(8f));
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mModalViewportRect, titles, bodies, titleCols,
+                COL_TEXT, COL_CARD_ALT, COL_BORDER, COL_CYAN,
+                dp(12.5f), dp(11.2f), mHelpScrollY, mTextPaint, mPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 
     private void drawRoundCard(Canvas c, RectF r, float rad, int fillCol, int strokeCol, float strokeW) {
@@ -491,7 +510,7 @@ public final class MetronomeView extends View {
         mTextPaint.setColor(color);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-        c.drawText(text, cx, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+        AppI18n.drawText(c, text, cx, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
     }
 
     private void drawLeftText(Canvas c, String text, float x, float cy, float sizePx, int color) {
@@ -499,7 +518,7 @@ public final class MetronomeView extends View {
         mTextPaint.setColor(color);
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-        c.drawText(text, x, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+        AppI18n.drawText(c, text, x, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
     }
 
     private void drawRightText(Canvas c, String text, float x, float cy, float sizePx, int color) {
@@ -507,7 +526,7 @@ public final class MetronomeView extends View {
         mTextPaint.setColor(color);
         mTextPaint.setTextAlign(Paint.Align.RIGHT);
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-        c.drawText(text, x, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+        AppI18n.drawText(c, text, x, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
     }
 
     @Override
@@ -518,8 +537,25 @@ public final class MetronomeView extends View {
 
         if (mShowHelpModal) {
             if (action == MotionEvent.ACTION_DOWN) {
-                mShowHelpModal = false;
-                invalidate();
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mModalCloseRect.contains(x, y) || !mModalCardRect.contains(x, y)) {
+                    mShowHelpModal = false;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > dp(6f)) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
             }
             return true;
         }

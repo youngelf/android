@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">पॉकेटबैंड</string>
+    <string name="band_title">बैंड</string>
+    <string name="play">चलाएं</string>
+    <string name="stop">रोकें</string>
+    <string name="fill">फ़िल</string>
+    <string name="auto_on">ऑटो:चालू</string>
+    <string name="auto_off">ऑटो:बंद</string>
+    <string name="rst">रीसेट</string>
+    <string name="key">स्केल / की</string>
+    <string name="tempo">टेम्पो</string>
+    <string name="drums">ड्रम</string>
+    <string name="bass">बेस</string>
+    <string name="chords">कॉर्ड्स</string>
+    <string name="on">चालू</string>
+    <string name="mute">म्यूट</string>
+    <string name="prog_grid_header">कॉर्ड प्रोग्रेशन ग्रिड (सुनने के लिए बार पर टैप करें)</string>
+    <string name="step_seq">सीक्वेंसर</string>
+    <string name="style_blues">ब्लूज़ शफ़ल 4/4 ▾</string>
+    <string name="prog_12bar">12-बार ब्लूज़ ▾</string>
+    <string name="legend_right">स्वर्ण=की  हरा=कॉर्ड  गुलाबी=ब्लू  सियान=स्केल</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">Band — त्वरित गाइड और नियंत्रण</string>
+    <string name="help_sec1_title">1. बैकिंग स्टाइल, प्रोग्रेशन और की (Key)</string>
+    <string name="help_sec1_body">ड्रॉपडाउन खोलने के लिए शीर्ष बार में स्टाइल, प्रोग्रेशन या की पर टैप करें, या गति बदलने के लिए टेम्पो पर - / + का उपयोग करें।</string>
+    <string name="help_sec2_title">2. इंटरैक्टिव कॉर्ड बार्स</string>
+    <string name="help_sec2_body">कॉर्ड सुनने और 22 डायटोनिक, डोमिनेंट 7th, माइनर 7th और जैज़ हार्मनी के बीच बदलने के लिए किसी भी बार कार्ड पर टैप करें।</string>
+    <string name="help_sec3_title">3. 5-ट्रैक स्टेप सीक्वेंसर</string>
+    <string name="help_sec3_body">किक, स्नेयर या हाई-हैट सेल को OFF -&gt; ON -&gt; ACCENT में बदलने के लिए टैप करें। बेस (Bass) सेल को टैप कर डिग्री बदलें: विश्राम (.) -&gt; रूट (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8।</string>
+    <string name="help_sec4_title">4. मिक्सर, फ़िल्स और 12-फ़्रेट सोलो स्केल मैप</string>
+    <string name="help_sec4_body">ड्रम्स / बेस / कॉर्ड्स को ऑन/ऑफ करें या वॉल्यूम बदलने के लिए % टैप करें। अगले बार पर ड्रम फ़िल के लिए \'फ़िल\' टैप करें। 12-फ़्रेट गिटार नेक पर सोलो बजाएं: सुनहरा = की रूट, हरा = कॉर्ड रूट।</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">五度圏コードホイール</string>
+    <string name="lock">固定</string>
+    <string name="key_prefix">キー </string>
+    <string name="sevenths">7th</string>
+    <string name="triads">三和音</string>
+    <string name="tap_swipe">タップ / スワイプ</string>
+    <string name="voicing_1">&lt; 1/3 オープン/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Eバレー (6弦) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Aバレー (5弦) &gt;</string>
+    <string name="loop_play">&gt; ループ</string>
+    <string name="loop_pause">|| 一時停止</string>
+    <string name="add_prog">+進行</string>
+    <string name="presets">プリセット</string>
+    <string name="close">閉じる</string>
+    <string name="func_tonic_maj">トニック・メジャー</string>
+    <string name="func_subdominant">サブドミナント</string>
+    <string name="func_dominant">ドミナント</string>
+    <string name="func_rel_min">平行短調</string>
+    <string name="func_supertonic">スーパートニック・マイナー</string>
+    <string name="func_mediant">メディアント・マイナー</string>
+    <string name="func_leading_dim">導音ディミニッシュ</string>
+    <string name="got_it">了解</string>
+    <string name="help_guide_title">五度圏（サークル・オブ・フィフス）の使い方</string>
+    <string name="help_guide_sec1_title">1. ホイールとハーモニック・リング</string>
+    <string name="help_guide_sec1_body">外周 = 12長調コード | 内周 = 12平行短調 | 中央 = キーと導音dim(vii°)。色分け：金 = トニック(I/vi)、青 = サブドミナント(IV/ii)、緑 = ドミナント(V/iii)。</string>
+    <string name="help_guide_sec2_title">2. キー回転 (ROTATE) とキー固定 (LOCK)</string>
+    <string name="help_guide_sec2_body">ロック解除時はコードをタップするとキーが回転し4小節ループも移調します。右上の「固定」をタップするとキーを固定したまま各コードの響きを確認できます。</string>
+    <string name="help_guide_sec3_title">3. コード構成音とスケール度数</string>
+    <string name="help_guide_sec3_body">現在のキーにおける構成音とスケール度数（例：Cキーで C = 1-3-5、F = 4-6-8）を表示します。「三和音 / 7th」をタップして4성7thコードに切り替えられます。</string>
+    <string name="help_guide_sec4_title">4. ギター指板ボイシングとスピーカー</string>
+    <string name="help_guide_sec4_body">「&lt; 1/3 オープン/CAGED &gt;」をタップまたは左右スワイプして3種類のギター押弦フォームを切り替えます。弦をなぞるか緑のスピーカーをタップしてストローク再生します。</string>
+    <string name="help_guide_sec5_title">5. 4小節ルーパーと進行プリセット</string>
+    <string name="help_guide_sec5_body">「&gt; ループ」で4小節進行を自動再生、「+進行」で選択中のスロットにコードを挿入、「プリセット」で定番コード進行を読み込みます。</string>
+    <string name="help_presets_title">コード進行プリセット＆ガイド</string>
+    <string name="help_looper_play">&gt; 4小節オートストラム・ルーパーを再生</string>
+    <string name="help_looper_pause">|| 4小節オートストラム・ルーパーを一時停止</string>
+    <string name="help_presets_touch">タッチ：ホイールをタップ/ドラッグ | 弦をスワイプしてストローク | ボイシング切替</string>
+    <string name="help_presets_keys">キー：十字=回転  A=ストローク  B=7th  L1/R1=ボイシング  X=+進行  SEL=固定</string>
+</resources>

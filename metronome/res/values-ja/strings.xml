@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">精密メトロノーム</string>
+    <string name="header_title">高精度メトロノーム</string>
+    <string name="tap_tempo">タップテンポ</string>
+    <string name="time_signature">拍子記号</string>
+    <string name="subdivision">サブディビジョン</string>
+    <string name="stealth_drop">ステルス消音 %</string>
+    <string name="speed_trainer">スピードトレーナー</string>
+    <string name="start_metronome">▶   メトロノーム開始</string>
+    <string name="stop_metronome">■   メトロノーム停止</string>
+    <string name="steady_click"> 通常クリック</string>
+    <string name="close">閉じる</string>
+    <string name="got_it">了解</string>
+    <string name="help_title">高精度メトロノーム • クイックガイド</string>
+    <string name="help_sec1_title">1. サンプル精度クロック＆サウンドキット</string>
+    <string name="help_sec1_body">ジッター0.03ms未満の44.1kHz PCMシンセサイザー。右上の「音色」をタップして V90クリック・ウッドブロック・リムショット・サイン波を切り替えます。</string>
+    <string name="help_sec2_title">2. ビート・アクセント・オーブ</string>
+    <string name="help_sec2_body">番号付きの拍サークル（1〜12）をタップすると、強拍（コーラル）・通常（シアン）・中強拍（アンバー）・ミュートを切り替えられます。</string>
+    <string name="help_sec3_title">3. BPMダイヤル＆タップテンポ</string>
+    <string name="help_sec3_body">円形のBPMリングをドラッグするか、-5 / -1 / +1 / +5 ボタン、または「タップテンポ」を連続タップして曲のテンポに合わせられます。</string>
+    <string name="help_sec4_title">4. ステルス消音（DROP %）＆スピードトレーナー</string>
+    <string name="help_sec4_body">「消音率 %」は最初の4小節を通常再生した後、設定確率でクリックをランダム消音して内なるリズム感を鍛えます。「速度トレーナー」は4小節ごとにBPMを自動上昇（+2/+4/+5）させます。</string>
+</resources>

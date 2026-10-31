@@ -62,6 +62,42 @@ public final class SightReadTheory {
 
     public static final int MAX_PIECE_NOTES = 16;
     public static final int MAX_SCALE_POOL  = 36;
+    public static final int NUM_EXERCISES   = 24;
+
+    /** Concise musical titles for the 24 progressive sight-reading exercises. */
+    public static final String[] EXERCISE_NAMES = {
+        "Open Stepwise",
+        "Scale Walk",
+        "Neighbor Tone",
+        "Running Eighths",
+        "Arch Melody",
+        "Scale Cascade",
+        "Rhythmic Steps",
+        "Cadence Study",
+        "Broken Thirds",
+        "Triad Outline",
+        "Skipping Stone",
+        "Arpeggio Etude",
+        "Interval Weave",
+        "String Crossing",
+        "Position Builder",
+        "Classical Etude",
+        "Lyric Prelude",
+        "Sonata Motif",
+        "Baroque Study",
+        "Fretboard Leap",
+        "Perpetual Motion",
+        "Chamber Theme",
+        "Virtuoso Study",
+        "Concert Caprice"
+    };
+
+    /** Returns the formatted exercise label (e.g., {@code "Ex 1: Open Stepwise"}). */
+    public static String exerciseLabel(int exerciseNum) {
+        int safe = Math.max(1, exerciseNum);
+        String title = EXERCISE_NAMES[(safe - 1) % EXERCISE_NAMES.length];
+        return "Ex " + safe + ": " + title;
+    }
 
     /** Treble staff lines (bottom to top) in diatonic steps relative to Middle C (step 0): E=2, G=4, B=6, D=8, F=10. */
     public static final int[] TREBLE_LINE_STEPS = { 2, 4, 6, 8, 10 };

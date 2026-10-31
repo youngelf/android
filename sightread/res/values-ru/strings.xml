@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Чтение с листа</string>
+    <string name="header_title">ЧТЕНИЕ С ЛИСТА</string>
+    <string name="play">ПУСК</string>
+    <string name="stop">СТОП</string>
+    <string name="sound">ЗВУК</string>
+    <string name="muted">ВЫКЛ</string>
+    <string name="new_piece">НОВЫЙ ЭТЮД</string>
+    <string name="hint_on">ПОДСК.: ВКЛ</string>
+    <string name="hint_off">ПОДСК.: ВЫКЛ</string>
+    <string name="mode_etude">РЕЖИМ: ЭТЮД</string>
+    <string name="mode_quiz">РЕЖИМ: ТЕСТ</string>
+    <string name="mode_flow">РЕЖИМ: ПОТОК</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="help_title">ЧТЕНИЕ С ЛИСТА — СКРИПИЧНЫЙ КЛЮЧ И ГИТАРА</string>
+    <string name="help_sec1_title">1. НОТАЦИЯ В СКРИПИЧНОМ КЛЮЧЕ</string>
+    <string name="help_sec1_body">Стандартный гитарный нотоносец в скрипичном ключе (8vb) с добавочными линиями. Золотая колонка выделяет текущую целевую ноту.</string>
+    <string name="help_sec2_title">2. КЛЮЧЕВЫЕ ЗНАКИ И ПОЗИЦИИ НА ГРИФЕ</string>
+    <string name="help_sec2_body">Практикуйтесь в 7 мажорных тональностях (C, G, D, A, E, F, Bb) в 5 позициях грифа (ОТКР., ПОЗ 2, 5, 7, 9) и 24 этюдах.</string>
+    <string name="help_sec3_title">3. ИНТЕРАКТИВНЫЙ ГРИФ И РЕЖИМЫ ПРАКТИКИ</string>
+    <string name="help_sec3_body">Нажимайте соответствующую струну и лад на 6-струнном палисандровом грифе. Режим «Этюд» показывает подсказки на грифе; «Тест» скрывает их; «Поток» автоматически двигается под метроном.</string>
+    <string name="help_sec4_title">4. АУДИОСИНТЕЗ И ПРОИГРЫВАНИЕ ЭТЮДОВ</string>
+    <string name="help_sec4_body">Нажмите «ПУСК», чтобы прослушать 2-тактовый этюд в выбранном темпе, или «ЗВУК / БЕЗ ЗВУКА» вверху для включения гитарного синтезатора.</string>
+</resources>

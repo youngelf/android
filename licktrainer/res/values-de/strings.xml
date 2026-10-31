@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lick-Trainer</string>
+    <string name="cat_pentatonic">PENTATONIK</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">WECHSELSCHLAG</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">SPINNE</string>
+    <string name="cat_jazz">JAZZ-SEPT.</string>
+    <string name="play">START</string>
+    <string name="pause">PAUSE</string>
+    <string name="ladder_static">STUFE: KONSTANT</string>
+    <string name="loop_full_bar">LOOP: GANZER TAKT</string>
+    <string name="loop_beat_1">LOOP: NUR SCHLAG 1</string>
+    <string name="finger_1">1: ZEIGEF.</string>
+    <string name="finger_2">2: MITTELF.</string>
+    <string name="finger_3">3: RINGF.</string>
+    <string name="finger_4">4: KLEINER F.</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_tab_howto">ANLEITUNG</string>
+    <string name="help_tab_jazz">JAZZ-7 &amp; TEMPO</string>
+    <string name="help_t0_sec1_title">1. KATEGORIE &amp; LICK AUSWÄHLEN</string>
+    <string name="help_t0_sec1_body">Durchsuche 33 Übungen aus Pentatonik, Legato, Wechselschlag, Blues/Rock, Spider-Warmups und Jazz-Sept-Arpeggien.</string>
+    <string name="help_t0_sec2_title">2. 6-SAITEN-TABULATUR-SEQUENZER</string>
+    <string name="help_t0_sec2_body">Tippe auf eine Spalte der Tabulatur, um den Ton anzuhören, den Greiffinger (1=Zeige .. 4=Kleiner) und den Anschlag (D=Ab, U=Auf, H=Hammer, P=Pull, /=Slide) zu prüfen.</string>
+    <string name="help_t0_sec3_title">3. INTERAKTIVER GRIFFBRETT-INSPEKTOR</string>
+    <string name="help_t0_sec3_body">Tippe auf eine Saite/Bund auf dem 8-Bund-Gitarrenhals, um den Ton direkt über den 12-stimmigen Karplus-Strong-Synthesizer anzuspielen.</string>
+    <string name="help_t0_sec4_title">4. IN JEDE TONART TRANSPONIEREN</string>
+    <string name="help_t0_sec4_body">Tippe auf TONART, um alle 33 Übungen über das Griffbrett von E bis Eb zu verschieben.</string>
+    <string name="help_t1_sec1_title">1. TEMPO-LEITER (BPM LADDER)</string>
+    <string name="help_t1_sec1_body">Tippe auf LEITER, um das Tempo alle 2, 4 oder 8 Takte automatisch um +2, +5 oder +10 BPM zu steigern.</string>
+    <string name="help_t1_sec2_title">2. TEILBEREICH-SCHLEIFE (LOOP)</string>
+    <string name="help_t1_sec2_body">Schalte SCHLEIFE zwischen GANZER TAKT und NUR SCHLAG 1 um, um schwierige 4-Noten-Gruppen isoliert zu üben.</string>
+    <string name="help_t1_sec3_title">3. JAZZ-SEPTAKKORDE (LICKS #26–#33)</string>
+    <string name="help_t1_sec3_body">Zeigt diatonische Stufen (Imaj7..viim7b5) und Akkordintervalle (1, 3, b3, 5, b5, 7, b7) mit synthetisierten Begleitakkorden.</string>
+</resources>

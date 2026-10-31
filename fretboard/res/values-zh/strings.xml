@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">吉他指板</string>
+    <string name="header_title">指板探索</string>
+    <string name="tab_scales">音阶</string>
+    <string name="tab_chords">和弦</string>
+    <string name="tab_finder">查和弦</string>
+    <string name="tab_1_scales">1: 音阶</string>
+    <string name="tab_2_chords">2: 和弦</string>
+    <string name="tab_3_finder">3: 查和弦</string>
+    <string name="play_scale">▶ 音阶</string>
+    <string name="play_strum">▶ 扫弦</string>
+    <string name="key_prefix">调式: </string>
+    <string name="position_header">把位</string>
+    <string name="all_neck">全指板</string>
+    <string name="frets_0_15">0–15 品</string>
+    <string name="lbl_intervals">标签: 根/3/5</string>
+    <string name="lbl_notes">标签: 音名</string>
+    <string name="lbl_degrees">标签: 级数</string>
+    <string name="hand_righty">手型: 右手</string>
+    <string name="hand_lefty">手型: 左手</string>
+    <string name="quiz_off">测验: 关</string>
+    <string name="quiz_note">测验: 音名</string>
+    <string name="quiz_intv">测验: 音程</string>
+    <string name="scale_dorian">多利亚调式 (Dorian) ▾</string>
+    <string name="scale_min_pent">小调五声音阶 ▾</string>
+    <string name="scale_blues">布鲁斯音阶 ▾</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">指板探索者 — 快速使用指南</string>
+    <string name="help_sec1_title">1. 三大指板探索模式</string>
+    <string name="help_sec1_body">在 1: 音阶（16种音阶/调式 + 5个CAGED把位盒）、2: 和弦（12种和弦属性与可移动CAGED指型）和 3: 查和弦（点击任意品格锁定或闷音琴弦，实时反查和弦名称）之间自由切换。</string>
+    <string name="help_sec2_title">2. 物理建模吉他合成与扫弦试听</string>
+    <string name="help_sec2_body">点击6弦指板上的任意品格即可弹响 Karplus-Strong 物理建模吉他音符；点击顶部栏的 ▶ 按钮可扫弦试听当前和弦或按序播放整条音阶。</string>
+    <string name="help_sec3_title">3. 音程色彩图例</string>
+    <string name="help_sec3_body">根音 (R) = 琥珀红 | 三度音 (3/b3) = 祖母绿 | 五度音 (5) = 皇家蓝 | 七度音 (7/b7) = 紫罗兰 | 布鲁斯降五音 (b5) = 金色 | 其他音阶音 = 灰蓝。</string>
+    <string name="help_sec4_title">4. 标记切换、调弦方案与左手模式</string>
+    <string name="help_sec4_body">支持在音程 (R, 3, 5)、音名与指法之间切换圆点标记，提供6种常用吉他调弦（标准、Drop D、DADGAD、降半音、开放G、开放D），并支持左手琴镜像翻转。</string>
+    <string name="help_sec5_title">5. 指板音名与音程闯关测验</string>
+    <string name="help_sec5_body">开启“音名测验”或“音程测验”，在6根琴弦上快速找出目标音符或音程，实时统计正确率。</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Гриф гітари</string>
+    <string name="header_title">ГРИФ</string>
+    <string name="tab_scales">Гами</string>
+    <string name="tab_chords">Акорди</string>
+    <string name="tab_finder">Пошук</string>
+    <string name="tab_1_scales">1: Гами</string>
+    <string name="tab_2_chords">2: Акорди</string>
+    <string name="tab_3_finder">3: Пошук</string>
+    <string name="play_scale">▶ Гама</string>
+    <string name="play_strum">▶ Бій</string>
+    <string name="key_prefix">Тон: </string>
+    <string name="position_header">ПОЗИЦІЯ</string>
+    <string name="all_neck">ВЕСЬ ГРИФ</string>
+    <string name="frets_0_15">Лади 0–15</string>
+    <string name="lbl_intervals">Міт: Т/3/5</string>
+    <string name="lbl_notes">Міт: Ноти</string>
+    <string name="lbl_degrees">Міт: Ступ.</string>
+    <string name="hand_righty">Рука: Правша</string>
+    <string name="hand_lefty">Рука: Лівша</string>
+    <string name="quiz_off">Тест: Вимк</string>
+    <string name="quiz_note">Тест: Нота</string>
+    <string name="quiz_intv">Тест: Інт.</string>
+    <string name="scale_dorian">Дорійський лад ▾</string>
+    <string name="scale_min_pent">Мінорна пентатоніка ▾</string>
+    <string name="scale_blues">Блюзова гама ▾</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">ДОСЛІДНИК ГРИФА — КОРОТКИЙ ПОСІБНИК</string>
+    <string name="help_sec1_title">1. ТРИ РЕЖИМИ ДОСЛІДЖЕННЯ</string>
+    <string name="help_sec1_body">Перемикайтеся між 1: Гами (16 гам + 5 боксів CAGED), 2: Акорди (12 типів з аплікатурами CAGED) та 3: Пошук (натискайте на лади для визначення акорду).</string>
+    <string name="help_sec2_title">2. АУДІОСИНТЕЗ І ПРОСЛУХОВУВАННЯ</string>
+    <string name="help_sec2_body">Натисніть на будь-який лад, щоб видобути гітарну ноту Karplus-Strong, або натисніть ▶ у верхній панелі для прослуховування акорду чи гами.</string>
+    <string name="help_sec3_title">3. КОЛЬОРОВА ЛЕГЕНДА ІНТЕРВАЛІВ</string>
+    <string name="help_sec3_body">Тоніка (R) = Бурштиновий | Терція (3/b3) = Смарагдовий | Квінта (5) = Синій | Септима (7/b7) = Фіолетовий | Блюзова b5 = Золотий.</string>
+    <string name="help_sec4_title">4. МІТКИ, СТРОЇ ТА РЕЖИМ ДЛЯ ЛІВШІ</string>
+    <string name="help_sec4_body">Перемикайте мітки між інтервалами (R, 3, 5), нотами та пальцями, обирайте з 6 гітарних строїв (Стандарт, Drop D, DADGAD, Eb, Open G, Open D) та режиму для лівші.</string>
+    <string name="help_sec5_title">5. ВІКТОРИНА НА ЗНАННЯ ГРИФА</string>
+    <string name="help_sec5_body">Увімкніть вікторину по нотах або інтервалах, щоб перевірити знання всіх 6 струн із підрахунком балів.</string>
+</resources>

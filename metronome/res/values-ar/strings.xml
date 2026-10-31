@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الميترونوم</string>
+    <string name="header_title">ميترونوم دقيق</string>
+    <string name="tap_tempo">نقر السرعة</string>
+    <string name="time_signature">الميزان الإيقاعي</string>
+    <string name="subdivision">التقسيم الإيقاعي</string>
+    <string name="stealth_drop">نسبة الصمت الخفي %</string>
+    <string name="speed_trainer">مدرب السرعة</string>
+    <string name="start_metronome">▶   بدء الميترونوم</string>
+    <string name="stop_metronome">■   إيقاف الميترونوم</string>
+    <string name="steady_click"> نقر ثابت</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_title">المترونوم الدقيق • دليل سريع</string>
+    <string name="help_sec1_title">1. ساعة فائقة الدقة وأطقم الأصوات</string>
+    <string name="help_sec1_body">مركب صوتي 44.1 كيلوهرتز بدقة فائقة. انقر على «صوت» أعلى اليمين للتبديل بين نقرة V90 أو القالب الخشبي أو حافة الطبلة أو موجة الجيب.</string>
+    <string name="help_sec2_title">2. دوائر نبر النبضات</string>
+    <string name="help_sec2_body">انقر على أي دائرة نبضة مرقمة (1..12) للتبديل بين نبر قوي (مرجاني) وعادي (سماوي) ونبر فرعي (كهرماني) وكتم.</string>
+    <string name="help_sec3_title">3. قرص السرعة والنقر لتحديد السرعة</string>
+    <string name="help_sec3_body">اسحب حلقة السرعة الدائرية، أو استخدم أزرار -5 / -1 / +1 / +5، أو انقر على «نقر السرعة» بشكل متكرر لمطابقة سرعة أي مقطوعة.</string>
+    <string name="help_sec4_title">4. نسبة الصمت الخفي ومدرب السرعة</string>
+    <string name="help_sec4_body">يعزف «الصمت الخفي %» 4 موازير كاملة ثم يكتم النقرات عشوائياً لتدريب ساعتك الداخلية. ويزيد «مدرب السرعة» السرعة تلقائياً كل 4 موازير (+2 / +4 / +5).</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مدرب الإيقاع</string>
+    <string name="subtitle_440">تدريب الإيقاع الموسيقي بتردد ثابت (440 هرتز)</string>
+    <string name="edit_mode">وضع التعديل</string>
+    <string name="done_editing">تم التعديل</string>
+    <string name="play">تشغيل</string>
+    <string name="pause">إيقاف</string>
+    <string name="loop">تكرار</string>
+    <string name="edit_btn">تعديل</string>
+    <string name="ready_hint">جاهز للتشغيل. اضغط تشغيل لعد تمهيدي 4..3..2..1 متبوعاً بالإيقاع.</string>
+    <string name="add_bar">إضافة مازورة</string>
+    <string name="remove_bar">حذف مازورة</string>
+    <string name="randomize">عشوائي</string>
+    <string name="quarter_notes">نغمات ربعية</string>
+    <string name="exit_edit_mode">إنهاء التعديل</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_title">مدرب الإيقاع — دليل سريع</string>
+    <string name="help_sec1_title">1. الموازين الإيقاعية والسرعة</string>
+    <string name="help_sec1_body">اختر الميزان 4/4 أو 3/4 أو 2/2 أو 5/4 أو 7/4 من أعلى اليسار، واضبط السرعة من 40 إلى 200 BPM، وفعّل «تكرار» للتدريب المستمر.</string>
+    <string name="help_sec2_title">2. العد التمهيدي وتشغيل نغمة 440 هرتز</string>
+    <string name="help_sec2_body">اضغط على «تشغيل» لسماع عد المترونوم 4..3..2..1 متبوعاً بالإيقاع على نغمة مرجعية واضحة بتردد 440 هرتز مع تتبع بصري متزامن.</string>
+    <string name="help_sec3_title">3. محرر الإيقاع التفاعلي والتوليد العشوائي</string>
+    <string name="help_sec3_body">انقر على «تعديل» لفتح وضع التعديل. انقر على أي نغمة أو سكتة في المدونة واختر كاملة أو نصفية أو ربعية أو ثمنية أو سداسية عشرية. أضف أو احذف الموازير (1–4) أو انقر على «عشوائي».</string>
+</resources>

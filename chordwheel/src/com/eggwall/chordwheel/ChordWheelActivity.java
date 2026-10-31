@@ -79,6 +79,8 @@ public class ChordWheelActivity extends Activity {
     }
 
     private void handleIntentExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
+        if (mWheelView != null) mWheelView.invalidate();
         if (intent == null || intent.getExtras() == null) {
             return;
         }

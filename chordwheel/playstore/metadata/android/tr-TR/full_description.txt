@@ -1,0 +1,8 @@
+ChordWheel: Beşliler Çemberi ve Gitar Looper ile müzik teorisini, şarkı yazımı armonisini ve gitar akor pozisyonlarını tek bir etkileşimli ekranda öğrenin. Gitaristler, besteciler ve müzik öğrencileri için tasarlanan ChordWheel, klasik Beşliler Çemberini gerçek zamanlı çalınabilir bir enstrümana dönüştürür.
+
+ÖNE ÇIKAN ÖZELLİKLER
+• Eşmerkezli Beşliler Çemberi: Dış halkada 12 Majör ton (I, IV, V), iç halkada ilgili minör akorlar (ii, iii, vi) ve merkezde eksik akor (vii°) ile Roma rakamı fonksiyonları.
+• Döndürme ve Kilitleme (LOCK) modları, gerçek zamanlı dizi derecesi formülleri (1 - 3 - 5, 4 - 6 - 8) ve tek dokunuşla 7'li akorlar (maj7, m7, dom7, m7b5).
+• Her akor için 3 CAGED gitar klavye pozisyonu (Açık/CAGED, E-tipi Bare, A-tipi Bare), parmak numaraları (1–4) ve 44,1 kHz Karplus-Strong gerçekçi gitar sesi.
+• 4 ölçülük akor döngüleyici (Looper) ve Pop, Caz, Blues hazır akor yürüyüşleri.
+• Dikey ve Yatay ekran desteği, %100 çevrimdışı, sıfır izin ve reklamsız.

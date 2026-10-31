@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Foco</string>
+    <string name="working_dnd">FOCADO: NÃO PERTURBE</string>
+    <string name="short_break_relax">PAUSA CURTA: RELAXE</string>
+    <string name="long_break_rest">PAUSA LONGA: DESCANSO</string>
+    <string name="paused_stopped">PAUSADO: TIMER PARADO</string>
+    <string name="ready_to_focus">PRONTO PARA FOCAR</string>
+    <string name="reset">ZERAR</string>
+    <string name="skip_btn">PULAR &gt;&gt;</string>
+    <string name="start_focus">INICIAR FOCO</string>
+    <string name="resume">RETOMAR</string>
+    <string name="bg_sound">Som de fundo</string>
+    <string name="amb_off">DESL.</string>
+    <string name="amb_soft_tick">TIQUE SUAVE</string>
+    <string name="amb_rain">CHUVA</string>
+    <string name="amb_brown_noise">RUÍDO MARROM</string>
+    <string name="duration_presets">PREDEFINIÇÕES (FOCO / CURTA / LONGA)</string>
+    <string name="all_time_total">TOTAL GERAL</string>
+    <string name="current_session">SESSÃO ATUAL</string>
+    <string name="focus_session">SESSÃO DE FOCO</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_title">TIMER POMODORO E RASTREADOR DE TRABALHO</string>
+    <string name="help_sec1_title">1. O CICLO DE 4 POMODOROS</string>
+    <string name="help_sec1_body">• Concentre-se sem interrupções por 1 Pomodoro (padrão 25 min).\n• Faça uma Pausa Curta (5 min) para relaxar e recarregar.\n• A cada 4 sessões de Foco concluídas, faça uma Pausa Longa (15 min).</string>
+    <string name="help_sec2_title">2. CONTROLES DE TOQUE E TECLADO / D-PAD</string>
+    <string name="help_sec2_body">• Toque no Mostrador Central / INICIAR (ou ESPAÇO / ENTER): Iniciar ou Pausar.\n• Toque em -5m / -1m / +1m / +5m (ou setas CIMA / BAIXO): Ajustar duração.\n• Toque nos Presets (ou tecla P): Clássico, Foco Profundo, Estúdio e Sprint.\n• Toque nos Sons Ambientes (ou tecla M): Tique-taque, Chuva ou Ruído Marrom.\n• Toque em PULAR &gt;&gt; (N) para avançar; REINICIAR (R) para voltar ao início.</string>
+    <string name="help_sec3_title">3. TELEMETRIA AUTOMÁTICA DE HORAS TRABALHADAS</string>
+    <string name="help_sec3_body">• Cada segundo passado em uma sessão de Foco ativa é registrado automaticamente nos totais de Hoje e Total Geral.</string>
+</resources>

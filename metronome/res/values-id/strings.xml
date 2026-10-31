@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronom</string>
+    <string name="header_title">METRONOM PRESISI</string>
+    <string name="tap_tempo">KETUK TEMPO</string>
+    <string name="time_signature">BIRAMA</string>
+    <string name="subdivision">SUBDIVISI</string>
+    <string name="stealth_drop">PERSEN SENYAP %</string>
+    <string name="speed_trainer">PELATIH KECEPATAN</string>
+    <string name="start_metronome">▶   MULAI METRONOM</string>
+    <string name="stop_metronome">■   HENTIKAN METRONOM</string>
+    <string name="steady_click"> KLIK STABIL</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">METRONOM PRESISI • PANDUAN CEPAT</string>
+    <string name="help_sec1_title">1. JAM AKURAT SAMPEL &amp; KIT SUARA</string>
+    <string name="help_sec1_body">Synthesizer PCM 44,1 kHz dengan jitter &lt;0,03 md. Ketuk \'KIT\' di kanan atas untuk memilih V90, Woodblock, Rimshot, atau Sine.</string>
+    <string name="help_sec2_title">2. LINGKARAN AKSEN KETUKAN</string>
+    <string name="help_sec2_body">Ketuk lingkaran ketukan bernomor (1..12) untuk beralih antara AKSEN (Koral), NORMAL (Sian), SUB-AKSEN (Amber), dan BISU.</string>
+    <string name="help_sec3_title">3. DIAL BPM &amp; KETUK TEMPO</string>
+    <string name="help_sec3_body">Geser cincin BPM melingkar, gunakan tombol -5 / -1 / +1 / +5, atau ketuk \'KETUK TEMPO\' berulang kali untuk mencocokkan tempo lagu.</string>
+    <string name="help_sec4_title">4. DROP % TERSEMBUNYI &amp; PELATIH KECEPATAN</string>
+    <string name="help_sec4_body">DROP % memainkan 4 bar penuh lalu membisukan klik secara acak untuk melatih ketukan internal Anda. PELATIH KECEPATAN menaikkan BPM setiap 4 bar (+2 / +4 / +5).</string>
+</resources>

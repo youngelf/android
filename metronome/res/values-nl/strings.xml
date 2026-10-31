@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronoom</string>
+    <string name="header_title">PRECISIEMETRONOOM</string>
+    <string name="tap_tempo">TIKTEMPO</string>
+    <string name="time_signature">MAATSOORT</string>
+    <string name="subdivision">ONDERVERDELING</string>
+    <string name="stealth_drop">STILTE-KANS %</string>
+    <string name="speed_trainer">SNELHEIDSTRAINER</string>
+    <string name="start_metronome">▶   START METRONOOM</string>
+    <string name="stop_metronome">■   STOP METRONOOM</string>
+    <string name="steady_click"> VASTE KLIK</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_title">PRECISIEMETRONOOM • SNELLE GIDS</string>
+    <string name="help_sec1_title">1. SAMPLE-NAUWKEURIGE KLOK &amp; GELUIDSKITS</string>
+    <string name="help_sec1_body">44,1 kHz PCM-synthesizer met &lt;0,03 ms jitter. Tik rechtsboven op \'KIT\' voor V90-klik, Houtblok, Rimshot of Sinus.</string>
+    <string name="help_sec2_title">2. TEL-ACCENTCIRKELS</string>
+    <string name="help_sec2_body">Tik op een genummerde telcirkel (1..12) om te wisselen tussen ACCENT (Koraal), NORMAAL (Cyaan), SUB-ACCENT (Amber) en DEMPEN.</string>
+    <string name="help_sec3_title">3. BPM-DRAAIKNOP &amp; TAP-TEMPO</string>
+    <string name="help_sec3_body">Sleep de BPM-ring, gebruik de knoppen -5 / -1 / +1 / +5, of tik herhaaldelijk op \'TAP TEMPO\' om het tempo van een nummer over te nemen.</string>
+    <string name="help_sec4_title">4. STEALTH-UITVAL % &amp; SNELHEIDSTRAINER</string>
+    <string name="help_sec4_body">UITVAL % speelt 4 volledige maten en dempt daarna willekeurig klikken om je interne klok te trainen. SNELHEIDSTRAINER verhoogt elke 4 maten automatisch de BPM (+2 / +4 / +5).</string>
+</resources>

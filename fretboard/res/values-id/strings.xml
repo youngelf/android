@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Papan Fret</string>
+    <string name="header_title">FRETBOARD</string>
+    <string name="tab_scales">Skala</string>
+    <string name="tab_chords">Akor</string>
+    <string name="tab_finder">Pencari</string>
+    <string name="tab_1_scales">1: Skala</string>
+    <string name="tab_2_chords">2: Akor</string>
+    <string name="tab_3_finder">3: Pencari</string>
+    <string name="play_scale">▶ Skala</string>
+    <string name="play_strum">▶ Genjreng</string>
+    <string name="key_prefix">Nada: </string>
+    <string name="position_header">POSISI</string>
+    <string name="all_neck">SEMUA NECK</string>
+    <string name="frets_0_15">Fret 0–15</string>
+    <string name="lbl_intervals">Lbl: R/3/5</string>
+    <string name="lbl_notes">Lbl: Nada</string>
+    <string name="lbl_degrees">Lbl: Derajat</string>
+    <string name="hand_righty">Tangan: Kanan</string>
+    <string name="hand_lefty">Tangan: Kidal</string>
+    <string name="quiz_off">Kuis: Mati</string>
+    <string name="quiz_note">Kuis: Nada</string>
+    <string name="quiz_intv">Kuis: Intv</string>
+    <string name="scale_dorian">Mode Dorian ▾</string>
+    <string name="scale_min_pent">Pentatonik Minor ▾</string>
+    <string name="scale_blues">Skala Blues ▾</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">PENJELAJAH FRETBOARD — PANDUAN CEPAT</string>
+    <string name="help_sec1_title">1. TIGA MODE EKSPLORASI</string>
+    <string name="help_sec1_body">Beralih antara 1: Skala (16 skala + 5 kotak CAGED), 2: Akor (12 kualitas akor dengan posisi CAGED), dan 3: Pencari Akor (ketuk fret untuk mengenali akor kustom).</string>
+    <string name="help_sec2_title">2. SINTESIS AUDIO &amp; GENJRENGAN</string>
+    <string name="help_sec2_body">Ketuk fret mana saja untuk memetik nada gitar Karplus-Strong, atau ketuk ▶ di bilah atas untuk menggenjreng akor atau mendengarkan skala.</string>
+    <string name="help_sec3_title">3. LEGENDA WARNA HARMONIK</string>
+    <string name="help_sec3_body">Nada Dasar (R) = Merah Amber | Ke-3 = Hijau Zamrud | Ke-5 = Biru Royal | Ke-7 = Ungu | Blue Note (b5) = Emas | Nada Skala = Abu-abu.</string>
+    <string name="help_sec4_title">4. LABEL, STEMAN &amp; MODE KIDAL</string>
+    <string name="help_sec4_body">Ubah penanda antara Interval (R, 3, 5), Nama Nada, dan Derajat, pilih dari 6 steman gitar (Standar, Drop D, DADGAD, Eb, Open G, Open D), atau balik untuk pemain kidal.</string>
+    <string name="help_sec5_title">5. KUIS PENGUASAAN FRETBOARD</string>
+    <string name="help_sec5_body">Aktifkan Kuis Nada atau Kuis Interval untuk menguji hafalan fretboard di ke-6 senar dengan skor langsung.</string>
+</resources>

@@ -98,5 +98,8 @@ public class SightReadTheoryTest {
         assertTrue(SightReadTheory.matchesNoteByLetterIndex(target, 0));
         assertFalse(SightReadTheory.matchesNoteByLetterIndex(target, 1));
         assertTrue(SightReadTheory.matchesNoteByPitchClass(target, 0));
+        assertEquals(24, SightReadTheory.EXERCISE_NAMES.length);
+        assertEquals("Ex 1: Open Stepwise", SightReadTheory.exerciseLabel(1));
+        assertEquals("Ex 24: Concert Caprice", SightReadTheory.exerciseLabel(24));
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Focus</string>
+    <string name="working_dnd">CONCENTRATION : NE PAS DÉRANGER</string>
+    <string name="short_break_relax">PAUSE COURTE : DÉTENTE</string>
+    <string name="long_break_rest">PAUSE LONGUE : REPOS PROFOND</string>
+    <string name="paused_stopped">EN PAUSE : MINUTEUR ARRÊTÉ</string>
+    <string name="ready_to_focus">PRÊT À SE CONCENTRER</string>
+    <string name="reset">RÉINIT.</string>
+    <string name="skip_btn">PASSER &gt;&gt;</string>
+    <string name="start_focus">DÉMARRER</string>
+    <string name="resume">REPRENDRE</string>
+    <string name="bg_sound">Son d\'ambiance</string>
+    <string name="amb_off">ARRÊT</string>
+    <string name="amb_soft_tick">TIC-TAC DOUX</string>
+    <string name="amb_rain">PLUIE</string>
+    <string name="amb_brown_noise">BRUIT BRUN</string>
+    <string name="duration_presets">PRÉRÉGLAGES DE DURÉE (TRAVAIL / COURTE / LONGUE)</string>
+    <string name="all_time_total">TOTAL CUMULÉ</string>
+    <string name="current_session">SESSION ACTUELLE</string>
+    <string name="focus_session">SESSION FOCUS</string>
+    <string name="close">FERMER</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_title">MINUTEUR POMODORO ET SUIVI DU TRAVAIL</string>
+    <string name="help_sec1_title">1. LE CYCLE DE 4 POMODOROS</string>
+    <string name="help_sec1_body">• Concentrez-vous sans interruption pendant 1 Pomodoro (25 min par défaut).\n• Prenez une Pause Courte (5 min) pour vous détendre.\n• Après 4 sessions de Focus terminées, prenez une Pause Longue (15 min).</string>
+    <string name="help_sec2_title">2. COMMANDES TACTILES ET CLAVIER / D-PAD</string>
+    <string name="help_sec2_body">• Touchez le Cadran Central / DÉMARRER (ou ESPACE / ENTRÉE) : Démarrer ou Pause.\n• Touchez -5m / -1m / +1m / +5m (ou HAUT / BAS) : Ajuster la durée.\n• Touchez les Préréglages (ou touche P) : Classique, Travail Profond, Studio, Sprint.\n• Touchez l\'Ambiance Sonore (ou touche M) : Tic-tac doux, Pluie ou Bruit Brun.\n• Touchez PASSER &gt;&gt; (N) pour changer de phase ; RÉINIT. (R) pour remettre à zéro.</string>
+    <string name="help_sec3_title">3. SUIVI AUTOMATIQUE DES HEURES DE TRAVAIL</string>
+    <string name="help_sec3_body">• Chaque seconde passée dans une session de Focus active est automatiquement enregistrée dans les totaux Aujourd\'hui et Cumul Total.</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Luyện Câu Lick</string>
+    <string name="cat_pentatonic">NGŨ CUNG</string>
+    <string name="cat_legato">LEGATO/RẢI</string>
+    <string name="cat_alt_pick">PHÍM LUÂN PHIÊN</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">LUYỆN NGÓN</string>
+    <string name="cat_jazz">HỢP ÂM 7 JAZZ</string>
+    <string name="play">PHÁT</string>
+    <string name="pause">TẠM DỪNG</string>
+    <string name="ladder_static">TĂNG TỐC: CỐ ĐỊNH</string>
+    <string name="loop_full_bar">LẶP: CẢ Ô NHỊP</string>
+    <string name="loop_beat_1">LẶP: NHỊP 1</string>
+    <string name="finger_1">1: NGÓN TRỎ</string>
+    <string name="finger_2">2: NGÓN GIỮA</string>
+    <string name="finger_3">3: ÁP ÚT</string>
+    <string name="finger_4">4: NGÓN ÚT</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_tab_howto">CÁCH DÙNG</string>
+    <string name="help_tab_jazz">HỢP ÂM 7 JAZZ &amp; TỐC ĐỘ</string>
+    <string name="help_t0_sec1_title">1. CHỌN DANH MỤC &amp; CÂU LICK</string>
+    <string name="help_t0_sec1_body">Duyệt 33 bài tập gồm Ngũ cung, Legato, Phím luân phiên, Blues/Rock, Khởi động Spider và Rải hợp âm 7 Jazz.</string>
+    <string name="help_t0_sec2_title">2. BỘ TUẦN TỰ TAB 6 DÂY</string>
+    <string name="help_t0_sec2_body">Chạm cột bước bất kỳ trên khuông TAB để nghe nốt nhạc, xem ngón bấm tay trái (1=Trỏ .. 4=Út) và ký hiệu gảy (D=Xuống, U=Lên, H=Hammer, P=Pull, /=Trượt).</string>
+    <string name="help_t0_sec3_title">3. BỘ QUAN SÁT CẦN ĐÀN TƯƠNG TÁC</string>
+    <string name="help_t0_sec3_body">Chạm bất kỳ dây/phím nào trên cần đàn phóng đại 8 phím để gảy trực tiếp cao độ đó qua bộ tổng hợp Karplus-Strong 12 giọng.</string>
+    <string name="help_t0_sec4_title">4. DỊCH GIỌNG SANG MỌI TÔNG</string>
+    <string name="help_t0_sec4_body">Chạm GIỌNG để dịch toàn bộ 33 bài tập trên cần đàn từ E sang Eb.</string>
+    <string name="help_t1_sec1_title">1. THANG TĂNG TỐC BPM TỰ ĐỘNG</string>
+    <string name="help_t1_sec1_body">Chạm THANG để tự động tăng BPM (+2, +5 hoặc +10 BPM) sau mỗi 2, 4 hoặc 8 ô nhịp giúp luyện tốc độ hiệu quả.</string>
+    <string name="help_t1_sec2_title">2. LẶP ĐOẠN NGẮN (BEAT 1)</string>
+    <string name="help_t1_sec2_body">Chuyển đổi LẶP giữa CẢ Ô NHỊP và CHỈ PHÁCH 1 để cô lập cụm 4 nốt khó trước khi ghép toàn bộ câu 16 bước.</string>
+    <string name="help_t1_sec3_title">3. RẢI HỢP ÂM 7 JAZZ (LICK #26–#33)</string>
+    <string name="help_t1_sec3_body">Hiển thị bậc La Mã diatonic (Imaj7..viim7b5) và quãng nốt hợp âm (1, 3, b3, 5, b5, 7, b7) cùng hợp âm đệm.</string>
+</resources>

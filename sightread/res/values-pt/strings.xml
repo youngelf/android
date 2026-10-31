@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Leitura à Primeira Vista</string>
+    <string name="header_title">LEITURA MUSICAL</string>
+    <string name="play">TOCAR</string>
+    <string name="stop">PARAR</string>
+    <string name="sound">SOM</string>
+    <string name="muted">MUDO</string>
+    <string name="new_piece">NOVA PEÇA</string>
+    <string name="hint_on">DICA: SIM</string>
+    <string name="hint_off">DICA: NÃO</string>
+    <string name="mode_etude">MODO: ESTUDO</string>
+    <string name="mode_quiz">MODO: QUIZ</string>
+    <string name="mode_flow">MODO: FLUXO</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="close">FECHAR</string>
+    <string name="help_title">LEITURA À PRIMEIRA VISTA — GUIA DE VIOLÃO</string>
+    <string name="help_sec1_title">1. NOTAÇÃO EM CLAVE DE SOL</string>
+    <string name="help_sec1_body">Pauta padrão de violão em clave de sol (8vb) com linhas suplementares automáticas. A coluna dourada destaca a nota alvo ativa.</string>
+    <string name="help_sec2_title">2. ARMADURAS DE CLAVE E POSIÇÕES</string>
+    <string name="help_sec2_body">Pratique em 7 tons maiores (Dó, Sol, Ré, Lá, Mi, Fá, Sib) em 5 posições do braço (ABERTO, POS 2, 5, 7, 9) e 24 estudos graduados.</string>
+    <string name="help_sec3_title">3. BRAÇO INTERATIVO E MODOS DE PRÁTICA</string>
+    <string name="help_sec3_body">Toque na corda e casa correspondentes no braço de jacarandá para ler cada nota. O modo Estudo mostra dicas no braço; o modo Quiz oculta as dicas; o modo Fluxo avança automaticamente com o metrônomo.</string>
+    <string name="help_sec4_title">4. SINTETIZADOR DE ÁUDIO E REPRODUÇÃO</string>
+    <string name="help_sec4_body">Toque em TOCAR para ouvir o estudo de 2 compassos no BPM selecionado, ou toque em SOM / MUDO no topo para alternar a síntese de violão.</string>
+</resources>

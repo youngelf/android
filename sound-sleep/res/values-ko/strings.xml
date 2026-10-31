@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">사운드 슬립</string>
+    <string name="cloudDesc">비구름 (백색소음)</string>
+    <string name="noteDesc">음표 (수면 음악)</string>
+    <string name="playing_music">음악 재생 중</string>
+</resources>

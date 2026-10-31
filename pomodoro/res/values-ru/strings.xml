@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Помодоро Фокус</string>
+    <string name="working_dnd">РАБОТА: НЕ БЕСПОКОИТЬ</string>
+    <string name="short_break_relax">КОРОТКИЙ ПЕРЕРЫВ: ОТДЫХ</string>
+    <string name="long_break_rest">ДЛИННЫЙ ПЕРЕРЫВ: ОТДЫХ</string>
+    <string name="paused_stopped">ПАУЗА: ТАЙМЕР ОСТАНОВЛЕН</string>
+    <string name="ready_to_focus">ГОТОВ К ФОКУСУ</string>
+    <string name="reset">СБРОС</string>
+    <string name="skip_btn">ДАЛЕЕ &gt;&gt;</string>
+    <string name="start_focus">НАЧАТЬ ФОКУС</string>
+    <string name="resume">ПРОДОЛЖИТЬ</string>
+    <string name="bg_sound">Фоновый звук</string>
+    <string name="amb_off">ВЫКЛ</string>
+    <string name="amb_soft_tick">МЯГКИЙ ТИК</string>
+    <string name="amb_rain">ДОЖДЬ</string>
+    <string name="amb_brown_noise">БРОУН. ШУМ</string>
+    <string name="duration_presets">ПРЕСЕТЫ ВРЕМЕНИ (РАБОТА / КОРОТКИЙ / ДЛИННЫЙ)</string>
+    <string name="all_time_total">ВСЕГО ЗА ВСЁ ВРЕМЯ</string>
+    <string name="current_session">ТЕКУЩАЯ СЕССИЯ</string>
+    <string name="focus_session">ФОКУС-СЕССИЯ</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="help_title">ТАЙМЕР ПОМОДОРО И УЧЁТ РАБОЧЕГО ВРЕМЕНИ</string>
+    <string name="help_sec1_title">1. ЦИКЛ ИЗ 4 ПОМОДОРО</string>
+    <string name="help_sec1_body">• Сосредоточьтесь без отвлечений на 1 Помодоро (по умолчанию 25 мин).\n• Сделайте короткий перерыв (5 мин) для отдыха.\n• Каждые 4 завершённые сессии Фокуса делайте длинный перерыв (15 мин).</string>
+    <string name="help_sec2_title">2. СЕНСОРНОЕ И КЛАВИАТУРНОЕ УПРАВЛЕНИЕ</string>
+    <string name="help_sec2_body">• Нажмите на циферблат / СТАРТ (или ПРОБЕЛ / ENTER): старт или пауза.\n• Нажмите -5м / -1м / +1м / +5м (или стрелки ВВЕРХ / ВНИЗ): изменить время.\n• Нажмите Пресеты (или клавишу P): Классика, Глубокая работа, Студия, Спринт.\n• Нажмите Фоновый звук (или клавишу M): Тиканье, Дождь или Коричневый шум.\n• «ПРОПУСК &gt;&gt;» (N) — следующая фаза; «СБРОС» (R) — сначала.</string>
+    <string name="help_sec3_title">3. АВТОМАТИЧЕСКИЙ УЧЁТ РАБОЧИХ ЧАСОВ</string>
+    <string name="help_sec3_body">• Каждая секунда активной сессии Фокуса автоматически сохраняется в статистику «Сегодня» и «За всё время».</string>
+</resources>

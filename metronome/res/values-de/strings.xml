@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronom</string>
+    <string name="header_title">PRÄZISIONS-METRONOM</string>
+    <string name="tap_tempo">TAP-TEMPO</string>
+    <string name="time_signature">TAKTART</string>
+    <string name="subdivision">UNTERTEILUNG</string>
+    <string name="stealth_drop">STUMM-QUOTE %</string>
+    <string name="speed_trainer">TEMPO-TRAINER</string>
+    <string name="start_metronome">▶   METRONOM STARTEN</string>
+    <string name="stop_metronome">■   METRONOM STOPPEN</string>
+    <string name="steady_click"> KONSTANTER KLICK</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_title">PRÄZISIONS-METRONOM • KURZANLEITUNG</string>
+    <string name="help_sec1_title">1. SAMPLE-GENAUER TAKT &amp; SOUND-KITS</string>
+    <string name="help_sec1_body">44,1-kHz-PCM-Synthesizer mit &lt;0,03 ms Jitter. Tippe oben rechts auf \'KIT\' für V90-Klick, Holzblock, Rimshot oder Sinus.</string>
+    <string name="help_sec2_title">2. SCHLAG-AKZENT-KREISE</string>
+    <string name="help_sec2_body">Tippe auf einen nummerierten Schlagkreis (1..12), um zwischen AKZENT (Koralle), NORMAL (Cyan), NEBENAKZENT (Bernstein) und STUMM zu wechseln.</string>
+    <string name="help_sec3_title">3. BPM-DREHRAD &amp; TAP-TEMPO</string>
+    <string name="help_sec3_body">Ziehe den BPM-Ring, nutze die Tasten -5 / -1 / +1 / +5 oder tippe wiederholt auf \'TAP TEMPO\', um das Tempo eines Songs zu übernehmen.</string>
+    <string name="help_sec4_title">4. STUMM-PROZENT &amp; GESCHWINDIGKEITSTRAINER</string>
+    <string name="help_sec4_body">STUMM % spielt 4 volle Takte und schaltet danach zufällig Klicks stumm, um dein inneres Timing zu schulen. Der TEMPO-TRAINER erhöht alle 4 Takte automatisch die BPM (+2 / +4 / +5).</string>
+</resources>

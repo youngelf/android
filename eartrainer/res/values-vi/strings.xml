@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Luyện Nghe Nhạc Lý</string>
+    <string name="mode_intervals">QUÃNG</string>
+    <string name="mode_chords">HỢP ÂM</string>
+    <string name="mode_solfege">XƯỚNG ÂM</string>
+    <string name="mode_melodic">GIAI ĐIỆU</string>
+    <string name="tier_easy">DỄ</string>
+    <string name="tier_medium">TRUNG BÌNH</string>
+    <string name="tier_all_12">CẢ 12</string>
+    <string name="replay">NGHE LẠI</string>
+    <string name="root_note">NỐT GỐC</string>
+    <string name="style">KIỂU</string>
+    <string name="hint_minus_2">GỢI Ý (-2)</string>
+    <string name="next">TIẾP &gt;&gt;</string>
+    <string name="skip">BỎ QUA &gt;&gt;</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_title">PHÒNG LUYỆN TAI ÂM NHẠC — HƯỚNG DẪN NHANH</string>
+    <string name="help_sec1_title">1. BỐN CHẾ ĐỘ LUYỆN TẬP (Chạm nút CHẾ ĐỘ ở góc trên trái)</string>
+    <string name="help_sec1_body">• QUÃNG: 12 quãng nửa cung (m2..P8) theo kiểu Đi lên, Đi xuống, Hòa âm hoặc Hỗn hợp.\n• HỢP ÂM: 12 tính chất hợp âm ba &amp; bảy (Trưởng, Thứ, giảm, tăng, sus2/4, Dom7, Maj7, m7).\n• XƯỚNG ÂM: Các bậc âm giai nửa cung trên vòng kết I-IV-V-I hoặc nốt chủ âm.\n• GIAI ĐIỆU: Cụm giai điệu 3 nốt &amp; vòng hòa âm 3 hợp âm (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. QUY TẮC 3 LẦN ĐOÁN &amp; NGHE SO SÁNH</string>
+    <string name="help_sec2_body">• Bạn có 3 lần đoán mỗi câu. Dùng GỢI Ý (-2) để loại bỏ hai đáp án sai.\n• Sau khi mở đáp án, hãy chạm BẤT KỲ ô nào trong 12 ô để nghe và so sánh các quãng/hợp âm trên cả Cần đàn Guitar và Phím Piano!</string>
+    <string name="help_sec3_title">3. ĐÀN PIANO &amp; CẦN ĐÀN GUITAR TƯƠNG TÁC</string>
+    <string name="help_sec3_body">Chạm bất kỳ phím nào trên đàn Piano 2 quãng tám hoặc dây/phím trên Cần đàn Guitar 6 dây bất cứ lúc nào để gảy nốt và kiểm tra quãng.</string>
+</resources>

@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SightRead</string>
+    <string name="header_title">SIGHTREAD</string>
+    <string name="play">PLAY</string>
+    <string name="stop">STOP</string>
+    <string name="sound">SOUND</string>
+    <string name="muted">MUTED</string>
+    <string name="new_piece">NEW PIECE</string>
+    <string name="hint_on">HINT: ON</string>
+    <string name="hint_off">HINT: OFF</string>
+    <string name="mode_etude">MODE: ETUDE</string>
+    <string name="mode_quiz">MODE: QUIZ</string>
+    <string name="mode_flow">MODE: FLOW</string>
+    <string name="got_it">GOT IT</string>
+    <string name="close">CLOSE</string>
+    <string name="help_title">SIGHTREAD — TREBLE CLEF &amp; GUITAR GUIDE</string>
+    <string name="help_sec1_title">1. TREBLE CLEF NOTATION</string>
+    <string name="help_sec1_body">Standard guitar 8vb Treble Staff with automatic ledger lines. The gold column highlights the active target note.</string>
+    <string name="help_sec2_title">2. KEY SIGNATURES &amp; POSITIONS</string>
+    <string name="help_sec2_body">Practice in 7 Major Keys (C, G, D, A, E, F, Bb) across 5 guitar neck positions (OPEN, POS 2, 5, 7, 9) and 24 graded etudes.</string>
+    <string name="help_sec3_title">3. INTERACTIVE FRETBOARD &amp; PRACTICE MODES</string>
+    <string name="help_sec3_body">Tap the matching string &amp; fret directly on the 6-string rosewood guitar neck to sight-read each note. Etude mode shows guided fretboard hints; Quiz mode hides hints for pure sight-reading; Flow mode auto-advances with the tempo click.</string>
+    <string name="help_sec4_title">4. AUDIO SYNTH &amp; ETUDE PLAYBACK</string>
+    <string name="help_sec4_body">Tap PLAY to hear the 2-bar etude at the selected BPM, or tap SOUND / MUTED in the top bar to toggle real-time guitar synthesis.</string>
 </resources>

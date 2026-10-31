@@ -1,0 +1,26 @@
+Domina la teoría musical, la armonía de composición y los acordes de guitarra en una sola pantalla interactiva con ChordWheel: Círculo de Quintas y Looper de Guitarra. Diseñado para guitarristas, compositores, estudiantes de música y profesores, ChordWheel transforma el clásico Círculo de Quintas en un instrumento musical interactivo en tiempo real.
+
+Tanto si buscas qué acordes pertenecen a una tonalidad, como si transportas una canción al instante, exploras posiciones CAGED por el mástil o improvisas sobre una progresión de 4 compases, ChordWheel te ofrece respuesta visual y sonora inmediata, sin anuncios y 100 % sin conexión.
+
+RUEDA ARMÓNICA CONCÉNTRICA DEL CÍRCULO DE QUINTAS
+• Anillo Mayor Exterior: Muestra las 12 tonalidades mayores ordenadas por quintas (C, G, D, A, E, B/Cb, F#/Gb, Db, Ab, Eb, Bb, F) y resalta los acordes mayores diatónicos principales (I, IV y V).
+• Anillo Menor Relativo Interior: Alinea cada tonalidad con su relativo menor y destaca los acordes menores diatónicos (ii, iii y vi).
+• Sector Disminuido Central y Números Romanos: Marca claramente el acorde disminuido (vii°) y etiqueta cada acorde diatónico con su función en números romanos (I, ii, iii, IV, V, vi, vii°).
+• Modos GIRAR y BLOQUEAR (LOCK): Gira la rueda suavemente para llevar cualquier tonalidad a las 12 en punto, o bloquea Do (C) arriba mientras tocas cualquier acorde del círculo.
+
+FÓRMULAS DE GRADOS DE LA ESCALA Y ACORDES DE SÉPTIMA
+• Lectura de Grados en Tiempo Real: Muestra los grados exactos del acorde seleccionado respecto a la tonalidad activa (por ejemplo, I = 1 - 3 - 5, IV = 4 - 6 - 8, V7 = 5 - 7 - 9 - 11) junto con los nombres de las notas.
+• Acordes de Séptima al Instante: Expande cualquier tríada a un acorde de séptima (maj7, m7, dom7, m7b5) con un solo toque.
+
+POSICIONES CAGED DE GUITARRA Y SÍNTESIS KARPLUS-STRONG
+• Tres Posiciones por Acorde en el Mástil: Alterna al instante entre formas Abiertas/CAGED, cejillas con forma de Mi (6.ª cuerda) y cejillas con forma de La (5.ª cuerda).
+• Digitaciones, Cejillas y Cuerdas Muteadas: Cada diagrama muestra los dedos recomendados (1–4), arcos de cejilla, cuerdas al aire (O), cuerdas silenciadas (X) y número de traste.
+• Síntesis de Guitarra en Tiempo Real a 44,1 kHz: Toca cualquier sector de la rueda o desliza el dedo por el diagrama del diapasón para escuchar un rasgueo de guitarra acústica de 6 cuerdas modelado físicamente (Karplus-Strong).
+
+LOOPER DE 4 COMPASES Y PROGRESIONES PREDEFINIDAS
+• Secuenciador de Acordes de 4 Compases: Asigna cualquier acorde a los compases 1 a 4 para componer estrofas y estribillos o crear una base de improvisación.
+• Plantillas de Progresiones Clásicas: Carga al instante progresiones Pop I–V–vi–IV, Jazz ii–V–I–VI, Cadencia Andaluza, Doo-Wop y Blues en cualquiera de las 12 tonalidades.
+
+DISEÑADO PARA MÚSICOS — PRIVACIDAD TOTAL Y 100 % OFFLINE
+• Diseños adaptativos en Vertical (Portrait) y Horizontal (Landscape) para móviles y tablets.
+• Cero permisos requeridos, sin recopilación de datos, sin anuncios y funcionamiento 100 % offline.

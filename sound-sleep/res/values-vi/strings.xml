@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Giấc Ngủ Ngon</string>
+    <string name="cloudDesc">đám mây (tiếng ồn trắng)</string>
+    <string name="noteDesc">nốt nhạc</string>
+    <string name="playing_music">Đang phát nhạc</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sanfter Schlaf</string>
+    <string name="cloudDesc">Regenwolke (Weißes Rauschen)</string>
+    <string name="noteDesc">Musiknote</string>
+    <string name="playing_music">Musik wird abgespielt</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Manche Guitare</string>
+    <string name="header_title">MANCHE</string>
+    <string name="tab_scales">Gammes</string>
+    <string name="tab_chords">Accords</string>
+    <string name="tab_finder">Détecteur</string>
+    <string name="tab_1_scales">1: Gammes</string>
+    <string name="tab_2_chords">2: Accords</string>
+    <string name="tab_3_finder">3: Détecteur</string>
+    <string name="play_scale">▶ Gamme</string>
+    <string name="play_strum">▶ Gratter</string>
+    <string name="key_prefix">Ton: </string>
+    <string name="position_header">POSITION</string>
+    <string name="all_neck">TOUT MANCHE</string>
+    <string name="frets_0_15">Frettes 0–15</string>
+    <string name="lbl_intervals">Étiq: F/3/5</string>
+    <string name="lbl_notes">Étiq: Notes</string>
+    <string name="lbl_degrees">Étiq: Deg</string>
+    <string name="hand_righty">Main: Droitier</string>
+    <string name="hand_lefty">Main: Gaucher</string>
+    <string name="quiz_off">Quiz: Non</string>
+    <string name="quiz_note">Quiz: Note</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Mode Dorien ▾</string>
+    <string name="scale_min_pent">Pentatonique Mineure ▾</string>
+    <string name="scale_blues">Gamme Blues ▾</string>
+    <string name="close">FERMER</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_title">EXPLORATEUR DE MANCHE — GUIDE RAPIDE</string>
+    <string name="help_sec1_title">1. TROIS MODES D\'EXPLORATION</string>
+    <string name="help_sec1_body">Basculez entre 1: Gammes (16 gammes + 5 boîtes CAGED), 2: Accords (12 qualités d\'accords avec positions CAGED) et 3: Détecteur (touchez une frette pour identifier vos propres accords).</string>
+    <string name="help_sec2_title">2. SYNTHÈSE AUDIO ET GRATTAGE</string>
+    <string name="help_sec2_body">Touchez n\'importe quelle frette pour pincer une note Karplus-Strong, ou touchez ▶ dans la barre supérieure pour gratter l\'accord ou écouter la gamme.</string>
+    <string name="help_sec3_title">3. LÉGENDE DES COULEURS HARMONIQUES</string>
+    <string name="help_sec3_body">Fondamentale = Ambre | Tierce (3/b3) = Émeraude | Quinte = Bleu royal | Septième (7/b7) = Violet | Blue Note (b5) = Or | Note de passage = Ardoise.</string>
+    <string name="help_sec4_title">4. ÉTIQUETTES, ACCORDAGES ET MODE GAUCHER</string>
+    <string name="help_sec4_body">Alternez entre Intervalles (R, 3, 5), Noms de notes et Degrés, choisissez parmi 6 accordages (Standard, Drop D, DADGAD, Mi b, Sol ouvert, Ré ouvert) ou inversez pour gaucher.</string>
+    <string name="help_sec5_title">5. QUIZ DE MAÎTRISE DU MANCHE</string>
+    <string name="help_sec5_body">Activez le Quiz Notes ou Intervalles pour tester votre connaissance des 6 cordes avec suivi du score en direct.</string>
+</resources>

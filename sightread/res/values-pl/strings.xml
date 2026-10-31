@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Czytanie A Vista</string>
+    <string name="header_title">A VISTA</string>
+    <string name="play">GRAJ</string>
+    <string name="stop">STOP</string>
+    <string name="sound">DŹWIĘK</string>
+    <string name="muted">WYCISZ.</string>
+    <string name="new_piece">NOWY UTWÓR</string>
+    <string name="hint_on">PODP.: WŁ.</string>
+    <string name="hint_off">PODP.: WYŁ.</string>
+    <string name="mode_etude">TRYB: ETIUDA</string>
+    <string name="mode_quiz">TRYB: QUIZ</string>
+    <string name="mode_flow">TRYB: PŁYNNY</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="help_title">CZYTANIE A VISTA — KLUCZ WIOLINOWY I GITARA</string>
+    <string name="help_sec1_title">1. NOTACJA W KLUCZU WIOLINOWYM</string>
+    <string name="help_sec1_body">Standardowa pięciolinia gitarowa w kluczu wiolinowym (8vb) z liniami dodanymi. Złota kolumna wskazuje aktywną nutę.</string>
+    <string name="help_sec2_title">2. ZNAKI PRZYKLUCZOWE I POZYCJE</string>
+    <string name="help_sec2_body">Ćwicz w 7 tonacjach durowych (C, G, D, A, E, F, Bb) w 5 pozycjach na gryfie (OTWARTE, POZ 2, 5, 7, 9) i 24 etiudach.</string>
+    <string name="help_sec3_title">3. INTERAKTYWNY GRYF I TRYBY ĆWICZEŃ</string>
+    <string name="help_sec3_body">Dotknij odpowiedniej struny i progu na 6-strunowym palisandrowym gryfie. Tryb Etiuda pokazuje podpowiedzi; Quiz je ukrywa; Płynny automatycznie przesuwa kursor z metronomem.</string>
+    <string name="help_sec4_title">4. SYNTEZATOR AUDIO I ODTWARZANIE</string>
+    <string name="help_sec4_body">Dotknij GRAJ, aby usłyszeć 2-taktową etiudę w wybranym tempie, lub DŹWIĘK / WYCISZ na górnym pasku, aby przełączyć syntezę gitary.</string>
+</resources>

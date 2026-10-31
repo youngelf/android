@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pelatih Pendengaran</string>
+    <string name="mode_intervals">INTERVAL</string>
+    <string name="mode_chords">AKOR</string>
+    <string name="mode_solfege">SOLFEGIO</string>
+    <string name="mode_melodic">MELODIS</string>
+    <string name="tier_easy">MUDAH</string>
+    <string name="tier_medium">SEDANG</string>
+    <string name="tier_all_12">SEMUA 12</string>
+    <string name="replay">ULANGI</string>
+    <string name="root_note">NADA DASAR</string>
+    <string name="style">GAYA</string>
+    <string name="hint_minus_2">PETUNJUK</string>
+    <string name="next">LANJUT &gt;&gt;</string>
+    <string name="skip">LEWATI &gt;&gt;</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">STUDIO PELATIH TELINGA — PANDUAN CEPAT</string>
+    <string name="help_sec1_title">1. EMPAT MODE LATIHAN (Ketuk tombol MODE di kiri atas)</string>
+    <string name="help_sec1_body">• INTERVAL: 12 interval kromatis (m2..P8) secara Naik, Turun, Harmonis, atau Campuran.\n• AKOR: 12 kualitas triad &amp; 7th (Mayor, Minor, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFEGIO: Derajat skala kromatis (Ra..Do\') di atas kadens I-IV-V-I atau nada dasar.\n• MELODIS: Sel melodi 3-nada &amp; kadens harmonis 3-akor (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. ATURAN 3 TEBAKAN &amp; AUDISI PERBANDINGAN</string>
+    <string name="help_sec2_body">• Anda mendapat 3 kesempatan per soal. Gunakan PETUNJUK (-2) untuk menghapus dua pilihan salah.\n• Setelah terjawab, ketuk tombol mana saja dari 12 pad untuk membandingkan interval atau akor pada Fretboard dan Piano!</string>
+    <string name="help_sec3_title">3. PIANO &amp; LEHER GITAR INTERAKTIF</string>
+    <string name="help_sec3_body">Ketuk tuts mana saja pada strip Piano 2-oktaf atau senar/fret pada Leher Gitar 6-senar kapan saja untuk memetik nada.</string>
+</resources>

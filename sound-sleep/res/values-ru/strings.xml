@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Крепкий Сон</string>
+    <string name="cloudDesc">облако (белый шум)</string>
+    <string name="noteDesc">музыкальная нота</string>
+    <string name="playing_music">Воспроизведение музыки</string>
+</resources>

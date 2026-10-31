@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">リック・トレーナー</string>
+    <string name="cat_pentatonic">ペンタトニック</string>
+    <string name="cat_legato">レガート/ARP</string>
+    <string name="cat_alt_pick">オルタネイト</string>
+    <string name="cat_blues_rock">ブルース/ロック</string>
+    <string name="cat_spider">スパイダー</string>
+    <string name="cat_jazz">ジャズ 7th</string>
+    <string name="play">再生</string>
+    <string name="pause">一時停止</string>
+    <string name="ladder_static">ラダー: 固定</string>
+    <string name="loop_full_bar">ループ: 全小節</string>
+    <string name="loop_beat_1">ループ: 1拍目のみ</string>
+    <string name="finger_1">1: 人差指</string>
+    <string name="finger_2">2: 中指</string>
+    <string name="finger_3">3: 薬指</string>
+    <string name="finger_4">4: 小指</string>
+    <string name="close">閉じる</string>
+    <string name="got_it">了解</string>
+    <string name="help_tab_howto">使い方</string>
+    <string name="help_tab_jazz">ジャズ7thと速度強化</string>
+    <string name="help_t0_sec1_title">1. カテゴリーとリックの選択</string>
+    <string name="help_t0_sec1_body">ペンタトニック、レガート、オルタネイト・ピッキング、ブルース/ロック、スパイダー基礎練習、ジャズ7thアルペジオの全33フレーズを収録。</string>
+    <string name="help_t0_sec2_title">2. 6弦タブ譜ステップ・シーケンサー</string>
+    <string name="help_t0_sec2_body">タブ譜グリッドの任意のステップ列をタップするとその音を試聴でき、左手の運指（1=人差指〜4=小指）とピッキング記号（D=ダウン、U=アップ、H=ハンマリング、P=プリング、/=スライド）を確認できます。</string>
+    <string name="help_t0_sec3_title">3. インタラクティブ・ネックインスペクター</string>
+    <string name="help_t0_sec3_body">拡大表示された8フレット指板上の任意の弦・フレットをタップすると、12ボイス Karplus-Strong シンセで直接そのピッチを鳴らせます。</string>
+    <string name="help_t0_sec4_title">4. 全12キーへの移調 (TRANSPOSE)</string>
+    <string name="help_t0_sec4_body">「キー」をタップすると、全33種類のエクササイズを E から Eb まで任意のキーに移調できます。</string>
+    <string name="help_t1_sec1_title">1. スピードビルダー BPM ラダー</string>
+    <string name="help_t1_sec1_body">「ラダー」をタップすると2・4・8小節ごとにテンポが自動上昇（+2/+5/+10 BPM）し、無理なくピッキング速度を引き上げられます。</string>
+    <string name="help_t1_sec2_title">2. 部分ループ（1拍目集中ループ）</string>
+    <string name="help_t1_sec2_body">ループ範囲を「小節全体」と「1拍目のみ」で切り替え、4音のピッキング・セルを集中反復してから16ステップ全体をつなげられます。</string>
+    <string name="help_t1_sec3_title">3. ジャズ7thアルペジオ (リック #26〜#33)</string>
+    <string name="help_t1_sec3_body">ダイアトニック・ローマ数字（Imaj7〜viim7b5）とコードトーン度数（1, 3, b3, 5, b5, 7, b7）を表示し、バッキングコードと共に練習できます。</string>
+</resources>

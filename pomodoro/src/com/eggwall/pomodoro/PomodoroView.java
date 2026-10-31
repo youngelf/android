@@ -67,6 +67,14 @@ public class PomodoroView extends View {
     private final RectF[] mBtnPresets = { new RectF(), new RectF(), new RectF(), new RectF() };
     private final RectF[] mBtnAmbients = { new RectF(), new RectF(), new RectF(), new RectF() };
     private final RectF mRingTapZone = new RectF();
+    private final RectF mHelpModalRect = new RectF();
+    private final RectF mHelpCloseRect = new RectF();
+    private final RectF mHelpViewportRect = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     private static final int[] ADJUST_DELTAS = { -5, -1, +1, +5 };
     private static final String[] ADJUST_LABELS = { "-5m", "-1m", "+1m", "+5m" };
@@ -221,14 +229,15 @@ public class PomodoroView extends View {
         }
         canvas.drawRect(0, 0, w, h, mBgPaint);
 
-        float pad = Math.min(w, h) * 0.032f;
-        float topBarH = Math.max(46f, Math.min(w, h) * 0.085f);
+        float pad = Math.min(w, h) * 0.030f;
+        boolean isLandscape = (w > h * 1.15f);
+        float topBarH = Math.max(56f, h * (isLandscape ? 0.115f : 0.072f));
         drawTopBar(canvas, pad, pad, w - 2 * pad, topBarH);
 
-        float contentTop = pad + topBarH + pad * 0.65f;
+        float contentTop = pad + topBarH + pad * 0.60f;
         float contentH = h - contentTop - pad;
 
-        if (w > h * 1.15f) {
+        if (isLandscape) {
             drawLandscapeLayout(canvas, pad, contentTop, w - 2 * pad, contentH);
         } else {
             drawPortraitLayout(canvas, pad, contentTop, w - 2 * pad, contentH);
@@ -241,35 +250,28 @@ public class PomodoroView extends View {
 
     private void drawTopBar(Canvas c, float x, float y, float w, float h) {
         int accent = getAccentColor();
+        boolean running = (mModel.getStatus() == PomodoroModel.STATUS_RUNNING);
 
         /* Left [?] Help button */
-        float helpW = h * 1.15f;
+        float helpW = h * 1.02f;
         mBtnHelp.set(x, y, x + helpW, y + h);
-        drawButtonSurface(c, mBtnHelp, mShowHelpModal ? accent : 0xFF212836, 0xFF39445B, h * 0.28f);
+        drawButtonSurface(c, mBtnHelp, mShowHelpModal ? accent : 0xFF212836, 0xFF39445B, h * 0.26f);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         mTextPaint.setFakeBoldText(true);
         mTextPaint.setTextSize(h * 0.46f);
         mTextPaint.setColor(mShowHelpModal ? 0xFF0E1117 : 0xFFE6EDF3);
-        c.drawText("?", mBtnHelp.centerX(), mBtnHelp.centerY() + h * 0.16f, mTextPaint);
+        AppI18n.drawText(c, "?", mBtnHelp.centerX(), mBtnHelp.centerY() + h * 0.16f, mTextPaint);
 
-        /* Right Ambient quick badge */
-        float ambW = Math.max(h * 2.5f, w * 0.23f);
-        mBtnHeaderAmbient.set(x + w - ambW, y, x + w, y + h);
-        boolean ambOn = mModel.getAmbientMode() != PomodoroModel.AMBIENT_SILENCE;
-        drawButtonSurface(c, mBtnHeaderAmbient, ambOn ? getAccentDimColor() : 0xFF212836,
-                ambOn ? accent : 0xFF39445B, h * 0.28f);
-        mTextPaint.setTextSize(h * 0.27f);
-        mTextPaint.setColor(ambOn ? accent : 0xFF9AA5B8);
-        c.drawText("SOUND: " + mModel.getAmbientModeName(),
-                mBtnHeaderAmbient.centerX(), mBtnHeaderAmbient.centerY() + h * 0.10f, mTextPaint);
-
-        /* Center status banner pill */
-        float gap = h * 0.22f;
-        mTempRect.set(mBtnHelp.right + gap, y, mBtnHeaderAmbient.left - gap, y + h);
-        drawButtonSurface(c, mTempRect, 0xFF1A202C, accent, h * 0.28f);
-        mTextPaint.setTextSize(Math.min(h * 0.31f, mTempRect.width() * 0.056f));
+        /* Prominent full-width Status Banner (e.g. WORKING: DO NOT DISTURB) */
+        float gap = h * 0.18f;
+        mTempRect.set(mBtnHelp.right + gap, y, x + w, y + h);
+        drawButtonSurface(c, mTempRect, running ? getAccentDimColor() : 0xFF1A202C, accent, h * 0.26f);
+        String headline = AppI18n.tr(mModel.getHeaderHeadline());
+        mTextPaint.setFakeBoldText(true);
+        mTextPaint.setTextSize(Math.min(h * 0.42f, (mTempRect.width() * 1.50f) / Math.max(10, headline.length())));
         mTextPaint.setColor(accent);
-        c.drawText(mModel.getHeaderHeadline(), mTempRect.centerX(), mTempRect.centerY() + h * 0.11f, mTextPaint);
+        AppI18n.drawText(c, headline, mTempRect.centerX(),
+                mTempRect.centerY() + mTextPaint.getTextSize() * 0.35f, mTextPaint);
     }
 
     private void drawPortraitLayout(Canvas c, float x, float y, float w, float h) {
@@ -278,7 +280,7 @@ public class PomodoroView extends View {
         drawModeTabs(c, x, y, w, modeH);
 
         float curY = y + modeH + gap;
-        float ringCardH = h * 0.44f;
+        float ringCardH = h * 0.467f;
         drawDialCard(c, x, curY, w, ringCardH);
 
         curY += ringCardH + gap;
@@ -286,7 +288,7 @@ public class PomodoroView extends View {
         drawTransportControls(c, x, curY, w, ctrlH);
 
         curY += ctrlH + gap;
-        float selH = h * 0.175f;
+        float selH = h * 0.148f;
         drawPresetAndAmbientCard(c, x, curY, w, selH);
 
         curY += selH + gap;
@@ -310,7 +312,7 @@ public class PomodoroView extends View {
         drawModeTabs(c, rightX, y, rightW, modeH);
 
         float rY = y + modeH + vGap;
-        float selH = h * 0.42f;
+        float selH = h * 0.355f;
         drawPresetAndAmbientCard(c, rightX, rY, rightW, selH);
 
         rY += selH + vGap;
@@ -339,7 +341,7 @@ public class PomodoroView extends View {
             mTextPaint.setFakeBoldText(sel);
             mTextPaint.setTextSize(Math.min(h * 0.36f, tabW * 0.13f));
             mTextPaint.setColor(sel ? 0xFFFFFFFF : 0xFF9AA5B8);
-            c.drawText(labels[i], mBtnModes[i].centerX(), mBtnModes[i].centerY() + h * 0.13f, mTextPaint);
+            AppI18n.drawText(c, labels[i], mBtnModes[i].centerX(), mBtnModes[i].centerY() + h * 0.13f, mTextPaint);
         }
     }
 
@@ -349,10 +351,10 @@ public class PomodoroView extends View {
 
         int accent = getAccentColor();
         float cx = x + w * 0.5f;
-        float adjustBarH = h * 0.125f;
-        float availDialH = h - adjustBarH - h * 0.06f;
-        float radius = Math.min(w * 0.42f, availDialH * 0.42f);
-        float cy = y + availDialH * 0.51f;
+        float adjustBarH = h * 0.118f;
+        float availDialH = h - adjustBarH - h * 0.065f;
+        float radius = Math.min(w * 0.40f, availDialH * 0.40f);
+        float cy = y + availDialH * 0.48f;
 
         float strokeW = Math.max(10f, radius * 0.105f);
         mRingTrackPaint.setStrokeWidth(strokeW);
@@ -369,37 +371,30 @@ public class PomodoroView extends View {
         mRingProgressPaint.setColor(accent);
         c.drawArc(mRingBounds, -90f, 360f * progress, false, mRingProgressPaint);
 
-        /* Phase sub-caption + mini tomato icon above countdown */
-        drawTomatoIcon(c, cx, cy - radius * 0.50f, radius * 0.11f, true, accent);
-        mTextPaint.setTextAlign(Paint.Align.CENTER);
-        mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize(radius * 0.125f);
-        mTextPaint.setColor(0xFF9AA5B8);
-        c.drawText(PomodoroModel.getModeTitle(mModel.getMode()), cx, cy - radius * 0.25f, mTextPaint);
-
-        /* Large MM:SS countdown */
+        /* Clean, centered MM:SS countdown inside the ring (no tomato icon, mode label, or cycle circles) */
         String clockText = PomodoroModel.formatCountdown(mModel.getRemainingSeconds());
-        mClockPaint.setTextSize(radius * 0.56f);
+        mClockPaint.setTextSize(radius * 0.62f);
         mClockPaint.setColor(0xFFF0F6FC);
-        c.drawText(clockText, cx, cy + radius * 0.17f, mClockPaint);
+        AppI18n.drawText(c, clockText, cx, cy + mClockPaint.getTextSize() * 0.34f, mClockPaint);
 
-        /* 4-session tomato cycle indicator inside lower dial */
-        int completedInCycle = mModel.getCycleCompletedCount();
-        float tomSpacing = radius * 0.25f;
-        float tomStartX = cx - 1.5f * tomSpacing;
-        float tomY = cy + radius * 0.47f;
-        for (int i = 0; i < PomodoroModel.POMODOROS_PER_LONG_BREAK; i++) {
-            drawTomatoIcon(c, tomStartX + i * tomSpacing, tomY, radius * 0.085f, i < completedInCycle, 0xFFFF5C5C);
-        }
-        mTextPaint.setTextSize(radius * 0.105f);
-        mTextPaint.setColor(0xFF8B949E);
-        c.drawText("CYCLE " + completedInCycle + "/4  •  TODAY " + mModel.getTodayPomodoros(),
-                cx, cy + radius * 0.68f, mTextPaint);
+        /* Speaker sound toggle button in the far lower-right corner of the dial card, well separated from the circle */
+        float cornerPad = Math.max(12f, Math.min(w, h) * 0.030f);
+        float spkBtnSize = Math.max(46f, Math.min(w, availDialH) * 0.145f);
+        float spkRight = x + w - cornerPad;
+        float spkBottom = y + h - cornerPad;
+        mBtnHeaderAmbient.set(spkRight - spkBtnSize, spkBottom - spkBtnSize, spkRight, spkBottom);
+        boolean ambOn = mModel.getAmbientMode() != PomodoroModel.AMBIENT_SILENCE;
+        int spkBorder = ambOn ? 0xFF38D39F : 0xFF39445B;
+        int spkFill = ambOn ? 0xFF133329 : 0xFF202736;
+        drawButtonSurface(c, mBtnHeaderAmbient, spkFill, spkBorder, spkBtnSize * 0.30f);
+        drawSpeakerIcon(c, mBtnHeaderAmbient.centerX(), mBtnHeaderAmbient.centerY(),
+                spkBtnSize * 0.30f, ambOn);
 
         /* Duration fine-adjustment pills (-5m, -1m, +1m, +5m) */
-        float btnY = y + h - adjustBarH - h * 0.035f;
-        float btnGap = w * 0.022f;
-        float totalBtnW = Math.min(w * 0.86f, radius * 2.3f);
+        float btnY = y + h - adjustBarH - cornerPad;
+        float btnGap = w * 0.018f;
+        float maxHalfW = (mBtnHeaderAmbient.left - w * 0.025f) - cx;
+        float totalBtnW = Math.min(Math.min(w * 0.68f, radius * 2.0f), maxHalfW * 2f);
         float btnW = (totalBtnW - 3 * btnGap) / 4f;
         float startX = cx - totalBtnW * 0.5f;
         boolean canAdjust = mModel.getStatus() != PomodoroModel.STATUS_RUNNING;
@@ -412,7 +407,7 @@ public class PomodoroView extends View {
             mTextPaint.setTextSize(adjustBarH * 0.40f);
             mTextPaint.setFakeBoldText(true);
             mTextPaint.setColor(canAdjust ? 0xFFD2DCE8 : 0xFF545D6E);
-            c.drawText(ADJUST_LABELS[i], mBtnAdjust[i].centerX(),
+            AppI18n.drawText(c, ADJUST_LABELS[i], mBtnAdjust[i].centerX(),
                     mBtnAdjust[i].centerY() + adjustBarH * 0.14f, mTextPaint);
         }
     }
@@ -440,17 +435,21 @@ public class PomodoroView extends View {
         mTextPaint.setFakeBoldText(true);
         mTextPaint.setTextSize(Math.min(h * 0.34f, sideW * 0.22f));
         mTextPaint.setColor(0xFFD2DCE8);
-        c.drawText("RESET", mBtnReset.centerX(), mBtnReset.centerY() + h * 0.12f, mTextPaint);
+        AppI18n.drawTextFit(c, "RESET", mBtnReset.centerX(), mBtnReset.centerY() + h * 0.12f, mTextPaint, mBtnReset.width() - 12f);
 
         drawButtonSurface(c, mBtnStartPause, accent, accent, h * 0.28f);
-        mTextPaint.setTextSize(Math.min(h * 0.37f, mainW * 0.13f));
-        mTextPaint.setColor(0xFF0E1117);
-        c.drawText(primaryLabel, mBtnStartPause.centerX(), mBtnStartPause.centerY() + h * 0.13f, mTextPaint);
+        if (status == PomodoroModel.STATUS_RUNNING) {
+            drawPauseBarsIcon(c, mBtnStartPause.centerX(), mBtnStartPause.centerY(), h * 0.42f, 0xFF0E1117);
+        } else {
+            mTextPaint.setTextSize(Math.min(h * 0.37f, mainW * 0.13f));
+            mTextPaint.setColor(0xFF0E1117);
+            AppI18n.drawText(c, primaryLabel, mBtnStartPause.centerX(), mBtnStartPause.centerY() + h * 0.13f, mTextPaint);
+        }
 
         drawButtonSurface(c, mBtnSkip, 0xFF202736, 0xFF39445B, h * 0.28f);
         mTextPaint.setTextSize(Math.min(h * 0.34f, sideW * 0.22f));
         mTextPaint.setColor(0xFFD2DCE8);
-        c.drawText("SKIP >>", mBtnSkip.centerX(), mBtnSkip.centerY() + h * 0.12f, mTextPaint);
+        AppI18n.drawTextFit(c, "SKIP >>", mBtnSkip.centerX(), mBtnSkip.centerY() + h * 0.12f, mTextPaint, mBtnSkip.width() - 12f);
     }
 
     private void drawPresetAndAmbientCard(Canvas c, float x, float y, float w, float h) {
@@ -459,57 +458,62 @@ public class PomodoroView extends View {
 
         int accent = getAccentColor();
         float inPad = w * 0.028f;
-        float rowH = (h - inPad * 2.6f) * 0.36f;
-        float labelY1 = y + inPad + rowH * 0.35f;
-
-        mTextPaint.setTextAlign(Paint.Align.LEFT);
-        mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize(rowH * 0.34f);
-        mTextPaint.setColor(0xFF8B949E);
-        c.drawText("DURATION PRESETS (WORK / SHORT / LONG)", x + inPad, labelY1, mTextPaint);
-
-        float pY = labelY1 + rowH * 0.18f;
         float gap = w * 0.018f;
         float pillW = (w - 2 * inPad - 3 * gap) / 4f;
 
-        for (int i = 0; i < 4; i++) {
-            float px = x + inPad + i * (pillW + gap);
-            mBtnPresets[i].set(px, pY, px + pillW, pY + rowH);
-            boolean sel = (mModel.getPresetIndex() == i);
-            drawButtonSurface(c, mBtnPresets[i], sel ? getAccentDimColor() : 0xFF202736,
-                    sel ? accent : 0xFF343F54, rowH * 0.25f);
-            PomodoroModel.DurationPreset preset = PomodoroModel.PRESETS[i];
-            mTextPaint.setTextAlign(Paint.Align.CENTER);
-            mTextPaint.setFakeBoldText(true);
-            mTextPaint.setTextSize(Math.min(rowH * 0.33f, pillW * 0.18f));
-            mTextPaint.setColor(sel ? 0xFFFFFFFF : 0xFFD2DCE8);
-            c.drawText(preset.name, mBtnPresets[i].centerX(), mBtnPresets[i].top + rowH * 0.44f, mTextPaint);
-            mTextPaint.setFakeBoldText(false);
-            mTextPaint.setTextSize(Math.min(rowH * 0.26f, pillW * 0.15f));
-            mTextPaint.setColor(sel ? accent : 0xFF8B949E);
-            c.drawText(preset.badge, mBtnPresets[i].centerX(), mBtnPresets[i].top + rowH * 0.80f, mTextPaint);
-        }
+        float availH = h - 2f * inPad;
+        float labelH = availH * 0.16f;
+        float ambRowH = availH * 0.33f;
+        float sectionGap = availH * 0.08f;
+        float presetRowH = availH * 0.27f;
 
-        float labelY2 = pY + rowH + rowH * 0.42f;
+        /* 1. Background sound at the top (30% shorter button height) */
+        float labelY1 = y + inPad + labelH * 0.80f;
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize(rowH * 0.34f);
+        mTextPaint.setTextSize(labelH * 0.82f);
         mTextPaint.setColor(0xFF8B949E);
-        c.drawText("AMBIENT FOCUS SOUNDSCAPE (REAL-TIME SYNTH)", x + inPad, labelY2, mTextPaint);
+        AppI18n.drawText(c, "Background sound", x + inPad, labelY1, mTextPaint);
 
-        float aY = labelY2 + rowH * 0.18f;
+        float aY = y + inPad + labelH + availH * 0.02f;
         for (int i = 0; i < 4; i++) {
             float ax = x + inPad + i * (pillW + gap);
-            mBtnAmbients[i].set(ax, aY, ax + pillW, aY + rowH * 0.86f);
+            mBtnAmbients[i].set(ax, aY, ax + pillW, aY + ambRowH);
             boolean sel = (mModel.getAmbientMode() == i);
-            drawButtonSurface(c, mBtnAmbients[i], sel ? getAccentDimColor() : 0xFF202736,
-                    sel ? accent : 0xFF343F54, rowH * 0.24f);
+            int ambCol = (i > 0 && sel) ? 0xFF38D39F : accent;
+            int ambDim = (i > 0 && sel) ? 0xFF14352B : getAccentDimColor();
+            drawButtonSurface(c, mBtnAmbients[i], sel ? ambDim : 0xFF202736,
+                    sel ? ambCol : 0xFF343F54, ambRowH * 0.25f);
             mTextPaint.setTextAlign(Paint.Align.CENTER);
             mTextPaint.setFakeBoldText(sel);
-            mTextPaint.setTextSize(Math.min(rowH * 0.31f, pillW * 0.15f));
-            mTextPaint.setColor(sel ? accent : 0xFFD2DCE8);
-            c.drawText(PomodoroModel.AMBIENT_NAMES[i],
-                    mBtnAmbients[i].centerX(), mBtnAmbients[i].centerY() + rowH * 0.11f, mTextPaint);
+            mTextPaint.setTextSize(Math.min(ambRowH * 0.40f, pillW * 0.145f));
+            mTextPaint.setColor(sel ? ambCol : 0xFFD2DCE8);
+            AppI18n.drawTextFit(c, PomodoroModel.AMBIENT_NAMES[i], mBtnAmbients[i].centerX(), mBtnAmbients[i].centerY() + mTextPaint.getTextSize() * 0.35f, mTextPaint, pillW - 10f);
+        }
+
+        /* 2. Compact Duration Presets below Background sound */
+        float labelY2 = aY + ambRowH + sectionGap + labelH * 0.72f;
+        mTextPaint.setTextAlign(Paint.Align.LEFT);
+        mTextPaint.setFakeBoldText(true);
+        mTextPaint.setTextSize(labelH * 0.78f);
+        mTextPaint.setColor(0xFF8B949E);
+        AppI18n.drawText(c, "DURATION PRESETS (WORK / SHORT / LONG)", x + inPad, labelY2, mTextPaint);
+
+        float pY = labelY2 + availH * 0.03f;
+        for (int i = 0; i < 4; i++) {
+            float px = x + inPad + i * (pillW + gap);
+            mBtnPresets[i].set(px, pY, px + pillW, pY + presetRowH);
+            boolean sel = (mModel.getPresetIndex() == i);
+            drawButtonSurface(c, mBtnPresets[i], sel ? getAccentDimColor() : 0xFF202736,
+                    sel ? accent : 0xFF343F54, presetRowH * 0.28f);
+            PomodoroModel.DurationPreset preset = PomodoroModel.PRESETS[i];
+            String compactLabel = AppI18n.tr(preset.name + " " + preset.badge.replace(" ", ""));
+            mTextPaint.setTextAlign(Paint.Align.CENTER);
+            mTextPaint.setFakeBoldText(sel);
+            mTextPaint.setTextSize(Math.min(presetRowH * 0.44f, (pillW * 1.48f) / Math.max(8, compactLabel.length())));
+            mTextPaint.setColor(sel ? 0xFFFFFFFF : 0xFFC9D1D9);
+            AppI18n.drawText(c, compactLabel, mBtnPresets[i].centerX(),
+                    mBtnPresets[i].centerY() + mTextPaint.getTextSize() * 0.35f, mTextPaint);
         }
     }
 
@@ -542,35 +546,68 @@ public class PomodoroView extends View {
             mTextPaint.setFakeBoldText(true);
             mTextPaint.setTextSize(Math.min(h * 0.16f, colW * 0.085f));
             mTextPaint.setColor(0xFF8B949E);
-            c.drawText(headers[i], cx, y + h * 0.28f, mTextPaint);
+            AppI18n.drawText(c, headers[i], cx, y + h * 0.28f, mTextPaint);
 
             mTextPaint.setTextSize(Math.min(h * 0.26f, colW * 0.145f));
             mTextPaint.setColor(valColors[i]);
-            c.drawText(mainVals[i], cx, y + h * 0.58f, mTextPaint);
+            AppI18n.drawText(c, mainVals[i], cx, y + h * 0.58f, mTextPaint);
 
             mTextPaint.setFakeBoldText(false);
             mTextPaint.setTextSize(Math.min(h * 0.16f, colW * 0.095f));
             mTextPaint.setColor(0xFFC9D1D9);
-            c.drawText(subVals[i], cx, y + h * 0.82f, mTextPaint);
+            AppI18n.drawText(c, subVals[i], cx, y + h * 0.82f, mTextPaint);
         }
     }
 
-    private void drawTomatoIcon(Canvas c, float cx, float cy, float r, boolean filled, int color) {
-        if (filled) {
-            mIconPaint.setStyle(Paint.Style.FILL);
-            mIconPaint.setColor(color);
-            c.drawCircle(cx, cy + r * 0.08f, r, mIconPaint);
+    private void drawPauseBarsIcon(Canvas c, float cx, float cy, float iconH, int color) {
+        float barW = Math.max(5f, iconH * 0.26f);
+        float gap = Math.max(6f, iconH * 0.28f);
+        float top = cy - iconH * 0.5f;
+        float bot = cy + iconH * 0.5f;
+        mIconPaint.setStyle(Paint.Style.FILL);
+        mIconPaint.setColor(color);
+        mTempRect.set(cx - gap * 0.5f - barW, top, cx - gap * 0.5f, bot);
+        c.drawRoundRect(mTempRect, barW * 0.35f, barW * 0.35f, mIconPaint);
+        mTempRect.set(cx + gap * 0.5f, top, cx + gap * 0.5f + barW, bot);
+        c.drawRoundRect(mTempRect, barW * 0.35f, barW * 0.35f, mIconPaint);
+    }
+
+    private void drawSpeakerIcon(Canvas c, float cx, float cy, float r, boolean soundEnabled) {
+        int speakerCol = soundEnabled ? 0xFF38D39F : 0xFF9AA5B8;
+        mIconPaint.setStyle(Paint.Style.FILL);
+        mIconPaint.setColor(speakerCol);
+
+        /* Speaker body + flare cone */
+        mLeafPath.reset();
+        mLeafPath.moveTo(cx - r * 0.85f, cy - r * 0.34f);
+        mLeafPath.lineTo(cx - r * 0.38f, cy - r * 0.34f);
+        mLeafPath.lineTo(cx + r * 0.18f, cy - r * 0.84f);
+        mLeafPath.lineTo(cx + r * 0.18f, cy + r * 0.84f);
+        mLeafPath.lineTo(cx - r * 0.38f, cy + r * 0.34f);
+        mLeafPath.lineTo(cx - r * 0.85f, cy + r * 0.34f);
+        mLeafPath.close();
+        c.drawPath(mLeafPath, mIconPaint);
+
+        mIconPaint.setStyle(Paint.Style.STROKE);
+        mIconPaint.setStrokeCap(Paint.Cap.ROUND);
+        float sw = Math.max(2.4f, r * 0.18f);
+        mIconPaint.setStrokeWidth(sw);
+
+        if (soundEnabled) {
+            /* Bright green acoustic wave arcs */
             mIconPaint.setColor(0xFF38D39F);
-            mLeafPath.reset();
-            mLeafPath.moveTo(cx - r * 0.45f, cy - r * 0.65f);
-            mLeafPath.quadTo(cx, cy - r * 1.25f, cx + r * 0.45f, cy - r * 0.65f);
-            mLeafPath.close();
-            c.drawPath(mLeafPath, mIconPaint);
+            float w1 = r * 0.48f;
+            mTempRect.set(cx - w1 + r * 0.12f, cy - w1, cx + w1 + r * 0.12f, cy + w1);
+            c.drawArc(mTempRect, -45f, 90f, false, mIconPaint);
+
+            float w2 = r * 0.82f;
+            mTempRect.set(cx - w2 + r * 0.12f, cy - w2, cx + w2 + r * 0.12f, cy + w2);
+            c.drawArc(mTempRect, -45f, 90f, false, mIconPaint);
         } else {
-            mIconPaint.setStyle(Paint.Style.STROKE);
-            mIconPaint.setStrokeWidth(Math.max(2f, r * 0.22f));
-            mIconPaint.setColor(0xFF485366);
-            c.drawCircle(cx, cy + r * 0.08f, r, mIconPaint);
+            /* Crossed-out diagonal slash when sound is OFF */
+            mIconPaint.setColor(0xFFFF5C5C);
+            mIconPaint.setStrokeWidth(sw * 1.15f);
+            c.drawLine(cx - r * 0.82f, cy - r * 0.82f, cx + r * 0.82f, cy + r * 0.82f, mIconPaint);
         }
     }
 
@@ -578,55 +615,55 @@ public class PomodoroView extends View {
         mCardPaint.setColor(0xD8090C10);
         c.drawRect(0, 0, w, h, mCardPaint);
 
-        float mw = Math.min(w * 0.88f, 920f);
-        float mh = Math.min(h * 0.82f, 680f);
+        float mw = Math.min(w * 0.90f, 920f);
+        float mh = Math.min(h * 0.84f, 680f);
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
-        mTempRect.set(mx, my, mx + mw, my + mh);
-        drawButtonSurface(c, mTempRect, 0xFF161C28, getAccentColor(), 24f);
+        mHelpModalRect.set(mx, my, mx + mw, my + mh);
+        drawButtonSurface(c, mHelpModalRect, 0xFF161C28, getAccentColor(), 24f);
 
-        float pad = mw * 0.055f;
-        float ty = my + mh * 0.11f;
-        mTextPaint.setTextAlign(Paint.Align.LEFT);
-        mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize(Math.min(mh * 0.058f, mw * 0.048f));
-        mTextPaint.setColor(getAccentColor());
-        c.drawText("POMODORO FOCUS TIMER & WORK TRACKER", mx + pad, ty, mTextPaint);
-
-        String[] lines = {
-            "1. THE 4-POMODORO CYCLE:",
-            "   • Focus without interruption for 1 Pomodoro (default 25m).",
-            "   • Take a Short Break (5m) to relax and recharge.",
-            "   • Every 4 completed Focus sessions, take a Long Break (15m).",
-            "",
-            "2. TOUCH & KEYBOARD / D-PAD CONTROLS:",
-            "   • Tap Center Dial / START button (or SPACE / ENTER): Start or Pause.",
-            "   • Tap -5m / -1m / +1m / +5m (or UP / DOWN arrows): Adjust phase duration.",
-            "   • Tap Presets (or P key): Cycle Classic, Deep Work, Studio, and Sprint.",
-            "   • Tap Ambient Soundscapes (or M key): Toggle Soft Tick, Rain, or Brown Noise.",
-            "   • Tap SKIP >> (or N key) to jump phases; RESET (or R key) to rewind.",
-            "",
-            "3. AUTOMATIC WORK-HOURS TELEMETRY:",
-            "   • Every second spent in an active Focus Session is logged to Today & All-Time."
-        };
-
-        float lineStep = (mh * 0.72f) / lines.length;
-        float bodySize = Math.min(lineStep * 0.72f, mw * 0.029f);
-        ty += mh * 0.06f;
-
-        for (String line : lines) {
-            boolean header = line.startsWith("1.") || line.startsWith("2.") || line.startsWith("3.");
-            mTextPaint.setFakeBoldText(header);
-            mTextPaint.setTextSize(bodySize);
-            mTextPaint.setColor(header ? 0xFFF2C94C : 0xFFD2DCE8);
-            c.drawText(line, mx + pad, ty, mTextPaint);
-            ty += lineStep;
-        }
-
+        float pad = Math.max(14f, mw * 0.035f);
+        float hdrH = Math.max(46f, mh * 0.11f);
+        float closeW = Math.max(100f, mw * 0.18f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        drawButtonSurface(c, mHelpCloseRect, 0xFF133329, 0xFF38D39F, (hdrH - 6f) * 0.30f);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         mTextPaint.setFakeBoldText(true);
+        mTextPaint.setTextSize((hdrH - 6f) * 0.42f);
         mTextPaint.setColor(0xFF38D39F);
-        c.drawText("TAP ANYWHERE OR PRESS [?] / BACK TO RESUME", mx + mw * 0.5f, my + mh - mh * 0.05f, mTextPaint);
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.close),
+                mHelpCloseRect.centerX(), mHelpCloseRect.centerY() + mTextPaint.getTextSize() * 0.35f,
+                mTextPaint, mHelpCloseRect.width() - 12f);
+
+        mTextPaint.setTextAlign(Paint.Align.LEFT);
+        mTextPaint.setFakeBoldText(true);
+        mTextPaint.setTextSize(Math.min(hdrH * 0.48f, 24f));
+        mTextPaint.setColor(getAccentColor());
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
+                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mTextPaint,
+                mHelpCloseRect.left - (mx + pad + 12f));
+
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title)
+        };
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body)
+        };
+        int[] titleCols = { 0xFFF2C94C, 0xFF38D39F, getAccentColor() };
+
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 14f);
+        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
+        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mHelpViewportRect, titles, bodies, titleCols,
+                0xFFD2DCE8, 0xFF202736, 0xFF343F54, getAccentColor(),
+                titleSz, bodySz, mHelpScrollY, mTextPaint, mCardPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 
     private void drawButtonSurface(Canvas c, RectF r, int fillColor, int borderColor, float cornerRadius) {
@@ -651,21 +688,43 @@ public class PomodoroView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) {
-            return super.onTouchEvent(event);
-        }
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (mShowHelpModal) {
-            mShowHelpModal = false;
-            mSynth.triggerUiClick();
-            invalidate();
+            if (action == MotionEvent.ACTION_DOWN) {
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mHelpCloseRect.contains(x, y) || !mHelpModalRect.contains(x, y)) {
+                    mShowHelpModal = false;
+                    mSynth.triggerUiClick();
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > 10f) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
+            }
             return true;
+        }
+
+        if (action != MotionEvent.ACTION_DOWN) {
+            return super.onTouchEvent(event);
         }
 
         if (mBtnHelp.contains(x, y)) {
             mShowHelpModal = true;
+            mHelpScrollY = 0f;
             mSynth.triggerUiClick();
             invalidate();
             return true;

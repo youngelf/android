@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cycle des Quintes</string>
+    <string name="lock">VERR.</string>
+    <string name="key_prefix">TON </string>
+    <string name="sevenths">7ÈMES</string>
+    <string name="triads">TRIADES</string>
+    <string name="tap_swipe">TOUCHER / GLISSER</string>
+    <string name="voicing_1">&lt; 1/3 Ouvert/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Barré Mi (6c) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Barré La (5c) &gt;</string>
+    <string name="loop_play">&gt; BOUCLE</string>
+    <string name="loop_pause">|| PAUSE</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRÉRÉGL.</string>
+    <string name="close">FERMER</string>
+    <string name="func_tonic_maj">Tonique Majeure</string>
+    <string name="func_subdominant">Sous-dominante</string>
+    <string name="func_dominant">Dominante</string>
+    <string name="func_rel_min">Relatif Mineur</string>
+    <string name="func_supertonic">Sus-tonique Min</string>
+    <string name="func_mediant">Médiante Mineure</string>
+    <string name="func_leading_dim">Sensible Diminuée</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_guide_title">COMMENT FONCTIONNE LE CYCLE DES QUINTES</string>
+    <string name="help_guide_sec1_title">1. LA ROUE ET LES ANNEAUX HARMONIQUES</string>
+    <string name="help_guide_sec1_body">Extérieur = 12 accords Majeurs | Intérieur = 12 Mineurs relatifs | Centre = Tonalité &amp; vii° dim. Or = Tonique (I/vi), Bleu = Sous-dominante (IV/ii), Vert = Dominante (V/iii).</string>
+    <string name="help_guide_sec2_title">2. TON : TOURNER vs TON : VERROUILLÉ</string>
+    <string name="help_guide_sec2_body">Déverrouillé, toucher un accord change la tonalité active et transpose la boucle. Touchez VERR. en haut à droite pour figer la tonalité et écouter le rôle de chaque accord.</string>
+    <string name="help_guide_sec3_title">3. NOTES DE L\'ACCORD ET DEGRÉS</string>
+    <string name="help_guide_sec3_body">Affiche les notes de l\'accord et les degrés dans la tonalité active (ex. Do = 1-3-5). Touchez TRIADES / 7ÈMES pour basculer vers les accords de 7e à 4 notes.</string>
+    <string name="help_guide_sec4_title">4. MANCHE DE GUITARE ET HAUT-PARLEUR</string>
+    <string name="help_guide_sec4_body">Touchez « &lt; 1/3 Ouvert/CAGED &gt; » ou glissez pour parcourir 3 positions de guitare. Glissez sur les 6 cordes ou touchez l\'icône Haut-parleur verte pour gratter.</string>
+    <string name="help_guide_sec5_title">5. BOUCLEUR 4 MESURES ET PRÉRÉGLAGES</string>
+    <string name="help_guide_sec5_body">Touchez « &gt; BOUCLE » pour jouer les 4 mesures, « +PROG » pour insérer l\'accord actif dans la case sélectionnée, ou « PRÉRÉGL. » pour charger un classique.</string>
+    <string name="help_presets_title">PRÉRÉGLAGES DE PROGRESSION ET GUIDE</string>
+    <string name="help_looper_play">&gt; JOUER LA BOUCLE AUTO 4 MESURES</string>
+    <string name="help_looper_pause">|| PAUSE BOUCLE AUTO 4 MESURES</string>
+    <string name="help_presets_touch">TACTILE : Toucher/Glisser Roue | Glisser Cordes | Glisser Barre Voicing</string>
+    <string name="help_presets_keys">TOUCHES : DPAD=Roue  A=Gratter  B=7e  L1/R1=Voicing  X=+Prog  SEL=Verr.</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مدرب الجمل اللحنية</string>
+    <string name="cat_pentatonic">خماسي</string>
+    <string name="cat_legato">ليغاتو/أربيج</string>
+    <string name="cat_alt_pick">ريشة متبادلة</string>
+    <string name="cat_blues_rock">بلوز/روك</string>
+    <string name="cat_spider">عنكبوت</string>
+    <string name="cat_jazz">جاز سباعيات</string>
+    <string name="play">تشغيل</string>
+    <string name="pause">إيقاف مؤقت</string>
+    <string name="ladder_static">سلم السرعة: ثابت</string>
+    <string name="loop_full_bar">تكرار: مازورة كاملة</string>
+    <string name="loop_beat_1">تكرار: النبضة 1</string>
+    <string name="finger_1">1: سبابة</string>
+    <string name="finger_2">2: وسطى</string>
+    <string name="finger_3">3: بنصر</string>
+    <string name="finger_4">4: خنصر</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_tab_howto">طريقة الاستخدام</string>
+    <string name="help_tab_jazz">سباعيات الجاز والسرعة</string>
+    <string name="help_t0_sec1_title">1. اختيار الفئة والجملة الموسيقية</string>
+    <string name="help_t0_sec1_body">تصفح 33 تمريناً تشمل الخماسي، ليغاتو، الريشة المتبادلة، البلوز/الروك، تمارين العنكبوت، وأربيجات الجاز السباعية.</string>
+    <string name="help_t0_sec2_title">2. متسلسل التابلتشر ذو 6 أوتار</string>
+    <string name="help_t0_sec2_body">انقر على أي عمود في التابلتشر لسماع النغمة، ومعرفة إصبع اليد اليسرى (1=السبابة .. 4=الخنصر) واتجاه الريشة (D=لأسفل، U=لأعلى، H=طرق، P=سحب، /=انزلاق).</string>
+    <string name="help_t0_sec3_title">3. فاحص عنق الجيتار التفاعلي</string>
+    <string name="help_t0_sec3_body">انقر على أي وتر/فريت على عنق الجيتار المكبر (8 فريتات) لعزف تلك النغمة مباشرة عبر مركب الصوت ذي 12 صوتاً.</string>
+    <string name="help_t0_sec4_title">4. النقل إلى أي مفتاح موسيقي</string>
+    <string name="help_t0_sec4_body">انقر على «مفتاح» لنقل جميع التمارين الـ 33 عبر لوحة الفريت من E إلى Eb.</string>
+    <string name="help_t1_sec1_title">1. سلم تسريع السرعة (BPM)</string>
+    <string name="help_t1_sec1_body">انقر على «سلم» لزيادة السرعة تلقائياً (+2 أو +5 أو +10 BPM) كل مازورتين أو 4 أو 8 موازير.</string>
+    <string name="help_t1_sec2_title">2. تكرار مقطع جزئي</string>
+    <string name="help_t1_sec2_body">بدّل التكرار بين «مازورة كاملة» و«النبضة 1 فقط» لعزل خلايا العزف المكونة من 4 نغمات قبل ربط الجملة الكاملة.</string>
+    <string name="help_t1_sec3_title">3. سباعيات الجاز (الجمل #26–#33)</string>
+    <string name="help_t1_sec3_body">يعرض الأرقام الرومانية (Imaj7..viim7b5) ومسافات نغمات الوتر (1, 3, b3, 5, b5, 7, b7) مع أوتار مصاحبة.</string>
+</resources>

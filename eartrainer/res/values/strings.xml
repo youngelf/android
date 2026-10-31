@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ear Trainer</string>
+    <string name="mode_intervals">INTERVALS</string>
+    <string name="mode_chords">CHORDS</string>
+    <string name="mode_solfege">SOLFEGE</string>
+    <string name="mode_melodic">MELODIC</string>
+    <string name="tier_easy">EASY</string>
+    <string name="tier_medium">MEDIUM</string>
+    <string name="tier_all_12">ALL 12</string>
+    <string name="replay">REPLAY</string>
+    <string name="root_note">ROOT NOTE</string>
+    <string name="style">STYLE</string>
+    <string name="hint_minus_2">HINT (-2)</string>
+    <string name="next">NEXT &gt;&gt;</string>
+    <string name="skip">SKIP &gt;&gt;</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_title">EAR TRAINER STUDIO — QUICK GUIDE</string>
+    <string name="help_sec1_title">1. FOUR DRILL MODES (Tap top-left MODE pill)</string>
+    <string name="help_sec1_body">• INTERVALS: 12 chromatic intervals (m2..P8) in Ascending, Descending, Harmonic, or Mixed style.\n• CHORDS: 12 triad &amp; 7th qualities (Major, Minor, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFEGE: Chromatic scale degrees (Ra..Do\') over a I-IV-V-I cadence or Root drone.\n• MELODIC: 3-note melodic cells &amp; 3-chord harmonic cadences (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. THREE-GUESS RULE &amp; COMPARATIVE AUDITIONING</string>
+    <string name="help_sec2_body">• You get 3 guesses per question. Use HINT (-2) to eliminate two wrong choices.\n• Once revealed, tap ANY of the 12 pads to audition &amp; compare intervals or chords against the current root note on both the 6-string Fretboard and Piano strip!</string>
+    <string name="help_sec3_title">3. INTERACTIVE PIANO &amp; GUITAR NECK</string>
+    <string name="help_sec3_body">Tap any key on the 2-octave Piano strip or any string/fret on the 6-string Guitar Neck at any time to pluck notes and verify intervals by ear.</string>
 </resources>

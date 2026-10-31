@@ -1,0 +1,19 @@
+Kuasai teori musik, harmoni penulisan lagu, dan posisi akor gitar dalam satu layar interaktif dengan ChordWheel: Lingkaran Kuint & Looper Gitar. Dirancang untuk gitaris, penulis lagu, pelajar musik, dan pengajar, ChordWheel mengubah Lingkaran Kuint (Circle of Fifths) klasik menjadi instrumen musik interaktif secara real-time.
+
+RODA HARMONI LINGKARAN KUINT KONSENTRIS
+• Cincin Mayor Luar: Menampilkan 12 tangga nada Mayor yang disusun berdasarkan kuint (C, G, D, A, E, B, F#, Db, Ab, Eb, Bb, F) serta menyoroti akor mayor diatonis utama (I, IV, dan V).
+• Cincin Minor Relatif Dalam: Menyelaraskan setiap nada dasar dengan minor relatifnya dan menyoroti akor minor diatonis (ii, iii, dan vi).
+• Sektor Diminished Tengah & Angka Romawi: Menandai akor diminished (vii°) dan fungsi angka Romawi (I, ii, iii, IV, V, vi, vii°).
+• Mode PUTAR dan KUNCI (LOCK): Putar roda untuk menempatkan nada dasar apa pun di posisi jam 12, atau kunci C di bagian atas.
+
+FORMULA DERAJAT SKALA & EKSTENSI AKOR TUJUH (7THS)
+• Menampilkan derajat skala akor terhadap nada dasar aktif (mis. I = 1 - 3 - 5, IV = 4 - 6 - 8) beserta nama nada.
+• Ubah triad menjadi akor seventh (maj7, m7, dom7, m7b5) hanya dengan satu ketukan.
+
+POSISI GITAR CAGED & SINTESIS KARPLUS-STRONG
+• Tiga Posisi Fretboard per Akor: Beralih antara bentuk Open/CAGED, akor gantung bentuk E (senar 6), dan bentuk A (senar 5) lengkap dengan nomor jari (1–4).
+• Sintesis Gitar Akustik 44,1 kHz: Ketuk akor atau usap diagram fretboard untuk mendengar genjrengan gitar 6 senar secara real-time.
+
+LOOPER 4 BIRAMA & PRESET PROGRESI LAGU
+• Susun progresi 4 birama atau muat preset Pop I–V–vi–IV, Jazz ii–V–I–VI, Andalusia, dan Blues di semua 12 nada dasar.
+• Layar Potret & Lanskap, 100% offline, tanpa izin perangkat, dan tanpa iklan.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metrônomo</string>
+    <string name="header_title">METRÔNOMO DE PRECISÃO</string>
+    <string name="tap_tempo">TAP TEMPO</string>
+    <string name="time_signature">FÓRMULA DE COMPASSO</string>
+    <string name="subdivision">SUBDIVISÃO</string>
+    <string name="stealth_drop">CORTE OCULTO %</string>
+    <string name="speed_trainer">TREINADOR DE VELOC.</string>
+    <string name="start_metronome">▶   INICIAR METRÔNOMO</string>
+    <string name="stop_metronome">■   PARAR METRÔNOMO</string>
+    <string name="steady_click"> CLIQUE FIRME</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_title">METRÔNOMO DE PRECISÃO • GUIA RÁPIDO</string>
+    <string name="help_sec1_title">1. CLOCK DE ALTA PRECISÃO E KITS DE SOM</string>
+    <string name="help_sec1_body">Sintetizador PCM de 44,1 kHz com jitter &lt;0,03 ms. Toque em \'KIT\' no canto superior direito para alternar V90, Bloco de Madeira, Rimshot ou Senoide.</string>
+    <string name="help_sec2_title">2. ESFERAS DE ACENTO DE TEMPO</string>
+    <string name="help_sec2_body">Toque em qualquer círculo numerado (1..12) para alternar entre ACENTO (Coral), NORMAL (Ciano), SUBACENTO (Âmbar) e MUDO.</string>
+    <string name="help_sec3_title">3. DISCO BPM E TAP TEMPO</string>
+    <string name="help_sec3_body">Arraste o anel circular de BPM, use os botões -5 / -1 / +1 / +5, ou toque repetidamente em \'TAP TEMPO\' para acompanhar qualquer música.</string>
+    <string name="help_sec4_title">4. FALHA OCULTA % E TREINADOR DE VELOCIDADE</string>
+    <string name="help_sec4_body">FALHA % toca 4 compassos completos e depois silencia cliques aleatoriamente para treinar seu relógio interno. TREINADOR aumenta o BPM a cada 4 compassos (+2 / +4 / +5).</string>
+</resources>

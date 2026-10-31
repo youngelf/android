@@ -77,6 +77,8 @@ public final class MetronomeActivity extends Activity {
     }
 
     private void applyIntentExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
+        if (mView != null) mView.invalidate();
         if (intent == null || intent.getExtras() == null) {
             return;
         }

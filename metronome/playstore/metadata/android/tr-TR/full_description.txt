@@ -1,0 +1,1 @@
+Metronom: Hassas Sarkaç ve Hız Koçu ile zamanlamanızı sağlamlaştırın, aksak ölçüleri (5/4, 7/8, 9/8, 11/8) ve poliritimleri (3:2, 4:3, 5:4, 7:4) ustalıkla çalın. 44,1 kHz örneklem hassasiyetinde ses motoru, 20–260 BPM aralığı, Tap Tempo, vuruş vurgu düzenleyicisi, Otomatik Hız Koçu ve Sessiz Ölçü (Bar Dropper) трениörü içerir. %100 çevrimdışı ve reklamsız.

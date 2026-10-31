@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Derin Uyku</string>
+    <string name="cloudDesc">bulut (beyaz gürültü)</string>
+    <string name="noteDesc">müzik notası</string>
+    <string name="playing_music">Müzik çalıyor</string>
+</resources>

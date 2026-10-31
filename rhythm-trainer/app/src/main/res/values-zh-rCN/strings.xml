@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">节奏训练师</string>
+    <string name="subtitle_440">单频音高节奏视唱与律动训练 (440 Hz)</string>
+    <string name="edit_mode">编辑模式</string>
+    <string name="done_editing">完成编辑</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="loop">循环</string>
+    <string name="edit_btn">编辑</string>
+    <string name="ready_hint">准备就绪。点击“播放”开始 4..3..2..1 预备拍并演奏节奏。</string>
+    <string name="add_bar">添加小节</string>
+    <string name="remove_bar">删除小节</string>
+    <string name="randomize">随机生成</string>
+    <string name="quarter_notes">重置四分音符</string>
+    <string name="exit_edit_mode">退出编辑</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">节奏训练师 — 快速使用指南</string>
+    <string name="help_sec1_title">1. 拍号选择与速度调节</string>
+    <string name="help_sec1_body">在左上角下拉框中选择 4/4、3/4、2/2、5/4 或 7/4 拍，拖动滑块在 40 至 200 BPM 之间调节速度，并开启“循环”进行不间断律动练习。</string>
+    <string name="help_sec2_title">2. 四拍预备拍与 440 Hz 精准播放</string>
+    <string name="help_sec2_body">点击“播放”后先响起 4..3..2..1 节拍器预备拍，随后以清晰的 440 Hz 基准音演奏整段节奏，乐谱光标实时同步高亮当前音符。</string>
+    <string name="help_sec3_title">3. 交互式节奏编辑器与随机生成</string>
+    <string name="help_sec3_body">点击“编辑”进入编辑模式：点击谱面上的任意音符或休止符，即可分配全音符、二分、四分、八分或十六分音符/休止符（小节时值自动平衡）。支持增删小节（1–4小节）或点击“随机生成”练习新视奏节奏。</string>
+</resources>

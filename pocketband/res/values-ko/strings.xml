@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">포켓밴드</string>
+    <string name="band_title">밴드</string>
+    <string name="play">재생</string>
+    <string name="stop">정지</string>
+    <string name="fill">필인</string>
+    <string name="auto_on">자동:켜짐</string>
+    <string name="auto_off">자동:꺼짐</string>
+    <string name="rst">초기화</string>
+    <string name="key">조성 (KEY)</string>
+    <string name="tempo">템포</string>
+    <string name="drums">드럼</string>
+    <string name="bass">베이스</string>
+    <string name="chords">코드</string>
+    <string name="on">켜짐</string>
+    <string name="mute">음소거</string>
+    <string name="prog_grid_header">코드 진행 그리드 (마디를 탭하여 미리 듣기 및 변경)</string>
+    <string name="step_seq">스텝 시퀀서</string>
+    <string name="style_blues">블루스 셔플 4/4 ▾</string>
+    <string name="prog_12bar">12마디 블루스 ▾</string>
+    <string name="legend_right">금=으뜸음  녹=코드근음  분홍=블루노트  청=스케일</string>
+    <string name="close">닫기</string>
+    <string name="got_it">확인</string>
+    <string name="help_title">Band — 빠른 가이드 및 조작법</string>
+    <string name="help_sec1_title">1. 반주 스타일, 코드 진행 및 조성</string>
+    <string name="help_sec1_body">상단 바에서 스타일, 코드 진행 또는 조성을 탭해 드롭다운 메뉴를 열거나, 템포의 - / + 버튼으로 반주 BPM을 조절하세요.</string>
+    <string name="help_sec2_title">2. 대화형 코드 마디 그리드</string>
+    <string name="help_sec2_body">코드 진행 그리드에서 아무 마디 카드나 탭하면 화음을 들어보고 22가지 다이아토닉, 도미넌트 7th, 마이너 7th 및 재즈 화성을 전환할 수 있습니다.</string>
+    <string name="help_sec3_title">3. 5트랙 스텝 시퀀서 (드럼 &amp; 베이스)</string>
+    <string name="help_sec3_body">킥, 스네어, 하이햇, 라이드 셀을 탭해 OFF -&gt; ON -&gt; 강세(ACCENT)를 전환하세요. 베이스 셀을 탭해 쉼표(.) -&gt; 근음(R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8도 음정을 순환합니다.</string>
+    <string name="help_sec4_title">4. 믹서, 드럼 필인 및 12프렛 솔로 스케일 맵</string>
+    <string name="help_sec4_body">드럼 / 베이스 / 코드 트랙을 켜고 끄거나 %를 탭해 음량을 조절하세요. \'필인\'을 탭하면 다음 마디에 드럼 필인을 넣으며, \'초기화\'는 기본 리듬을 복원합니다. 12프렛 지판: 금색 = 조성 근음, 초록색 = 현재 화음 근음.</string>
+</resources>

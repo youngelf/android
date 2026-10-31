@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">吉他乐句教练</string>
+    <string name="cat_pentatonic">五声音阶</string>
+    <string name="cat_legato">连音/琶音</string>
+    <string name="cat_alt_pick">交替拨弦</string>
+    <string name="cat_blues_rock">布鲁斯/摇滚</string>
+    <string name="cat_spider">爬格子练习</string>
+    <string name="cat_jazz">爵士七和弦</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="ladder_static">阶梯加速: 固定</string>
+    <string name="loop_full_bar">循环: 整小节</string>
+    <string name="loop_beat_1">循环: 仅第1拍</string>
+    <string name="finger_1">1: 食指</string>
+    <string name="finger_2">2: 中指</string>
+    <string name="finger_3">3: 无名指</string>
+    <string name="finger_4">4: 小指</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_tab_howto">使用指南</string>
+    <string name="help_tab_jazz">爵士七和弦与提速</string>
+    <string name="help_t0_sec1_title">1. 选择练习分类与乐句 (Lick)</string>
+    <string name="help_t0_sec1_body">浏览涵盖五声音阶、连奏(Legato)、交替拨弦、布鲁斯/摇滚、爬格子热身及爵士七和弦琶音的33条精选练习。</string>
+    <string name="help_t0_sec2_title">2. 六线谱 16 步进音序器</string>
+    <string name="help_t0_sec2_body">点击六线谱上的任意步进列即可试听该音符，查看左手按弦指法（1=食指 .. 4=小指）以及右手拨弦标记（D=下拨、U=上挑、H=击弦、P=勾弦、/=滑音）。</string>
+    <string name="help_t0_sec3_title">3. 放大指板检视器与实时弹奏</string>
+    <string name="help_t0_sec3_body">点击8品放大吉他指板上的任意琴弦与品格，即可通过12复音 Karplus-Strong 物理建模合成器直接弹响该音高。</string>
+    <string name="help_t0_sec4_title">4. 一键移调至任意调式</string>
+    <string name="help_t0_sec4_body">点击“调式”按钮即可将全部33条练习从 E 移调至 Eb，自动重新计算最佳指板把位。</string>
+    <string name="help_t1_sec1_title">1. 自动递进提速阶梯 (BPM LADDER)</string>
+    <string name="help_t1_sec1_body">点击“阶梯”按钮可在每循环 2、4 或 8 小节后自动提升速度（+2 / +5 / +10 BPM），循序渐进突破拨弦极限。</string>
+    <string name="help_t1_sec2_title">2. 局部拍点循环与难点突破</string>
+    <string name="help_t1_sec2_body">在“整小节”与“仅第1拍”之间切换循环范围，先攻克4音拨弦核心动作，再串联完整的16步乐句。</string>
+    <string name="help_t1_sec3_title">3. 爵士七和弦琶音与和声伴奏 (#26–#33)</string>
+    <string name="help_t1_sec3_body">实时显示自然音阶罗马数字级数（Imaj7..viim7b5）与和弦音程（1, 3, b3, 5, b5, 7, b7），并提供多声部和弦伴奏。</string>
+</resources>

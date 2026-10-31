@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ฝึกจังหวะดนตรี</string>
+    <string name="subtitle_440">ฝึกจังหวะดนตรีด้วยความถี่คงที่ (440 Hz)</string>
+    <string name="edit_mode">โหมดแก้ไข</string>
+    <string name="done_editing">เสร็จสิ้น</string>
+    <string name="play">เล่น</string>
+    <string name="pause">หยุด</string>
+    <string name="loop">ลูป</string>
+    <string name="edit_btn">แก้ไข</string>
+    <string name="ready_hint">พร้อมเล่น กดเล่นเพื่อฟังเสียงนับ 4..3..2..1 ตามด้วยจังหวะ</string>
+    <string name="add_bar">เพิ่มห้องเพลง</string>
+    <string name="remove_bar">ลบห้องเพลง</string>
+    <string name="randomize">สุ่มจังหวะ</string>
+    <string name="quarter_notes">โน้ตตัวดำ</string>
+    <string name="exit_edit_mode">ออกจากโหมดแก้ไข</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_title">ฝึกจังหวะดนตรี — คู่มือฉบับย่อ</string>
+    <string name="help_sec1_title">1. เครื่องหมายกำหนดจังหวะและความเร็ว</string>
+    <string name="help_sec1_body">เลือกอัตราจังหวะ 4/4, 3/4, 2/2, 5/4 หรือ 7/4 จากมุมซ้ายบน ปรับความเร็ว 40–200 BPM ด้วยแถบเลื่อน และเปิด \'ลูป\' เพื่อฝึกต่อเนื่อง</string>
+    <string name="help_sec2_title">2. เสียงนับเข้า 4 จังหวะและการเล่นความถี่ 440 Hz</string>
+    <string name="help_sec2_body">กด \'เล่น\' เพื่อฟังเสียงนับ 4..3..2..1 ตามด้วยจังหวะที่บรรเลงด้วยโทนเสียง 440 Hz ที่ชัดเจนพร้อมไฮไลต์ตัวโน้ตตามจังหวะ</string>
+    <string name="help_sec3_title">3. โหมดแก้ไขจังหวะและสุ่มแบบฝึกหัด</string>
+    <string name="help_sec3_body">แตะ \'แก้ไข\' เพื่อเข้าสู่โหมดแก้ไข แตะโน้ตหรือตัวหยุดบนบรรทัดเพลงเพื่อเปลี่ยนเป็นโน้ตตัวกลม ตัวขาว ตัวดำ เขบ็ต 1 ชั้น หรือ 2 ชั้น เพิ่ม/ลบห้องเพลง (1–4 ห้อง) หรือแตะ \'สุ่มจังหวะ\'</string>
+</resources>

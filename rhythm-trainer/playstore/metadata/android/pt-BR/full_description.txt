@@ -1,0 +1,6 @@
+Domine a leitura rítmica, a subdivisão de valores musicais e os compassos ímpares com Treinador de Ritmo: Editor e Reprodutor de Notação Rítmica. Reproduz cada ritmo escrito em um tom puro de referência de 440 Hz (Lá4) precedido por uma contagem de 4 tempos.
+
+RECURSOS PRINCIPAIS
+• Figuras e Pausas Completas: Semibreve, Mínima, Semínima, Colcheia e Semicolcheia com suas pausas.
+• 5 Fórmulas de Compasso: 4/4, 3/4, 2/2, 5/4 e 7/4 com validação automática.
+• Modo de Edição interativo e reprodução precisa de duração em 440 Hz após contagem 4..3..2..1. 100% offline e sem anúncios.

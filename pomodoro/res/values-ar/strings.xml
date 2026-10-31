@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مؤقت بومودورو</string>
+    <string name="working_dnd">جلسة تركيز: الرجاء عدم الإزعاج</string>
+    <string name="short_break_relax">استراحة قصيرة: استرخِ</string>
+    <string name="long_break_rest">استراحة طويلة: راحة عميقة</string>
+    <string name="paused_stopped">متوقف مؤقتاً</string>
+    <string name="ready_to_focus">جاهز للتركيز</string>
+    <string name="reset">إعادة</string>
+    <string name="skip_btn">تخطي &gt;&gt;</string>
+    <string name="start_focus">ابدأ التركيز</string>
+    <string name="resume">استئناف</string>
+    <string name="bg_sound">صوت الخلفية</string>
+    <string name="amb_off">إيقاف</string>
+    <string name="amb_soft_tick">دقات ناعمة</string>
+    <string name="amb_rain">مطر</string>
+    <string name="amb_brown_noise">ضوضاء بنية</string>
+    <string name="duration_presets">قوالب المدة (تركيز / قصيرة / طويلة)</string>
+    <string name="all_time_total">الإجمالي الكلي</string>
+    <string name="current_session">الجلسة الحالية</string>
+    <string name="focus_session">جلسة تركيز</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_title">مؤقت بومودورو ومتتبع ساعات العمل</string>
+    <string name="help_sec1_title">1. دورة البومودورو الأربع</string>
+    <string name="help_sec1_body">• ركّز دون انقطاع لمدة بومودورو واحد (افتراضياً 25 دقيقة).\n• خذ استراحة قصيرة (5 دقائق) للاسترخاء وتجديد النشاط.\n• بعد كل 4 جلسات تركيز مكتملة، خذ استراحة طويلة (15 دقيقة).</string>
+    <string name="help_sec2_title">2. عناصر التحكم باللمس ولوحة المفاتيح</string>
+    <string name="help_sec2_body">• انقر على القرص المركزي / «بدء» (أو المسافة / الإدخال): للبدء أو الإيقاف المؤقت.\n• انقر على -5د / -1د / +1د / +5د (أو أسهم أعلى/أسفل): لتعديل مدة المرحلة.\n• انقر على القوالب (أو مفتاح P): للتبديل بين كلاسيكي وعمل عميق واستوديو وسبرينت.\n• انقر على الأصوات المحيطة (أو M): للتبديل بين دقات هادئة أو مطر أو ضوضاء بنية.\n• انقر على «تخطي &gt;&gt;» (N) لتجاوز المرحلة؛ و«إعادة» (R) لإعادة الضبط.</string>
+    <string name="help_sec3_title">3. التسجيل التلقائي لساعات العمل</string>
+    <string name="help_sec3_body">• يتم تسجيل كل ثانية تقضيها في جلسة التركيز النشطة تلقائياً في إحصائيات «اليوم» و«الإجمالي الكلي».</string>
+</resources>

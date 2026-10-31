@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entraînement Auditif</string>
+    <string name="mode_intervals">INTERVALLES</string>
+    <string name="mode_chords">ACCORDS</string>
+    <string name="mode_solfege">SOLFÈGE</string>
+    <string name="mode_melodic">MÉLODIQUE</string>
+    <string name="tier_easy">FACILE</string>
+    <string name="tier_medium">MOYEN</string>
+    <string name="tier_all_12">LES 12</string>
+    <string name="replay">RÉÉCOUTER</string>
+    <string name="root_note">NOTE FOND.</string>
+    <string name="style">STYLE</string>
+    <string name="hint_minus_2">INDICE (-2)</string>
+    <string name="next">SUIVANT &gt;&gt;</string>
+    <string name="skip">PASSER &gt;&gt;</string>
+    <string name="close">FERMER</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_title">STUDIO D\'OREILLE MUSICALE — GUIDE RAPIDE</string>
+    <string name="help_sec1_title">1. QUATRE MODES D\'EXERCICE (Bouton MODE en haut à gauche)</string>
+    <string name="help_sec1_body">• INTERVALLES : 12 intervalles chromatiques (m2..P8) ascendants, descendants, harmoniques ou mixtes.\n• ACCORDS : 12 qualités de triades et 7e (Majeur, Mineur, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFÈGE : Degrés chromatiques (Ra..Do\') sur une cadence I-IV-V-I ou note fondamentale.\n• MÉLODIQUE : Cellules mélodiques à 3 notes et cadences harmoniques (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. RÈGLE DES 3 ESSAIS ET ÉCOUTE COMPARATIVE</string>
+    <string name="help_sec2_body">• Vous avez 3 essais par question. Utilisez INDICE (-2) pour éliminer deux choix.\n• Une fois la réponse révélée, touchez N\'IMPORTE QUEL pad pour écouter et comparer les intervalles ou accords sur le manche 6 cordes et le clavier de piano !</string>
+    <string name="help_sec3_title">3. PIANO ET MANCHE DE GUITARE INTERACTIFS</string>
+    <string name="help_sec3_body">Touchez n\'importe quelle touche du piano 2 octaves ou corde/frette du manche 6 cordes à tout moment pour jouer des notes et vérifier les intervalles à l\'oreille.</string>
+</resources>

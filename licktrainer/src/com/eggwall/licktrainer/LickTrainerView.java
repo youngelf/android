@@ -85,6 +85,13 @@ public class LickTrainerView extends View {
     private final RectF mRectModalClose = new RectF();
     private final RectF mRectModalTab0  = new RectF();
     private final RectF mRectModalTab1  = new RectF();
+    private final RectF mRectModalBox   = new RectF();
+    private final RectF mRectModalViewport = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     public LickTrainerView(Context context) {
         super(context);
@@ -401,7 +408,7 @@ public class LickTrainerView extends View {
                 String bLbl = lick.isJazz7ths()
                         ? LickTheory.DIATONIC_7THS[lick.beatDeg[beat & 3]].roman
                         : ("BEAT " + (beat + 1));
-                c.drawText(bLbl, beatX + 4f, r.top + topPad * 0.54f, mTextPaint);
+                AppI18n.drawText(c, bLbl, beatX + 4f, r.top + topPad * 0.54f, mTextPaint);
             }
         }
 
@@ -417,7 +424,7 @@ public class LickTrainerView extends View {
             mTextPaint.setColor(COL_CYAN);
             mTextPaint.setTextSize(strLabelTs);
             mTextPaint.setTextAlign(Paint.Align.CENTER);
-            c.drawText(String.valueOf(LickTheory.STR_LABELS[strIdx]), r.left + 21f, sy + strLabelTs * 0.35f, mTextPaint);
+            AppI18n.drawText(c, String.valueOf(LickTheory.STR_LABELS[strIdx]), r.left + 21f, sy + strLabelTs * 0.35f, mTextPaint);
         }
 
         // Draw large, circle-free fret numbers directly on the tab lines + picking badges at bottom
@@ -448,14 +455,14 @@ public class LickTrainerView extends View {
                 mTextPaint.setColor(isCur ? COL_BG : fCol);
                 mTextPaint.setTextAlign(Paint.Align.CENTER);
                 Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-                c.drawText(fretStr, cx, sy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+                AppI18n.drawText(c, fretStr, cx, sy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
             }
 
             // Pick badge at bottom of column (D = Down, U = Up, H/P// = Legato)
             mTextPaint.setColor(st.pick == 'D' ? COL_CYAN : (st.pick == 'U' ? COL_GOLD : COL_PURPLE));
             mTextPaint.setTextSize(pickTs);
             mTextPaint.setTextAlign(Paint.Align.CENTER);
-            c.drawText(String.valueOf(st.pick), cx, r.bottom - botPad * 0.22f, mTextPaint);
+            AppI18n.drawText(c, String.valueOf(st.pick), cx, r.bottom - botPad * 0.22f, mTextPaint);
         }
     }
 
@@ -569,7 +576,7 @@ public class LickTrainerView extends View {
                 mTextPaint.setColor(COL_MUTED);
                 mTextPaint.setTextSize(Math.min(20f, botPad * 0.65f));
                 mTextPaint.setTextAlign(Paint.Align.CENTER);
-                c.drawText(dispFret + "fr", midX, r.bottom - botPad * 0.22f, mTextPaint);
+                AppI18n.drawText(c, dispFret + "fr", midX, r.bottom - botPad * 0.22f, mTextPaint);
             }
         }
 
@@ -585,7 +592,7 @@ public class LickTrainerView extends View {
             mTextPaint.setColor(COL_MUTED);
             mTextPaint.setTextSize(strLabelTs);
             mTextPaint.setTextAlign(Paint.Align.CENTER);
-            c.drawText(String.valueOf(LickTheory.STR_LABELS[strIdx]), r.left + 21f, sy + strLabelTs * 0.35f, mTextPaint);
+            AppI18n.drawText(c, String.valueOf(LickTheory.STR_LABELS[strIdx]), r.left + 21f, sy + strLabelTs * 0.35f, mTextPaint);
         }
 
         // Ghost dots for non-active steps first, then active step on top
@@ -620,7 +627,7 @@ public class LickTrainerView extends View {
                 mTextPaint.setTextSize(rad * 1.05f);
                 mTextPaint.setTextAlign(Paint.Align.CENTER);
                 Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-                c.drawText(lbl, cx, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
+                AppI18n.drawText(c, lbl, cx, cy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
             }
         }
     }
@@ -670,12 +677,14 @@ public class LickTrainerView extends View {
     }
 
     private void drawHelpModal(Canvas c, int w, int h) {
+        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(0xD805070B);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = w * 0.88f;
-        float mh = h * 0.82f;
-        RectF mr = new RectF((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
+        float mw = w * 0.90f;
+        float mh = h * 0.84f;
+        mRectModalBox.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
+        RectF mr = mRectModalBox;
         mPaint.setColor(COL_PANEL);
         c.drawRoundRect(mr, 18f, 18f, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -684,45 +693,68 @@ public class LickTrainerView extends View {
         c.drawRoundRect(mr, 18f, 18f, mPaint);
         mPaint.setStyle(Paint.Style.FILL);
 
-        mRectModalTab0.set(mr.left + 16f, mr.top + 14f, mr.left + 190f, mr.top + 56f);
-        mRectModalTab1.set(mr.left + 200f, mr.top + 14f, mr.left + 390f, mr.top + 56f);
-        mRectModalClose.set(mr.right - 110f, mr.top + 14f, mr.right - 16f, mr.top + 56f);
+        float pad = Math.max(12f, mw * 0.025f);
+        float hdrH = Math.max(42f, mh * 0.105f);
+        float closeW = Math.max(96f, mw * 0.18f);
+        float availTabsW = mw - pad * 3f - closeW - 10f;
+        float tabW = Math.min(240f, availTabsW * 0.48f);
 
-        drawPill(c, mRectModalTab0, "HOW TO USE", mHelpTab == 0 ? COL_CYAN : COL_PANEL_ALT,
+        mRectModalTab0.set(mr.left + pad, mr.top + 12f, mr.left + pad + tabW, mr.top + 12f + hdrH);
+        mRectModalTab1.set(mRectModalTab0.right + 10f, mr.top + 12f, mRectModalTab0.right + 10f + tabW, mr.top + 12f + hdrH);
+        mRectModalClose.set(mr.right - pad - closeW, mr.top + 12f, mr.right - pad, mr.top + 12f + hdrH);
+
+        Context ctx = getContext();
+        drawPill(c, mRectModalTab0, AppI18n.str(ctx, R.string.help_tab_howto),
+                mHelpTab == 0 ? COL_CYAN : COL_PANEL_ALT,
                 mHelpTab == 0 ? COL_BG : COL_TEXT, 18f);
-        drawPill(c, mRectModalTab1, "JAZZ 7THS & SPEED", mHelpTab == 1 ? COL_CYAN : COL_PANEL_ALT,
+        drawPill(c, mRectModalTab1, AppI18n.str(ctx, R.string.help_tab_jazz),
+                mHelpTab == 1 ? COL_CYAN : COL_PANEL_ALT,
                 mHelpTab == 1 ? COL_BG : COL_TEXT, 18f);
-        drawPill(c, mRectModalClose, "CLOSE", COL_CORAL, COL_BG, 18f);
+        drawPill(c, mRectModalClose, AppI18n.str(ctx, R.string.close), COL_CORAL, COL_BG, 18f);
 
-        String[] lines = (mHelpTab == 0) ? new String[]{
-            "1. SELECT CATEGORY & LICK: Browse 33 exercises across Pentatonic, Legato,",
-            "   Alternate Picking, Blues/Rock, Spider Warmups, and Jazz 7th Arpeggios.",
-            "2. 6-STRING TAB SEQUENCER: Tap any step column on the tablature grid to",
-            "   audition that note, inspect its left-hand finger (1=Index .. 4=Pinky),",
-            "   and check the picking badge (D=Down, U=Up, H=Hammer, P=Pull, /=Slide).",
-            "3. NECK INSPECTOR: Tap any string/fret on the zoomed 8-fret guitar neck",
-            "   to pluck that pitch directly through the 12-voice Karplus-Strong synth.",
-            "4. TRANSPOSE TO ANY KEY: Tap KEY to shift all 33 exercises from E to Eb."
-        } : new String[]{
-            "1. SPEED-BUILDER BPM LADDER: Tap LADDER to auto-increment BPM (+2/+5/+10 BPM)",
-            "   every 2, 4, or 8 bars so your picking speed builds effortlessly.",
-            "2. SUB-RANGE LOOP: Toggle LOOP between FULL BAR and BEAT 1 to isolate",
-            "   difficult 4-note picking cells before linking the full 16-step phrase.",
-            "3. JAZZ 7THS (LICKS #26-#33): Displays diatonic Roman numerals (Imaj7..viim7b5)",
-            "   and chord-tone intervals (1, 3, b3, 5, b5, 7, b7) with backing chords."
-        };
-
-        mTextPaint.setTextAlign(Paint.Align.LEFT);
-        mTextPaint.setColor(COL_TEXT);
-        mTextPaint.setTextSize(Math.min(22f, mh * 0.045f));
-        float ty = mr.top + 96f;
-        for (String line : lines) {
-            c.drawText(line, mr.left + 24f, ty, mTextPaint);
-            ty += Math.min(34f, mh * 0.068f);
+        String[] titles;
+        String[] bodies;
+        int[] titleCols;
+        if (mHelpTab == 0) {
+            titles = new String[]{
+                AppI18n.str(ctx, R.string.help_t0_sec1_title),
+                AppI18n.str(ctx, R.string.help_t0_sec2_title),
+                AppI18n.str(ctx, R.string.help_t0_sec3_title),
+                AppI18n.str(ctx, R.string.help_t0_sec4_title)
+            };
+            bodies = new String[]{
+                AppI18n.str(ctx, R.string.help_t0_sec1_body),
+                AppI18n.str(ctx, R.string.help_t0_sec2_body),
+                AppI18n.str(ctx, R.string.help_t0_sec3_body),
+                AppI18n.str(ctx, R.string.help_t0_sec4_body)
+            };
+            titleCols = new int[]{ COL_GOLD, COL_CYAN, COL_GREEN, COL_PURPLE };
+        } else {
+            titles = new String[]{
+                AppI18n.str(ctx, R.string.help_t1_sec1_title),
+                AppI18n.str(ctx, R.string.help_t1_sec2_title),
+                AppI18n.str(ctx, R.string.help_t1_sec3_title)
+            };
+            bodies = new String[]{
+                AppI18n.str(ctx, R.string.help_t1_sec1_body),
+                AppI18n.str(ctx, R.string.help_t1_sec2_body),
+                AppI18n.str(ctx, R.string.help_t1_sec3_body)
+            };
+            titleCols = new int[]{ COL_GOLD, COL_CYAN, COL_GREEN };
         }
+
+        mRectModalViewport.set(mr.left + pad, mRectModalClose.bottom + 10f, mr.right - pad, mr.bottom - 12f);
+        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
+        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mRectModalViewport, titles, bodies, titleCols,
+                COL_TEXT, COL_PANEL_ALT, COL_BORDER, COL_CYAN,
+                titleSz, bodySz, mHelpScrollY, mTextPaint, mPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 
     private void drawPill(Canvas c, RectF r, String text, int bgCol, int fgCol, float textSize) {
+        text = AppI18n.tr(text);
         mPaint.setColor(bgCol);
         c.drawRoundRect(r, 10f, 10f, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -741,33 +773,55 @@ public class LickTrainerView extends View {
             mTextPaint.setTextSize(ts);
         }
         mTextPaint.setTextAlign(Paint.Align.CENTER);
-        c.drawText(text, r.centerX(), r.centerY() + ts * 0.35f, mTextPaint);
+        AppI18n.drawText(c, text, r.centerX(), r.centerY() + ts * 0.35f, mTextPaint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) {
-            return true;
-        }
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (mShowHelp) {
-            if (mRectModalClose.contains(x, y)) {
-                mShowHelp = false;
-            } else if (mRectModalTab0.contains(x, y)) {
-                mHelpTab = 0;
-            } else if (mRectModalTab1.contains(x, y)) {
-                mHelpTab = 1;
-            } else {
-                mShowHelp = false;
+            if (action == MotionEvent.ACTION_DOWN) {
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mRectModalClose.contains(x, y) || !mRectModalBox.contains(x, y)) {
+                    mShowHelp = false;
+                    invalidate();
+                } else if (mRectModalTab0.contains(x, y)) {
+                    mHelpTab = 0;
+                    mHelpScrollY = 0f;
+                    invalidate();
+                } else if (mRectModalTab1.contains(x, y)) {
+                    mHelpTab = 1;
+                    mHelpScrollY = 0f;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > 10f) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
             }
-            invalidate();
+            return true;
+        }
+
+        if (action != MotionEvent.ACTION_DOWN) {
             return true;
         }
 
         if (mRectHelpPill.contains(x, y)) {
             mShowHelp = true;
+            mHelpScrollY = 0f;
             invalidate();
             return true;
         }

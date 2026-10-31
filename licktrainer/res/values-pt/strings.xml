@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Treinador de Licks</string>
+    <string name="cat_pentatonic">PENTATÔNICA</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">PALHETADA ALT</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">ARANHA</string>
+    <string name="cat_jazz">JAZZ 7ªs</string>
+    <string name="play">TOCAR</string>
+    <string name="pause">PAUSA</string>
+    <string name="ladder_static">ESCADA: FIXA</string>
+    <string name="loop_full_bar">LOOP: COMPASSO</string>
+    <string name="loop_beat_1">LOOP: SÓ TEMPO 1</string>
+    <string name="finger_1">1: INDICADOR</string>
+    <string name="finger_2">2: MÉDIO</string>
+    <string name="finger_3">3: ANELAR</string>
+    <string name="finger_4">4: MÍNIMO</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_tab_howto">COMO USAR</string>
+    <string name="help_tab_jazz">7ªs JAZZ E VELOCIDADE</string>
+    <string name="help_t0_sec1_title">1. SELECIONE CATEGORIA E LICK</string>
+    <string name="help_t0_sec1_body">Navegue por 33 exercícios entre Pentatônica, Legato, Palhetada Alternada, Blues/Rock, Spider Warmups e Arpejos Jazz 7ª.</string>
+    <string name="help_t0_sec2_title">2. SEQUENCIADOR DE TABLATURA DE 6 CORDAS</string>
+    <string name="help_t0_sec2_body">Toque em qualquer coluna da tablatura para ouvir a nota, ver o dedo da mão esquerda (1=Indicador .. 4=Mínimo) e a palhetada (D=Baixo, U=Cima, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. INSPETOR INTERATIVO DO BRAÇO</string>
+    <string name="help_t0_sec3_body">Toque em qualquer corda/casa no braço ampliado de 8 casas para tocar a nota diretamente pelo sintetizador Karplus-Strong de 12 vozes.</string>
+    <string name="help_t0_sec4_title">4. TRANSPOR PARA QUALQUER TOM</string>
+    <string name="help_t0_sec4_body">Toque em TOM para transportar todos os 33 exercícios pelo braço de Mi a Mib.</string>
+    <string name="help_t1_sec1_title">1. ESCADA DE VELOCIDADE BPM</string>
+    <string name="help_t1_sec1_body">Toque em ESCADA para aumentar automaticamente o BPM (+2, +5 ou +10 BPM) a cada 2, 4 ou 8 compassos.</string>
+    <string name="help_t1_sec2_title">2. LOOP DE SUB-TRECHO</string>
+    <string name="help_t1_sec2_body">Alterne o LOOP entre COMPASSO INTEIRO e SÓ TEMPO 1 para isolar células difíceis de 4 notas antes de tocar os 16 passos.</string>
+    <string name="help_t1_sec3_title">3. ARPEJOS JAZZ 7ª (LICKS #26–#33)</string>
+    <string name="help_t1_sec3_body">Exibe graus romanos diatônicos (Imaj7..viim7b5) e intervalos do acorde (1, 3, b3, 5, b5, 7, b7) com acordes de acompanhamento.</string>
+</resources>

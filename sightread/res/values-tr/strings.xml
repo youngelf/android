@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deşifre Eğitmeni</string>
+    <string name="header_title">DEŞİFRE</string>
+    <string name="play">OYNAT</string>
+    <string name="stop">DUR</string>
+    <string name="sound">SES AÇIK</string>
+    <string name="muted">SESSİZ</string>
+    <string name="new_piece">YENİ ETÜT</string>
+    <string name="hint_on">İPUCU: AÇIK</string>
+    <string name="hint_off">İPUCU: KAPALI</string>
+    <string name="mode_etude">MOD: ETÜT</string>
+    <string name="mode_quiz">MOD: TEST</string>
+    <string name="mode_flow">MOD: AKIŞ</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="close">KAPAT</string>
+    <string name="help_title">DEŞİFRE — SOL ANAHTARI VE GİTAR KILAVUZU</string>
+    <string name="help_sec1_title">1. SOL ANAHTARI NOTASYONU</string>
+    <string name="help_sec1_body">Otomatik ek çizgilere sahip standart gitar Sol Anahtarı porte. Altın sütun aktif hedef notayı vurgular.</string>
+    <string name="help_sec2_title">2. DONANIMLAR VE SAP POZİSYONLARI</string>
+    <string name="help_sec2_body">5 gitar sapı pozisyonunda (AÇIK, POZ 2, 5, 7, 9) ve 24 etütte 7 Majör Tonda (C, G, D, A, E, F, Bb) pratik yapın.</string>
+    <string name="help_sec3_title">3. ETKİLEŞİMLİ KLAVYE VE ÇALIŞMA MODLARI</string>
+    <string name="help_sec3_body">Her notayı okumak için 6 telli gül ağacı gitar sapında ilgili tel ve perdeye dokunun. Etüt modu klavye ipuçlarını gösterir; Test modu ipuçlarını gizler; Akış modu metronomla ilerler.</string>
+    <string name="help_sec4_title">4. SES SENTEZİ VE ETÜT ÇALMA</string>
+    <string name="help_sec4_body">2 ölçülük etüdü seçilen BPM\'de dinlemek için OYNAT\'a veya gerçek zamanlı gitar sentezini değiştirmek için SES AÇIK / SESSİZ\'e dokunun.</string>
+</resources>

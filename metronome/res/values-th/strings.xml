@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">เมโทรนอม</string>
+    <string name="header_title">เมโทรนอมความแม่นยำสูง</string>
+    <string name="tap_tempo">แตะวัดจังหวะ</string>
+    <string name="time_signature">เครื่องหมายกำหนดจังหวะ</string>
+    <string name="subdivision">การแบ่งจังหวะย่อย</string>
+    <string name="stealth_drop">เปอร์เซ็นต์เงียบสุ่ม %</string>
+    <string name="speed_trainer">ฝึกเร่งความเร็ว</string>
+    <string name="start_metronome">▶   เริ่มเมโทรนอม</string>
+    <string name="stop_metronome">■   หยุดเมโทรนอม</string>
+    <string name="steady_click"> จังหวะคงที่</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_title">เมโทรนอมความแม่นยำสูง • คู่มือฉบับย่อ</string>
+    <string name="help_sec1_title">1. สัญญาณนาฬิกาแม่นยำสูงและชุดเสียง</string>
+    <string name="help_sec1_body">ซินธิไซเซอร์ PCM 44.1 kHz ความคลาดเคลื่อนต่ำกว่า 0.03 ms แตะ \'ชุดเสียง\' มุมขวาบนเพื่อสลับเสียง V90 บล็อกไม้ ขอบสแนร์ หรือคลื่นไซน์</string>
+    <string name="help_sec2_title">2. วงกลมเน้นจังหวะ (Beat Accent)</string>
+    <string name="help_sec2_body">แตะวงกลมจังหวะ (1..12) เพื่อสลับระหว่าง เน้นหนัก (สีคอรัล), ปกติ (สีฟ้า), เน้นรอง (สีอำพัน) และ ปิดเสียง</string>
+    <string name="help_sec3_title">3. วงล้อหมุน BPM และเคาะจังหวะ (TAP TEMPO)</string>
+    <string name="help_sec3_body">ลากวงแหวน BPM ใช้ปุ่ม -5 / -1 / +1 / +5 หรือแตะ \'เคาะจังหวะ\' ต่อเนื่องกันเพื่อจับความเร็วของเพลงที่กำลังฟัง</string>
+    <string name="help_sec4_title">4. สุ่มเงียบเสียง (DROP %) และตัวฝึกความเร็ว</string>
+    <string name="help_sec4_body">โหมดสุ่มเงียบ % จะเล่นเต็ม 4 ห้องแรกแล้วสุ่มตัดเสียงคลิกเพื่อฝึกจังหวะในใจ ส่วนตัวฝึกความเร็วจะเพิ่ม BPM อัตโนมัติทุก 4 ห้อง (+2 / +4 / +5)</string>
+</resources>

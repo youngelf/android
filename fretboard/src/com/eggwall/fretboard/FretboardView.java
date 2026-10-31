@@ -89,6 +89,14 @@ public final class FretboardView extends View {
     private final RectF quizBtnRect = new RectF();
     private final RectF clearBtnRect = new RectF();
     private final RectF neckRect = new RectF();
+    private final RectF helpModalRect = new RectF();
+    private final RectF helpCloseRect = new RectF();
+    private final RectF helpViewportRect = new RectF();
+    private float helpScrollY = 0f;
+    private float helpMaxScrollY = 0f;
+    private float helpTouchStartY = 0f;
+    private float helpLastTouchY = 0f;
+    private boolean helpDragging = false;
     private boolean neckVertical = false;
     private float nutW;
     private float fretColW;
@@ -122,6 +130,12 @@ public final class FretboardView extends View {
 
     public boolean isShowingHelp() {
         return showHelp || activeDropdown != DROPDOWN_NONE;
+    }
+
+    public void setShowHelp(boolean show) {
+        this.showHelp = show;
+        this.helpScrollY = 0f;
+        invalidate();
     }
 
     public void dismissHelp() {
@@ -255,7 +269,7 @@ public final class FretboardView extends View {
         textPaint.setColor(0xFFE6EDF3);
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setTextSize(Math.min(h * 0.42f, titleW * 0.18f));
-        c.drawText("FRETBOARD", x + 12f, y + h * 0.64f, textPaint);
+        AppI18n.drawText(c, "FRETBOARD", x + 12f, y + h * 0.64f, textPaint);
 
         float helpW = h * 0.92f;
         helpBtnRect.set(x + w - helpW - 6f, y + 5f, x + w - 6f, y + h - 5f);
@@ -333,6 +347,7 @@ public final class FretboardView extends View {
 
     private void drawLargeDropdownButton(
             Canvas c, RectF r, String text, boolean open, int bgColor, int accentColor) {
+        text = AppI18n.tr(text);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(open ? accentColor : bgColor);
         c.drawRoundRect(r, 10f, 10f, paint);
@@ -347,7 +362,7 @@ public final class FretboardView extends View {
         textPaint.setTextAlign(Paint.Align.CENTER);
         float maxTs = Math.min(r.height() * 0.44f, (r.width() * 1.48f) / Math.max(6, text.length()));
         textPaint.setTextSize(Math.max(13f, maxTs));
-        c.drawText(text, r.centerX(), r.centerY() + textPaint.getTextSize() * 0.35f, textPaint);
+        AppI18n.drawText(c, text, r.centerX(), r.centerY() + textPaint.getTextSize() * 0.35f, textPaint);
     }
 
     private void drawFretboardNeck(Canvas c, float x, float y, float w, float h) {
@@ -382,7 +397,7 @@ public final class FretboardView extends View {
             float cx = getFretCenterX(f);
             textPaint.setColor((f == 0 || f == 3 || f == 5 || f == 7 || f == 9 || f == 12 || f == 15)
                     ? 0xFFD8DEE9 : 0xFF7D8590);
-            c.drawText(f == 0 ? "OPEN" : Integer.toString(f), cx, y + numRowH * 0.74f, textPaint);
+            AppI18n.drawText(c, f == 0 ? "OPEN" : Integer.toString(f), cx, y + numRowH * 0.74f, textPaint);
             if (f > 0) {
                 float wireX = leftHanded
                         ? (x + w - nutW - f * fretColW)
@@ -393,15 +408,15 @@ public final class FretboardView extends View {
             }
         }
 
-        /* Pearloid ~ wave fret markers at 3, 5, 7, 9, 12, 15 (12th fret between A&D and G&B) */
+        /* Subdued ~ wave fret markers at 3, 5, 7, 9, 12, 15 (rotated 90° in landscape) */
         int[] inlays = { 3, 5, 7, 9, 12, 15 };
         for (int f : inlays) {
             float cx = getFretCenterX(f);
             if (f == 12) {
-                drawFretInlayWave(c, cx, boardTop + strRowH * 2.0f, fretColW * 0.26f, strRowH * 0.085f);
-                drawFretInlayWave(c, cx, boardTop + strRowH * 4.0f, fretColW * 0.26f, strRowH * 0.085f);
+                drawFretInlayWave(c, cx, boardTop + strRowH * 2.0f, strRowH * 0.155f, fretColW * 0.11f, true);
+                drawFretInlayWave(c, cx, boardTop + strRowH * 4.0f, strRowH * 0.155f, fretColW * 0.11f, true);
             } else {
-                drawFretInlayWave(c, cx, boardTop + boardH * 0.5f, fretColW * 0.26f, strRowH * 0.085f);
+                drawFretInlayWave(c, cx, boardTop + boardH * 0.5f, strRowH * 0.155f, fretColW * 0.11f, true);
             }
         }
 
@@ -510,7 +525,7 @@ public final class FretboardView extends View {
             float sx = getStringCoordX(s);
             int openPc = FretboardTheory.getPitchClass(tuningIdx, s, 0);
             String sLbl = (s == 5 && openPc == 4) ? "e" : FretboardTheory.NOTE_NAMES[openPc];
-            c.drawText(sLbl, sx, y + strHeaderH * 0.72f, textPaint);
+            AppI18n.drawText(c, sLbl, sx, y + strHeaderH * 0.72f, textPaint);
         }
 
         /* Horizontal ivory nut bar at the top of the neck (below fret 0 / OPEN row) */
@@ -526,7 +541,7 @@ public final class FretboardView extends View {
             float cy = getFretCoordY(f);
             boolean isMarkerFret = (f == 0 || f == 3 || f == 5 || f == 7 || f == 9 || f == 12 || f == 15);
             textPaint.setColor(isMarkerFret ? 0xFFD8DEE9 : 0xFF7D8590);
-            c.drawText(f == 0 ? "OPEN" : Integer.toString(f), boardLeft - 12f, cy + fretNumTs * 0.34f, textPaint);
+            AppI18n.drawTextFit(c, f == 0 ? "OPEN" : Integer.toString(f), boardLeft - 12f, cy + fretNumTs * 0.34f, textPaint, leftGutterW - 14f);
             if (f > 0) {
                 float wireY = boardTop + nutW + f * fretRowH;
                 paint.setColor(0xFF9EA7B3);
@@ -535,15 +550,15 @@ public final class FretboardView extends View {
             }
         }
 
-        /* Pearloid ~ wave fret markers at 3, 5, 7, 9, 12, 15 (12th fret between A&D and G&B) */
+        /* Subdued ~ wave fret markers at 3, 5, 7, 9, 12, 15 (12th fret between A&D and G&B) */
         int[] inlays = { 3, 5, 7, 9, 12, 15 };
         for (int f : inlays) {
             float cy = getFretCoordY(f);
             if (f == 12) {
-                drawFretInlayWave(c, boardLeft + strColW * 2.0f, cy, strColW * 0.145f, fretRowH * 0.11f);
-                drawFretInlayWave(c, boardLeft + strColW * 4.0f, cy, strColW * 0.145f, fretRowH * 0.11f);
+                drawFretInlayWave(c, boardLeft + strColW * 2.0f, cy, strColW * 0.145f, fretRowH * 0.11f, false);
+                drawFretInlayWave(c, boardLeft + strColW * 4.0f, cy, strColW * 0.145f, fretRowH * 0.11f, false);
             } else {
-                drawFretInlayWave(c, boardLeft + boardW * 0.5f, cy, strColW * 0.145f, fretRowH * 0.11f);
+                drawFretInlayWave(c, boardLeft + boardW * 0.5f, cy, strColW * 0.145f, fretRowH * 0.11f, false);
             }
         }
 
@@ -638,7 +653,7 @@ public final class FretboardView extends View {
         textPaint.setColor(0xFF8B949E);
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTextSize(Math.min(titleH * 0.72f, w * 0.12f));
-        c.drawText("POSITION", x + w * 0.5f, y + inPad + titleH * 0.72f, textPaint);
+        AppI18n.drawText(c, "POSITION", x + w * 0.5f, y + inPad + titleH * 0.72f, textPaint);
 
         float bodyTop = y + inPad + titleH + 4f;
         float bodyH = (y + h - inPad) - bodyTop;
@@ -685,12 +700,12 @@ public final class FretboardView extends View {
         textPaint.setColor(accent);
         float ts1 = Math.min(posBadgeRect.height() * 0.28f, (posBadgeRect.width() * 1.45f) / Math.max(6, posTitle.length()));
         textPaint.setTextSize(Math.max(11f, ts1));
-        c.drawText(posTitle, posBadgeRect.centerX(), posBadgeRect.centerY() - posBadgeRect.height() * 0.06f, textPaint);
+        AppI18n.drawTextFit(c, posTitle, posBadgeRect.centerX(), posBadgeRect.centerY() - posBadgeRect.height() * 0.06f, textPaint, posBadgeRect.width() - 10f);
 
         textPaint.setColor(0xFFD8DEE9);
         float ts2 = Math.min(posBadgeRect.height() * 0.22f, posBadgeRect.width() * 0.14f);
         textPaint.setTextSize(Math.max(10f, ts2));
-        c.drawText(fretSub, posBadgeRect.centerX(), posBadgeRect.centerY() + posBadgeRect.height() * 0.28f, textPaint);
+        AppI18n.drawTextFit(c, fretSub, posBadgeRect.centerX(), posBadgeRect.centerY() + posBadgeRect.height() * 0.28f, textPaint, posBadgeRect.width() - 10f);
     }
 
     /**
@@ -748,7 +763,7 @@ public final class FretboardView extends View {
             textPaint.setColor(0xFFF0883E);
             textPaint.setTextAlign(Paint.Align.LEFT);
             textPaint.setTextSize(20f);
-            c.drawText("SELECT KEY (ROOT NOTE)", panelX + 16f, topY + 32f, textPaint);
+            AppI18n.drawText(c, "SELECT KEY (ROOT NOTE)", panelX + 16f, topY + 32f, textPaint);
 
             float gridTop = topY + 4f + headerH + 6f;
             float gap = 10f;
@@ -791,7 +806,7 @@ public final class FretboardView extends View {
             textPaint.setTextSize(20f);
             String title = (mode == FretboardTheory.MODE_CHORDS)
                     ? "SELECT CHORD QUALITY" : "SELECT SCALE / MODE";
-            c.drawText(title, panelX + 16f, topY + 32f, textPaint);
+            AppI18n.drawText(c, title, panelX + 16f, topY + 32f, textPaint);
 
             float gridTop = topY + 4f + headerH + 4f;
             float cellW = (panelW - (cols + 1) * gap) / cols;
@@ -821,18 +836,27 @@ public final class FretboardView extends View {
     }
 
     /**
-     * Draws a pearloid tilde (~) wave inlay centered at (cx, cy) inside the inter-string gap,
-     * visually distinct from circular fingering/scale note dots.
+     * Draws a subdued tilde (~) wave inlay centered at (cx, cy) inside the inter-string gap,
+     * rotated 90 degrees when {@code rotated90} is true (landscape mode), and darkened so
+     * circular fingering/scale note dots stand out clearly above the fretboard.
      */
-    private void drawFretInlayWave(Canvas c, float cx, float cy, float halfW, float amp) {
-        float strokeW = Math.max(2.6f, Math.min(halfW, amp) * 0.58f);
+    private void drawFretInlayWave(Canvas c, float cx, float cy, float halfSpan, float amp, boolean rotated90) {
+        float strokeW = Math.max(2.4f, Math.min(halfSpan, amp) * 0.56f);
 
         inlayPath.reset();
-        inlayPath.moveTo(cx - halfW, cy + amp * 0.35f);
-        inlayPath.cubicTo(
-                cx - halfW * 0.42f, cy - amp * 1.55f,
-                cx + halfW * 0.42f, cy + amp * 1.55f,
-                cx + halfW, cy - amp * 0.35f);
+        if (rotated90) {
+            inlayPath.moveTo(cx - amp * 0.35f, cy - halfSpan);
+            inlayPath.cubicTo(
+                    cx + amp * 1.55f, cy - halfSpan * 0.42f,
+                    cx - amp * 1.55f, cy + halfSpan * 0.42f,
+                    cx + amp * 0.35f, cy + halfSpan);
+        } else {
+            inlayPath.moveTo(cx - halfSpan, cy + amp * 0.35f);
+            inlayPath.cubicTo(
+                    cx - halfSpan * 0.42f, cy - amp * 1.55f,
+                    cx + halfSpan * 0.42f, cy + amp * 1.55f,
+                    cx + halfSpan, cy - amp * 0.35f);
+        }
 
         Paint.Cap prevCap = paint.getStrokeCap();
         Paint.Join prevJoin = paint.getStrokeJoin();
@@ -840,13 +864,13 @@ public final class FretboardView extends View {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
 
-        /* Subtle dark wood-recess outline followed by pearloid wave stroke */
-        paint.setStrokeWidth(strokeW + 1.8f);
-        paint.setColor(0x66140B06);
+        /* Subtle dark wood-recess outline followed by subdued warm-stone inlay stroke */
+        paint.setStrokeWidth(strokeW + 1.6f);
+        paint.setColor(0x5C120905);
         c.drawPath(inlayPath, paint);
 
         paint.setStrokeWidth(strokeW);
-        paint.setColor(0x99E6EDF3);
+        paint.setColor(0x7A90867A);
         c.drawPath(inlayPath, paint);
 
         paint.setStrokeCap(prevCap);
@@ -888,14 +912,14 @@ public final class FretboardView extends View {
         textPaint.setColor(strokeColor);
         textPaint.setTextSize(Math.min(h * 0.085f, 22f));
         textPaint.setTextAlign(Paint.Align.CENTER);
-        c.drawText(caption, (left + right) * 0.5f, top + h + textPaint.getTextSize() * 1.15f, textPaint);
+        AppI18n.drawText(c, caption, (left + right) * 0.5f, top + h + textPaint.getTextSize() * 1.15f, textPaint);
     }
 
     private void drawMutedMarker(Canvas c, float cx, float cy, float r) {
         textPaint.setColor(0xFFF85149);
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTextSize(r * 1.25f);
-        c.drawText("X", cx, cy + r * 0.42f, textPaint);
+        AppI18n.drawText(c, "X", cx, cy + r * 0.42f, textPaint);
     }
 
     private void drawFretNote(
@@ -958,7 +982,7 @@ public final class FretboardView extends View {
         textPaint.setColor(ghost && !isPlucked ? 0xBBE6EDF3 : 0xFFFFFFFF);
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTextSize(drawR * (lbl.length() > 2 ? 0.68f : 0.82f));
-        c.drawText(lbl, cx, cy + textPaint.getTextSize() * 0.35f, textPaint);
+        AppI18n.drawText(c, lbl, cx, cy + textPaint.getTextSize() * 0.35f, textPaint);
     }
 
     private static int getIntervalFillColor(int relIv) {
@@ -1009,54 +1033,74 @@ public final class FretboardView extends View {
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setColor(0xFFF0F6FC);
         textPaint.setTextSize(Math.min(h * 0.30f, portrait ? w * 0.033f : w * 0.022f));
-        c.drawText(line1, x + 14f, y + h * 0.42f, textPaint);
+        AppI18n.drawText(c, line1, x + 14f, y + h * 0.42f, textPaint);
 
         textPaint.setColor(quizMode != FretboardTheory.QUIZ_OFF && !quizLastCorrect ? 0xFFF85149 : 0xFF8B949E);
         textPaint.setTextSize(Math.min(h * 0.25f, portrait ? w * 0.029f : w * 0.019f));
-        c.drawText(line2, x + 14f, y + h * 0.78f, textPaint);
+        AppI18n.drawText(c, line2, x + 14f, y + h * 0.78f, textPaint);
 
         if (!portrait) {
             monoPaint.setColor(0xFF58A6FF);
             monoPaint.setTextAlign(Paint.Align.RIGHT);
             monoPaint.setTextSize(Math.min(h * 0.27f, w * 0.020f));
-            c.drawText(rightBadge, x + w - 14f, y + h * 0.44f, monoPaint);
+            AppI18n.drawText(c, rightBadge, x + w - 14f, y + h * 0.44f, monoPaint);
         }
     }
 
     private void drawHelpModal(Canvas c, int w, int h) {
-        paint.setColor(0xCC06090F);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(0xD806090F);
         c.drawRect(0, 0, w, h, paint);
 
-        float mw = Math.min(w * 0.88f, 760f);
-        float mh = Math.min(h * 0.82f, 460f);
+        float mw = Math.min(w * 0.94f, 880f);
+        float mh = Math.min(h * 0.92f, 700f);
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
-        tmpRect.set(mx, my, mx + mw, my + mh);
-        paint.setColor(0xFF182230);
-        c.drawRoundRect(tmpRect, 16f, 16f, paint);
+        helpModalRect.set(mx, my, mx + mw, my + mh);
+        paint.setColor(0xFF151E2B);
+        c.drawRoundRect(helpModalRect, 16f, 16f, paint);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(2f);
+        paint.setStrokeWidth(2.2f);
         paint.setColor(0xFF58A6FF);
-        c.drawRoundRect(tmpRect, 16f, 16f, paint);
+        c.drawRoundRect(helpModalRect, 16f, 16f, paint);
         paint.setStyle(Paint.Style.FILL);
 
-        String[] lines = {
-            "FRETBOARD EXPLORER \u2014 QUICK GUIDE",
-            "\u2022 Modes: Switch between 1: Scales (16 scales + 5 CAGED boxes), 2: Chords (12 qualities), and 3: Chord Finder.",
-            "\u2022 Audio Synthesis: Tap any fret to pluck a Karplus-Strong guitar note, or tap \u25B6 to strum/audition.",
-            "\u2022 Color Legend: Root (Amber)  |  3rd (Emerald)  |  5th (Royal Blue)  |  7th (Purple)  |  Blue b5 (Gold).",
-            "\u2022 Labels & Tunings: Cycle Intervals (R,3,5), Note Names, Scale Degrees, 6 Guitar Tunings, and Lefty flip.",
-            "\u2022 Fretboard Quiz: Toggle Note or Interval Quiz to test your neck mastery across all 6 strings.",
-            "Tap anywhere to close this guide."
-        };
-        float ty = my + mh * 0.16f;
-        float step = mh * 0.115f;
+        float hdrH = Math.max(40f, mh * 0.085f);
+        float closeW = Math.max(96f, mw * 0.19f);
+        helpCloseRect.set(mx + mw - closeW - 14f, my + 6f, mx + mw - 14f, my + hdrH - 2f);
+        drawPill(c, helpCloseRect, AppI18n.str(getContext(), R.string.close), true, 0xFF3A1E24, 0xFFF85149);
+
         textPaint.setTextAlign(Paint.Align.LEFT);
-        for (int i = 0; i < lines.length; i++) {
-            textPaint.setColor(i == 0 ? 0xFFF0883E : (i == lines.length - 1 ? 0xFF58A6FF : 0xFFE6EDF3));
-            textPaint.setTextSize(i == 0 ? Math.min(mh * 0.068f, 24f) : Math.min(mh * 0.048f, 17f));
-            c.drawText(lines[i], mx + 24f, ty + i * step, textPaint);
-        }
+        textPaint.setColor(0xFFF0883E);
+        textPaint.setTextSize(Math.min(hdrH * 0.44f, 20f));
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
+                mx + 18f, my + hdrH * 0.66f, textPaint, helpCloseRect.left - (mx + 26f));
+
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title),
+            AppI18n.str(ctx, R.string.help_sec4_title),
+            AppI18n.str(ctx, R.string.help_sec5_title)
+        };
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body),
+            AppI18n.str(ctx, R.string.help_sec4_body),
+            AppI18n.str(ctx, R.string.help_sec5_body)
+        };
+        int[] titleCols = { 0xFF58A6FF, 0xFF3FB950, 0xFFF0883E, 0xFFD2A8FF, 0xFFFFD866 };
+
+        helpViewportRect.set(mx + 12f, my + hdrH + 2f, mx + mw - 12f, my + mh - 10f);
+        float titleSz = Math.max(12.2f, Math.min(15f, Math.min(w, h) * 0.023f));
+        float bodySz = Math.max(11.2f, Math.min(13.5f, Math.min(w, h) * 0.020f));
+        helpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, helpViewportRect, titles, bodies, titleCols,
+                0xFFE6EDF3, 0xFF1D293A, 0xFF2E3F57, 0xFF58A6FF,
+                titleSz, bodySz, helpScrollY, textPaint, paint);
+        helpScrollY = Math.max(0f, Math.min(helpScrollY, helpMaxScrollY));
     }
 
     private void drawPill(Canvas c, RectF r, String text, boolean active, int bgColor, int accentColor) {
@@ -1072,9 +1116,14 @@ public final class FretboardView extends View {
         }
         textPaint.setColor(active ? 0xFF0B0F17 : 0xFFE6EDF3);
         textPaint.setTextAlign(Paint.Align.CENTER);
-        float maxTs = Math.min(r.height() * 0.44f, (r.width() * 1.55f) / Math.max(3, text.length()));
+        text = AppI18n.tr(text);
+        int denom = text.length() <= 2 ? 3 : Math.max(8, text.length());
+        float maxTs = Math.min(r.height() * 0.44f, (r.width() * 1.55f) / denom);
         textPaint.setTextSize(Math.max(10f, maxTs));
-        c.drawText(text, r.centerX(), r.centerY() + textPaint.getTextSize() * 0.35f, textPaint);
+        float tw = textPaint.measureText(text);
+        float maxW = Math.max(12f, r.width() - 18f);
+        if (tw > maxW && tw > 0f) textPaint.setTextSize(textPaint.getTextSize() * (maxW / tw));
+        AppI18n.drawText(c, text, r.centerX(), r.centerY() + textPaint.getTextSize() * 0.35f, textPaint);
     }
 
     private float getFretCenterX(int fret) {
@@ -1107,15 +1156,35 @@ public final class FretboardView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) return true;
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (showHelp) {
-            showHelp = false;
-            invalidate();
+            if (action == MotionEvent.ACTION_DOWN) {
+                helpTouchStartY = y;
+                helpLastTouchY = y;
+                helpDragging = false;
+                if (helpCloseRect.contains(x, y) || !helpModalRect.contains(x, y)) {
+                    showHelp = false;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = helpLastTouchY - y;
+                if (Math.abs(y - helpTouchStartY) > 10f) {
+                    helpDragging = true;
+                }
+                if (helpDragging && helpMaxScrollY > 0f) {
+                    helpScrollY = Math.max(0f, Math.min(helpMaxScrollY, helpScrollY + dy));
+                    helpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                helpDragging = false;
+            }
             return true;
         }
+        if (action != MotionEvent.ACTION_DOWN) return true;
         if (activeDropdown != DROPDOWN_NONE) {
             if (activeDropdown == DROPDOWN_KEY) {
                 for (int k = 0; k < 12; k++) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Міцний Сон</string>
+    <string name="cloudDesc">хмара (білий шум)</string>
+    <string name="noteDesc">музична нота</string>
+    <string name="playing_music">Відтворення музики</string>
+</resources>

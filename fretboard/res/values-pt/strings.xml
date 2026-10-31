@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Braço da Guitarra</string>
+    <string name="header_title">BRAÇO</string>
+    <string name="tab_scales">Escalas</string>
+    <string name="tab_chords">Acordes</string>
+    <string name="tab_finder">Busca</string>
+    <string name="tab_1_scales">1: Escalas</string>
+    <string name="tab_2_chords">2: Acordes</string>
+    <string name="tab_3_finder">3: Busca</string>
+    <string name="play_scale">▶ Escala</string>
+    <string name="play_strum">▶ Rasguear</string>
+    <string name="key_prefix">Tom: </string>
+    <string name="position_header">POSIÇÃO</string>
+    <string name="all_neck">TODO BRAÇO</string>
+    <string name="frets_0_15">Trastes 0–15</string>
+    <string name="lbl_intervals">Rót: T/3/5</string>
+    <string name="lbl_notes">Rót: Notas</string>
+    <string name="lbl_degrees">Rót: Graus</string>
+    <string name="hand_righty">Mão: Destro</string>
+    <string name="hand_lefty">Mão: Canhoto</string>
+    <string name="quiz_off">Quiz: Desl.</string>
+    <string name="quiz_note">Quiz: Nota</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Modo Dórico ▾</string>
+    <string name="scale_min_pent">Pentatônica Menor ▾</string>
+    <string name="scale_blues">Escala de Blues ▾</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_title">EXPLORADOR DE BRAÇO — GUIA RÁPIDO</string>
+    <string name="help_sec1_title">1. TRÊS MODOS DE EXPLORAÇÃO</string>
+    <string name="help_sec1_body">Alterne entre 1: Escalas (16 escalas + 5 desenhos CAGED), 2: Acordes (12 qualidades com posições CAGED) e 3: Busca (toque em qualquer casa para identificar acordes).</string>
+    <string name="help_sec2_title">2. SÍNTESE DE ÁUDIO E DEDILHADO</string>
+    <string name="help_sec2_body">Toque em qualquer casa no braço para tocar uma nota Karplus-Strong, ou toque em ▶ na barra superior para dedilhar o acorde ou ouvir a escala.</string>
+    <string name="help_sec3_title">3. LEGENDA DE CORES HARMÔNICAS</string>
+    <string name="help_sec3_body">Tônica = Âmbar | Terça (3/b3) = Esmeralda | Quinta = Azul Royal | Sétima (7/b7) = Roxo | Blue Note (b5) = Ouro | Nota da escala = Ardósia.</string>
+    <string name="help_sec4_title">4. RÓTULOS, AFINAÇÕES E MODO CANHOTO</string>
+    <string name="help_sec4_body">Alterne entre Intervalos (R, 3, 5), Notas e Graus, mude entre 6 afinações (Padrão, Drop D, DADGAD, Mib, Sol Aberto, Ré Aberto) ou inverta para canhotos.</string>
+    <string name="help_sec5_title">5. QUIZ DE DOMÍNIO DO BRAÇO</string>
+    <string name="help_sec5_body">Ative o Quiz de Notas ou Intervalos para testar sua memória nas 6 cordas com placar ao vivo.</string>
+</resources>

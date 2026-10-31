@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">লিক ট্রেইনার</string>
+    <string name="cat_pentatonic">পেন্টাটোনিক</string>
+    <string name="cat_legato">লেগাটো/আরপেজিও</string>
+    <string name="cat_alt_pick">অল্টারনেট পিকিং</string>
+    <string name="cat_blues_rock">ব্লুজ/রক</string>
+    <string name="cat_spider">স্পাইডার</string>
+    <string name="cat_jazz">জ্যাজ ৭ম</string>
+    <string name="play">চালান</string>
+    <string name="pause">বিরতি</string>
+    <string name="ladder_static">ল্যাডার: স্থির</string>
+    <string name="loop_full_bar">লুপ: পুরো বার</string>
+    <string name="loop_beat_1">লুপ: শুধু বিট ১</string>
+    <string name="finger_1">1: তর্জনী</string>
+    <string name="finger_2">2: মধ্যমা</string>
+    <string name="finger_3">3: অনামিকা</string>
+    <string name="finger_4">4: কনিষ্ঠা</string>
+    <string name="close">বন্ধ</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_tab_howto">ব্যবহার বিধি</string>
+    <string name="help_tab_jazz">জ্যাজ ৭ম ও গতি</string>
+    <string name="help_t0_sec1_title">1. বিভাগ এবং লিক (Lick) নির্বাচন</string>
+    <string name="help_t0_sec1_body">পেন্টাটোনিক, লেগাটো, অল্টারনেট পিকিং, ব্লুজ/রক, স্পাইডার ওয়ার্মআপ এবং জ্যাজ ৭ম আর্পেজিও জুড়ে ৩৩টি অনুশীলন ব্রাউজ করুন।</string>
+    <string name="help_t0_sec2_title">2. ৬-তারের ট্যাব সিকোয়েন্সার</string>
+    <string name="help_t0_sec2_body">নোটটি শুনতে, বাম হাতের আঙুল (1=তর্জনী .. 4=কনিষ্ঠা) এবং পিকিং ব্যাজ (D=ডাউন, U=আপ, H=হ্যামার, P=পুল, /=স্লাইড) দেখতে ট্যাব গ্রিডের যেকোনো কলামে ট্যাপ করুন।</string>
+    <string name="help_t0_sec3_title">3. ইন্টারঅ্যাক্টিভ নেক ইন্সপেক্টর</string>
+    <string name="help_t0_sec3_body">১২-ভয়েস Karplus-Strong সিন্থের মাধ্যমে সরাসরি সুর বাজাতে জুম করা ৮-ফ্রেট গিটার নেকের যেকোনো তার/ফ্রেটে ট্যাপ করুন।</string>
+    <string name="help_t0_sec4_title">4. যেকোনো কী-তে ট্রান্সপোজ করুন</string>
+    <string name="help_t0_sec4_body">সব ৩৩টি অনুশীলন E থেকে Eb পর্যন্ত যেকোনো কী-তে সরাতে \'কী\' বোতামে ট্যাপ করুন।</string>
+    <string name="help_t1_sec1_title">1. স্পিড-বিল্ডার BPM ল্যাডার</string>
+    <string name="help_t1_sec1_body">প্রতি ২, ৪ বা ৮ বারে স্বয়ংক্রিয়ভাবে BPM (+২, +৫ বা +১০) বাড়াতে \'সিঁড়ি\' বোতামে ট্যাপ করুন।</string>
+    <string name="help_t1_sec2_title">2. সাব-রেঞ্জ লুপিং</string>
+    <string name="help_t1_sec2_body">পূর্ণ ১৬-স্টেপ ফ্রেজ বাজানোর আগে কঠিন ৪-নোট পিকিং অংশ আলাদাভাবে অনুশীলন করতে লুপ \'পূর্ণ বার\' ও \'শুধু বিট ১\'-এর মধ্যে পরিবর্তন করুন।</string>
+    <string name="help_t1_sec3_title">3. জ্যাজ ৭ম আর্পেজিও (লিক #২৬–#৩৩)</string>
+    <string name="help_t1_sec3_body">ব্যাকিং কর্ডসহ ডায়াটোনিক রোমান সংখ্যা (Imaj7..viim7b5) এবং কর্ড-টোন ইন্টারভ্যাল (1, 3, b3, 5, b5, 7, b7) প্রদর্শন করে।</string>
+</resources>

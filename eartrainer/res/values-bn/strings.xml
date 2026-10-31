@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ইয়ার ট্রেইনার</string>
+    <string name="mode_intervals">ব্যবধান</string>
+    <string name="mode_chords">কর্ড</string>
+    <string name="mode_solfege">সলফেজ</string>
+    <string name="mode_melodic">মেলোডিক</string>
+    <string name="tier_easy">সহজ</string>
+    <string name="tier_medium">মাঝারি</string>
+    <string name="tier_all_12">সব ১২টি</string>
+    <string name="replay">পুনরায়</string>
+    <string name="root_note">মূল নোট</string>
+    <string name="style">স্টাইল</string>
+    <string name="hint_minus_2">ইঙ্গিত (-2)</string>
+    <string name="next">পরবর্তী &gt;&gt;</string>
+    <string name="skip">এড়িয়ে যান &gt;&gt;</string>
+    <string name="close">বন্ধ</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_title">ইয়ার ট্রেইনার স্টুডিও — দ্রুত গাইড</string>
+    <string name="help_sec1_title">1. চারটি অনুশীলন মোড (উপরে বামদিকে \'মোড\' বোতামে ট্যাপ করুন)</string>
+    <string name="help_sec1_body">• ইন্টারভ্যাল: আরোহী, অবরোহী, হারমোনিক বা মিশ্র শৈলীতে ১২টি ক্রোমাটিক ইন্টারভ্যাল (m2..P8)।\n• কর্ড: ১২টি ট্রায়াড ও ৭ম কর্ড (Major, Minor, dim, aug, sus2/4, Dom7, Maj7, m7)।\n• সলফেজ: I-IV-V-I ক্যাডেন্স বা রুট রেফারেন্সের ওপর ক্রোমাটিক স্কেল ডিগ্রি।\n• মেলোডিক: ৩-নোটের মেলোডিক সেল এবং ৩-কর্ডের হারমোনিক ক্যাডেন্স (I-IV-V, ii-V-I)।</string>
+    <string name="help_sec2_title">2. তিন-অনুমান নিয়ম ও তুলনামূলক শ্রবণ</string>
+    <string name="help_sec2_body">• প্রতিটি প্রশ্নের জন্য ৩টি সুযোগ পাবেন। দুটি ভুল বিকল্প সরাতে \'ইঙ্গিত (-2)\' ব্যবহার করুন।\n• উত্তর প্রকাশের পর গিটার ফ্রেটবোর্ড ও পিয়ানোতে ইন্টারভ্যাল/কর্ড তুলনা করতে যেকোনো প্যাডে ট্যাপ করুন!</string>
+    <string name="help_sec3_title">3. ইন্টারঅ্যাক্টিভ পিয়ানো ও গিটার নেক</string>
+    <string name="help_sec3_body">নোট বাজাতে এবং কানে শুনে ইন্টারভ্যাল যাচাই করতে যেকোনো সময় ২-অক্টেভ পিয়ানো স্ট্রিপ বা ৬-তারের গিটার নেকে ট্যাপ করুন।</string>
+</resources>

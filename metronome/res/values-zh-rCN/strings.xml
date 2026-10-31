@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">精准节拍器</string>
+    <string name="header_title">高精度专业节拍器</string>
+    <string name="tap_tempo">点按测速</string>
+    <string name="time_signature">拍号 (TIME SIG)</string>
+    <string name="subdivision">节奏细分</string>
+    <string name="stealth_drop">随机漏拍率 %</string>
+    <string name="speed_trainer">速度递增训练</string>
+    <string name="start_metronome">▶   启动节拍器</string>
+    <string name="stop_metronome">■   停止节拍器</string>
+    <string name="steady_click"> 稳定节拍</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">高精度节拍器 • 快速使用指南</string>
+    <string name="help_sec1_title">1. 采样级精准时钟与音色套件</string>
+    <string name="help_sec1_body">采用 44.1 kHz PCM 实时音频合成，抖动低于 0.03 毫秒。点击右上角“音色”按钮可在 V90 机械拍、木鱼、军鼓边击与纯净正弦波之间切换。</string>
+    <string name="help_sec2_title">2. 节拍重音圆球（独立定制每拍强弱）</string>
+    <string name="help_sec2_body">点击任意编号的节拍圆圈（1..12），即可在“强拍重音（珊瑚红）”、“普通拍（青色）”、“次强拍（琥珀黄）”与“静音”之间循环切换。</string>
+    <string name="help_sec3_title">3. BPM 旋钮转盘与敲击测速 (TAP TEMPO)</string>
+    <string name="help_sec3_body">拖动圆形 BPM 刻度环、点击 -5 / -1 / +1 / +5 步进按钮，或随音乐连续点击“敲击测速”即可快速匹配任意歌曲的速度。</string>
+    <string name="help_sec4_title">4. 隐身静音抽拍与自动提速教练</string>
+    <string name="help_sec4_body">“隐身静音 %”先完整播放4小节帮你锁定律动，随后按设定概率随机静音节拍，锤炼内心节拍感。“速度教练”每4小节自动提升速度（+2 / +4 / +5 BPM）。</string>
+</resources>

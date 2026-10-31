@@ -202,6 +202,16 @@ public final class BandTheory {
                 new BarChord(9, CHQ_MIN, "vi"),
                 new BarChord(7, CHQ_MAJ, "V")
             }
+        ),
+        // 8: Heavy Metal Riff (i - bVI - bVII - i)
+        new ProgressionPreset(
+            "Heavy Metal (i-bVI-bVII-i)", "i-bVI-bVII-i",
+            new BarChord[] {
+                new BarChord(0,  CHQ_MIN, "i"),
+                new BarChord(8,  CHQ_MAJ, "bVI"),
+                new BarChord(10, CHQ_MAJ, "bVII"),
+                new BarChord(0,  CHQ_MIN, "i")
+            }
         )
     };
 
@@ -396,6 +406,36 @@ public final class BandTheory {
                 /* CLHAT*/ { 1, 2, 1, 2, 1, 2, 1, 2 }, // Accent offbeat '&'
                 /* OPHAT*/ { 0, 0, 0, 0, 0, 0, 0, 0 },
                 /* BASS */ { 1, 0, 3, 5, 1, 0, 3, 0 } // Deep dub bassline
+            }
+        ),
+
+        // 10: Heavy Metal 4/4 (Driving double-kick & palm-muted eighth-note pedal bass)
+        new StylePreset(
+            "Heavy Metal 4/4", "METAL 4/4", 4, 8, 148, 50, 8,
+            "Aeolian / Phrygian Metal (1 b2 b3 4 b5 5 b6 b7)",
+            new int[] { 1, 2, 1, 1, 0, 1, 2, 1, 1, 0, 1, 0 },
+            new int[][] {
+                /* steps:   1  &  2  &  3  &  4  &  */
+                /* KICK */ { 2, 1, 0, 1, 2, 1, 0, 2 },
+                /* SNARE*/ { 0, 0, 2, 0, 0, 0, 2, 0 },
+                /* CLHAT*/ { 2, 1, 2, 1, 2, 1, 2, 0 },
+                /* OPHAT*/ { 0, 0, 0, 0, 0, 0, 0, 1 },
+                /* BASS */ { 1, 1, 1, 1, 1, 1, 5, 6 } // Chugging R-R-R-R R-R-b7-8
+            }
+        ),
+
+        // 11: Pop 4/4 (Upbeat 4-on-the-floor Pop groove, I - V - vi - IV)
+        new StylePreset(
+            "Pop 4/4", "POP 4/4", 4, 8, 122, 50, 5,
+            "Major / Ionian Pop (1 2 3 4 5 6 7)",
+            new int[] { 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 },
+            new int[][] {
+                /* steps:   1  &  2  &  3  &  4  &  */
+                /* KICK */ { 2, 0, 0, 1, 2, 0, 1, 0 },
+                /* SNARE*/ { 0, 0, 2, 0, 0, 0, 2, 0 },
+                /* CLHAT*/ { 2, 1, 2, 1, 2, 1, 2, 1 },
+                /* OPHAT*/ { 0, 0, 0, 1, 0, 0, 0, 1 },
+                /* BASS */ { 1, 6, 1, 3, 1, 6, 3, 4 } // Octave-bouncing Pop bass
             }
         )
     };

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ईयर ट्रेनर</string>
+    <string name="mode_intervals">अंतराल</string>
+    <string name="mode_chords">कॉर्ड्स</string>
+    <string name="mode_solfege">सोलफ़ेज</string>
+    <string name="mode_melodic">मेलोडिक</string>
+    <string name="tier_easy">आसान</string>
+    <string name="tier_medium">मध्यम</string>
+    <string name="tier_all_12">सभी 12</string>
+    <string name="replay">फिर सुनें</string>
+    <string name="root_note">मूल स्वर</string>
+    <string name="style">शैली</string>
+    <string name="hint_minus_2">संकेत (-2)</string>
+    <string name="next">अगला &gt;&gt;</string>
+    <string name="skip">छोड़ें &gt;&gt;</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">ईयर ट्रेनर स्टूडियो — त्वरित गाइड</string>
+    <string name="help_sec1_title">1. चार अभ्यास मोड (शीर्ष-बाएं \'मोड\' बटन पर टैप करें)</string>
+    <string name="help_sec1_body">• अंतराल (INTERVALS): आरोही, अवरोही, हार्मोनिक या मिश्रित शैली में 12 क्रोमैटिक अंतराल (m2..P8)।\n• कॉर्ड्स (CHORDS): 12 ट्रायड और 7वीं क्वालिटी (Major, Minor, dim, aug, sus2/4, Dom7, Maj7, m7)।\n• सोलफ़ेज (SOLFEGE): I-IV-V-I कैडेंस या रूट स्वर पर क्रोमैटिक स्केल डिग्री।\n• मेलोडिक (MELODIC): 3-स्वर मेलोडिक सेल और 3-कॉर्ड हार्मोनिक कैडेंस (I-IV-V, ii-V-I)।</string>
+    <string name="help_sec2_title">2. तीन-अनुमान नियम और तुलनात्मक श्रवण</string>
+    <string name="help_sec2_body">• प्रत्येक प्रश्न के लिए 3 अवसर मिलते हैं। दो गलत विकल्प हटाने के लिए \'संकेत (-2)\' का उपयोग करें।\n• उत्तर दिखने के बाद, गिटार फ़्रेटबोर्ड और पियानो पर अंतराल/कॉर्ड्स की तुलना करने के लिए किसी भी पैड पर टैप करें!</string>
+    <string name="help_sec3_title">3. इंटरैक्टिव पियानो और गिटार नेक</string>
+    <string name="help_sec3_body">स्वर बजाने और कान से अंतराल जांचने के लिए किसी भी समय 2-ऑक्टेव पियानो पट्टी या 6-स्ट्रिंग गिटार नेक पर टैप करें।</string>
+</resources>

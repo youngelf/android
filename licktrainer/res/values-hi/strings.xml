@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">लिक ट्रेनर</string>
+    <string name="cat_pentatonic">पेंटाटोनिक</string>
+    <string name="cat_legato">लेगाटो/अर्पेजियो</string>
+    <string name="cat_alt_pick">अल्टरनेट पिकिंग</string>
+    <string name="cat_blues_rock">ब्लूज़/रॉक</string>
+    <string name="cat_spider">स्पाइडर</string>
+    <string name="cat_jazz">जैज़ 7वें</string>
+    <string name="play">चलाएं</string>
+    <string name="pause">रोकें</string>
+    <string name="ladder_static">लैडर: स्थिर</string>
+    <string name="loop_full_bar">लूप: पूरा बार</string>
+    <string name="loop_beat_1">लूप: केवल बीट 1</string>
+    <string name="finger_1">1: तर्जनी</string>
+    <string name="finger_2">2: मध्यमा</string>
+    <string name="finger_3">3: अनामिका</string>
+    <string name="finger_4">4: कनिष्ठा</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_tab_howto">उपयोग कैसे करें</string>
+    <string name="help_tab_jazz">जैज़ 7वें और गति</string>
+    <string name="help_t0_sec1_title">1. श्रेणी और लिक (Lick) चुनें</string>
+    <string name="help_t0_sec1_body">पेंटाटोनिक, लेगाटो, अल्टरनेट पिकिंग, ब्लूज़/रॉक, स्पाइडर वार्मअप और जैज़ 7वीं अर्पेजियो में 33 अभ्यास ब्राउज़ करें।</string>
+    <string name="help_t0_sec2_title">2. 6-स्ट्रिंग टैब सीक्वेंसर</string>
+    <string name="help_t0_sec2_body">उस स्वर को सुनने, बाएं हाथ की उंगली (1=तर्जनी .. 4=कनिष्ठा) और पिकिंग बैज (D=डाउन, U=अप, H=हैमर, P=पुल, /=स्लाइड) देखने के लिए टैब ग्रिड के किसी भी कॉलम पर टैप करें।</string>
+    <string name="help_t0_sec3_title">3. इंटरैक्टिव नेक इंस्पेक्टर</string>
+    <string name="help_t0_sec3_body">12-वॉइस Karplus-Strong सिंथ के माध्यम से सीधे स्वर बजाने के लिए ज़ूम किए गए 8-फ़्रेट गिटार नेक पर किसी भी तार/फ़्रेट को टैप करें।</string>
+    <string name="help_t0_sec4_title">4. किसी भी की (Key) में ट्रांसपोज़ करें</string>
+    <string name="help_t0_sec4_body">सभी 33 अभ्यासों को E से Eb तक किसी भी की में बदलने के लिए \'की\' बटन पर टैप करें।</string>
+    <string name="help_t1_sec1_title">1. स्पीड-बिल्डर BPM लैडर</string>
+    <string name="help_t1_sec1_body">हर 2, 4 या 8 बार में स्वचालित रूप से BPM (+2, +5 या +10) बढ़ाने के लिए \'सीढ़ी\' पर टैप करें।</string>
+    <string name="help_t1_sec2_title">2. सब-रेंज लूपिंग</string>
+    <string name="help_t1_sec2_body">पूरे 16-स्टेप फ़्रेज़ को जोड़ने से पहले कठिन 4-नोट पिकिंग समूहों का अभ्यास करने के लिए लूप को \'पूरा बार\' और \'केवल बीट 1\' के बीच बदलें।</string>
+    <string name="help_t1_sec3_title">3. जैज़ 7वें अर्पेजियो (लिक्स #26–#33)</string>
+    <string name="help_t1_sec3_body">सिंथेसाइज़्ड बैकिंग कॉर्ड्स के साथ डायटोनिक रोमन अंक (Imaj7..viim7b5) और कॉर्ड-टोन इंटरवल (1, 3, b3, 5, b5, 7, b7) दिखाता है।</string>
+</resources>

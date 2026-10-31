@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lecture à Vue</string>
+    <string name="header_title">LECTURE À VUE</string>
+    <string name="play">JOUER</string>
+    <string name="stop">STOP</string>
+    <string name="sound">SON</string>
+    <string name="muted">MUET</string>
+    <string name="new_piece">NOUVEAU</string>
+    <string name="hint_on">INDICE: OUI</string>
+    <string name="hint_off">INDICE: NON</string>
+    <string name="mode_etude">MODE: ÉTUDE</string>
+    <string name="mode_quiz">MODE: QUIZ</string>
+    <string name="mode_flow">MODE: CONTINU</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="close">FERMER</string>
+    <string name="help_title">LECTURE À VUE — GUIDE CLÉ DE SOL ET GUITARE</string>
+    <string name="help_sec1_title">1. NOTATION EN CLÉ DE SOL</string>
+    <string name="help_sec1_body">Portée de guitare standard en clé de sol (8vb) avec lignes supplémentaires automatiques. La colonne dorée indique la note cible active.</string>
+    <string name="help_sec2_title">2. ARMURES ET POSITIONS SUR LE MANCHE</string>
+    <string name="help_sec2_body">Entraînez-vous dans 7 tonalités majeures (Do, Sol, Ré, La, Mi, Fa, Sib) sur 5 positions du manche (OUVERT, POS 2, 5, 7, 9) et 24 études.</string>
+    <string name="help_sec3_title">3. MANCHE INTERACTIF ET MODES D\'ENTRAÎNEMENT</string>
+    <string name="help_sec3_body">Touchez la corde et la frette correspondantes sur le manche en palissandre pour lire chaque note. Le mode Étude affiche des indices sur le manche ; le mode Quiz les masque ; le mode Continu avance avec le métronome.</string>
+    <string name="help_sec4_title">4. SYNTHÉ AUDIO ET LECTURE DE L\'ÉTUDE</string>
+    <string name="help_sec4_body">Touchez JOUER pour écouter l\'étude de 2 mesures au tempo choisi, ou touchez SON / MUET en haut pour activer/couper la synthèse guitare.</string>
+</resources>

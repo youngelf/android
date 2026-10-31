@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronom</string>
+    <string name="header_title">METRONOM PRECYZYJNY</string>
+    <string name="tap_tempo">NABIJ TEMPO</string>
+    <string name="time_signature">METRUM</string>
+    <string name="subdivision">PODZIAŁ RYTMU</string>
+    <string name="stealth_drop">UKRYTE WYCIECIA %</string>
+    <string name="speed_trainer">TRENER TEMPA</string>
+    <string name="start_metronome">▶   URUCHOM METRONOM</string>
+    <string name="stop_metronome">■   ZATRZYMAJ METRONOM</string>
+    <string name="steady_click"> STAŁY KLIK</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">PRECYZYJNY METRONOM • SZYBKI PRZEWODNIK</string>
+    <string name="help_sec1_title">1. ZEGAR CO DO PRÓBKI I ZESTAWY BRZMIEŃ</string>
+    <string name="help_sec1_body">Syntezator PCM 44,1 kHz z jitterem &lt;0,03 ms. Dotknij „BRZMIENIE” w prawym górnym rogu, aby wybrać V90, Woodblock, Rimshot lub Sinus.</string>
+    <string name="help_sec2_title">2. KULE AKCENTÓW MIAR</string>
+    <string name="help_sec2_body">Dotknij dowolnego koła miary (1..12), aby przełączyć między AKCENTEM (Koral), NORMALNYM (Cyjan), SUB-AKCENTEM (Bursztyn) i WYCISZENIEM.</string>
+    <string name="help_sec3_title">3. POKRĘTŁO BPM I NABIcie TEMPA</string>
+    <string name="help_sec3_body">Przeciągnij pierścień BPM, użyj przycisków -5 / -1 / +1 / +5 lub stukaj rytmicznie w „NABIJ TEMPO”, aby dopasować tempo utworu.</string>
+    <string name="help_sec4_title">4. UKRYTE WYCISZENIE % I TRENER TEMPA</string>
+    <string name="help_sec4_body">WYCISZENIE % gra 4 pełne takty, a następnie losowo wycisza kliknięcia, ćwicząc Twój wewnętrzny zegar. TRENER TEMPA zwiększa BPM co 4 takty (+2 / +4 / +5).</string>
+</resources>

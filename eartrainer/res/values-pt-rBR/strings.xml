@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Treino Auditivo</string>
+    <string name="mode_intervals">INTERVALOS</string>
+    <string name="mode_chords">ACORDES</string>
+    <string name="mode_solfege">SOLFEJO</string>
+    <string name="mode_melodic">MELÓDICO</string>
+    <string name="tier_easy">FÁCIL</string>
+    <string name="tier_medium">MÉDIO</string>
+    <string name="tier_all_12">TODOS 12</string>
+    <string name="replay">REPETIR</string>
+    <string name="root_note">NOTA RAIZ</string>
+    <string name="style">ESTILO</string>
+    <string name="hint_minus_2">DICA (-2)</string>
+    <string name="next">PRÓXIMO &gt;&gt;</string>
+    <string name="skip">PULAR &gt;&gt;</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_title">ESTÚDIO DE TREINO AUDITIVO — GUIA RÁPIDO</string>
+    <string name="help_sec1_title">1. QUATRO MODOS DE TREINO (Toque em MODO no topo)</string>
+    <string name="help_sec1_body">• INTERVALOS: 12 intervalos cromáticos (m2..P8) ascendentes, descendentes, harmônicos ou mistos.\n• ACORDES: 12 qualidades de tríades e 7ª (Maior, Menor, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFEJO: Graus cromáticos (Ra..Do\') sobre cadência I-IV-V-I ou nota tônica.\n• MELÓDICO: Células melódicas de 3 notas e cadências harmônicas (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. REGRA DE 3 TENTATIVAS E AUDIÇÃO COMPARATIVA</string>
+    <string name="help_sec2_body">• Você tem 3 tentativas por questão. Use DICA (-2) para eliminar duas opções incorretas.\n• Após revelado, toque em QUALQUER um dos 12 botões para ouvir e comparar intervalos ou acordes no braço do violão e no piano!</string>
+    <string name="help_sec3_title">3. PIANO E BRAÇO DE VIOLÃO INTERATIVOS</string>
+    <string name="help_sec3_body">Toque em qualquer tecla do piano de 2 oitavas ou corda/casa no braço de 6 cordas a qualquer momento para tocar notas e conferir intervalos de ouvido.</string>
+</resources>

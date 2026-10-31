@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">이어 트레이너 (청음)</string>
+    <string name="mode_intervals">음정</string>
+    <string name="mode_chords">코드</string>
+    <string name="mode_solfege">계명 (솔페지)</string>
+    <string name="mode_melodic">선율 (멜로디)</string>
+    <string name="tier_easy">쉬움</string>
+    <string name="tier_medium">보통</string>
+    <string name="tier_all_12">전체 12음</string>
+    <string name="replay">다시 듣기</string>
+    <string name="root_note">근음 듣기</string>
+    <string name="style">주법</string>
+    <string name="hint_minus_2">힌트 (-2)</string>
+    <string name="next">다음 &gt;&gt;</string>
+    <string name="skip">건너뛰기 &gt;&gt;</string>
+    <string name="close">닫기</string>
+    <string name="got_it">확인</string>
+    <string name="help_title">청음 트레이너 스튜디오 — 빠른 가이드</string>
+    <string name="help_sec1_title">1. 4가지 청음 훈련 모드 (좌측 상단 모드 버튼 탭)</string>
+    <string name="help_sec1_body">• 음정(INTERVALS): 단2도(m2)~완전8도(P8) 12개 반음계 음정을 상행, 하행, 화성, 혼합 방식으로 훈련합니다.\n• 코드(CHORDS): 12가지 3화음 및 7화음(장, 단, 감, 증, sus2/4, Dom7, Maj7, m7)을 식별합니다.\n• 계명창(SOLFEGE): I-IV-V-I 마침꼴 또는 근음 기준 위에서 반음계 도수를 청음합니다.\n• 멜로디(MELODIC): 3음 선율 모티프 및 3화음 화성 진행(I-IV-V, ii-V-I)을 청음합니다.</string>
+    <string name="help_sec2_title">2. 3회 시도 규칙 및 비교 청음</string>
+    <string name="help_sec2_body">• 문제당 3번의 기회가 주어지며, \'힌트(-2)\'를 탭해 오답 2개를 제거할 수 있습니다.\n• 정답 공개 후에는 12개 패드 중 아무 곳이나 탭하여 현재 근음 기준의 음정/코드를 6현 지판과 피아노 건반에서 비교 청음해 보세요!</string>
+    <string name="help_sec3_title">3. 대화형 피아노 건반 및 기타 지판</string>
+    <string name="help_sec3_body">언제든지 2옥타브 피아노 건반이나 6현 기타 지판의 줄/프렛을 탭하여 직접 음을 연주하고 귀로 음정 간격을 확인하세요.</string>
+</resources>

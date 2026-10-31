@@ -1,0 +1,17 @@
+Transformez votre téléphone ou tablette en une horloge de chevet apaisante sans éblouissement et un générateur sonore avec Sommeil Paisible (Sound Sleep) — Horloge de Nuit & Bruit Blanc. Conçue pour rester sur votre table de nuit toute la nuit sans éclairer la chambre ni marquer votre écran OLED, l'application associe un grand affichage de l'heure sur fond noir pur à une lecture instantanée de bruit blanc ou de musique de sommeil.
+
+HORLOGE DE CHEVET PLEIN ÉCRAN TOUTE LA NUIT
+• Affichage grand format (120dp) au format h:mm sur fond noir pur (#000000) pour une lisibilité parfaite dans l'obscurité.
+• Mode plein écran immersif masquant automatiquement la barre d'état et les boutons de navigation système.
+• Maintien de l'écran allumé toute la nuit et filtrage intelligent des balayages vers le haut pour éviter les clics accidentels en quittant l'application.
+
+PROTECTION ANTI-BRÛLURE OLED ET ATTÉNUATION PROGRESSIVE
+• Déplacement fluide toutes les 10 minutes : L'horloge et les icônes glissent doucement vers de nouvelles positions aléatoires toutes les 10 minutes afin de protéger les dalles OLED et AMOLED.
+• Assombrissement progressif : Les icônes s'estompent graduellement au fil de la nuit et retrouvent leur luminosité dès que vous touchez l'écran.
+
+COMMANDES TACTILES GÉANTES (BRUIT BLANC & MUSIQUE)
+L'écran est divisé en deux grandes zones tactiles utilisables les yeux fermés :
+• Moitié inférieure (Nuage de pluie — Bruit blanc) : Touchez le bas de l'écran pour diffuser un bruit blanc continu en boucle qui masque les bruits extérieurs.
+• Moitié supérieure (Note de musique — Musique de sommeil) : Touchez le haut de l'écran pour lire aléatoirement vos morceaux du dossier Music/sleeping ou la mélodie relaxante intégrée.
+• Touchez une seconde fois la zone active (icône Pause) pour revenir au silence complet.
+• Fonctionne en Portrait et Paysage, en arrière-plan, 100 % hors ligne, sans connexion Internet et sans publicité.

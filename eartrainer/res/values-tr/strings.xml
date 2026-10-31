@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kulak Eğitimi</string>
+    <string name="mode_intervals">ARALIKLAR</string>
+    <string name="mode_chords">AKORLAR</string>
+    <string name="mode_solfege">SOLFEJ</string>
+    <string name="mode_melodic">MELODİK</string>
+    <string name="tier_easy">KOLAY</string>
+    <string name="tier_medium">ORTA</string>
+    <string name="tier_all_12">TÜM 12</string>
+    <string name="replay">TEKRAR</string>
+    <string name="root_note">KÖK NOTA</string>
+    <string name="style">STİL</string>
+    <string name="hint_minus_2">İPUCU (-2)</string>
+    <string name="next">SONRAKİ &gt;&gt;</string>
+    <string name="skip">ATLA &gt;&gt;</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">KULAK EĞİTİMİ STÜDYOSU — HIZLI KILAVUZ</string>
+    <string name="help_sec1_title">1. DÖRT ÇALIŞMA MODU (Sol üstteki MOD düğmesine dokunun)</string>
+    <string name="help_sec1_body">• ARALIKLAR: Çıkıcı, İnici, Armonik veya Karışık stilde 12 kromatik aralık (m2..P8).\n• AKORLAR: 12 üçlü ve 7\'li akor kalitesi (Majör, Minör, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFEJ: I-IV-V-I kadansı veya Kök ses üzerinde kromatik gam dereceleri.\n• MELODİK: 3 notalı melodik hücreler ve 3 akorlu armonik kadanslar (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. 3 TAHMİN KURALI VE KARŞILAŞTIRMALI DİNLEME</string>
+    <string name="help_sec2_body">• Soru başına 3 tahmin hakkınız vardır. İki yanlış seçeneği elemek için İPUCU (-2) kullanın.\n• Cevap açıldıktan sonra, 6 telli Klavye ve Piyano üzerinde aralıkları/akorları karşılaştırmak için 12 pedden herhangi birine dokunun!</string>
+    <string name="help_sec3_title">3. ETKİLEŞİMLİ PİYANO VE GİTAR SAPI</string>
+    <string name="help_sec3_body">Notaları çalmak ve aralıkları kulaktan doğrulamak için istediğiniz zaman 2 oktavlık Piyano şeridine veya 6 telli Gitar Sapına dokunun.</string>
+</resources>

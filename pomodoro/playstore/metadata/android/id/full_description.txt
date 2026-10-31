@@ -1,0 +1,7 @@
+Kembalikan konsentrasi mendalam Anda untuk latihan musik, belajar, dan pemrograman dengan Pomodoro: Timer Fokus & Suara Latar. Dilengkapi antarmuka kontras tinggi dan synthesizer suara latar prosedural 44,1 kHz.
+
+FITUR UTAMA
+• Banner status jelas (SEDANG FOKUS: JANGAN GANGGU), cincin hitung mundur, tombol -5m/-1m/+1m/+5m, dan ikon speaker di kanan bawah.
+• 3 Suara Latar Real-Time tanpa internet: Detik Halus, Hujan, dan Derau Cokelat (Brown Noise).
+• 4 Preset Durasi (Klasik 25/5/15, Fokus Dalam 50/10/20, Studio 45/15/30, Sprint 15/3/10) serta catatan jam fokus Hari Ini dan Total.
+• 100% offline, tanpa izin, dan tanpa iklan.

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gitaarhals</string>
+    <string name="header_title">HALS</string>
+    <string name="tab_scales">Toonladders</string>
+    <string name="tab_chords">Akkoorden</string>
+    <string name="tab_finder">Zoeker</string>
+    <string name="tab_1_scales">1: Ladders</string>
+    <string name="tab_2_chords">2: Akkoorden</string>
+    <string name="tab_3_finder">3: Zoeker</string>
+    <string name="play_scale">▶ Ladder</string>
+    <string name="play_strum">▶ Slag</string>
+    <string name="key_prefix">Toon: </string>
+    <string name="position_header">POSITIE</string>
+    <string name="all_neck">HELE HALS</string>
+    <string name="frets_0_15">Frets 0–15</string>
+    <string name="lbl_intervals">Lbl: R/3/5</string>
+    <string name="lbl_notes">Lbl: Noten</string>
+    <string name="lbl_degrees">Lbl: Trap</string>
+    <string name="hand_righty">Hand: Rechts</string>
+    <string name="hand_lefty">Hand: Links</string>
+    <string name="quiz_off">Quiz: Uit</string>
+    <string name="quiz_note">Quiz: Noot</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Dorische modus ▾</string>
+    <string name="scale_min_pent">Mineur pentatonisch ▾</string>
+    <string name="scale_blues">Bluesladder ▾</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_title">HALSVERKENNER — SNELLE GIDS</string>
+    <string name="help_sec1_title">1. DRIE VERKENNINGSMODI</string>
+    <string name="help_sec1_body">Wissel tussen 1: Toonladders (16 ladders + 5 CAGED-boxen), 2: Akkoorden (12 kwaliteiten met CAGED-grepen) en 3: Zoeker (tik op frets om akkoorden te herkennen).</string>
+    <string name="help_sec2_title">2. AUDIOSYNTHESE &amp; TOKKELEN</string>
+    <string name="help_sec2_body">Tik op een fret om een Karplus-Strong gitaarnoot te plukken, of tik bovenaan op ▶ om het akkoord of de toonladder te beluisteren.</string>
+    <string name="help_sec3_title">3. HARMONISCHE KLEURENLEGENDA</string>
+    <string name="help_sec3_body">Grondtoon (R) = Amber | Terts (3/b3) = Smaragdgroen | Kwint (5) = Koningsblauw | Septiem (7/b7) = Paars | Blue Note (b5) = Goud.</string>
+    <string name="help_sec4_title">4. LABELS, STEMMINGEN &amp; LINKSHANDIGE MODUS</string>
+    <string name="help_sec4_body">Wissel tussen intervallen (R, 3, 5), nootnamen en trappen, kies uit 6 gitaarstemmingen (Standaard, Drop D, DADGAD, Eb, Open G, Open D) of spiegel voor linkshandigen.</string>
+    <string name="help_sec5_title">5. HALSKENNIS-QUIZ</string>
+    <string name="help_sec5_body">Schakel de Noot- of Intervalquiz in om je kennis op alle 6 snaren te testen met live score.</string>
+</resources>

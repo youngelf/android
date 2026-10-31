@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trener Zagrywek</string>
+    <string name="cat_pentatonic">PENTATONIKA</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">KOSTkowanie</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">PAJĄK</string>
+    <string name="cat_jazz">JAZZ 7-KI</string>
+    <string name="play">GRAJ</string>
+    <string name="pause">PAUZA</string>
+    <string name="ladder_static">DRABINA: STAŁA</string>
+    <string name="loop_full_bar">PĘTLA: CAŁY TAKT</string>
+    <string name="loop_beat_1">PĘTLA: 1. MIARA</string>
+    <string name="finger_1">1: WSKAZ.</string>
+    <string name="finger_2">2: ŚRODK.</string>
+    <string name="finger_3">3: SERDECZ.</string>
+    <string name="finger_4">4: MAŁY</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_tab_howto">JAK UŻYWAĆ</string>
+    <string name="help_tab_jazz">7-KI JAZZ I TEMPO</string>
+    <string name="help_t0_sec1_title">1. WYBIERZ KATEGORIĘ I ZAGRYWKĘ</string>
+    <string name="help_t0_sec1_body">Przeglądaj 33 ćwiczenia: Pentatonika, Legato, Kostkowanie naprzemienne, Blues/Rock, Pajączek i Arpeggia Jazzowe.</string>
+    <string name="help_t0_sec2_title">2. 6-STRUNOWY SEKWENCER TABULATURY</string>
+    <string name="help_t0_sec2_body">Dotknij dowolnej kolumny tabulatury, aby odsłuchać dźwięk, sprawdzić palcowanie lewej ręki (1=Wskazujący .. 4=Mały) i kostkowanie (D=Dół, U=Góra, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. INTERAKTYWNY PODGLĄD GRYFU</string>
+    <string name="help_t0_sec3_body">Dotknij dowolnej struny/progu na powiększonym 8-progowym gryfie, aby zagrać dźwięk przez 12-głosowy syntezator Karplus-Strong.</string>
+    <string name="help_t0_sec4_title">4. TRANSPOZYCJA DO DOWOLNEJ TONACJI</string>
+    <string name="help_t0_sec4_body">Dotknij TON., aby przetransponować wszystkie 33 ćwiczenia na gryfie od E do Eb.</string>
+    <string name="help_t1_sec1_title">1. DRABINKA PRZYSPIESZENIA BPM</string>
+    <string name="help_t1_sec1_body">Dotknij DRABINKA, aby automatycznie zwiększać tempo (+2, +5 lub +10 BPM) co 2, 4 lub 8 taktów.</string>
+    <string name="help_t1_sec2_title">2. PĘTLA FRAGMENTU TAKTU</string>
+    <string name="help_t1_sec2_body">Przełączaj PĘTLĘ między CAŁY TAKT a TYLKO 1 MIARA, aby wyćwiczyć trudne 4-dźwiękowe grupy przed zagraniem całej frazy.</string>
+    <string name="help_t1_sec3_title">3. ARPEGGIA JAZZOWE 7 (ZAGRYWKI #26–#33)</string>
+    <string name="help_t1_sec3_body">Wyświetla diatoniczne stopnie rzymskie (Imaj7..viim7b5) i interwały składników akordu (1, 3, b3, 5, b5, 7, b7) z akompaniamentem.</string>
+</resources>

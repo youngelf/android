@@ -1,0 +1,16 @@
+Consigue un tempo sólido como una roca, domina compases irregulares y polirritmos, y desarrolla velocidad sin esfuerzo con Metrónomo: Péndulo de Precisión y Entrenador de Velocidad. Diseñado para instrumentistas, bateristas, guitarristas y pianistas, este metrónomo funciona con un motor de síntesis de audio PCM a 44,1 kHz con precisión de muestra que elimina cualquier fluctuación de tiempo.
+
+PRECISIÓN DE MUESTRA A 44,1 kHz Y PÉNDULO VISUAL
+• Motor de Audio sin Jitter: Cada clic, acento y subdivisión se calcula a nivel de muestra individual a 44,1 kHz.
+• Péndulo visual fluido y matriz de pulsos de alto contraste.
+• Tap Tempo y controles finos (-5, -1, +1 y +5 BPM) de 20 a 260 BPM con indicaciones italianas clásicas (Largo, Adagio, Andante, Moderato, Allegro, Presto).
+
+12 COMPASES, MÉTRICAS IRREGULARES Y 6 SUBDIVISIONES
+• Compases estándar e irregulares: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 y 13/8.
+• Secuenciador de Acentos por Pulso: Toca cualquier pulso para alternar entre ACENTO FUERTE, PULSO NORMAL, SUBACENTO y SILENCIO.
+• 6 Subdivisiones Rítmicas: Negras, Corcheas, Tresillos, Semicorcheas, Corcheas con puntillo (Swing) y Quintillos.
+
+GENERADOR DE POLIRRITMOS, ENTRENADOR DE VELOCIDAD Y COMPASES MUDOS
+• Modo Polirritmia de doble anillo (3:2, 4:3, 5:3, 5:4, 7:4).
+• Entrenador automático de velocidad (+BPM cada N compases) y Silenciador de compases (Bar Dropper) para poner a prueba tu reloj interno.
+• 5 timbres de clic, pantalla siempre encendida, Vertical/Horizontal, 100 % offline y sin anuncios.

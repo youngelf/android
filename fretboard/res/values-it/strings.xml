@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tastiera Chitarra</string>
+    <string name="header_title">TASTIERA</string>
+    <string name="tab_scales">Scale</string>
+    <string name="tab_chords">Accordi</string>
+    <string name="tab_finder">Trova</string>
+    <string name="tab_1_scales">1: Scale</string>
+    <string name="tab_2_chords">2: Accordi</string>
+    <string name="tab_3_finder">3: Trova</string>
+    <string name="play_scale">▶ Scala</string>
+    <string name="play_strum">▶ Pennata</string>
+    <string name="key_prefix">Ton.: </string>
+    <string name="position_header">POSIZIONE</string>
+    <string name="all_neck">TUTTA TAST.</string>
+    <string name="frets_0_15">Tasti 0–15</string>
+    <string name="lbl_intervals">Etic: R/3/5</string>
+    <string name="lbl_notes">Etic: Note</string>
+    <string name="lbl_degrees">Etic: Gradi</string>
+    <string name="hand_righty">Mano: Destro</string>
+    <string name="hand_lefty">Mano: Mancino</string>
+    <string name="quiz_off">Quiz: Off</string>
+    <string name="quiz_note">Quiz: Nota</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Modo Dorico ▾</string>
+    <string name="scale_min_pent">Pentatonica Minore ▾</string>
+    <string name="scale_blues">Scala Blues ▾</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">ESPLORATORE TASTIERA — GUIDA RAPIDA</string>
+    <string name="help_sec1_title">1. TRE MODALITÀ DI ESPLORAZIONE</string>
+    <string name="help_sec1_body">Passa tra 1: Scale (16 scale + 5 box CAGED), 2: Accordi (12 qualità con voicing CAGED mobili) e 3: Trova Accordi (tocca qualsiasi tasto per bloccare/silenziare le corde e identificare l\'accordo).</string>
+    <string name="help_sec2_title">2. SINTESI AUDIO E STRUMMING</string>
+    <string name="help_sec2_body">Tocca qualsiasi tasto sul manico per pizzicare una nota Karplus-Strong, o tocca ▶ nella barra superiore per suonare l\'accordo o ascoltare la scala.</string>
+    <string name="help_sec3_title">3. LEGENDA COLORI ARMONICI</string>
+    <string name="help_sec3_body">Tonica = Ambra | Terza (3/b3) = Smeraldo | Quinta = Blu reale | Settima (7/b7) = Viola | Blue Note (b5) = Oro | Nota della scala = Ardesia.</string>
+    <string name="help_sec4_title">4. ETICHETTE, ACCORDATURE E MANCINI</string>
+    <string name="help_sec4_body">Alterna tra Intervalli (R, 3, 5), Nomi delle note e Gradi, scegli tra 6 accordature (Standard, Drop D, DADGAD, Mib, Open G, Open D) o inverti il manico per mancini.</string>
+    <string name="help_sec5_title">5. QUIZ DI PADRONANZA DELLA TASTIERA</string>
+    <string name="help_sec5_body">Attiva il Quiz Note o Intervalli per mettere alla prova la memoria su tutte le 6 corde con punteggio in tempo reale.</string>
+</resources>

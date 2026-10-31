@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Baca Not Balok</string>
+    <string name="header_title">BACA NOT</string>
+    <string name="play">MAINKAN</string>
+    <string name="stop">BERHENTI</string>
+    <string name="sound">SUARA</string>
+    <string name="muted">BISU</string>
+    <string name="new_piece">LAGU BARU</string>
+    <string name="hint_on">PETUNJUK: ON</string>
+    <string name="hint_off">PETUNJUK: OFF</string>
+    <string name="mode_etude">MODE: ETUDE</string>
+    <string name="mode_quiz">MODE: KUIS</string>
+    <string name="mode_flow">MODE: ALIR</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="close">TUTUP</string>
+    <string name="help_title">BACA NOT BALOK — PANDUAN KUNCI G &amp; GITAR</string>
+    <string name="help_sec1_title">1. NOTASI KUNCI G (TREBLE CLEF)</string>
+    <string name="help_sec1_body">Paranada Kunci G standar gitar dengan garis bantu otomatis. Kolom emas menyoroti nada target yang aktif.</string>
+    <string name="help_sec2_title">2. TANDA MULA &amp; POSISI LEHER GITAR</string>
+    <string name="help_sec2_body">Berlatih di 7 Nada Dasar Mayor (C, G, D, A, E, F, Bb) pada 5 posisi leher gitar (TERBUKA, POS 2, 5, 7, 9) dan 24 etude.</string>
+    <string name="help_sec3_title">3. FRETBOARD INTERAKTIF &amp; MODE LATIHAN</string>
+    <string name="help_sec3_body">Ketuk senar &amp; fret yang sesuai pada leher gitar rosewood 6-senar. Mode Etude menampilkan petunjuk fret; mode Kuis menyembunyikan petunjuk; mode Alir berjalan otomatis mengikuti ketukan.</string>
+    <string name="help_sec4_title">4. SYNTH AUDIO &amp; PEMUTARAN ETUDE</string>
+    <string name="help_sec4_body">Ketuk MAINKAN untuk mendengar etude 2-bar pada BPM terpilih, atau ketuk SUARA / BISU di bilah atas untuk mengatur sintesis gitar.</string>
+</resources>

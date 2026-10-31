@@ -55,6 +55,14 @@ public final class EarTrainerView extends View {
     private final RectF mBannerRect = new RectF();
     private final RectF[] mGridRects = new RectF[EarTheory.NUM_ITEMS];
     private final RectF[] mActionRects = new RectF[4]; /* Replay, Root, Hint, Next */
+    private final RectF mHelpModalRect = new RectF();
+    private final RectF mHelpCloseRect = new RectF();
+    private final RectF mHelpViewportRect = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     private boolean mShowHelp = false;
     private int mLastTappedMidi = -1;
@@ -253,12 +261,13 @@ public final class EarTrainerView extends View {
         mPaint.setTextSize(btnH * 0.34f);
         mPaint.setColor(0xFFFFD454);
         float rx = x + w - inPad * 1.2f;
-        c.drawText("STRK " + mSession.streak + " (BEST " + mSession.bestStreak + ")", rx, y + h * 0.43f, mPaint);
+        AppI18n.drawText(c, "STRK " + mSession.streak + " (BEST " + mSession.bestStreak + ")", rx, y + h * 0.43f, mPaint);
         mPaint.setColor(0xFFA8B4CC);
-        c.drawText(mSession.sessionOk + "/" + mSession.sessionTot + " (" + mSession.getSessionAccuracyPercent() + "%)", rx, y + h * 0.80f, mPaint);
+        AppI18n.drawText(c, mSession.sessionOk + "/" + mSession.sessionTot + " (" + mSession.getSessionAccuracyPercent() + "%)", rx, y + h * 0.80f, mPaint);
     }
 
     private void drawPill(Canvas c, RectF r, String text, int bg, int border, int fg) {
+        text = AppI18n.tr(text);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(bg);
         c.drawRoundRect(r, 12f, 12f, mPaint);
@@ -280,7 +289,7 @@ public final class EarTrainerView extends View {
             mPaint.setTextSize(ts);
         }
         Paint.FontMetrics fm = mPaint.getFontMetrics();
-        c.drawText(text, r.centerX(), r.centerY() - (fm.ascent + fm.descent) * 0.5f, mPaint);
+        AppI18n.drawText(c, text, r.centerX(), r.centerY() - (fm.ascent + fm.descent) * 0.5f, mPaint);
     }
 
     private void drawFretboard(Canvas c, RectF r) {
@@ -328,7 +337,7 @@ public final class EarTrainerView extends View {
                     c.drawCircle(cx, r.top + topPad + strSpan * 0.5f, rad, mPaint);
                 }
                 mPaint.setColor(0xFFA89F91);
-                c.drawText(String.valueOf(f), cx, r.bottom - botPad * 0.18f, mPaint);
+                AppI18n.drawText(c, String.valueOf(f), cx, r.bottom - botPad * 0.18f, mPaint);
             }
         }
 
@@ -343,7 +352,7 @@ public final class EarTrainerView extends View {
 
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setColor(0xFFC8B89A);
-            c.drawText(EarTheory.STRING_NAMES[s], r.left + leftGutter * 0.45f, sy + strStep * 0.20f, mPaint);
+            AppI18n.drawText(c, EarTheory.STRING_NAMES[s], r.left + leftGutter * 0.45f, sy + strStep * 0.20f, mPaint);
         }
 
         /* Draw Root Note Marker (always visible) */
@@ -405,7 +414,7 @@ public final class EarTrainerView extends View {
         mPaint.setTextAlign(Paint.Align.CENTER);
         mPaint.setTextSize(rad * 0.95f);
         Paint.FontMetrics fm = mPaint.getFontMetrics();
-        c.drawText(label, cx, cy - (fm.ascent + fm.descent) * 0.5f, mPaint);
+        AppI18n.drawText(c, label, cx, cy - (fm.ascent + fm.descent) * 0.5f, mPaint);
     }
 
     private void drawPianoStrip(Canvas c, RectF r) {
@@ -441,7 +450,7 @@ public final class EarTrainerView extends View {
             mPaint.setTextAlign(Paint.Align.CENTER);
             mPaint.setTypeface(Typeface.DEFAULT_BOLD);
             mPaint.setTextSize(Math.min(keyW * 0.30f, keyH * 0.24f));
-            c.drawText(EarTheory.formatMidiNote(midi), mRect.centerX(), mRect.bottom - keyH * 0.10f, mPaint);
+            AppI18n.drawText(c, EarTheory.formatMidiNote(midi), mRect.centerX(), mRect.bottom - keyH * 0.10f, mPaint);
         }
 
         /* Black keys */
@@ -526,12 +535,14 @@ public final class EarTrainerView extends View {
         float maxLine1W = Math.max(40f, r.width() - dotsReserveW - 16f);
         float line1Ts = Math.min(r.height() * 0.36f, r.width() * 0.036f);
         mPaint.setTextSize(line1Ts);
+        line1 = AppI18n.tr(line1);
+        line2 = AppI18n.tr(line2);
         float m1 = mPaint.measureText(line1);
         if (m1 > maxLine1W && m1 > 0f) {
             mPaint.setTextSize(line1Ts * (maxLine1W / m1));
         }
         mPaint.setColor(0xFFFFFFFF);
-        c.drawText(line1, r.left + 14f, r.top + r.height() * 0.43f, mPaint);
+        AppI18n.drawText(c, line1, r.left + 14f, r.top + r.height() * 0.43f, mPaint);
 
         mPaint.setTypeface(Typeface.DEFAULT);
         float maxLine2W = Math.max(40f, r.width() - 28f);
@@ -542,7 +553,7 @@ public final class EarTrainerView extends View {
             mPaint.setTextSize(line2Ts * (maxLine2W / m2));
         }
         mPaint.setColor(0xFFB8C6E0);
-        c.drawText(line2, r.left + 14f, r.top + r.height() * 0.80f, mPaint);
+        AppI18n.drawText(c, line2, r.left + 14f, r.top + r.height() * 0.80f, mPaint);
 
         /* Remaining guess dots on right side */
         for (int g = 0; g < EarTheory.MAX_GUESSES; g++) {
@@ -615,13 +626,13 @@ public final class EarTrainerView extends View {
             mPaint.setTypeface(Typeface.DEFAULT_BOLD);
             mPaint.setTextAlign(Paint.Align.CENTER);
             mPaint.setTextSize(Math.min(cellH * 0.34f, cellW / Math.max(3.2f, label.length() * 0.65f)));
-            c.drawText(label, cr.centerX(), cr.top + cellH * 0.48f, mPaint);
+            AppI18n.drawText(c, label, cr.centerX(), cr.top + cellH * 0.48f, mPaint);
 
             /* Sub-label */
             mPaint.setTypeface(Typeface.DEFAULT);
             mPaint.setTextSize(Math.min(cellH * 0.21f, cellW * 0.18f));
             mPaint.setColor(en ? 0xFF94A6C8 : 0xFF3E4658);
-            c.drawText(sub, cr.centerX(), cr.top + cellH * 0.74f, mPaint);
+            AppI18n.drawText(c, sub, cr.centerX(), cr.top + cellH * 0.74f, mPaint);
 
             /* Per-item accuracy bar along bottom of cell */
             int tot = mSession.itemTot[mSession.mode][i];
@@ -696,68 +707,95 @@ public final class EarTrainerView extends View {
         mPaint.setColor(0xD8080B12);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = w * 0.88f;
+        float mw = w * 0.90f;
         float mh = h * 0.84f;
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
-        mRect.set(mx, my, mx + mw, my + mh);
+        mHelpModalRect.set(mx, my, mx + mw, my + mh);
 
         mPaint.setColor(0xFF182032);
-        c.drawRoundRect(mRect, 18f, 18f, mPaint);
+        c.drawRoundRect(mHelpModalRect, 18f, 18f, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(3f);
         mPaint.setColor(0xFF6EC6FF);
-        c.drawRoundRect(mRect, 18f, 18f, mPaint);
+        c.drawRoundRect(mHelpModalRect, 18f, 18f, mPaint);
+        mPaint.setStyle(Paint.Style.FILL);
+
+        float pad = Math.max(14f, mw * 0.03f);
+        float hdrH = Math.max(44f, mh * 0.105f);
+        float closeW = Math.max(96f, mw * 0.18f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        drawPill(c, mHelpCloseRect, AppI18n.str(getContext(), R.string.close), 0xFF3A1A22, 0xFFFF6B6B, 0xFFFFFFFF);
 
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setTextAlign(Paint.Align.LEFT);
-        float tx = mx + mw * 0.05f;
-        float ty = my + mh * 0.10f;
-        float step = mh * 0.068f;
-
         mPaint.setTypeface(Typeface.DEFAULT_BOLD);
-        mPaint.setTextSize( Math.min(mh * 0.048f, mw * 0.042f));
+        mPaint.setTextSize(Math.min(hdrH * 0.46f, 22f));
         mPaint.setColor(0xFF6BFFB8);
-        c.drawText("EAR TRAINER STUDIO - QUICK GUIDE & MUSIC THEORY", tx, ty, mPaint);
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
+                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mPaint,
+                mHelpCloseRect.left - (mx + pad + 12f));
 
-        mPaint.setTypeface(Typeface.DEFAULT);
-        mPaint.setTextSize(Math.min(mh * 0.034f, mw * 0.029f));
-        mPaint.setColor(0xFFE2EAF8);
-
-        String[] lines = {
-            "1. DRILL MODES (Tap top-left MODE pill to cycle):",
-            "   • INTERVALS: 12 chromatic intervals (m2..P8) in ASC, DESC, HARM, or MIX.",
-            "   • CHORDS: 12 triad & 7th qualities (Major, Minor, dim, aug, sus2/4, Dom7, Maj7, m7).",
-            "   • SOLFEGE: Chromatic scale degrees (Ra..Do') over a I-IV-V-I or Root reference.",
-            "   • MELODIC: 3-note melodic cells & 3-chord harmonic cadences (I-IV-V, ii-V-I).",
-            "2. THREE-GUESS RULE & COMPARATIVE AUDITIONING:",
-            "   • You get 3 guesses per question. Use HINT (-2) to eliminate two wrong choices.",
-            "   • Once revealed, tap ANY of the 12 pads to audition & compare intervals/chords",
-            "     against the current root note on both the 6-string Fretboard and Piano strip!",
-            "3. INTERACTIVE INSTRUMENTS:",
-            "   • Tap any key on the Piano strip or string/fret on the Guitar Neck to pluck notes.",
-            "   • Tap anywhere to close this Help Reference."
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title)
         };
-        for (int i = 0; i < lines.length; i++) {
-            c.drawText(lines[i], tx, ty + (i + 1.2f) * step, mPaint);
-        }
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body)
+        };
+        int[] titleCols = { 0xFF6EC6FF, 0xFFFFC042, 0xFF5CE6B0 };
+
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 12f);
+        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
+        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        Paint fillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mHelpViewportRect, titles, bodies, titleCols,
+                0xFFE2EAF8, 0xFF1E293E, 0xFF2D3C5A, 0xFF6EC6FF,
+                titleSz, bodySz, mHelpScrollY, mPaint, fillPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) {
-            return true;
-        }
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (mShowHelp) {
-            mShowHelp = false;
-            invalidate();
+            if (action == MotionEvent.ACTION_DOWN) {
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mHelpCloseRect.contains(x, y) || !mHelpModalRect.contains(x, y)) {
+                    mShowHelp = false;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > 10f) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
+            }
+            return true;
+        }
+        if (action != MotionEvent.ACTION_DOWN) {
             return true;
         }
         if (mBtnHelp.contains(x, y)) {
             mShowHelp = true;
+            mHelpScrollY = 0f;
             invalidate();
             return true;
         }

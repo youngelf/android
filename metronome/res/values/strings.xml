@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Metronome</string>
+    <string name="header_title">PRECISION METRONOME</string>
+    <string name="tap_tempo">TAP TEMPO</string>
+    <string name="time_signature">TIME SIGNATURE</string>
+    <string name="subdivision">SUBDIVISION</string>
+    <string name="stealth_drop">STEALTH DROP %</string>
+    <string name="speed_trainer">SPEED TRAINER</string>
+    <string name="start_metronome">▶   START METRONOME   (SPACE)</string>
+    <string name="stop_metronome">■   STOP METRONOME   (SPACE)</string>
+    <string name="steady_click"> STEADY CLICK</string>
+    <string name="close">CLOSE</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_title">PRECISION METRONOME • QUICK GUIDE</string>
+    <string name="help_sec1_title">1. SAMPLE-ACCURATE CLOCK &amp; SOUND KITS</string>
+    <string name="help_sec1_body">44.1 kHz PCM synthesizer with &lt;0.03 ms jitter. Tap \'KIT\' in the top right to cycle V90 Click, Woodblock, Rimshot, or Pure Sine.</string>
+    <string name="help_sec2_title">2. BEAT ACCENT ORBS</string>
+    <string name="help_sec2_body">Tap any numbered beat circle (1..12) to cycle between ACCENT (Coral), NORMAL (Cyan), SUB-ACCENT (Amber), and MUTE.</string>
+    <string name="help_sec3_title">3. BPM DIAL &amp; TAP TEMPO</string>
+    <string name="help_sec3_body">Drag the circular BPM ring, use the -5 / -1 / +1 / +5 step buttons, or tap \'TAP TEMPO\' repeatedly to match any live song\'s groove.</string>
+    <string name="help_sec4_title">4. 4-BAR LOCK-IN &amp; STEALTH DROP % &amp; SPEED TRAINER</string>
+    <string name="help_sec4_body">STEALTH DROP plays 4 full bars to lock in your timing, then randomly silences clicks to test your internal clock. SPEED TRAINER automatically steps up BPM every 4 bars (+2 / +4 / +5 BPM).</string>
 </resources>

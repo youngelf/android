@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ฟิงเกอร์บอร์ด</string>
+    <string name="header_title">คอฟิงเกอร์บอร์ด</string>
+    <string name="tab_scales">สเกล</string>
+    <string name="tab_chords">คอร์ด</string>
+    <string name="tab_finder">ค้นหา</string>
+    <string name="tab_1_scales">1: สเกล</string>
+    <string name="tab_2_chords">2: คอร์ด</string>
+    <string name="tab_3_finder">3: ค้นหา</string>
+    <string name="play_scale">▶ สเกล</string>
+    <string name="play_strum">▶ ดีดคอร์ด</string>
+    <string name="key_prefix">คีย์: </string>
+    <string name="position_header">ตำแหน่ง</string>
+    <string name="all_neck">ทั้งคอ</string>
+    <string name="frets_0_15">เฟรต 0–15</string>
+    <string name="lbl_intervals">ป้าย: R/3/5</string>
+    <string name="lbl_notes">ป้าย: โน้ต</string>
+    <string name="lbl_degrees">ป้าย: ขั้นคู่</string>
+    <string name="hand_righty">มือ: ถนัดขวา</string>
+    <string name="hand_lefty">มือ: ถนัดซ้าย</string>
+    <string name="quiz_off">ควิซ: ปิด</string>
+    <string name="quiz_note">ควิซ: โน้ต</string>
+    <string name="quiz_intv">ควิซ: ขั้นคู่</string>
+    <string name="scale_dorian">โหมดดอเรียน ▾</string>
+    <string name="scale_min_pent">ไมเนอร์เพนทาโทนิก ▾</string>
+    <string name="scale_blues">สเกลบลูส์ ▾</string>
+    <string name="close">ปิด</string>
+    <string name="got_it">เข้าใจแล้ว</string>
+    <string name="help_title">สำรวจคอฟิงเกอร์บอร์ด — คู่มือฉบับย่อ</string>
+    <string name="help_sec1_title">1. สามโหมดสำรวจคอฟิงเกอร์บอร์ด</string>
+    <string name="help_sec1_body">สลับระหว่าง 1: สเกล (16 สเกล + 5 บ็อกซ์ CAGED), 2: คอร์ด (12 ชนิดคอร์ดพร้อมรูปคอร์ด CAGED) และ 3: ค้นหาคอร์ด (แตะเฟรตเพื่อระบุชื่อคอร์ดอัตโนมัติ)</string>
+    <string name="help_sec2_title">2. เสียงสังเคราะห์กีตาร์และการดีดฟังเสียง</string>
+    <string name="help_sec2_body">แตะเฟรตใดก็ได้บนคอ 6 สายเพื่อดีดโน้ตกีตาร์ Karplus-Strong หรือแตะ ▶ บนแถบด้านบนเพื่อดีดคอร์ดหรือฟังเสียงสเกล</string>
+    <string name="help_sec3_title">3. ความหมายสีของขั้นคู่เสียง</string>
+    <string name="help_sec3_body">โน้ตรูท (R) = สีส้มอำพัน | คู่ 3 = สีเขียวมรกต | คู่ 5 = สีน้ำเงิน | คู่ 7 = สีม่วง | บลูโน้ต (b5) = สีทอง | โน้ตในสเกล = สีเทา</string>
+    <string name="help_sec4_title">4. ป้ายกำกับ การตั้งสาย และโหมดมือซ้าย</string>
+    <string name="help_sec4_body">สลับป้ายกำกับระหว่างขั้นคู่เสียง (R, 3, 5) ชื่อโน้ต และนิ้ว เลือกการตั้งสายกีตาร์ 6 แบบ (มาตรฐาน, Drop D, DADGAD, ลดครึ่งเสียง, Open G, Open D) หรือกลับด้านสำหรับคนถนัดซ้าย</string>
+    <string name="help_sec5_title">5. แบบทดสอบความแม่นยำบนคอฟิงเกอร์บอร์ด</string>
+    <string name="help_sec5_body">เปิดโหมดทายโน้ตหรือทายขั้นคู่เสียงเพื่อทดสอบความจำบนสายทั้ง 6 พร้อมนับคะแนนแบบเรียลไทม์</string>
+</resources>

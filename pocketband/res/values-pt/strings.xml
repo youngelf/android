@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketBand</string>
+    <string name="band_title">Banda</string>
+    <string name="play">TOCAR</string>
+    <string name="stop">PARAR</string>
+    <string name="fill">VIRADA</string>
+    <string name="auto_on">AUTO:SIM</string>
+    <string name="auto_off">AUTO:NÃO</string>
+    <string name="rst">RST</string>
+    <string name="key">TOM</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">BATERIA</string>
+    <string name="bass">BAIXO</string>
+    <string name="chords">ACORDES</string>
+    <string name="on">ATIVO</string>
+    <string name="mute">MUDO</string>
+    <string name="prog_grid_header">GRADE DE ACORDES (TOQUE NO COMPASSO PARA OUVIR)</string>
+    <string name="step_seq">SEQUENC.</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">Blues de 12 Compassos ▾</string>
+    <string name="legend_right">OURO=Tom  VERDE=Acorde  ROSA=Blue  CIANO=Escala</string>
+    <string name="close">FECHAR</string>
+    <string name="got_it">ENTENDI</string>
+    <string name="help_title">Band — GUIA RÁPIDO E CONTROLES</string>
+    <string name="help_sec1_title">1. ESTILOS DE ACOMPANHAMENTO, PROGRESSÕES E TOM</string>
+    <string name="help_sec1_body">Toque no Estilo, Progressão ou Tom na barra superior para abrir o menu suspenso, ou use - / + em TEMPO para ajustar o andamento.</string>
+    <string name="help_sec2_title">2. COMPASSOS DE ACORDES INTERATIVOS</string>
+    <string name="help_sec2_body">Toque em qualquer compasso na grade para ouvir o acorde e alternar entre 22 harmonias diatônicas, dominantes com 7ª, menores com 7ª e jazz.</string>
+    <string name="help_sec3_title">3. SEQUENCIADOR DE PASSOS DE 5 FAIXAS</string>
+    <string name="help_sec3_body">Toque nas células de Bumbo, Caixa ou Chimbal para alternar OFF -&gt; ON -&gt; ACENTO. Toque no Baixo para alternar graus: Pausa (.) -&gt; Tônica (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MIXER, VIRADAS E MAPA DE ESCALA DE 12 CASAS</string>
+    <string name="help_sec4_body">Ative/silencie BATERIA / BAIXO / ACORDES ou toque em % para mudar o volume. Toque em FILL para agendar uma virada de bateria, ou RST para restaurar. Sole no braço de 12 casas: OURO = Tom, VERDE = Tônica do acorde.</string>
+</resources>

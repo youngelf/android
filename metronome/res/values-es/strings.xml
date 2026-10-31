@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metrónomo</string>
+    <string name="header_title">METRÓNOMO DE PRECISIÓN</string>
+    <string name="tap_tempo">TAP TEMPO</string>
+    <string name="time_signature">COMPÁS</string>
+    <string name="subdivision">SUBDIVISIÓN</string>
+    <string name="stealth_drop">SILENCIO OCULTO %</string>
+    <string name="speed_trainer">ENTRENADOR VELOCIDAD</string>
+    <string name="start_metronome">▶   INICIAR METRÓNOMO</string>
+    <string name="stop_metronome">■   DETENER METRÓNOMO</string>
+    <string name="steady_click"> CLIC CONSTANTE</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">METRÓNOMO DE PRECISIÓN • GUÍA RÁPIDA</string>
+    <string name="help_sec1_title">1. RELOJ DE ALTA PRECISIÓN Y KITS DE SONIDO</string>
+    <string name="help_sec1_body">Sintetizador PCM de 44,1 kHz con jitter &lt;0,03 ms. Toca \'KIT\' arriba a la derecha para alternar entre V90, Bloque de madera, Rimshot o Seno.</string>
+    <string name="help_sec2_title">2. ESFERAS DE ACENTO DE PULSO</string>
+    <string name="help_sec2_body">Toca cualquier círculo numerado (1..12) para alternar entre ACENTO (Coral), NORMAL (Cian), SUBACENTO (Ámbar) y SILENCIO.</string>
+    <string name="help_sec3_title">3. RUEDA BPM Y TAP TEMPO</string>
+    <string name="help_sec3_body">Arrastra el anillo circular de BPM, usa -5 / -1 / +1 / +5, o toca \'TAP TEMPO\' repetidamente para igualar el ritmo de cualquier canción.</string>
+    <string name="help_sec4_title">4. SILENCIO ALEATORIO % Y ENTRENADOR DE VELOCIDAD</string>
+    <string name="help_sec4_body">SILENCIO % reproduce 4 compases completos y luego silencia clics al azar para entrenar tu reloj interno. ENTRENADOR aumenta los BPM cada 4 compases (+2 / +4 / +5).</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренировка слуха</string>
+    <string name="mode_intervals">ИНТЕРВАЛЫ</string>
+    <string name="mode_chords">АККОРДЫ</string>
+    <string name="mode_solfege">СОЛЬФЕДЖИО</string>
+    <string name="mode_melodic">МЕЛОДИКА</string>
+    <string name="tier_easy">ЛЕГКО</string>
+    <string name="tier_medium">СРЕДНЕ</string>
+    <string name="tier_all_12">ВСЕ 12</string>
+    <string name="replay">ПОВТОР</string>
+    <string name="root_note">ТОНИКА</string>
+    <string name="style">СТИЛЬ</string>
+    <string name="hint_minus_2">ПОДСКАЗКА</string>
+    <string name="next">ДАЛЕЕ &gt;&gt;</string>
+    <string name="skip">ПРОПУСК &gt;&gt;</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="help_title">СТУДИЯ СОЛЬФЕДЖИО — КРАТКОЕ РУКОВОДСТВО</string>
+    <string name="help_sec1_title">1. ЧЕТЫРЕ РЕЖИМА ТРЕНИРОВКИ (Кнопка РЕЖИМ вверху слева)</string>
+    <string name="help_sec1_body">• ИНТЕРВАЛЫ: 12 хроматических интервалов (m2..P8) вверх, вниз, гармонически или смешанно.\n• АККОРДЫ: 12 типов трезвучий и септаккордов (мажор, минор, ум., ув., sus2/4, Dom7, Maj7, m7).\n• СОЛЬФЕДЖИО: Хроматические ступени (Ra..Do\') на фоне каденции I-IV-V-I или тоники.\n• МЕЛОДИИ: 3-нотные мотивы и гармонические обороты (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. ПРАВИЛО 3 ПОПЫТОК И СРАВНИТЕЛЬНОЕ ПРОСЛУШИВАНИЕ</string>
+    <string name="help_sec2_body">• У вас есть 3 попытки на вопрос. Кнопка «ПОДСКАЗКА (-2)» убирает два неверных варианта.\n• После открытия ответа нажимайте ЛЮБУЮ из 12 кнопок для сравнительного прослушивания интервалов и аккордов на грифе и пианино!</string>
+    <string name="help_sec3_title">3. ИНТЕРАКТИВНОЕ ПИАНИНО И ГРИФ ГИТАРЫ</string>
+    <string name="help_sec3_body">В любой момент нажимайте клавиши 2-октавного пианино или струны/лады на 6-струнном грифе, чтобы сыграть ноты и проверить интервалы на слух.</string>
+</resources>

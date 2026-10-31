@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">快眠クロック</string>
+    <string name="cloudDesc">雨雲（ホワイトノイズ）</string>
+    <string name="noteDesc">音符（スリープ音楽）</string>
+    <string name="playing_music">音楽を再生中</string>
+</resources>

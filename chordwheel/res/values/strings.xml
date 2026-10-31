@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ChordWheel</string>
+    <string name="lock">LOCK</string>
+    <string name="key_prefix">KEY </string>
+    <string name="sevenths">7THS</string>
+    <string name="triads">TRIADS</string>
+    <string name="tap_swipe">TAP / SWIPE</string>
+    <string name="voicing_1">&lt; 1/3 Open/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 E-Barre (6str) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 A-Barre (5str) &gt;</string>
+    <string name="loop_play">&gt; LOOP</string>
+    <string name="loop_pause">|| PAUSE</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESETS</string>
+    <string name="close">CLOSE</string>
+    <string name="func_tonic_maj">Tonic Major</string>
+    <string name="func_subdominant">Subdominant</string>
+    <string name="func_dominant">Dominant</string>
+    <string name="func_rel_min">Relative Minor</string>
+    <string name="func_supertonic">Supertonic Min</string>
+    <string name="func_mediant">Mediant Minor</string>
+    <string name="func_leading_dim">Leading-Tone Dim</string>
+    <string name="got_it">GOT IT</string>
+    <string name="help_guide_title">HOW CIRCLE OF FIFTHS WORKS</string>
+    <string name="help_guide_sec1_title">1. THE WHEEL &amp; HARMONIC RINGS</string>
+    <string name="help_guide_sec1_body">Outer = 12 Major chords | Inner = 12 Relative Minors | Hub = Key &amp; vii° dim. Colors: Gold = Tonic (I/vi), Blue = Subdominant (IV/ii), Green = Dominant (V/iii).</string>
+    <string name="help_guide_sec2_title">2. KEY: ROTATE vs. KEY: LOCKED</string>
+    <string name="help_guide_sec2_body">When unlocked, tapping any chord rotates the active key and transposes your 4-bar loop. Tap LOCK in the top-right corner to freeze the key and audition any chord\'s role.</string>
+    <string name="help_guide_sec3_title">3. CHORD NOTES &amp; SCALE DEGREES</string>
+    <string name="help_guide_sec3_body">Displays chord notes and scale degrees in the active key (e.g. C = 1-3-5, F = 4-6-8 in Key of C). Tap TRIADS / 7THS to toggle rich 4-note seventh chords.</string>
+    <string name="help_guide_sec4_title">4. GUITAR FRETBOARD &amp; SPEAKER</string>
+    <string name="help_guide_sec4_body">Tap \'&lt; 1/3 Open/CAGED &gt;\' or swipe left/right to cycle 3 playable guitar voicings. Drag across the 6 strings or tap the green Speaker icon to strum.</string>
+    <string name="help_guide_sec5_title">5. 4-BAR LOOPER &amp; PRESETS</string>
+    <string name="help_guide_sec5_body">Tap \'&gt; LOOP\' to play the 4-bar progression, \'+PROG\' to insert the active chord into the highlighted slot, or \'PRESETS\' to load classic progressions.</string>
+    <string name="help_presets_title">PROGRESSION PRESETS &amp; GUIDE</string>
+    <string name="help_looper_play">&gt; PLAY 4-BAR AUTO-STRUM LOOPER</string>
+    <string name="help_looper_pause">|| PAUSE 4-BAR AUTO-STRUM LOOPER</string>
+    <string name="help_presets_touch">TOUCH: Tap/Drag Wheel | Swipe Strings to Strum | Swipe Voicing Bar</string>
+    <string name="help_presets_keys">KEYS: DPAD=Wheel  A=Strum  B=7ths  L1/R1=Voicing  X=+Prog  SEL=Lock</string>
 </resources>

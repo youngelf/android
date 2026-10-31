@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entrenador de Licks</string>
+    <string name="cat_pentatonic">PENTATÓNICA</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">PÚA ALTERNA</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">ARAÑA</string>
+    <string name="cat_jazz">JAZZ 7ª</string>
+    <string name="play">REPRODUCIR</string>
+    <string name="pause">PAUSA</string>
+    <string name="ladder_static">ESCALA: FIJA</string>
+    <string name="loop_full_bar">BUCLE: COMPÁS</string>
+    <string name="loop_beat_1">BUCLE: PULSO 1</string>
+    <string name="finger_1">1: ÍNDICE</string>
+    <string name="finger_2">2: MEDIO</string>
+    <string name="finger_3">3: ANULAR</string>
+    <string name="finger_4">4: MEÑIQUE</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_tab_howto">CÓMO USAR</string>
+    <string name="help_tab_jazz">7ª JAZZ Y VELOCIDAD</string>
+    <string name="help_t0_sec1_title">1. SELECCIONAR CATEGORÍA Y FRASE</string>
+    <string name="help_t0_sec1_body">Explora 33 ejercicios de Pentatónica, Legato, Púa Alternada, Blues/Rock, Calentamiento Spider y Arpegios Jazz de 7ª.</string>
+    <string name="help_t0_sec2_title">2. SECUENCIADOR DE TABLATURA DE 6 CUERDAS</string>
+    <string name="help_t0_sec2_body">Toca cualquier columna en la tablatura para escuchar la nota, ver el dedo de la mano izquierda (1=Índice .. 4=Meñique) y la técnica de púa (D=Abajo, U=Arriba, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. INSPECTOR INTERACTIVO DEL MÁSTIL</string>
+    <string name="help_t0_sec3_body">Toca cualquier cuerda/traste en el mástil ampliado de 8 trastes para pulsar esa nota con el sintetizador Karplus-Strong de 12 voces.</string>
+    <string name="help_t0_sec4_title">4. TRANSPONER A CUALQUIER TONALIDAD</string>
+    <string name="help_t0_sec4_body">Toca TONO para transportar los 33 ejercicios por el diapasón de Mi a Mib.</string>
+    <string name="help_t1_sec1_title">1. ESCALERA DE VELOCIDAD BPM</string>
+    <string name="help_t1_sec1_body">Toca ESCALERA para incrementar automáticamente los BPM (+2, +5 o +10 BPM) cada 2, 4 u 8 compases.</string>
+    <string name="help_t1_sec2_title">2. BUCLE DE SUB-RANGO</string>
+    <string name="help_t1_sec2_body">Alterna BUCLE entre COMPÁS COMPLETO y SOLO PULSO 1 para aislar células difíciles de 4 notas antes de tocar los 16 pasos.</string>
+    <string name="help_t1_sec3_title">3. ARPEGIOS JAZZ 7ª (FRASES #26–#33)</string>
+    <string name="help_t1_sec3_body">Muestra grados romanos diatónicos (Imaj7..viim7b5) e intervalos del acorde (1, 3, b3, 5, b5, 7, b7) con acordes de acompañamiento.</string>
+</resources>

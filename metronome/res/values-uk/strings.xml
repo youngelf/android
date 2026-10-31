@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Метроном</string>
+    <string name="header_title">ТОЧНИЙ МЕТРОНОМ</string>
+    <string name="tap_tempo">НАСТУКАТИ</string>
+    <string name="time_signature">РОЗМІР ТАКТУ</string>
+    <string name="subdivision">ПУЛЬСАЦІЯ</string>
+    <string name="stealth_drop">ПРИХОВАНИЙ ПРОПУСК %</string>
+    <string name="speed_trainer">ПРИСКОРЮВАЧ ТЕМПУ</string>
+    <string name="start_metronome">▶   ЗАПУСТИТИ МЕТРОНОМ</string>
+    <string name="stop_metronome">■   ЗУПИНИТИ МЕТРОНОМ</string>
+    <string name="steady_click"> РІВНИЙ КЛІК</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">ТОЧНИЙ МЕТРОНОМ • КОРОТКИЙ ПОСІБНИК</string>
+    <string name="help_sec1_title">1. СЕМПЛ-ТОЧНИЙ ТАЙМЕР І НАБОРИ ЗВУКІВ</string>
+    <string name="help_sec1_body">PCM-синтезатор 44,1 кГц із джитером &lt;0,03 мс. Натисніть «ЗВУК» праворуч угорі для вибору V90, вудблока, рімшота або синуса.</string>
+    <string name="help_sec2_title">2. КОЛА АКЦЕНТІВ ДОЛЕЙ</string>
+    <string name="help_sec2_body">Натисніть на будь-який кружечок долі (1..12) для перемикання між АКЦЕНТОМ (кораловий), ЗВИЧАЙНИМ (блакитний), НАПІВАКЦЕНТОМ і ПАУЗОЮ.</string>
+    <string name="help_sec3_title">3. КОЛЕСО BPM І НАСТУКУВАННЯ ТЕМПУ</string>
+    <string name="help_sec3_body">Обертайте кільце BPM, використовуйте кнопки -5 / -1 / +1 / +5 або настукайте ритм по кнопці «НАСТУКАТИ».</string>
+    <string name="help_sec4_title">4. ПРИХОВАНИЙ ПРОПУСК % І ТРЕНАЖЕР ШВИДКОСТІ</string>
+    <string name="help_sec4_body">«ПРОПУСК %» грає 4 повні такти, а потім випадково глушить долі для розвитку внутрішнього ритму. «ТРЕНАЖЕР» підвищує темп кожні 4 такти (+2 / +4 / +5).</string>
+</resources>

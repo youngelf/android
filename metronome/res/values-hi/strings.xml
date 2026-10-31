@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">मेट्रोनोम</string>
+    <string name="header_title">सटीक मेट्रोनोम</string>
+    <string name="tap_tempo">टैप टेम्पो</string>
+    <string name="time_signature">टाइम सिग्नेचर</string>
+    <string name="subdivision">सबडिवीज़न</string>
+    <string name="stealth_drop">स्टेल्थ ड्रॉप %</string>
+    <string name="speed_trainer">स्पीड ट्रेनर</string>
+    <string name="start_metronome">▶   मेट्रोनोम शुरू करें</string>
+    <string name="stop_metronome">■   मेट्रोनोम रोकें</string>
+    <string name="steady_click"> स्थिर क्लिक</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">सटीक मेट्रोनोम • त्वरित गाइड</string>
+    <string name="help_sec1_title">1. सैंपल-सटीक घड़ी और साउंड किट</string>
+    <string name="help_sec1_body">&lt;0.03 ms जिटर के साथ 44.1 kHz PCM सिंथेसाइज़र। V90, वुडब्लॉक, रिमशॉट या साइन बदलने के लिए ऊपर दाईं ओर \'किट\' पर टैप करें।</string>
+    <string name="help_sec2_title">2. बीट एक्सेंट ऑर्ब्स</string>
+    <string name="help_sec2_body">एक्सेंट (कोरल), सामान्य (सियान), सब-एक्सेंट (अंबर) और म्यूट के बीच बदलने के लिए किसी भी क्रमांकित बीट सर्कल (1..12) पर टैप करें।</string>
+    <string name="help_sec3_title">3. BPM डायल और टैप टेम्पो</string>
+    <string name="help_sec3_body">गोलाकार BPM रिंग को ड्रैग करें, -5 / -1 / +1 / +5 बटन का उपयोग करें, या किसी भी गाने की गति मिलाने के लिए बार-बार \'टैप टेम्पो\' दबाएं।</string>
+    <string name="help_sec4_title">4. स्टेल्थ ड्रॉप % और स्पीड ट्रेनर</string>
+    <string name="help_sec4_body">\'स्टेल्थ ड्रॉप %\' आपकी टाइमिंग सेट करने के लिए 4 पूरे बार बजाता है, फिर आंतरिक लय परखने के लिए क्लिक को रैंडम रूप से म्यूट करता है। \'स्पीड ट्रेनर\' हर 4 बार में BPM (+2/+4/+5) बढ़ाता है।</string>
+</resources>

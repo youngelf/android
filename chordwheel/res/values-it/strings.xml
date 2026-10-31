@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Circolo delle Quinte</string>
+    <string name="lock">BLOCCA</string>
+    <string name="key_prefix">TON. </string>
+    <string name="sevenths">7ª</string>
+    <string name="triads">TRIADI</string>
+    <string name="tap_swipe">TOCCA / SCORRI</string>
+    <string name="voicing_1">&lt; 1/3 Aperto/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Barré Mi (6c) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Barré La (5c) &gt;</string>
+    <string name="loop_play">&gt; LOOP</string>
+    <string name="loop_pause">|| PAUSA</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESET</string>
+    <string name="close">CHIUDI</string>
+    <string name="func_tonic_maj">Tonica Maggiore</string>
+    <string name="func_subdominant">Sottodominante</string>
+    <string name="func_dominant">Dominante</string>
+    <string name="func_rel_min">Relativa Minore</string>
+    <string name="func_supertonic">Sopratonica Min</string>
+    <string name="func_mediant">Mediante Minore</string>
+    <string name="func_leading_dim">Sensibile Diminuita</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_guide_title">COME FUNZIONA IL CIRCOLO DELLE QUINTE</string>
+    <string name="help_guide_sec1_title">1. LA RUOTA E GLI ANELLI ARMONICI</string>
+    <string name="help_guide_sec1_body">Esterno = 12 accordi Maggiori | Interno = 12 Minori relativi | Centro = Tonalità e vii° dim. Oro = Tonica (I/vi), Blu = Sottodominante (IV/ii), Verde = Dominante (V/iii).</string>
+    <string name="help_guide_sec2_title">2. TONALITÀ: RUOTA vs BLOCCATA</string>
+    <string name="help_guide_sec2_body">Se sbloccato, toccare un accordo ruota la tonalità attiva e traspone il loop. Tocca BLOCCA in alto a destra per fissare la tonalità e ascoltare il ruolo di ogni accordo.</string>
+    <string name="help_guide_sec3_title">3. NOTE DELL\'ACCORDO E GRADI DELLA SCALA</string>
+    <string name="help_guide_sec3_body">Mostra le note dell\'accordo e i gradi nella tonalità attiva (es. Do = 1-3-5). Tocca TRIADI / 7ª per attivare gli accordi di settima a 4 voci.</string>
+    <string name="help_guide_sec4_title">4. TASTIERA CHITARRA E ALTOPARLANTE</string>
+    <string name="help_guide_sec4_body">Tocca \'&lt; 1/3 Aperto/CAGED &gt;\' o scorri per cambiare i 3 voicing di chitarra. Trascina sulle 6 corde o tocca l\'icona verde dell\'altoparlante perplettrare.</string>
+    <string name="help_guide_sec5_title">5. LOOPER A 4 BATTUTE E PRESET</string>
+    <string name="help_guide_sec5_body">Tocca \'&gt; LOOP\' per avviare le 4 battute, \'+PROG\' per inserire l\'accordo attivo nello slot selezionato, o \'PRESET\' per caricare progressioni classiche.</string>
+    <string name="help_presets_title">PRESET DI PROGRESSIONI E GUIDA</string>
+    <string name="help_looper_play">&gt; AVVIA LOOPER AUTO-STRUM 4 BATTUTE</string>
+    <string name="help_looper_pause">|| PAUSA LOOPER AUTO-STRUM 4 BATTUTE</string>
+    <string name="help_presets_touch">TOCCO: Tocca/Trascina Ruota | Scorri Corde | Scorri Barra Voicing</string>
+    <string name="help_presets_keys">TASTI: DPAD=Ruota  A=Strum  B=7ª  L1/R1=Voicing  X=+Prog  SEL=Blocca</string>
+</resources>

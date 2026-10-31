@@ -1,0 +1,1 @@
+Editor de notação rítmica musical e reprodutor de prática em 440 Hz.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gehoortrainer</string>
+    <string name="mode_intervals">INTERVALLEN</string>
+    <string name="mode_chords">AKKOORDEN</string>
+    <string name="mode_solfege">SOLFÈGE</string>
+    <string name="mode_melodic">MELODISCH</string>
+    <string name="tier_easy">MAKKELIJK</string>
+    <string name="tier_medium">GEMIDDELD</string>
+    <string name="tier_all_12">ALLE 12</string>
+    <string name="replay">HERHAAL</string>
+    <string name="root_note">GRONDTOON</string>
+    <string name="style">STIJL</string>
+    <string name="hint_minus_2">HINT (-2)</string>
+    <string name="next">VOLGENDE &gt;&gt;</string>
+    <string name="skip">OVERSLAAN &gt;&gt;</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_title">GEHOORTRAINING STUDIO — SNELLE GIDS</string>
+    <string name="help_sec1_title">1. VIER OEFENMODI (Tik linksboven op MODUS)</string>
+    <string name="help_sec1_body">• INTERVALLEN: 12 chromatische intervallen (m2..P8) stijgend, dalend, harmonisch of gemengd.\n• AKKOORDEN: 12 drieklank- &amp; septiemkwaliteiten (Majeur, Mineur, dim, aug, sus2/4, Dom7, Maj7, m7).\n• SOLFÈGE: Chromatische toonladdertrappen (Ra..Do\') boven een I-IV-V-I cadens of grondtoon.\n• MELODISCH: 3-noots melodische cellen &amp; 3-akkoords cadensen (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. 3-POGINGEN-REGEL &amp; VERGELIJKEND LUISTEREN</string>
+    <string name="help_sec2_body">• Je krijgt 3 pogingen per vraag. Gebruik HINT (-2) om twee foute opties weg te strepen.\n• Na onthulling kun je op ELKE van de 12 pads tikken om intervallen of akkoorden te vergelijken op de gitaarhals en het piano-klavier!</string>
+    <string name="help_sec3_title">3. INTERACTIEVE PIANO &amp; GITAARHALS</string>
+    <string name="help_sec3_body">Tik op elk moment op een toets van het 2-octaafs pianoklavier of een snaar/fret op de 6-snarige gitaarhals om noten te spelen.</string>
+</resources>

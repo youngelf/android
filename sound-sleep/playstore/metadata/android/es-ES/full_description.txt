@@ -1,0 +1,17 @@
+Convierte tu teléfono o tablet en un reloj de mesita de noche sin deslumbramientos y en un generador de sonido relajante con Sueño Profundo (Sound Sleep) — Reloj Nocturno y Ruido Blanco. Diseñado para permanecer toda la noche en tu mesita sin iluminar el dormitorio ni quemar la pantalla OLED, combina una hora grande sobre fondo negro puro con reproducción instantánea de ruido blanco y música para dormir.
+
+RELOJ NOCTURNO A PANTALLA COMPLETA TODA LA NOCHE
+• Hora en gran tamaño (120dp h:mm) sobre fondo negro puro (#000000) de mínimo brillo en habitaciones oscuras.
+• Pantalla completa inmersiva que oculta automáticamente la barra de estado y los botones de navegación del sistema.
+• Mantiene la pantalla encendida toda la noche e ignora los deslizamientos hacia arriba para salir de la app sin activar sonidos por error.
+
+PROTECCIÓN CONTRA QUEMADO OLED Y ATENUACIÓN PROGRESIVA
+• Movimiento suave cada 10 minutos: El reloj y los iconos se desplazan suavemente a posiciones aleatorias cada 10 minutos para evitar el quemado de píxeles en pantallas OLED y AMOLED.
+• Atenuación automática: Los iconos se oscurecen progresivamente durante la noche y recuperan su brillo al tocar la pantalla.
+
+CONTROLES TÁCTILES DE MEDIA PANTALLA A CIEGAS
+La pantalla se divide en dos grandes zonas táctiles para usarla sin abrir los ojos:
+• Mitad inferior (Nube de lluvia — Ruido Blanco): Toca la parte inferior para reproducir ruido blanco continuo en bucle y bloquear ruidos externos.
+• Mitad superior (Nota musical — Música para dormir): Toca la parte superior para reproducir pistas aleatorias de tu carpeta Music/sleeping o la melodía relajante integrada.
+• Toca por segunda vez la mitad activa (icono de Pausa) para volver al silencio total.
+• Compatible con modo Vertical y Horizontal, reproducción en segundo plano, 100 % sin conexión, sin acceso a Internet y sin anuncios.

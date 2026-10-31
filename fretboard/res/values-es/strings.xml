@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diapasón</string>
+    <string name="header_title">DIAPASÓN</string>
+    <string name="tab_scales">Escalas</string>
+    <string name="tab_chords">Acordes</string>
+    <string name="tab_finder">Buscador</string>
+    <string name="tab_1_scales">1: Escalas</string>
+    <string name="tab_2_chords">2: Acordes</string>
+    <string name="tab_3_finder">3: Buscador</string>
+    <string name="play_scale">▶ Escala</string>
+    <string name="play_strum">▶ Rasgueo</string>
+    <string name="key_prefix">Tono: </string>
+    <string name="position_header">POSICIÓN</string>
+    <string name="all_neck">TODO MÁSTIL</string>
+    <string name="frets_0_15">Trastes 0–15</string>
+    <string name="lbl_intervals">Etiq: T/3/5</string>
+    <string name="lbl_notes">Etiq: Notas</string>
+    <string name="lbl_degrees">Etiq: Grados</string>
+    <string name="hand_righty">Mano: Diestro</string>
+    <string name="hand_lefty">Mano: Zurdo</string>
+    <string name="quiz_off">Quiz: No</string>
+    <string name="quiz_note">Quiz: Nota</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Modo Dórico ▾</string>
+    <string name="scale_min_pent">Pentatónica Menor ▾</string>
+    <string name="scale_blues">Escala de Blues ▾</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">EXPLORADOR DE DIAPASÓN — GUÍA RÁPIDA</string>
+    <string name="help_sec1_title">1. TRES MODOS DE EXPLORACIÓN</string>
+    <string name="help_sec1_body">Alterna entre 1: Escalas (16 escalas + 5 cajas CAGED), 2: Acordes (12 cualidades con posiciones CAGED) y 3: Buscador (toca cualquier traste para identificar acordes propios).</string>
+    <string name="help_sec2_title">2. SÍNTESIS DE AUDIO Y RASGUEO</string>
+    <string name="help_sec2_body">Toca cualquier traste para pulsar una nota de guitarra Karplus-Strong, o toca ▶ en la barra superior para rasguear el acorde o escuchar la escala.</string>
+    <string name="help_sec3_title">3. LEYENDA DE COLORES ARMÓNICOS</string>
+    <string name="help_sec3_body">Tónica = Ámbar | Tercera (3/b3) = Esmeralda | Quinta = Azul real | Séptima (7/b7) = Púrpura | Nota Blues (b5) = Oro | Nota de escala = Pizarra.</string>
+    <string name="help_sec4_title">4. ETIQUETAS, AFINACIONES Y MODO ZURDO</string>
+    <string name="help_sec4_body">Alterna entre Intervalos (R, 3, 5), Notas y Grados, cambia entre 6 afinaciones (Estándar, Drop D, DADGAD, Mib, Sol abierto, Re abierto) o invierte el mástil para zurdos.</string>
+    <string name="help_sec5_title">5. CUESTIONARIO DE DOMINIO DEL DIAPASÓN</string>
+    <string name="help_sec5_body">Activa el Quiz de Notas o Intervalos para poner a prueba tu memoria en las 6 cuerdas con puntuación en vivo.</string>
+</resources>

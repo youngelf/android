@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">릭 트레이너</string>
+    <string name="cat_pentatonic">펜타토닉</string>
+    <string name="cat_legato">레가토/아르페지오</string>
+    <string name="cat_alt_pick">얼터네이트 피킹</string>
+    <string name="cat_blues_rock">블루스/록</string>
+    <string name="cat_spider">스파이더 크로매틱</string>
+    <string name="cat_jazz">재즈 7화음</string>
+    <string name="play">재생</string>
+    <string name="pause">일시정지</string>
+    <string name="ladder_static">래더: 고정</string>
+    <string name="loop_full_bar">루프: 전체 마디</string>
+    <string name="loop_beat_1">루프: 1박만</string>
+    <string name="finger_1">1: 검지</string>
+    <string name="finger_2">2: 중지</string>
+    <string name="finger_3">3: 약지</string>
+    <string name="finger_4">4: 소지</string>
+    <string name="close">닫기</string>
+    <string name="got_it">확인</string>
+    <string name="help_tab_howto">사용 방법</string>
+    <string name="help_tab_jazz">재즈 7화음 &amp; 속도 훈련</string>
+    <string name="help_t0_sec1_title">1. 카테고리 및 릭(Lick) 선택</string>
+    <string name="help_t0_sec1_body">펜타토닉, 레가토, 얼터네이트 피킹, 블루스/록, 스파이더 워밍업, 재즈 7화음 아르페지오에 걸친 33개 연습곡을 탐색하세요.</string>
+    <string name="help_t0_sec2_title">2. 6현 타브(TAB) 스텝 시퀀서</string>
+    <string name="help_t0_sec2_body">타브 악보의 스텝 열을 탭하면 해당 음을 청음하고 왼손 운지 번호(1=검지..4=소지)와 피킹 기호(D=다운, U=업, H=해머링, P=풀링, /=슬라이드)를 확인할 수 있습니다.</string>
+    <string name="help_t0_sec3_title">3. 대화형 넥 인스펙터</string>
+    <string name="help_t0_sec3_body">확대된 8프렛 기타 지판에서 아무 줄/프렛이나 탭하면 12보이스 Karplus-Strong 신스를 통해 해당 음정을 직접 연주합니다.</string>
+    <string name="help_t0_sec4_title">4. 모든 조성으로 조바꿈 (KEY)</string>
+    <string name="help_t0_sec4_body">\'조성\' 버튼을 탭하면 33개 연습곡 전체를 E부터 Eb까지 원하는 조성으로 즉시 이동합니다.</string>
+    <string name="help_t1_sec1_title">1. 스피드 빌더 BPM 사다리 훈련</string>
+    <string name="help_t1_sec1_body">\'사다리\' 버튼을 탭하면 2, 4 또는 8마디마다 템포가 자동 증가(+2/+5/+10 BPM)하여 피킹 속도를 자연스럽게 끌어올립니다.</string>
+    <string name="help_t1_sec2_title">2. 구간 반복 루프 (전체 마디 vs 1박 집중)</string>
+    <string name="help_t1_sec2_body">루프를 \'전체 마디\'와 \'1박만\' 사이에서 전환하여 까다로운 4음 피킹 패턴을 먼저 숙달한 뒤 16스텝 전체 프레이즈를 연결하세요.</string>
+    <string name="help_t1_sec3_title">3. 재즈 7화음 아르페지오 (릭 #26–#33)</string>
+    <string name="help_t1_sec3_body">다이아토닉 로마 숫자(Imaj7..viim7b5)와 코드톤 음정(1, 3, b3, 5, b5, 7, b7)을 표시하며 반주 코드와 함께 연주됩니다.</string>
+</resources>

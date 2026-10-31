@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lick Eğitmeni</string>
+    <string name="cat_pentatonic">PENTATONİK</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">ALT PENA</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">ÖRÜMCEK</string>
+    <string name="cat_jazz">CAZ 7\'Lİ</string>
+    <string name="play">OYNAT</string>
+    <string name="pause">DURAKLAT</string>
+    <string name="ladder_static">BASAMAK: SABİT</string>
+    <string name="loop_full_bar">DÖNGÜ: TAM ÖLÇÜ</string>
+    <string name="loop_beat_1">DÖNGÜ: SADECE 1</string>
+    <string name="finger_1">1: İŞARET</string>
+    <string name="finger_2">2: ORTA</string>
+    <string name="finger_3">3: YÜZÜK</string>
+    <string name="finger_4">4: SERÇE</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_tab_howto">NASIL KULLANILIR</string>
+    <string name="help_tab_jazz">CAZ 7\'Lİ VE HIZ</string>
+    <string name="help_t0_sec1_title">1. KATEGORİ VE LICK SEÇİMİ</string>
+    <string name="help_t0_sec1_body">Pentatonik, Legato, Alternatif Pena, Blues/Rock, Örümcek Isınma ve Caz 7\'li Arpejlerde 33 egzersize göz atın.</string>
+    <string name="help_t0_sec2_title">2. 6 TELLİ TAB SEKANSERI</string>
+    <string name="help_t0_sec2_body">Notayı dinlemek, sol el parmağını (1=İşaret .. 4=Serçe) ve pena yönünü (D=Alt, U=Üst, H=Hammer, P=Pull, /=Slide) görmek için tablodaki herhangi bir adıma dokunun.</string>
+    <string name="help_t0_sec3_title">3. ETKİLEŞİMLİ SAP İNCELEYİCİ</string>
+    <string name="help_t0_sec3_body">12 sesli Karplus-Strong sentezleyici ile doğrudan nota çalmak için yakınlaştırılmış 8 perdeli gitar sapında herhangi bir tel/perdeye dokunun.</string>
+    <string name="help_t0_sec4_title">4. HERHANGİ BİR TONA TRANSPOZE</string>
+    <string name="help_t0_sec4_body">Tüm 33 egzersizi klavye üzerinde E\'den Eb\'ye kaydırmak için TON düğmesine dokunun.</string>
+    <string name="help_t1_sec1_title">1. HIZ GELİŞTİRİCİ BPM BASAMAĞI</string>
+    <string name="help_t1_sec1_body">Her 2, 4 veya 8 ölçüde bir BPM\'i otomatik artırmak (+2, +5 veya +10 BPM) için BASAMAK düğmesine dokunun.</string>
+    <string name="help_t1_sec2_title">2. ALT BÖLÜM DÖNGÜSÜ</string>
+    <string name="help_t1_sec2_body">16 adımlık cümleyi birleştirmeden önce zorlu 4 notalık hücreleri çalışmak için DÖNGÜ\'yü TAM ÖLÇÜ ve SADECE VURUŞ 1 arasında değiştirin.</string>
+    <string name="help_t1_sec3_title">3. CAZ 7\'Lİ ARPEJLER (LICK #26–#33)</string>
+    <string name="help_t1_sec3_body">Eşlik하는 akorlarla birlikte diyatonik Romen rakamlarını (Imaj7..viim7b5) ve akor sesi aralıklarını (1, 3, b3, 5, b5, 7, b7) gösterir.</string>
+</resources>

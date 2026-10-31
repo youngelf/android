@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronomo</string>
+    <string name="header_title">METRONOMO DI PRECISIONE</string>
+    <string name="tap_tempo">TAP TEMPO</string>
+    <string name="time_signature">INDICAZIONE DI TEMPO</string>
+    <string name="subdivision">SUDDIVISIONE</string>
+    <string name="stealth_drop">DROP SILENZIOSO %</string>
+    <string name="speed_trainer">ALLENATORE VELOCITÀ</string>
+    <string name="start_metronome">▶   AVVIA METRONOMO</string>
+    <string name="stop_metronome">■   FERMA METRONOMO</string>
+    <string name="steady_click"> CLICK COSTANTE</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">METRONOMO DI PRECISIONE • GUIDA RAPIDA</string>
+    <string name="help_sec1_title">1. CLOCK AD ALTA PRECISIONE E KIT SONORI</string>
+    <string name="help_sec1_body">Sintetizzatore PCM a 44,1 kHz con jitter &lt;0,03 ms. Tocca \'KIT\' in alto a destra per cambiare tra V90, Woodblock, Rimshot o Onda Sinusoidale.</string>
+    <string name="help_sec2_title">2. INDICATORI DI ACCENTO DEI MOVIMENTI</string>
+    <string name="help_sec2_body">Tocca qualsiasi cerchio numerato (1..12) per alternare tra ACCENTO (Corallo), NORMALE (Ciano), SUB-ACCENTO (Ambra) e MUTO.</string>
+    <string name="help_sec3_title">3. GHIERA BPM E TAP TEMPO</string>
+    <string name="help_sec3_body">Trascina l\'anello circolare BPM, usa i pulsanti -5 / -1 / +1 / +5, o tocca ripetutamente \'TAP TEMPO\' per rilevare il tempo di qualsiasi brano.</string>
+    <string name="help_sec4_title">4. SILENZIO RANDOM % E SPEED TRAINER</string>
+    <string name="help_sec4_body">SILENZIO % suona 4 battute complete e poi silenzia casualmente dei clic per allenare il tuo tempo interno. SPEED TRAINER aumenta i BPM ogni 4 battute (+2 / +4 / +5).</string>
+</resources>

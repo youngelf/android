@@ -80,6 +80,8 @@ public class LickTrainerActivity extends Activity {
     }
 
     private void handleIntentExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
+        if (mTrainerView != null) mTrainerView.invalidate();
         if (intent == null || intent.getExtras() == null) {
             return;
         }

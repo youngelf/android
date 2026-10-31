@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Spokojny Sen</string>
+    <string name="cloudDesc">chmura (biały szum)</string>
+    <string name="noteDesc">nuta muzyczna</string>
+    <string name="playing_music">Odtwarzanie muzyki</string>
+</resources>

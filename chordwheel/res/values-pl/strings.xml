@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Koło Kwintowe</string>
+    <string name="lock">BLOKUJ</string>
+    <string name="key_prefix">TON. </string>
+    <string name="sevenths">7-KI</string>
+    <string name="triads">TRÓJDŹW.</string>
+    <string name="tap_swipe">DOTKNIJ / PRZESUŃ</string>
+    <string name="voicing_1">&lt; 1/3 Otwarte/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 E-Barre (6str) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 A-Barre (5str) &gt;</string>
+    <string name="loop_play">&gt; PĘTLA</string>
+    <string name="loop_pause">|| PAUZA</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESETY</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="func_tonic_maj">Tonika dur</string>
+    <string name="func_subdominant">Subdominanta</string>
+    <string name="func_dominant">Dominanta</string>
+    <string name="func_rel_min">Mol paralelny</string>
+    <string name="func_supertonic">Supertonika mol</string>
+    <string name="func_mediant">Medianta mol</string>
+    <string name="func_leading_dim">Dźwięk prowadzący zm.</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_guide_title">JAK DZIAŁA KOŁO KWINTOWE</string>
+    <string name="help_guide_sec1_title">1. KOŁO I PIERŚCIENIE HARMONICZNE</string>
+    <string name="help_guide_sec1_body">Zewnętrzny = 12 akordów durowych | Wewnętrzny = 12 molowych | Środek = Tonacja i vii° zm. Złoty = Tonika (I/vi), Niebieski = Subdominanta (IV/ii), Zielony = Dominanta (V/iii).</string>
+    <string name="help_guide_sec2_title">2. OBRACANIE TONACJI vs. BLOKADA (LOCK)</string>
+    <string name="help_guide_sec2_body">Po odblokowaniu dotknięcie akordu obraca aktywną tonację i transponuje pętlę. Dotknij BLOKUJ w prawym górnym rogu, aby zamrozić tonację.</string>
+    <string name="help_guide_sec3_title">3. DŹWIĘKI AKORDU I STOPNIE SKALI</string>
+    <string name="help_guide_sec3_body">Wyświetla dźwięki akordu i stopnie skali w aktywnej tonacji (np. C = 1-3-5). Dotknij TRÓJDŹW. / 7-KI, aby przełączyć akordy septymowe.</string>
+    <string name="help_guide_sec4_title">4. GRYF GITARY I GŁOŚNIK</string>
+    <string name="help_guide_sec4_body">Dotknij „&lt; 1/3 Otwarte/CAGED &gt;” lub przesuń, aby zmienić 3 przewroty gitarowe. Przeciągnij po strunach lub dotknij zielonej ikony głośnika.</string>
+    <string name="help_guide_sec5_title">5. PĘTLA 4-TAKTOWA I PRESETY</string>
+    <string name="help_guide_sec5_body">Dotknij „&gt; PĘTLA”, aby odtworzyć 4 takty, „+PROG”, aby wstawić aktywny akord, lub „PRESETY”, aby wczytać klasyczne progresje.</string>
+    <string name="help_presets_title">PRESETY PROGRESJI I PRZEWODNIK</string>
+    <string name="help_looper_play">&gt; ODTWÓRZ 4-TAKTOWY AUTO-LOOPER</string>
+    <string name="help_looper_pause">|| WSTRZYMAJ 4-TAKTOWY AUTO-LOOPER</string>
+    <string name="help_presets_touch">DOTYK: Dotknij/Przeciągnij koło | Przeciągnij struny | Przesuń pasek przewrotu</string>
+    <string name="help_presets_keys">KLAWISZE: DPAD=Koło  A=Strum  B=7-ki  L1/R1=Przewrót  X=+Prog  SEL=Blokuj</string>
+</resources>

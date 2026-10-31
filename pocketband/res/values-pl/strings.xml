@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketBand</string>
+    <string name="band_title">Zespół</string>
+    <string name="play">GRAJ</string>
+    <string name="stop">STOP</string>
+    <string name="fill">PRZEJŚCIE</string>
+    <string name="auto_on">AUTO:WŁ</string>
+    <string name="auto_off">AUTO:WYŁ</string>
+    <string name="rst">RST</string>
+    <string name="key">TONACJA</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">PERKUSJA</string>
+    <string name="bass">BAS</string>
+    <string name="chords">AKORDY</string>
+    <string name="on">WŁ.</string>
+    <string name="mute">WYCISZ</string>
+    <string name="prog_grid_header">SIATKA AKORDÓW (DOTKNIJ TAKTU, ABY ODSŁUCHAĆ)</string>
+    <string name="step_seq">SEKWENCER</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">12-taktowy Blues ▾</string>
+    <string name="legend_right">ZŁOTY=Ton  ZIEL=Akord  RÓŻ=Blue  BŁĘK=Skala</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">Band — SZYBKI PRZEWODNIK I STEROWANIE</string>
+    <string name="help_sec1_title">1. STYLE AKOMPANIAMENTU, PROGRESJE I TONACJA</string>
+    <string name="help_sec1_body">Dotknij Stylu, Progresji lub Tonacji na górnym pasku, aby otworzyć listę wyboru, lub użyj - / + przy TEMPO.</string>
+    <string name="help_sec2_title">2. INTERAKTYWNE TAKTY AKORDOWE</string>
+    <string name="help_sec2_body">Dotknij dowolnego taktu w siatce, aby odsłuchać akord i przełączać spośród 22 harmonii diatonicznych, septymowych i jazzowych.</string>
+    <string name="help_sec3_title">3. 5-ŚCIEŻKOWY SEKWENCER KROKOWY</string>
+    <string name="help_sec3_body">Dotknij komórek stopy, werbla lub hi-hatu, aby przełączyć WYŁ -&gt; WŁ -&gt; AKCENT. Komórki basu zmieniają stopień: Pauza (.) -&gt; Pryma (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MIKSER, PRZEJŚCIA I 12-PROGOWA MAPA SOLO</string>
+    <string name="help_sec4_body">Włączaj/wyciszaj PERKUSJĘ / BAS / AKORDY lub dotknij %, aby zmienić głośność. Dotknij PRZEJŚCIE dla przejścia perkusyjnego lub RESET, aby przywrócić rytm. Graj solo na 12-progowym gryfie: ZŁOTY = Tonacja, ZIELONY = Akord.</string>
+</resources>

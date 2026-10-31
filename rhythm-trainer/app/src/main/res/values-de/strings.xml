@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rhythmus-Trainer</string>
+    <string name="subtitle_440">Rhythmustraining mit fester Tonhöhe (440 Hz)</string>
+    <string name="edit_mode">Bearbeiten</string>
+    <string name="done_editing">Fertig</string>
+    <string name="play">Start</string>
+    <string name="pause">Pause</string>
+    <string name="loop">Schleife</string>
+    <string name="edit_btn">Ändern</string>
+    <string name="ready_hint">Spielbereit. Drücke Start für einen 4..3..2..1-Einzähler gefolgt vom Rhythmus.</string>
+    <string name="add_bar">Takt +</string>
+    <string name="remove_bar">Takt -</string>
+    <string name="randomize">Zufall</string>
+    <string name="quarter_notes">Viertelnoten</string>
+    <string name="exit_edit_mode">Bearbeitung beenden</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_title">Rhythmus-Trainer — Kurzanleitung</string>
+    <string name="help_sec1_title">1. Taktarten &amp; Tempo</string>
+    <string name="help_sec1_body">Wähle oben links 4/4, 3/4, 2/2, 5/4 oder 7/4, stelle die BPM von 40 bis 200 per Schieberegler ein und aktiviere Schleife für endloses Üben.</string>
+    <string name="help_sec2_title">2. 4-Schlag-Einzähler &amp; 440-Hz-Wiedergabe</string>
+    <string name="help_sec2_body">Drücke Start für einen 4..3..2..1-Metronom-Einzähler, gefolgt vom Rhythmus auf einem klaren 440-Hz-Referenzton mit synchronem Cursor.</string>
+    <string name="help_sec3_title">3. Interaktiver Rhythmus-Editor &amp; Zufallsgenerator</string>
+    <string name="help_sec3_body">Tippe auf Ändern für den Bearbeitungsmodus. Tippe eine Note oder Pause an und weise Ganze, Halbe, Viertel, Achtel oder Sechzehntel zu. Füge Takte hinzu (1–4) oder tippe auf Zufall für neue Rhythmen.</string>
+</resources>

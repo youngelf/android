@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Đồng Hồ Pomodoro</string>
+    <string name="working_dnd">ĐANG TẬP TRUNG: ĐỪNG LÀM PHIỀN</string>
+    <string name="short_break_relax">NGHỈ NGẮN: THƯ GIÃN</string>
+    <string name="long_break_rest">NGHỈ DÀI: PHỤC HỒI NĂNG LƯỢNG</string>
+    <string name="paused_stopped">TẠM DỪNG: ĐỒNG HỒ DỪNG</string>
+    <string name="ready_to_focus">SẴN SÀNG TẬP TRUNG</string>
+    <string name="reset">ĐẶT LẠI</string>
+    <string name="skip_btn">BỎ QUA &gt;&gt;</string>
+    <string name="start_focus">BẮT ĐẦU</string>
+    <string name="resume">TIẾP TỤC</string>
+    <string name="bg_sound">Âm thanh nền</string>
+    <string name="amb_off">TẮT</string>
+    <string name="amb_soft_tick">TÍCH TẮC NHẸ</string>
+    <string name="amb_rain">TIẾNG MƯA</string>
+    <string name="amb_brown_noise">NHIỄU NÂU</string>
+    <string name="duration_presets">MẪU THỜI LƯỢNG (LÀM VIỆC / NGHỈ NGẮN / DÀI)</string>
+    <string name="all_time_total">TỔNG TÍCH LŨY</string>
+    <string name="current_session">PHIÊN HIỆN TẠI</string>
+    <string name="focus_session">PHIÊN TẬP TRUNG</string>
+    <string name="close">ĐÓNG</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_title">ĐỒNG HỒ POMODORO &amp; THEO DÕI GIỜ LÀM</string>
+    <string name="help_sec1_title">1. CHU KỲ 4 POMODORO</string>
+    <string name="help_sec1_body">• Tập trung không gián đoạn trong 1 Pomodoro (mặc định 25 phút).\n• Nghỉ ngắn (5 phút) để thư giãn và nạp lại năng lượng.\n• Sau mỗi 4 phiên Tập trung hoàn thành, hãy Nghỉ dài (15 phút).</string>
+    <string name="help_sec2_title">2. ĐIỀU KHIỂN CẢM ỨNG &amp; BÀN PHÍM / D-PAD</string>
+    <string name="help_sec2_body">• Chạm Mặt đồng hồ / BẮT ĐẦU (hoặc PHÍM CÁCH / ENTER): Bắt đầu hoặc Tạm dừng.\n• Chạm -5p / -1p / +1p / +5p (hoặc mũi tên LÊN / XUỐNG): Chỉnh thời lượng.\n• Chạm Mẫu sẵn (phím P): Đổi giữa Cổ điển, Làm việc sâu, Phòng thu và Nước rút.\n• Chạm Âm thanh nền (phím M): Tiếng tích tắc nhẹ, Tiếng mưa hoặc Nhiễu nâu.\n• Chạm BỎ QUA &gt;&gt; (N) để chuyển pha; ĐẶT LẠI (R) để quay về đầu.</string>
+    <string name="help_sec3_title">3. THỐNG KÊ GIỜ LÀM VIỆC TỰ ĐỘNG</string>
+    <string name="help_sec3_body">• Mỗi giây trong Phiên Tập trung đang chạy đều được tự động ghi nhận vào thống kê Hôm nay &amp; Tổng cộng.</string>
+</resources>

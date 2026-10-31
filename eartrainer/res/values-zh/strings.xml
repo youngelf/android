@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">练耳大师</string>
+    <string name="mode_intervals">音程</string>
+    <string name="mode_chords">和弦</string>
+    <string name="mode_solfege">唱名/级数</string>
+    <string name="mode_melodic">旋律听写</string>
+    <string name="tier_easy">初级</string>
+    <string name="tier_medium">中级</string>
+    <string name="tier_all_12">全部12音</string>
+    <string name="replay">重播</string>
+    <string name="root_note">根音参考</string>
+    <string name="style">奏法</string>
+    <string name="hint_minus_2">提示 (-2)</string>
+    <string name="next">下一题 &gt;&gt;</string>
+    <string name="skip">跳过 &gt;&gt;</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">视唱练耳工作室 — 快速指南与乐理</string>
+    <string name="help_sec1_title">1. 四大练耳训练模式（点击左上角“模式”切换）</string>
+    <string name="help_sec1_body">• 音程：12个半音音程（小二度 m2 至纯八度 P8），支持上行、下行、和声音程与混合播放。\n• 和弦：12种三和弦与七和弦色彩（大、小、减、增、挂留、属七、大七、小七等）。\n• 唱名：在 I-IV-V-I 终止式或主音参照下听辨半音阶唱名（Ra..Do\'）。\n• 旋律与终止式：3音动机听辨与经典3和弦和声进行（I-IV-V、ii-V-I）。</string>
+    <string name="help_sec2_title">2. 三次作答机制与对比试听</string>
+    <string name="help_sec2_body">• 每道题有 3 次作答机会，点击“提示 (-2)”可排除两个错误选项。\n• 揭晓答案后，点击任意12个答题垫即可基于当前根音对比试听所有音程或和弦，并在6弦吉他指板与钢琴键盘上同步查看指法！</string>
+    <string name="help_sec3_title">3. 交互式钢琴键盘与吉他指板</string>
+    <string name="help_sec3_body">随时点击 2 八度钢琴键盘上的任意琴键，或 6 弦吉他指板上的任意品格，直接弹响音符并凭听觉验证音程关系。</string>
+</resources>

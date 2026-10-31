@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pelatih Lick</string>
+    <string name="cat_pentatonic">PENTATONIK</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">PETIKAN ALT</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">LABA-LABA</string>
+    <string name="cat_jazz">JAZZ 7TH</string>
+    <string name="play">MAINKAN</string>
+    <string name="pause">JEDA</string>
+    <string name="ladder_static">TANGGA: TETAP</string>
+    <string name="loop_full_bar">ULANG: 1 BAR</string>
+    <string name="loop_beat_1">ULANG: KETUKAN 1</string>
+    <string name="finger_1">1: TELUNJUK</string>
+    <string name="finger_2">2: TENGAH</string>
+    <string name="finger_3">3: MANIS</string>
+    <string name="finger_4">4: KELINGKING</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_tab_howto">CARA PAKAI</string>
+    <string name="help_tab_jazz">AKOR 7 JAZZ &amp; KECEPATAN</string>
+    <string name="help_t0_sec1_title">1. PILIH KATEGORI &amp; LICK</string>
+    <string name="help_t0_sec1_body">Jelajahi 33 latihan meliputi Pentatonik, Legato, Alternate Picking, Blues/Rock, Pemanasan Spider, dan Arpeggio Jazz 7th.</string>
+    <string name="help_t0_sec2_title">2. SEKUENSER TAB 6-SENAR</string>
+    <string name="help_t0_sec2_body">Ketuk kolom langkah pada tab untuk mendengarkan nada, memeriksa jari tangan kiri (1=Telunjuk .. 4=Kelingking), dan tanda petikan (D=Bawah, U=Atas, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. INSPEKTUR LEHER GITAR INTERAKTIF</string>
+    <string name="help_t0_sec3_body">Ketuk senar/fret mana saja pada leher gitar 8-fret yang diperbesar untuk memetik nada melalui synth Karplus-Strong 12-suara.</string>
+    <string name="help_t0_sec4_title">4. TRANSPOSISI KE NADA DASAR APA SAJA</string>
+    <string name="help_t0_sec4_body">Ketuk NADA untuk menggeser ke-33 latihan di sepanjang fretboard dari E hingga Eb.</string>
+    <string name="help_t1_sec1_title">1. TANGGA KECEPATAN BPM</string>
+    <string name="help_t1_sec1_body">Ketuk TANGGA untuk menaikkan BPM secara otomatis (+2, +5, atau +10 BPM) setiap 2, 4, atau 8 bar.</string>
+    <string name="help_t1_sec2_title">2. LOOP SUB-RENTANG</string>
+    <string name="help_t1_sec2_body">Ubah ULANG antara BAR PENUH dan KETUKAN 1 SAJA untuk melatih kelompok 4-nada sulit sebelum menggabungkan 16 langkah penuh.</string>
+    <string name="help_t1_sec3_title">3. ARPEGGIO JAZZ 7TH (LICK #26–#33)</string>
+    <string name="help_t1_sec3_body">Menampilkan angka Romawi diatonis (Imaj7..viim7b5) dan interval nada akor (1, 3, b3, 5, b5, 7, b7) dengan iringan akor.</string>
+</resources>

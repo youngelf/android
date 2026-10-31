@@ -73,6 +73,8 @@ public class EarTrainerActivity extends Activity {
     }
 
     private void handleIntentExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
+        if (mView != null) mView.invalidate();
         if (intent == null || intent.getExtras() == null || mView == null) {
             return;
         }

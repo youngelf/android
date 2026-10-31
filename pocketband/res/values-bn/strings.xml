@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">পকেটব্যান্ড</string>
+    <string name="band_title">ব্যান্ড</string>
+    <string name="play">চালান</string>
+    <string name="stop">থামুন</string>
+    <string name="fill">ফিল</string>
+    <string name="auto_on">অটো:চালু</string>
+    <string name="auto_off">অটো:বন্ধ</string>
+    <string name="rst">রিসেট</string>
+    <string name="key">কী (KEY)</string>
+    <string name="tempo">টেম্পো</string>
+    <string name="drums">ড্রামস</string>
+    <string name="bass">বেস</string>
+    <string name="chords">কর্ড</string>
+    <string name="on">চালু</string>
+    <string name="mute">মিউট</string>
+    <string name="prog_grid_header">কর্ড প্রোগ্রেশন গ্রিড (শুনতে বারে ট্যাপ করুন)</string>
+    <string name="step_seq">সিকোয়েন্সার</string>
+    <string name="style_blues">ব্লুজ শাফেল 4/4 ▾</string>
+    <string name="prog_12bar">১২-বার ব্লুজ ▾</string>
+    <string name="legend_right">সোনা=কী  সবুজ=কর্ড  গোলাপী=ব্লু  সায়ান=স্কেল</string>
+    <string name="close">বন্ধ</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_title">Band — দ্রুত গাইড ও নিয়ন্ত্রণ</string>
+    <string name="help_sec1_title">1. ব্যাকিং স্টাইল, প্রোগ্রেশন ও কী (Key)</string>
+    <string name="help_sec1_body">ড্রপডাউন খুলতে উপরের বারে স্টাইল, প্রোগ্রেশন বা কী-তে ট্যাপ করুন, অথবা গতি পরিবর্তন করতে টেম্পোর - / + বোতাম ব্যবহার করুন।</string>
+    <string name="help_sec2_title">2. ইন্টারঅ্যাক্টিভ কর্ড বার</string>
+    <string name="help_sec2_body">কর্ড শুনতে এবং ২২টি ডায়াটোনিক, ডমিন্যান্ট ৭ম, মাইনর ৭ম ও জ্যাজ হারমনির মধ্যে পরিবর্তন করতে যেকোনো বার কার্ডে ট্যাপ করুন।</string>
+    <string name="help_sec3_title">3. ৫-ট্র্যাক স্টেপ সিকোয়েন্সার</string>
+    <string name="help_sec3_body">কিক, স্নেয়ার বা হাই-হ্যাট সেলে ট্যাপ করে OFF -&gt; ON -&gt; ACCENT পরিবর্তন করুন। বেস (Bass) সেলে ট্যাপ করে ডিগ্রি বদলান: বিরতি (.) -&gt; রুট (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8।</string>
+    <string name="help_sec4_title">4. মিক্সার, ফিল এবং ১২-ফ্রেট সোলো স্কেল ম্যাপ</string>
+    <string name="help_sec4_body">ড্রামস / বেস / কর্ড চালু বা বন্ধ করুন অথবা ভলিউম বদলাতে % ট্যাপ করুন। পরবর্তী বারে ড্রাম ফিল দিতে \'ফিল\' ট্যাপ করুন। ১২-ফ্রেট গিটার নেকে সোলো বাজান: সোনালী = কী রুট, সবুজ = কর্ড রুট।</string>
+</resources>

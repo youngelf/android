@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lick Trainer</string>
+    <string name="cat_pentatonic">PENTATONISCH</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">WISSELSLAG</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">SPIN</string>
+    <string name="cat_jazz">JAZZ 7e</string>
+    <string name="play">SPEEL</string>
+    <string name="pause">PAUZE</string>
+    <string name="ladder_static">LADDER: VAST</string>
+    <string name="loop_full_bar">LUS: HELE MAAT</string>
+    <string name="loop_beat_1">LUS: ALLEEN TEL 1</string>
+    <string name="finger_1">1: WIJSV.</string>
+    <string name="finger_2">2: MIDDELV.</string>
+    <string name="finger_3">3: RINGV.</string>
+    <string name="finger_4">4: PINK</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_tab_howto">HOE TE GEBRUIKEN</string>
+    <string name="help_tab_jazz">JAZZ 7e &amp; SNELHEID</string>
+    <string name="help_t0_sec1_title">1. KIES CATEGORIE &amp; LICK</string>
+    <string name="help_t0_sec1_body">Blader door 33 oefeningen in Pentatoniek, Legato, Wisselslag, Blues/Rock, Spider-warmups en Jazz 7e-arpeggio\'s.</string>
+    <string name="help_t0_sec2_title">2. 6-SNARIGE TAB-SEQUENCER</string>
+    <string name="help_t0_sec2_body">Tik op een kolom in de tabulatuur om de noot te horen, de vingerzetting (1=Wijs .. 4=Pink) en de aanslag (D=Neer, U=Op, H=Hammer, P=Pull, /=Slide) te bekijken.</string>
+    <string name="help_t0_sec3_title">3. INTERACTIEVE HALS-INSPECTEUR</string>
+    <string name="help_t0_sec3_body">Tik op een snaar/fret op de ingezoomde 8-frets gitaarhals om die toon direct via de 12-stemmige Karplus-Strong synth te spelen.</string>
+    <string name="help_t0_sec4_title">4. TRANSPONEER NAAR ELKE TOONSOORT</string>
+    <string name="help_t0_sec4_body">Tik op TOON om alle 33 oefeningen over de hals te verschuiven van E tot Eb.</string>
+    <string name="help_t1_sec1_title">1. SNELHEIDSLADDER (BPM LADDER)</string>
+    <string name="help_t1_sec1_body">Tik op LADDER om het tempo elke 2, 4 of 8 maten automatisch te verhogen (+2, +5 of +10 BPM).</string>
+    <string name="help_t1_sec2_title">2. DEELLUS (SUB-RANGE LOOP)</string>
+    <string name="help_t1_sec2_body">Wissel LUS tussen HELE MAAT en ALLEEN TEL 1 om lastige 4-noots patronen te isoleren voordat je alle 16 stappen speelt.</string>
+    <string name="help_t1_sec3_title">3. JAZZ 7e-ARPEGGIO\'S (LICKS #26–#33)</string>
+    <string name="help_t1_sec3_body">Toont diatonische Romeinse trappen (Imaj7..viim7b5) en akkoordintervallen (1, 3, b3, 5, b5, 7, b7) met begeleidingsakkoorden.</string>
+</resources>

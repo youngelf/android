@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kwintencirkel</string>
+    <string name="lock">SLOT</string>
+    <string name="key_prefix">TOON </string>
+    <string name="sevenths">7e</string>
+    <string name="triads">DRIEKL.</string>
+    <string name="tap_swipe">TIK / SWIPE</string>
+    <string name="voicing_1">&lt; 1/3 Open/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 E-Barré (6sn) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 A-Barré (5sn) &gt;</string>
+    <string name="loop_play">&gt; LUS</string>
+    <string name="loop_pause">|| PAUZE</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">PRESETS</string>
+    <string name="close">SLUITEN</string>
+    <string name="func_tonic_maj">Tonica groot</string>
+    <string name="func_subdominant">Subdominant</string>
+    <string name="func_dominant">Dominant</string>
+    <string name="func_rel_min">Parallel mineur</string>
+    <string name="func_supertonic">Supertonica mineur</string>
+    <string name="func_mediant">Mediant mineur</string>
+    <string name="func_leading_dim">Leidtoon verm.</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_guide_title">HOE DE KWINTENCIRKEL WERKT</string>
+    <string name="help_guide_sec1_title">1. HET WIEL &amp; HARMONISCHE RINGEN</string>
+    <string name="help_guide_sec1_body">Buiten = 12 Majeur-akkoorden | Binnen = 12 Parallelle mineurs | Kern = Toonsoort &amp; vii° verm. Goud = Tonica (I/vi), Blauw = Subdominant (IV/ii), Groen = Dominant (V/iii).</string>
+    <string name="help_guide_sec2_title">2. TOONSOORT DRAAIEN vs. VERGRENDELD</string>
+    <string name="help_guide_sec2_body">Ontgrendeld draait het aantikken van een akkoord de actieve toonsoort en transponeert de lus. Tik rechtsboven op SLOT om de toonsoort vast te zetten.</string>
+    <string name="help_guide_sec3_title">3. AKKOORDNOTEN &amp; TOONLADDERTRAPPEN</string>
+    <string name="help_guide_sec3_body">Toont akkoordnoten en toonladdertrappen in de actieve toonsoort (bijv. C = 1-3-5). Tik op DRIEKL. / 7e om septiemakkoorden in te schakelen.</string>
+    <string name="help_guide_sec4_title">4. GITAARHALS &amp; LUIDSPREKER</string>
+    <string name="help_guide_sec4_body">Tik op \'&lt; 1/3 Open/CAGED &gt;\' of veeg om 3 gitaarvoicings te wisselen. Veeg over de snaren of tik op het groene luidsprekericoon om te tokkelen.</string>
+    <string name="help_guide_sec5_title">5. 4-MAATS LOOPER &amp; PRESETS</string>
+    <string name="help_guide_sec5_body">Tik op \'&gt; LUS\' om de 4-maats progressie te spelen, \'+PROG\' om het actieve akkoord in te voegen, of \'PRESETS\' voor klassieke progressies.</string>
+    <string name="help_presets_title">PROGRESSIE-PRESETS &amp; GIDS</string>
+    <string name="help_looper_play">&gt; SPEEL 4-MAATS AUTO-STRUM LOOPER</string>
+    <string name="help_looper_pause">|| PAUZEER 4-MAATS AUTO-STRUM LOOPER</string>
+    <string name="help_presets_touch"> TOUCH: Tik/Sleep Wiel | Veeg Snaren om te Tokkelen | Veeg Voicing-balk</string>
+    <string name="help_presets_keys">TOETSEN: DPAD=Wiel  A=Strum  B=7e  L1/R1=Voicing  X=+Prog  SEL=Slot</string>
+</resources>

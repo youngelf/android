@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">初見視奏トレーナー</string>
+    <string name="header_title">初見視奏</string>
+    <string name="play">再生</string>
+    <string name="stop">停止</string>
+    <string name="sound">音声ON</string>
+    <string name="muted">消音</string>
+    <string name="new_piece">新しい課題</string>
+    <string name="hint_on">ヒント: 入</string>
+    <string name="hint_off">ヒント: 切</string>
+    <string name="mode_etude">モード: エチュード</string>
+    <string name="mode_quiz">モード: クイズ</string>
+    <string name="mode_flow">モード: フロー</string>
+    <string name="got_it">了解</string>
+    <string name="close">閉じる</string>
+    <string name="help_title">初見視奏トレーナー — ト音記号＆ギターガイド</string>
+    <string name="help_sec1_title">1. ト音記号（ギター8vb標準五線譜）</string>
+    <string name="help_sec1_body">自動加線付きの標準ギター五線譜（8vbト音記号）を表示します。金色のハイライト列が現在弾くべきターゲット音を示します。</string>
+    <string name="help_sec2_title">2. 7つの調号と5つのネックポジション</string>
+    <string name="help_sec2_body">7つの長調（C, G, D, A, E, F, Bb）と5つのギターポジション（開放、第2・5・7・9ポジション）、全24曲の練習曲でトレーニングできます。</string>
+    <string name="help_sec3_title">3. インタラクティブ指板＆3つの練習モード</string>
+    <string name="help_sec3_body">6弦ローズウッド指板上の該当する弦とフレットをタップして音符を読み取ります。「練習曲」は指板ヒントを表示、「クイズ」はヒントを隠して実力テスト、「フロー」はクリックに合わせて自動進行します。</string>
+    <string name="help_sec4_title">4. ギター音源シンセとエチュード自動再生</string>
+    <string name="help_sec4_body">「再生」をタップすると選択中のBPMで2小節エチュードの模範演奏が聴けます。上部の「音ON / 消音」でギター音源のON/OFFを切り替えられます。</string>
+</resources>

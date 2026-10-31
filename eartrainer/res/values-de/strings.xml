@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gehörbildung</string>
+    <string name="mode_intervals">INTERVALLE</string>
+    <string name="mode_chords">AKKORDE</string>
+    <string name="mode_solfege">SOLMISATION</string>
+    <string name="mode_melodic">MELODISCH</string>
+    <string name="tier_easy">LEICHT</string>
+    <string name="tier_medium">MITTEL</string>
+    <string name="tier_all_12">ALLE 12</string>
+    <string name="replay">NOCHMAL</string>
+    <string name="root_note">GRUNDTON</string>
+    <string name="style">STIL</string>
+    <string name="hint_minus_2">TIPP (-2)</string>
+    <string name="next">WEITER &gt;&gt;</string>
+    <string name="skip">ÜBERSPR. &gt;&gt;</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_title">GEHÖRBILDUNGS-STUDIO — KURZANLEITUNG</string>
+    <string name="help_sec1_title">1. VIER ÜBUNGSMODI (Oben links auf MODUS tippen)</string>
+    <string name="help_sec1_body">• INTERVALLE: 12 chromatische Intervalle (m2..P8) aufsteigend, absteigend, harmonisch oder gemischt.\n• AKKORDE: 12 Dreiklangs- &amp; Sept-Qualitäten (Dur, Moll, verm., überm., sus2/4, Dom7, Maj7, m7).\n• SOLMISATION: Chromatische Stufen (Ra..Do\') über einer I-IV-V-I-Kadenz oder Grundton.\n• MELODISCH: 3-Ton-Melodiezellen &amp; 3-Akkord-Kadenzen (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. 3-VERSUCHE-REGEL &amp; VERGLEICHENDES PROBEHÖREN</string>
+    <string name="help_sec2_body">• Du hast 3 Versuche pro Frage. Nutze TIPP (-2), um zwei falsche Optionen auszuschließen.\n• Nach der Auflösung kannst du JEDES der 12 Pads antippen, um Intervalle oder Akkorde auf Griffbrett und Klaviatur zu vergleichen!</string>
+    <string name="help_sec3_title">3. INTERAKTIVES KLAVIER &amp; GITARRENGRIFFBRETT</string>
+    <string name="help_sec3_body">Tippe jederzeit auf eine Taste der 2-Oktaven-Klaviatur oder eine Saite/Bund auf dem Gitarrenhals, um Töne anzuspielen und Intervalle nach Gehör zu prüfen.</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bladlezen</string>
+    <string name="header_title">BLADLEZEN</string>
+    <string name="play">SPEEL</string>
+    <string name="stop">STOP</string>
+    <string name="sound">GELUID</string>
+    <string name="muted">GEDEMPT</string>
+    <string name="new_piece">NIEUW STUK</string>
+    <string name="hint_on">HINT: AAN</string>
+    <string name="hint_off">HINT: UIT</string>
+    <string name="mode_etude">MODUS: ETUDE</string>
+    <string name="mode_quiz">MODUS: QUIZ</string>
+    <string name="mode_flow">MODUS: FLOW</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="close">SLUITEN</string>
+    <string name="help_title">VAN BLAD SPELEN — VIOLINSLEUTEL &amp; GITAARGIDS</string>
+    <string name="help_sec1_title">1. NOTATIE IN DE VIOLINSLEUTEL</string>
+    <string name="help_sec1_body">Standaard gitaarnotenbalk in de vioolsleutel (8vb) met automatische hulplijnen. De gouden kolom markeert de doelnoot.</string>
+    <string name="help_sec2_title">2. VOORTEKENS &amp; HALSPOSITIES</string>
+    <string name="help_sec2_body">Oefen in 7 majeurtoonsoorten (C, G, D, A, E, F, Bb) over 5 halsposities (OPEN, POS 2, 5, 7, 9) en 24 etudes.</string>
+    <string name="help_sec3_title">3. INTERACTIEVE HALS &amp; OEFENMODI</string>
+    <string name="help_sec3_body">Tik direct op de juiste snaar en fret op de 6-snarige palissander gitaarhals. Etude-modus toont hints op de hals; Quiz-modus verbergt hints; Flow-modus loopt automatisch mee met de klik.</string>
+    <string name="help_sec4_title">4. AUDIO-SYNTH &amp; ETUDE AFSPELEN</string>
+    <string name="help_sec4_body">Tik op SPEEL om de 2-maats etude op de gekozen BPM te horen, of tik bovenaan op GELUID / GEDEMPT voor gitaarsynthese.</string>
+</resources>

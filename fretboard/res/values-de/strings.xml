@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Griffbrett</string>
+    <string name="header_title">GRIFFBRETT</string>
+    <string name="tab_scales">Skalen</string>
+    <string name="tab_chords">Akkorde</string>
+    <string name="tab_finder">Finder</string>
+    <string name="tab_1_scales">1: Skalen</string>
+    <string name="tab_2_chords">2: Akkorde</string>
+    <string name="tab_3_finder">3: Finder</string>
+    <string name="play_scale">▶ Skala</string>
+    <string name="play_strum">▶ Strum</string>
+    <string name="key_prefix">Tonart: </string>
+    <string name="position_header">LAGE</string>
+    <string name="all_neck">GANZER HALS</string>
+    <string name="frets_0_15">Bünde 0–15</string>
+    <string name="lbl_intervals">Bez: R/3/5</string>
+    <string name="lbl_notes">Bez: Noten</string>
+    <string name="lbl_degrees">Bez: Stufen</string>
+    <string name="hand_righty">Hand: Rechts</string>
+    <string name="hand_lefty">Hand: Links</string>
+    <string name="quiz_off">Quiz: Aus</string>
+    <string name="quiz_note">Quiz: Note</string>
+    <string name="quiz_intv">Quiz: Intv</string>
+    <string name="scale_dorian">Dorischer Modus ▾</string>
+    <string name="scale_min_pent">Moll-Pentatonik ▾</string>
+    <string name="scale_blues">Blues-Skala ▾</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_title">GRIFFBRETT-EXPLORER — KURZANLEITUNG</string>
+    <string name="help_sec1_title">1. DREI ERKUNDUNGSMODI</string>
+    <string name="help_sec1_body">Wechsle zwischen 1: Skalen (16 Skalen + 5 CAGED-Boxen), 2: Akkorde (12 Qualitäten mit CAGED-Voicings) und 3: Finder (tippe auf Bünde, um eigene Akkorde zu bestimmen).</string>
+    <string name="help_sec2_title">2. AUDIOSYNTHESE &amp; ANSCHLAG</string>
+    <string name="help_sec2_body">Tippe auf einen Bund, um eine Karplus-Strong-Gitarrennote anzuschlagen, oder tippe oben auf ▶, um den Akkord oder die Skala anzuhören.</string>
+    <string name="help_sec3_title">3. HARMONISCHE FARBLEGENDE</string>
+    <string name="help_sec3_body">Grundton = Bernstein | Terz (3/b3) = Smaragdgrün | Quinte = Königsblau | Septime (7/b7) = Violett | Blue Note (b5) = Gold | Skalenton = Schiefer.</string>
+    <string name="help_sec4_title">4. BESCHRIFTUNG, STIMMUNGEN &amp; LINKSHÄNDER</string>
+    <string name="help_sec4_body">Wechsle zwischen Intervallen (R, 3, 5), Notennamen und Stufen, wähle aus 6 Stimmungen (Standard, Drop D, DADGAD, Eb, Open G, Open D) oder aktiviere den Linkshänder-Modus.</string>
+    <string name="help_sec5_title">5. GRIFFBRETT-QUIZ</string>
+    <string name="help_sec5_body">Aktiviere das Noten- oder Intervall-Quiz, um dein Griffbrettwissen auf allen 6 Saiten mit Live-Punktestand zu testen.</string>
+</resources>

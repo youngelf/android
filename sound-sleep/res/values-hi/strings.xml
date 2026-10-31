@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">गहरी नींद</string>
+    <string name="cloudDesc">बादल (व्हाइट नॉइज़)</string>
+    <string name="noteDesc">संगीत स्वर</string>
+    <string name="playing_music">संगीत चल रहा है</string>
+</resources>

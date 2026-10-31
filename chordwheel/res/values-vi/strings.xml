@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vòng Quãng Năm</string>
+    <string name="lock">KHÓA</string>
+    <string name="key_prefix">GIỌNG </string>
+    <string name="sevenths">HỢP ÂM 7</string>
+    <string name="triads">BA ÂM</string>
+    <string name="tap_swipe">CHẠM / VUỐT</string>
+    <string name="voicing_1">&lt; 1/3 Mở/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Chặn E (6dây) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Chặn A (5dây) &gt;</string>
+    <string name="loop_play">&gt; LẶP</string>
+    <string name="loop_pause">|| TẠM DỪNG</string>
+    <string name="add_prog">+TIẾN TRÌNH</string>
+    <string name="presets">MẪU SẴN</string>
+    <string name="close">ĐÓNG</string>
+    <string name="func_tonic_maj">Chủ âm Trưởng</string>
+    <string name="func_subdominant">Hạ át âm</string>
+    <string name="func_dominant">Át âm</string>
+    <string name="func_rel_min">Thứ tương đương</string>
+    <string name="func_supertonic">Thượng chủ âm Thứ</string>
+    <string name="func_mediant">Trung âm Thứ</string>
+    <string name="func_leading_dim">Âm dẫn Giảm</string>
+    <string name="got_it">ĐÃ HIỂU</string>
+    <string name="help_guide_title">CÁCH HOẠT ĐỘNG CỦA VÒNG QUÃNG NĂM</string>
+    <string name="help_guide_sec1_title">1. VÒNG XOAY &amp; CÁC VÒNG HÒA ÂM</string>
+    <string name="help_guide_sec1_body">Vòng ngoài = 12 hợp âm Trưởng | Vòng trong = 12 Thứ tương đương | Tâm = Giọng &amp; vii° giảm. Vàng = Chủ âm (I/vi), Xanh lam = Hạ át (IV/ii), Xanh lục = Át âm (V/iii).</string>
+    <string name="help_guide_sec2_title">2. XOAY GIỌNG vs. KHÓA GIỌNG (LOCK)</string>
+    <string name="help_guide_sec2_body">Khi mở khóa, chạm vào hợp âm sẽ xoay giọng đang chọn và dịch giọng vòng lặp. Chạm KHÓA ở góc trên bên phải để cố định giọng và nghe thử hợp âm.</string>
+    <string name="help_guide_sec3_title">3. NỐT HỢP ÂM &amp; BẬC ÂM GIAI</string>
+    <string name="help_guide_sec3_body">Hiển thị các nốt hợp âm và bậc âm giai trong giọng hiện tại (VD: C = 1-3-5). Chạm BA ÂM / HỢP ÂM 7 để chuyển đổi hợp âm bảy 4 nốt.</string>
+    <string name="help_guide_sec4_title">4. CẦN ĐÀN GUITAR &amp; LOA NGHE THỬ</string>
+    <string name="help_guide_sec4_body">Chạm \'&lt; 1/3 Mở/CAGED &gt;\' hoặc vuốt trái/phải để đổi 3 thế bấm guitar. Vuốt qua 6 dây đàn hoặc chạm biểu tượng Loa màu xanh lá để quạt chả.</string>
+    <string name="help_guide_sec5_title">5. VÒNG LẶP 4 Ô NHỊP &amp; MẪU SẴN</string>
+    <string name="help_guide_sec5_body">Chạm \'&gt; LẶP\' để phát vòng 4 ô nhịp, \'+TIẾN TRÌNH\' để chèn hợp âm đang chọn vào ô sáng, hoặc \'MẪU SẴN\' để nạp các vòng hợp âm kinh điển.</string>
+    <string name="help_presets_title">MẪU TIẾN TRÌNH HỢP ÂM &amp; HƯỚNG DẪN</string>
+    <string name="help_looper_play">&gt; PHÁT VÒNG LẶP QUẠT CHẢ 4 Ô NHỊP</string>
+    <string name="help_looper_pause">|| TẠM DỪNG VÒNG LẶP 4 Ô NHỊP</string>
+    <string name="help_presets_touch">CHẠM: Chạm/Kéo Vòng xoay | Vuốt dây để quạt chả | Vuốt thanh thế bấm</string>
+    <string name="help_presets_keys">PHÍM: DPAD=Vòng  A=Quạt  B=Hợp âm 7  L1/R1=Thế bấm  X=+Prog  SEL=Khóa</string>
+</resources>

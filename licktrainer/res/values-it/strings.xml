@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lick Trainer</string>
+    <string name="cat_pentatonic">PENTATONICA</string>
+    <string name="cat_legato">LEGATO/ARP</string>
+    <string name="cat_alt_pick">PENNATA ALT.</string>
+    <string name="cat_blues_rock">BLUES/ROCK</string>
+    <string name="cat_spider">RAGNO</string>
+    <string name="cat_jazz">JAZZ 7ª</string>
+    <string name="play">AVVIA</string>
+    <string name="pause">PAUSA</string>
+    <string name="ladder_static">SCALA: FISSA</string>
+    <string name="loop_full_bar">LOOP: BATTUTA</string>
+    <string name="loop_beat_1">LOOP: SOLO MOV. 1</string>
+    <string name="finger_1">1: INDICE</string>
+    <string name="finger_2">2: MEDIO</string>
+    <string name="finger_3">3: ANULARE</string>
+    <string name="finger_4">4: MIGNOLO</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_tab_howto">COME USARE</string>
+    <string name="help_tab_jazz">7ª JAZZ E VELOCITÀ</string>
+    <string name="help_t0_sec1_title">1. SELEZIONA CATEGORIA E LICK</string>
+    <string name="help_t0_sec1_body">Esplora 33 esercizi tra Pentatonica, Legato, Pennata Alternata, Blues/Rock, Riscaldamento Spider e Arpeggi Jazz di 7ª.</string>
+    <string name="help_t0_sec2_title">2. SEQUENCER INTAVOLATURA A 6 CORDE</string>
+    <string name="help_t0_sec2_body">Tocca qualsiasi colonna sulla tablatura per ascoltare la nota, controllare il dito della mano sinistra (1=Indice .. 4=Mignolo) e la pennata (D=Giù, U=Su, H=Hammer, P=Pull, /=Slide).</string>
+    <string name="help_t0_sec3_title">3. ISPETTORE MANICO INTERATTIVO</string>
+    <string name="help_t0_sec3_body">Tocca qualsiasi corda/tasto sul manico ingrandito a 8 tasti per pizzicare la nota tramite il sintetizzatore Karplus-Strong a 12 voci.</string>
+    <string name="help_t0_sec4_title">4. TRASPONI IN QUALSIASI TONALITÀ</string>
+    <string name="help_t0_sec4_body">Tocca TON. per trasportare tutti i 33 esercizi lungo la tastiera da Mi a Mib.</string>
+    <string name="help_t1_sec1_title">1. SCALA DI VELOCITÀ BPM PROGRESSIVA</string>
+    <string name="help_t1_sec1_body">Tocca SCALA per aumentare automaticamente i BPM (+2, +5 o +10 BPM) ogni 2, 4 o 8 battute e sviluppare la velocità.</string>
+    <string name="help_t1_sec2_title">2. LOOP SU SINGOLO MOVIMENTO</string>
+    <string name="help_t1_sec2_body">Alterna LOOP tra BATTUTA INTERA e SOLO MOV. 1 per isolare cellule difficili di 4 note prima di unire l\'intera frase di 16 passi.</string>
+    <string name="help_t1_sec3_title">3. ARPEGGI JAZZ 7ª (LICK #26–#33)</string>
+    <string name="help_t1_sec3_body">Mostra i gradi romani diatonici (Imaj7..viim7b5) e gli intervalli dell\'accordo (1, 3, b3, 5, b5, 7, b7) con accordi di accompagnamento.</string>
+</resources>

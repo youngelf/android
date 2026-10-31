@@ -1,0 +1,1 @@
+Metrônomo de pêndulo preciso com compassos ímpares, polirritmia e treinador BPM.

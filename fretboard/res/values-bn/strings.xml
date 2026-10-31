@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ফ্রেটবোর্ড</string>
+    <string name="header_title">ফ্রেটবোর্ড</string>
+    <string name="tab_scales">স্কেল</string>
+    <string name="tab_chords">কর্ড</string>
+    <string name="tab_finder">ফাইন্ডার</string>
+    <string name="tab_1_scales">1: স্কেল</string>
+    <string name="tab_2_chords">2: কর্ড</string>
+    <string name="tab_3_finder">3: ফাইন্ডার</string>
+    <string name="play_scale">▶ স্কেল</string>
+    <string name="play_strum">▶ স্ট্রাম</string>
+    <string name="key_prefix">কী: </string>
+    <string name="position_header">পজিশন</string>
+    <string name="all_neck">পুরো নেক</string>
+    <string name="frets_0_15">ফ্রেট 0–15</string>
+    <string name="lbl_intervals">লেবেল: R/3/5</string>
+    <string name="lbl_notes">লেবেল: নোট</string>
+    <string name="lbl_degrees">লেবেল: ডিগ্রি</string>
+    <string name="hand_righty">হাত: ডানহাতি</string>
+    <string name="hand_lefty">হাত: বাঁহাতি</string>
+    <string name="quiz_off">কুইজ: বন্ধ</string>
+    <string name="quiz_note">কুইজ: নোট</string>
+    <string name="quiz_intv">কুইজ: ব্যবধান</string>
+    <string name="scale_dorian">ডোরিয়ান মোড ▾</string>
+    <string name="scale_min_pent">মাইনর পেন্টাটোনিক ▾</string>
+    <string name="scale_blues">ব্লুজ স্কেল ▾</string>
+    <string name="close">বন্ধ</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_title">ফ্রেটবোর্ড এক্সপ্লোরার — দ্রুত গাইড</string>
+    <string name="help_sec1_title">1. তিনটি অন্বেষণ মোড</string>
+    <string name="help_sec1_body">১: স্কেল (১৬টি স্কেল + ৫টি CAGED বক্স), ২: কর্ড (১২টি কর্ড ও CAGED ভয়েসিং), এবং ৩: ফাইন্ডার (যেকোনো ফ্রেটে ট্যাপ করে কাস্টম কর্ড শনাক্ত করুন) এর মধ্যে পরিবর্তন করুন।</string>
+    <string name="help_sec2_title">2. অডিও সিন্থেসিস ও স্ট্রামিং</string>
+    <string name="help_sec2_body">Karplus-Strong গিটার নোট বাজাতে যেকোনো ফ্রেটে ট্যাপ করুন, অথবা কর্ড বা স্কেল শুনতে উপরের বারে ▶ বোতামে ট্যাপ করুন।</string>
+    <string name="help_sec3_title">3. হারমোনিক রঙের নির্দেশিকা</string>
+    <string name="help_sec3_body">রুট (R) = অ্যাম্বার-লাল | ৩য় (3/b3) = পান্না সবুজ | ৫ম (5) = রয়েল ব্লু | ৭ম (7/b7) = বেগুনি | ব্লু নোট (b5) = সোনালী | অন্যান্য = স্লেট।</string>
+    <string name="help_sec4_title">4. লেবেল, টিউনিং ও বাঁ-হাতি মোড</string>
+    <string name="help_sec4_body">ইন্টারভ্যাল (R, 3, 5), স্বরের নাম ও ডিগ্রির মধ্যে পরিবর্তন করুন, ৬টি গিটার টিউনিং বেছে নিন অথবা বাঁ-হাতি বাদকদের জন্য ফ্রেটবোর্ড উল্টে নিন।</string>
+    <string name="help_sec5_title">5. ফ্রেটবোর্ড কুইজ</string>
+    <string name="help_sec5_body">সব ৬টি তারে আপনার ফ্রেটবোর্ড দক্ষতা যাচাই করতে \'নোট কুইজ\' বা \'ইন্টারভ্যাল কুইজ\' চালু করুন।</string>
+</resources>

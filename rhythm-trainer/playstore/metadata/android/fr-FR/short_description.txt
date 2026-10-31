@@ -1,0 +1,1 @@
+Éditeur et lecteur de notation rythmique musicale à fréquence fixe (440 Hz).

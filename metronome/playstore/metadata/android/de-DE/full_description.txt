@@ -1,0 +1,16 @@
+Entwickeln Sie ein felsenfestes Timing, meistern Sie ungerade Taktarten sowie Polyrhythmen und steigern Sie Ihre Spielgeschwindigkeit mit Metronom: Präzisions-Pendel & Speed-Coach. Entwickelt für Instrumentalisten, Schlagzeuger, Gitarristen und Pianisten, arbeitet dieses Metronom mit einer samplegenauen 44,1-kHz-PCM-Klangsynthese ohne Timing-Jitter.
+
+SAMPLEGENAUES 44,1-kHz-TIMING & VISUELLES PENDEL
+• Zero-Jitter-Audio-Engine: Jeder Klick, Akzent und jede Unterteilung wird exakt auf Sample-Ebene bei 44,1 kHz berechnet.
+• Kontrastreiches Pendel und leuchtstarke Schlag-Matrix.
+• Tap-Tempo und feine BPM-Schritte (-5, -1, +1, +5) von 20 bis 260 BPM inklusive klassischer Tempobezeichnungen (Largo, Adagio, Andante, Moderato, Allegro, Presto).
+
+12 TAKTARTEN, UNGERADE METREN & 6 UNTERTEILUNGEN
+• Standard- und ungerade Takte: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8 sowie 5/4, 5/8, 7/4, 7/8, 11/8 und 13/8.
+• Interaktiver Schlag-Akzent-Sequenzer: Tippen Sie auf eine Schlagspalte, um zwischen STARKER AKZENT, NORMAL, NEBENAKZENT und STUMM zu wechseln.
+• 6 rhythmische Unterteilungen: Viertel, Achtel, Triolen, Sechzehntel, punktierte Achtel (Swing) und Quintolen.
+
+POLYRHYTHMIK-GENERATOR, SPEED-COACH & STUMME TAKTE
+• Zwei-Ring-Polyrhythmik (3:2, 4:3, 5:3, 5:4, 7:4).
+• Automatischer Tempotrainer (+BPM alle N Takte) und Taktaussetzer (Bar Dropper) zum Training der inneren Uhr.
+• 5 Klick-Klangfarben, Display bleibt beim Üben aktiv, Hoch-/Querformat, 100 % offline und werbefrei.

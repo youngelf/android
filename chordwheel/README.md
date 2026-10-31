@@ -1,52 +1,101 @@
-# Circle of Fifths (`com.eggwall.chordwheel`)
+# ChordWheel — Circle of Fifths & Guitar Chord Looper (`com.eggwall.chordwheel`)
 
 <p align="center">
-  <img src="playstore-icon-512.png" width="128" alt="Circle of Fifths Icon" />
+  <img src="playstore-icon-512.png" width="128" alt="ChordWheel — Circle of Fifths & Guitar Chord Looper 512x512 Icon" />
 </p>
 
-Android music-theory companion, guitar voicing inspector, and 4-bar chord progression looper translated from the PowKiddy V90 `chordwheel` application.
+> **Play Store Short Description:** Interactive Circle of Fifths, CAGED guitar voicings, and 4-bar chord looper.
 
-## Screenshots
+Interactive concentric Circle of Fifths (Outer Major, Inner Minor, Center Diminished), active-key scale-degree chord formulas (`1 - 3 - 5`, `4 - 6 - 8`), Open/CAGED & barre guitar voicings with Karplus-Strong synthesis, and a 4-bar progression looper.
 
-| Portrait Workspace | Landscape Two-Pane Workspace |
+![Feature Graphic](feature-graphic-1024x500.png)
+
+---
+
+## Built for Both Musicians & Software Engineers
+
+### 1. For Musicians, Music Students & Guitar Students
+- **Practical Daily Practice Companion**: Designed for students of music theory, songwriters, and guitar students learning how keys, Roman numerals, scale degrees, and CAGED/barre chord shapes connect on the fretboard.
+- **100% Offline & Distraction-Free**: Runs with zero network permissions, zero ads, and instant 44.1 kHz real-time audio synthesis.
+- **Musician's Guide**: See **[`USER_GUIDE.md`](USER_GUIDE.md)** for a complete visual tour, music-theory reference, and structured practice routines.
+
+### 2. For Software Engineers & Tinkerers (Modify & Build Your Own Apps)
+- **Clean, Hackable 4-Class Architecture**: This app is intentionally architected with zero third-party runtime dependencies so software engineers and musician-coders can read the entire codebase in an afternoon and customize it for their exact use case:
+  1. **Pure JVM Domain & Theory Layer ([`src/com/eggwall/chordwheel/MusicTheory.java`](src/com/eggwall/chordwheel/MusicTheory.java))**: Stateless tables and math with zero Android UI dependencies—100% unit-tested on a standard JVM in **[`test/com/eggwall/chordwheel/MusicTheoryTest.java`](test/com/eggwall/chordwheel/MusicTheoryTest.java)**.
+  2. **Real-Time 44.1 kHz Audio Synthesis ([`src/com/eggwall/chordwheel/GuitarSynthEngine.java`](src/com/eggwall/chordwheel/GuitarSynthEngine.java))**: Low-latency `AudioTrack` PCM synthesis with zero heap allocations inside the audio loop.
+  3. **Responsive Custom Canvas UI ([`src/com/eggwall/chordwheel/ChordWheelView.java`](src/com/eggwall/chordwheel/ChordWheelView.java))**: Hardware-accelerated vector rendering that adapts automatically between Portrait and Landscape.
+- **How to Customize**: Modify chord voicings, add custom progression presets, tweak the Karplus-Strong plucked-string DSP parameters, or customize the polar wheel canvas layout.
+- **Developer Documentation**:
+  - **[Developer & Customization Guide (`DEVELOPER_GUIDE.md`)](DEVELOPER_GUIDE.md)** — Module breakdown, screen rendering map, and step-by-step code customization recipes.
+  - **[Suite Porting & Engineering Playbook (`../porting.md`)](../porting.md)** — Full architectural guide explaining how these apps are scaffolded, synthesized, tested, and packaged so you can build your own custom Android apps.
+
+---
+
+## Phone Screenshots
+
+### Main Workspace (Portrait & Landscape)
+| Portrait Workspace | Landscape Workspace |
 | :---: | :---: |
-| ![Portrait](docs/images/seg_portrait_main.png) | ![Landscape](docs/images/seg_landscape_two_pane.png) |
+| ![Portrait Main](docs/images/seg_portrait_main.png) | ![Landscape Main](docs/images/seg_landscape_two_pane.png) |
 
-## Documentation
+### Additional Functionality Screenshots (2 Portrait + 2 Landscape)
+| Portrait Feature 1 | Portrait Feature 2 |
+| :---: | :---: |
+| ![Portrait 1](docs/images/phone_portrait_1.png) | ![Portrait 2](docs/images/phone_portrait_2.png) |
 
-- **[Musician's User Guide (`USER_GUIDE.md`)](USER_GUIDE.md)**: How the interface works and 6 structured practice routines to improve ear training, fretboard fluency, songwriting, and harmonic understanding.
-- **[Engineering & Customization Guide (`DEVELOPER_GUIDE.md`)](DEVELOPER_GUIDE.md)**: Architecture overview and step-by-step instructions for modifying chord qualities, tunings, voicings, progression presets, layout geometry, and Karplus-Strong synthesis, with relative links to source files.
-- **[Privacy Policy (`PRIVACY_POLICY.md`)](PRIVACY_POLICY.md)**: Zero-permission, offline-only privacy policy with direct source-code verification links.
+| Landscape Feature 1 | Landscape Feature 2 |
+| :---: | :---: |
+| ![Landscape 1](docs/images/phone_landscape_1.png) | ![Landscape 2](docs/images/phone_landscape_2.png) |
 
-## Key Features
+---
 
-- **Full-Width Interactive Circle of Fifths Wheel** ([`ChordWheelView.java`](src/com/eggwall/chordwheel/ChordWheelView.java#L481-L611)):
-  - **Outer Ring**: 12 Major keys/chords (`C, G, D, A, E, B, F#, Db, Ab, Eb, Bb, F`).
-  - **Inner Ring**: 12 Relative Minor chords (`Am, Em, Bm, F#m, C#m, G#m, D#m, Bbm, Fm, Cm, Gm, Dm`).
-  - **Center Hub**: Key signature and leading-tone diminished (`vii°` / `m7b5`) chord of the active key.
-  - **Corner `?` & `LOCK` Pills**: Top-left `?` opens the in-app *How Circle of Fifths Works* guide modal; top-right `LOCK` freezes the active key so you can audition any chord's harmonic role without rotating the key.
-- **Chord Composition with Active-Key Scale Degrees** ([`MusicTheory.resolveChordAt()`](src/com/eggwall/chordwheel/MusicTheory.java#L379-L464)):
-  - Displays both spelled chord notes and scale-degree numbers relative to the active key (e.g., in Key of C: `C Major` = `C - E - G (1 - 3 - 5)`, `F Major` = `F - A - C (4 - 6 - 8)`, `G Major` = `G - B - D (5 - 7 - 9)`).
-- **Responsive Portrait & Landscape Layouts** ([`drawLandscapeLayout()`](src/com/eggwall/chordwheel/ChordWheelView.java#L421-L447), [`drawPortraitLayout()`](src/com/eggwall/chordwheel/ChordWheelView.java#L449-L479)):
-  - **Landscape**: Full-height Circle of Fifths wheel on the left pane; Chord Info card, 6-string Guitar Fretboard card, and 4-bar Progression Loop bar stacked on the right pane.
-  - **Portrait**: Full-width Circle of Fifths wheel on top, Chord Info and Fretboard cards in the middle, and the 4-bar Progression Loop bar along the bottom.
-- **Interactive 6-String Fretboard & Karplus-Strong Synth** ([`GuitarSynthEngine.java`](src/com/eggwall/chordwheel/GuitarSynthEngine.java#L26-L261)):
-  - Drag across the strings to pluck individual strings, tap the green speaker icon on the right of the fretboard to strum, or tap/swipe the `< 1/3 Open/CAGED >` bar to cycle between Open/CAGED, E-Barre, and A-Barre shapes.
-- **System Status Bar & Screen Timeout Behavior** ([`AndroidManifest.xml`](AndroidManifest.xml), [`ChordWheelActivity.java`](src/com/eggwall/chordwheel/ChordWheelActivity.java)):
-  - Uses `@android:style/Theme.DeviceDefault.NoActionBar` with system-bar window-inset padding (`wrapWithStatusBarInsets`) so the top Android status bar remains visible at all times.
-  - Respects the device's normal system screen timeout (does not hold `FLAG_KEEP_SCREEN_ON`).
+## Documentation & Play Store Assets
 
-## Build, Test & Sign Instructions
+- **[User & Musician's Guide (`USER_GUIDE.md`)](USER_GUIDE.md)** — Visual tour, feature reference, and structured practice routines.
+- **[Developer & Customization Guide (`DEVELOPER_GUIDE.md`)](DEVELOPER_GUIDE.md)** — Architecture, customization recipes, and UI layout map for software engineers.
+- **[Suite Porting & Architecture Playbook (`../porting.md`)](../porting.md)** — Reusable engineering guide for building or porting custom Android audio/music apps.
+- **[Play Store Listing & Assets (`PLAY_STORE_LISTING.md`)](PLAY_STORE_LISTING.md)** — Short description, 512×512 icon, 1024×500 Miyazaki-style feature graphic, and phone screenshots.
+- **[Privacy Policy (`PRIVACY_POLICY.md`)](PRIVACY_POLICY.md)** — Zero permissions, zero network access, and zero third-party SDK verification.
 
-Built with Android Gradle Plugin `8.9.0`, Gradle `8.14`, and Android SDK `36` (`minSdk = 19`, `targetSdk = 36`):
+---
+
+## Window & Screen Timeout Behavior
+
+- **Visible System Status Bar**: Uses `@android:style/Theme.DeviceDefault.NoActionBar` ([`AndroidManifest.xml`](AndroidManifest.xml)) with system-bar window-inset padding so the top Android status bar remains visible at all times.
+- **Standard Screen Timeout**: Does not set `FLAG_KEEP_SCREEN_ON`, respecting the user's normal device screen timeout.
+
+<!-- I18N_EFIGSCJK_START -->
+---
+
+## Internationalization (i18n) — Top 20 World Languages & EFIGSCJK Preview
+
+**ChordWheel** is localized across the **top 20 world languages** via Android resource qualifiers (`res/values-<lang>/strings.xml`) and runtime canvas/UI localization (`AppI18n`):
+
+- **Supported 20 Languages:** English (`en-US`), French (`fr-FR`), Italian (`it-IT`), German (`de-DE`), Spanish (`es-ES`), Simplified Chinese (`zh-CN`), Japanese (`ja-JP`), Korean (`ko-KR`), Portuguese (`pt-BR`), Russian (`ru-RU`), Arabic (`ar`), Hindi (`hi-IN`), Bengali (`bn-BD`), Indonesian (`id`), Turkish (`tr-TR`), Vietnamese (`vi`), Polish (`pl-PL`), Dutch (`nl-NL`), Thai (`th`), and Ukrainian (`uk`).
+- **Google Play Console "Import translations with AI" (All 20 Languages):** Upload **[`PLAY_STORE_AI_IMPORT.csv`](PLAY_STORE_AI_IMPORT.csv)** (recommended), **[`PLAY_STORE_AI_IMPORT.md`](PLAY_STORE_AI_IMPORT.md)**, or **[`PLAY_STORE_AI_IMPORT.txt`](PLAY_STORE_AI_IMPORT.txt)** in **Grow users → Store presence → Store listings → Edit store listing → Import translations with AI** to populate **App name** (`≤ 30` chars), **Short description** (`≤ 80` chars), and **Full description** (`≤ 4000` chars) across all 20 languages in one step.
+- **Fastlane / Per-Locale Store Metadata:** See **[`playstore/metadata/android/`](playstore/metadata/android/)** (all 20 locales) and **[`PLAY_STORE_I18N_EFIGSCJK.md`](PLAY_STORE_I18N_EFIGSCJK.md)**.
+
+### EFIGSCJK 8-Language Visual Contact Sheet (Click Thumbnail to Inspect Full Resolution)
+
+Click the thumbnail below to open the full-resolution `2260×2640` 8-language contact sheet ([`docs/images/i18n/efigscjk_grid.png`](docs/images/i18n/efigscjk_grid.png)), or open any individual `1080×2400` language screenshot directly:
+
+- **Individual Full-Resolution Screenshots:** [**English (`en`)**](docs/images/i18n/en.png) · [**Français (`fr`)**](docs/images/i18n/fr.png) · [**Italiano (`it`)**](docs/images/i18n/it.png) · [**Deutsch (`de`)**](docs/images/i18n/de.png) · [**Español (`es`)**](docs/images/i18n/es.png) · [**中文 (`zh`)**](docs/images/i18n/zh.png) · [**日本語 (`ja`)**](docs/images/i18n/ja.png) · [**한국어 (`ko`)**](docs/images/i18n/ko.png)
+
+[![ChordWheel EFIGSCJK Thumbnail — Click to open full image](docs/images/i18n/efigscjk_grid_thumb.png)](docs/images/i18n/efigscjk_grid.png)
+
+### EFIGSCJK 8-Language Help (`?`) Modal Verification Contact Sheet
+
+Every interactive Help (`?`) guide modal is localized across all 20 supported languages and verified across EFIGSCJK (`en`, `fr`, `it`, `de`, `es`, `zh`, `ja`, `ko`) with zero text clipping or overflow:
+
+- **Individual Help Modal Screenshots:** [**English (`help_en`)**](docs/images/i18n/help_en.png) · [**Français (`help_fr`)**](docs/images/i18n/help_fr.png) · [**Italiano (`help_it`)**](docs/images/i18n/help_it.png) · [**Deutsch (`help_de`)**](docs/images/i18n/help_de.png) · [**Español (`help_es`)**](docs/images/i18n/help_es.png) · [**中文 (`help_zh`)**](docs/images/i18n/help_zh.png) · [**日本語 (`help_ja`)**](docs/images/i18n/help_ja.png) · [**한국어 (`help_ko`)**](docs/images/i18n/help_ko.png)
+
+[![ChordWheel EFIGSCJK Help Modal Thumbnail — Click to open full image](docs/images/i18n/efigscjk_help_grid_thumb.png)](docs/images/i18n/efigscjk_help_grid.png)
+<!-- I18N_EFIGSCJK_END -->
+
+---
+
+## Build & Unit Test
 
 ```bash
-# Run JUnit 4 unit tests (verifies all 12 keys and all 252 guitar voicings)
-./gradlew testDebugUnitTest
-
-# Build debug APK
-./gradlew assembleDebug
-
-# Build signed release APK and Play Store AAB bundle (uses ant.properties)
-./gradlew assembleRelease bundleRelease
+./gradlew testDebugUnitTest assembleDebug assembleRelease
 ```

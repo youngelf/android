@@ -59,6 +59,7 @@ public class SightReadView extends View {
     private int mBpm = SightReadTheory.DEFAULT_BPM;
     private boolean mShowHints = true;
     private boolean mShowHelp = false;
+    private boolean mShowExercisePicker = false;
     private boolean mIsPlaying = false;
 
     private int mCurrentIdx = 0;
@@ -77,11 +78,18 @@ public class SightReadView extends View {
     private final RectF mBtnPlay = new RectF();
     private final RectF mBtnMute = new RectF();
     private final RectF mBtnHelp = new RectF();
-    private final RectF[] mCtrlBtns = new RectF[8];
+    private final RectF[] mCtrlBtns = new RectF[7];
+    private final RectF[] mExerciseBtns = new RectF[SightReadTheory.NUM_EXERCISES];
     private final RectF mStaffCard = new RectF();
     private final RectF mNeckRect = new RectF();
     private final RectF mModalRect = new RectF();
     private final RectF mModalCloseBtn = new RectF();
+    private final RectF mModalViewportRect = new RectF();
+    private float mHelpScrollY = 0f;
+    private float mHelpMaxScrollY = 0f;
+    private float mHelpTouchStartY = 0f;
+    private float mHelpLastTouchY = 0f;
+    private boolean mHelpDragging = false;
 
     private int mStepEighthCursor = 0;
     private final Runnable mTickRunnable = new Runnable() {
@@ -99,6 +107,9 @@ public class SightReadView extends View {
         for (int i = 0; i < mCtrlBtns.length; i++) {
             mCtrlBtns[i] = new RectF();
         }
+        for (int i = 0; i < mExerciseBtns.length; i++) {
+            mExerciseBtns[i] = new RectF();
+        }
         loadPiece();
     }
 
@@ -109,6 +120,7 @@ public class SightReadView extends View {
         mExerciseNum = Math.max(1, Math.min(99, ex));
         mPracticeMode = ((mode % SightReadTheory.NUM_MODES) + SightReadTheory.NUM_MODES) % SightReadTheory.NUM_MODES;
         mShowHelp = showHelp;
+        mShowExercisePicker = false;
         loadPiece();
         invalidate();
     }
@@ -171,13 +183,25 @@ public class SightReadView extends View {
         mStepEighthCursor++;
         if (mStepEighthCursor >= totalEighths) {
             if (mPracticeMode == SightReadTheory.MODE_SCROLL) {
-                mExerciseNum = (mExerciseNum % 24) + 1;
+                mExerciseNum = (mExerciseNum % SightReadTheory.NUM_EXERCISES) + 1;
                 loadPiece();
             } else {
                 mStepEighthCursor = 0;
             }
         }
         invalidate();
+    }
+
+    private String[] buildControlLabels() {
+        return new String[] {
+            "KEY: " + SightReadTheory.KEYS[mKeyIdx].badge,
+            SightReadTheory.POSITIONS[mPosIdx].shortName,
+            "MODE: " + SightReadTheory.MODE_NAMES[mPracticeMode],
+            SightReadTheory.exerciseLabel(mExerciseNum) + " \u25BE",
+            "BPM: " + mBpm + " +",
+            "HINT: " + (mShowHints ? "ON" : "OFF"),
+            "NEW PIECE"
+        };
     }
 
     @Override
@@ -192,25 +216,28 @@ public class SightReadView extends View {
 
         canvas.drawColor(COL_BG_PAPER);
 
-        float headerH = Math.max(46f * dp, h * (landscape ? 0.11f : 0.075f));
-        drawHeader(canvas, w, headerH, dp);
+        float headerH = Math.max(44f * dp, h * (landscape ? 0.115f : 0.075f));
+        drawHeader(canvas, w, headerH, dp, landscape);
 
-        float ctrlH = landscape ? Math.max(40f * dp, h * 0.10f) : Math.max(74f * dp, h * 0.125f);
-        drawControls(canvas, 0, headerH, w, ctrlH, dp, landscape);
+        float ctrlH = landscape ? 0f : Math.max(72f * dp, h * 0.12f);
+        if (!landscape) {
+            drawPortraitControls(canvas, 0, headerH, w, ctrlH, dp);
+        }
 
         float bannerY = headerH + ctrlH;
-        float bannerH = Math.max(28f * dp, h * 0.048f);
+        float bannerH = Math.max(26f * dp, h * 0.046f);
         drawStatusBanner(canvas, bannerY, w, bannerH, dp);
 
         float contentTop = bannerY + bannerH + 6f * dp;
         float contentH = h - contentTop - 8f * dp;
 
-        float neckH = contentH * (landscape ? 0.34f : 0.27f);
-        float staffH = contentH - neckH - 12f * dp;
+        // 30%+ more vertical space allocated to the fretboard neck
+        float neckH = contentH * (landscape ? 0.45f : 0.351f);
+        float staffH = contentH - neckH - 10f * dp;
         mStaffCard.set(10f * dp, contentTop, w - 10f * dp, contentTop + staffH);
         drawStaffCard(canvas, mStaffCard, dp);
 
-        float neckTop = mStaffCard.bottom + 10f * dp;
+        float neckTop = mStaffCard.bottom + 8f * dp;
         mNeckRect.set(10f * dp, neckTop, w - 10f * dp, neckTop + neckH);
         drawGuitarNeck(canvas, mNeckRect, dp);
 
@@ -218,84 +245,116 @@ public class SightReadView extends View {
             postInvalidateDelayed(40);
         }
 
-        if (mShowHelp) {
+        if (mShowExercisePicker) {
+            drawExercisePickerModal(canvas, w, h, dp, landscape);
+        } else if (mShowHelp) {
             drawHelpModal(canvas, w, h, dp);
         }
     }
 
-    private void drawHeader(Canvas c, float w, float h, float dp) {
+    private void drawHeader(Canvas c, float w, float h, float dp, boolean landscape) {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(COL_HEADER_BG);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float btnH = h * 0.64f;
+        float btnH = h * (landscape ? 0.72f : 0.64f);
         float btnY = (h - btnH) * 0.5f;
-        float helpW = 36f * dp;
+        float helpW = (landscape ? 30f : 36f) * dp;
 
         // Top-left '?' help pill
-        mBtnHelp.set(10f * dp, btnY, 10f * dp + helpW, btnY + btnH);
-        drawPillButton(c, mBtnHelp, "?", COL_GOLD_ACCENT, COL_HEADER_BG, 14f * dp);
+        mBtnHelp.set(8f * dp, btnY, 8f * dp + helpW, btnY + btnH);
+        drawPillButton(c, mBtnHelp, "?", COL_GOLD_ACCENT, COL_HEADER_BG, (landscape ? 13f : 14f) * dp);
 
-        float titleX = mBtnHelp.right + 10f * dp;
+        float muteW = (landscape ? 54f : 66f) * dp;
+        float playW = (landscape ? 54f : 70f) * dp;
+
+        mBtnMute.set(w - muteW - 8f * dp, btnY, w - 8f * dp, btnY + btnH);
+        mBtnPlay.set(mBtnMute.left - playW - 5f * dp, btnY, mBtnMute.left - 5f * dp, btnY + btnH);
+
+        drawPillButton(c, mBtnPlay, mIsPlaying ? "STOP" : "PLAY",
+                mIsPlaying ? COL_RED_ERR : COL_GREEN_OK, 0xFFFFFFFF, (landscape ? 10f : 11f) * dp);
+        drawPillButton(c, mBtnMute, mSynth.isMuted() ? "MUTED" : "SOUND",
+                mSynth.isMuted() ? 0xFF454C59 : COL_BLUE_INFO, 0xFFFFFFFF, (landscape ? 9.5f : 10.5f) * dp);
+
+        float titleX = mBtnHelp.right + 8f * dp;
         mTextPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
         mTextPaint.setColor(0xFFFDF8EE);
         mTextPaint.setTextAlign(Paint.Align.LEFT);
-        mTextPaint.setTextSize(16.5f * dp);
-        c.drawText("SIGHTREAD", titleX, h * 0.46f, mTextPaint);
+        mTextPaint.setTextSize((landscape ? 14f : 16.5f) * dp);
 
-        mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
-        mTextPaint.setColor(0xFFB8C0CC);
-        mTextPaint.setTextSize(10.5f * dp);
-        String sub = "TREBLE CLEF • "
-                + SightReadTheory.KEYS[mKeyIdx].badge + " • "
-                + SightReadTheory.POSITIONS[mPosIdx].shortName;
-        c.drawText(sub, titleX, h * 0.80f, mTextPaint);
+        if (landscape) {
+            AppI18n.drawText(c, "SIGHTREAD", titleX, h * 0.62f, mTextPaint);
+            float titleW = mTextPaint.measureText("SIGHTREAD");
+            float ctrlLeft = titleX + titleW + 8f * dp;
+            float ctrlRight = mBtnPlay.left - 6f * dp;
+            float availW = Math.max(100f * dp, ctrlRight - ctrlLeft);
 
-        float muteW = 66f * dp;
-        float playW = 70f * dp;
+            String[] labels = buildControlLabels();
+            float[] weights = { 0.92f, 1.08f, 0.95f, 1.65f, 0.84f, 0.80f, 0.92f };
+            float totalWeight = 0f;
+            for (float wt : weights) totalWeight += wt;
 
-        mBtnMute.set(w - muteW - 10f * dp, btnY, w - 10f * dp, btnY + btnH);
-        mBtnPlay.set(mBtnMute.left - playW - 6f * dp, btnY, mBtnMute.left - 6f * dp, btnY + btnH);
-
-        drawPillButton(c, mBtnPlay, mIsPlaying ? "STOP" : "PLAY",
-                mIsPlaying ? COL_RED_ERR : COL_GREEN_OK, 0xFFFFFFFF, 11f * dp);
-        drawPillButton(c, mBtnMute, mSynth.isMuted() ? "MUTED" : "SOUND",
-                mSynth.isMuted() ? 0xFF454C59 : COL_BLUE_INFO, 0xFFFFFFFF, 10.5f * dp);
+            float gap = 4f * dp;
+            float netW = availW - gap * (labels.length - 1);
+            float curX = ctrlLeft;
+            for (int i = 0; i < labels.length; i++) {
+                float bw = netW * (weights[i] / totalWeight);
+                mCtrlBtns[i].set(curX, btnY, curX + bw, btnY + btnH);
+                int bg = (i == 6) ? COL_GOLD_ACCENT
+                       : (i == 5 && mShowHints) ? 0xFFDCEBE2
+                       : (i == 3) ? 0xFFFFF3D1
+                       : COL_CARD_BG;
+                int fg = (i == 6) ? COL_HEADER_BG : COL_INK_DARK;
+                drawPillButton(c, mCtrlBtns[i], labels[i], bg, fg, 8.8f * dp);
+                curX += bw + gap;
+            }
+        } else {
+            AppI18n.drawText(c, "SIGHTREAD", titleX, h * 0.46f, mTextPaint);
+            mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
+            mTextPaint.setColor(0xFFB8C0CC);
+            mTextPaint.setTextSize(10.5f * dp);
+            String sub = "TREBLE CLEF • "
+                    + SightReadTheory.KEYS[mKeyIdx].badge + " • "
+                    + SightReadTheory.POSITIONS[mPosIdx].shortName;
+            AppI18n.drawText(c, sub, titleX, h * 0.80f, mTextPaint);
+        }
     }
 
-    private void drawControls(Canvas c, float x, float y, float w, float h, float dp, boolean landscape) {
+    private void drawPortraitControls(Canvas c, float x, float y, float w, float h, float dp) {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(COL_CONTROL_BG);
         c.drawRect(x, y, x + w, y + h, mPaint);
 
-        String exNumStr = (mExerciseNum < 10 ? "0" : "") + mExerciseNum;
-        String[] labels = {
-            "KEY: " + SightReadTheory.KEYS[mKeyIdx].badge,
-            SightReadTheory.POSITIONS[mPosIdx].shortName,
-            "MODE: " + SightReadTheory.MODE_NAMES[mPracticeMode],
-            "< EX #" + exNumStr,
-            "EX #" + exNumStr + " >",
-            "BPM: " + mBpm + " +",
-            "HINT: " + (mShowHints ? "ON" : "OFF"),
-            "NEW PIECE"
-        };
-
-        int cols = landscape ? 8 : 4;
-        int rows = landscape ? 1 : 2;
+        String[] labels = buildControlLabels();
+        int cols = 4;
+        int rows = 2;
         float pad = 5f * dp;
         float cellW = (w - pad * (cols + 1)) / cols;
         float cellH = (h - pad * (rows + 1)) / rows;
 
-        for (int i = 0; i < 8; i++) {
-            int r = i / cols;
-            int col = i % cols;
+        // Row 0: KEY (0), POS (1), MODE (2), BPM (4)
+        int[] row0Indices = { 0, 1, 2, 4 };
+        float row0Y = y + pad;
+        for (int col = 0; col < 4; col++) {
+            int idx = row0Indices[col];
             float bx = x + pad + col * (cellW + pad);
-            float by = y + pad + r * (cellH + pad);
-            mCtrlBtns[i].set(bx, by, bx + cellW, by + cellH);
-            int bg = (i == 7) ? COL_GOLD_ACCENT : (i == 6 && mShowHints) ? 0xFFDCEBE2 : COL_CARD_BG;
-            int fg = (i == 7) ? COL_HEADER_BG : COL_INK_DARK;
-            drawPillButton(c, mCtrlBtns[i], labels[i], bg, fg, landscape ? 9.5f * dp : 10f * dp);
+            mCtrlBtns[idx].set(bx, row0Y, bx + cellW, row0Y + cellH);
+            drawPillButton(c, mCtrlBtns[idx], labels[idx], COL_CARD_BG, COL_INK_DARK, 9.8f * dp);
         }
+
+        // Row 1: Exercise Name Picker (3, spanning 2 columns), HINT (5), NEW PIECE (6)
+        float row1Y = y + pad + cellH + pad;
+        float exW = cellW * 2f + pad;
+        mCtrlBtns[3].set(x + pad, row1Y, x + pad + exW, row1Y + cellH);
+        drawPillButton(c, mCtrlBtns[3], labels[3], 0xFFFFF3D1, COL_INK_DARK, 10.2f * dp);
+
+        float hintX = mCtrlBtns[3].right + pad;
+        mCtrlBtns[5].set(hintX, row1Y, hintX + cellW, row1Y + cellH);
+        drawPillButton(c, mCtrlBtns[5], labels[5], mShowHints ? 0xFFDCEBE2 : COL_CARD_BG, COL_INK_DARK, 9.8f * dp);
+
+        float newX = mCtrlBtns[5].right + pad;
+        mCtrlBtns[6].set(newX, row1Y, newX + cellW, row1Y + cellH);
+        drawPillButton(c, mCtrlBtns[6], labels[6], COL_GOLD_ACCENT, COL_HEADER_BG, 9.8f * dp);
     }
 
     private void drawStatusBanner(Canvas c, float y, float w, float h, float dp) {
@@ -306,13 +365,13 @@ public class SightReadView extends View {
         mTextPaint.setTextSize(11f * dp);
         mTextPaint.setColor(mStatusColor);
         mTextPaint.setTextAlign(Paint.Align.LEFT);
-        c.drawText(mStatusText, 12f * dp, y + h * 0.68f, mTextPaint);
+        AppI18n.drawText(c, mStatusText, 12f * dp, y + h * 0.68f, mTextPaint);
 
         int pct = mScoreAttempts > 0 ? (100 * mScoreHits / mScoreAttempts) : 100;
         String scoreStr = "Score: " + mScoreHits + "/" + mScoreAttempts + " (" + pct + "%)  Streak: " + mStreak;
         mTextPaint.setColor(COL_INK_DARK);
         mTextPaint.setTextAlign(Paint.Align.RIGHT);
-        c.drawText(scoreStr, w - 12f * dp, y + h * 0.68f, mTextPaint);
+        AppI18n.drawText(c, scoreStr, w - 12f * dp, y + h * 0.68f, mTextPaint);
     }
 
     private void drawStaffCard(Canvas c, RectF card, float dp) {
@@ -360,14 +419,14 @@ public class SightReadView extends View {
         for (int i = 0; i < count; i++) {
             String sym = sf > 0 ? "\u266F" : "\u266D";
             int st = sf > 0 ? SightReadTheory.TREBLE_SHARP_STEPS[i] : SightReadTheory.TREBLE_FLAT_STEPS[i];
-            c.drawText(sym, accX + i * 7.5f * dp, centerStepY - st * halfSpace + halfSpace, mTextPaint);
+            AppI18n.drawText(c, sym, accX + i * 7.5f * dp, centerStepY - st * halfSpace + halfSpace, mTextPaint);
         }
 
         // 4/4 Time Signature on Treble Staff
         float timeX = accX + count * 7.5f * dp + 8f * dp;
         mTextPaint.setTextSize(halfSpace * 3.6f);
-        c.drawText("4", timeX, centerStepY - 6.2f * halfSpace, mTextPaint);
-        c.drawText("4", timeX, centerStepY - 2.2f * halfSpace, mTextPaint);
+        AppI18n.drawText(c, "4", timeX, centerStepY - 6.2f * halfSpace, mTextPaint);
+        AppI18n.drawText(c, "4", timeX, centerStepY - 2.2f * halfSpace, mTextPaint);
 
         float notesStart = timeX + 22f * dp;
         float notesEnd = staffRight - 10f * dp;
@@ -539,19 +598,15 @@ public class SightReadView extends View {
         c.drawRoundRect(neck, 8f * dp, 8f * dp, mPaint);
 
         float colW = neck.width() / 5f; // Col 0 = Open string, Cols 1..4 = Frets baseFret..baseFret+3
-        float topPad = 16f * dp;
-        float rowH = (neck.height() - topPad) / 6f;
+        float vertPad = 5f * dp;
+        float rowH = (neck.height() - 2f * vertPad) / 6f;
 
         // Nut or position divider on right of column 0
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(pos.minFret == 0 ? COL_NUT_BONE : COL_FRET_WIRE);
         c.drawRect(neck.left + colW - 3f * dp, neck.top, neck.left + colW + 2f * dp, neck.bottom, mPaint);
 
-        // Fret wires & fret numbers
-        mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
-        mTextPaint.setTextSize(10f * dp);
-        mTextPaint.setTextAlign(Paint.Align.CENTER);
-
+        // Fret wires & pearl inlay dots
         for (int col = 0; col < 5; col++) {
             int fretNum = (col == 0) ? 0 : (pos.baseFret + col - 1);
             float cx = neck.left + (col + 0.5f) * colW;
@@ -562,19 +617,16 @@ public class SightReadView extends View {
                     c.drawRect(wireX - 1f * dp, neck.top, wireX + 1f * dp, neck.bottom, mPaint);
                 }
                 // Pearl inlay dots on frets 3, 5, 7, 9, 12
-                float midY = neck.top + topPad + 3f * rowH;
+                float midY = neck.top + vertPad + 3f * rowH;
                 if (fretNum == 3 || fretNum == 5 || fretNum == 7 || fretNum == 9) {
-                    mPaint.setColor(0x55FFFDF5);
+                    mPaint.setColor(0x44FFFDF5);
                     c.drawCircle(cx, midY, 5.5f * dp, mPaint);
                 } else if (fretNum == 12) {
-                    mPaint.setColor(0x55FFFDF5);
-                    c.drawCircle(cx, neck.top + topPad + rowH * 2f, 5f * dp, mPaint);
-                    c.drawCircle(cx, neck.top + topPad + rowH * 4f, 5f * dp, mPaint);
+                    mPaint.setColor(0x44FFFDF5);
+                    c.drawCircle(cx, neck.top + vertPad + rowH * 2f, 5f * dp, mPaint);
+                    c.drawCircle(cx, neck.top + vertPad + rowH * 4f, 5f * dp, mPaint);
                 }
             }
-            mTextPaint.setColor(0xFFE5D8C5);
-            String flbl = (col == 0) ? "OPEN" : ("FRET " + fretNum);
-            c.drawText(flbl, cx, neck.top + 12f * dp, mTextPaint);
         }
 
         StaffNote target = (mCurrentIdx < mPiece.numNotes) ? mPiece.notes[mCurrentIdx] : null;
@@ -583,7 +635,7 @@ public class SightReadView extends View {
         // Draw 6 strings (top row = 1st string high 'e', str=5; bottom row = 6th string low 'E', str=0)
         for (int row = 0; row < 6; row++) {
             int str = 5 - row;
-            float sy = neck.top + topPad + (row + 0.5f) * rowH;
+            float sy = neck.top + vertPad + (row + 0.5f) * rowH;
 
             mPaint.setStyle(Paint.Style.STROKE);
             mPaint.setStrokeWidth((1.3f + (5 - str) * 0.40f) * dp);
@@ -591,48 +643,52 @@ public class SightReadView extends View {
             c.drawLine(neck.left + 8f * dp, sy, neck.right - 8f * dp, sy, mPaint);
 
             // String name badge on left
+            mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
             mTextPaint.setColor(0xFFFFF6E5);
             mTextPaint.setTextSize(11.5f * dp);
             mTextPaint.setTextAlign(Paint.Align.LEFT);
-            c.drawText(String.valueOf(SightReadTheory.STRING_LABELS[str]), neck.left + 6f * dp, sy - 3f * dp, mTextPaint);
+            AppI18n.drawText(c, String.valueOf(SightReadTheory.STRING_LABELS[str]), neck.left + 6f * dp, sy - 3f * dp, mTextPaint);
 
             for (int col = 0; col < 5; col++) {
                 int fretNum = (col == 0) ? 0 : (pos.baseFret + col - 1);
                 float cx = neck.left + (col + 0.5f) * colW;
-                int midi = SightReadTheory.midiForStringFret(str, fretNum);
-                String noteName = SightReadTheory.CHROMATIC_SHARP[midi % 12];
 
                 boolean isTarget = target != null && target.str == str && target.fret == fretNum;
                 boolean isFlashed = flashActive && mFlashString == str && mFlashFret == fretNum;
 
                 if (isFlashed || (isTarget && mShowHints && mPracticeMode != SightReadTheory.MODE_QUIZ)) {
+                    float r = Math.min(rowH * 0.40f, 13.5f * dp);
                     mPaint.setStyle(Paint.Style.FILL);
                     mPaint.setColor(isFlashed ? (mFlashCorrect ? COL_GREEN_OK : COL_RED_ERR) : COL_GOLD_ACCENT);
-                    c.drawCircle(cx, sy, Math.min(rowH * 0.38f, 14f * dp), mPaint);
-                    mTextPaint.setColor(0xFFFFFFFF);
-                    mTextPaint.setTextAlign(Paint.Align.CENTER);
-                    mTextPaint.setTextSize(10.5f * dp);
-                    c.drawText(noteName, cx, sy + 3.8f * dp, mTextPaint);
-                } else if (mShowHints && mPracticeMode == SightReadTheory.MODE_ETUDE) {
-                    mPaint.setStyle(Paint.Style.FILL);
-                    mPaint.setColor(0x6618120C);
-                    c.drawCircle(cx, sy, Math.min(rowH * 0.28f, 10f * dp), mPaint);
-                    mTextPaint.setColor(0xFFD8CBB8);
-                    mTextPaint.setTextAlign(Paint.Align.CENTER);
-                    mTextPaint.setTextSize(9f * dp);
-                    c.drawText(noteName, cx, sy + 3.2f * dp, mTextPaint);
+                    c.drawCircle(cx, sy, r, mPaint);
+                    mPaint.setStyle(Paint.Style.STROKE);
+                    mPaint.setStrokeWidth(1.5f * dp);
+                    mPaint.setColor(0xCCFFFFFF);
+                    c.drawCircle(cx, sy, r * 0.72f, mPaint);
                 }
             }
         }
+
+        // Fret numbers as compact numbers in the top-right corner of each fret
+        mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
+        mTextPaint.setTextSize(10.5f * dp);
+        mTextPaint.setTextAlign(Paint.Align.RIGHT);
+        mTextPaint.setColor(0xFFE8D9C2);
+        for (int col = 0; col < 5; col++) {
+            int fretNum = (col == 0) ? 0 : (pos.baseFret + col - 1);
+            float colRight = neck.left + (col + 1) * colW;
+            float numX = colRight - (col == 0 ? 6.5f * dp : 5.5f * dp);
+            AppI18n.drawText(c, String.valueOf(fretNum), numX, neck.top + 12f * dp, mTextPaint);
+        }
     }
 
-    private void drawHelpModal(Canvas c, float w, float h, float dp) {
+    private void drawExercisePickerModal(Canvas c, float w, float h, float dp, boolean landscape) {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(0xB810141A);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = Math.min(w * 0.90f, 520f * dp);
-        float mh = Math.min(h * 0.84f, 410f * dp);
+        float mw = Math.min(w * 0.94f, (landscape ? 680f : 390f) * dp);
+        float mh = Math.min(h * 0.88f, (landscape ? 330f : 520f) * dp);
         mModalRect.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
 
         mPaint.setColor(COL_CARD_BG);
@@ -642,41 +698,94 @@ public class SightReadView extends View {
         mPaint.setColor(COL_GOLD_ACCENT);
         c.drawRoundRect(mModalRect, 12f * dp, 12f * dp, mPaint);
 
-        float tx = mModalRect.left + 18f * dp;
-        float ty = mModalRect.top + 28f * dp;
+        mTextPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
+        mTextPaint.setTextSize(14.5f * dp);
+        mTextPaint.setColor(COL_INK_DARK);
+        mTextPaint.setTextAlign(Paint.Align.LEFT);
+        AppI18n.drawText(c, "SELECT EXERCISE (1\u201324)", mModalRect.left + 14f * dp, mModalRect.top + 24f * dp, mTextPaint);
+
+        int cols = landscape ? 4 : 2;
+        int rows = SightReadTheory.NUM_EXERCISES / cols;
+        float pad = 6f * dp;
+        float gridTop = mModalRect.top + 34f * dp;
+        float gridBot = mModalRect.bottom - 10f * dp;
+        float gridW = mModalRect.width() - 24f * dp;
+        float gridH = gridBot - gridTop;
+        float cellW = (gridW - pad * (cols - 1)) / cols;
+        float cellH = (gridH - pad * (rows - 1)) / rows;
+
+        int activeIdx = ((mExerciseNum - 1) % SightReadTheory.NUM_EXERCISES + SightReadTheory.NUM_EXERCISES)
+                % SightReadTheory.NUM_EXERCISES;
+
+        for (int i = 0; i < SightReadTheory.NUM_EXERCISES; i++) {
+            int r = i / cols;
+            int col = i % cols;
+            float bx = mModalRect.left + 12f * dp + col * (cellW + pad);
+            float by = gridTop + r * (cellH + pad);
+            mExerciseBtns[i].set(bx, by, bx + cellW, by + cellH);
+            boolean sel = (i == activeIdx);
+            int bg = sel ? COL_GOLD_ACCENT : COL_CONTROL_BG;
+            int fg = sel ? COL_HEADER_BG : COL_INK_DARK;
+            String lbl = (i + 1) + ". " + SightReadTheory.EXERCISE_NAMES[i];
+            drawPillButton(c, mExerciseBtns[i], lbl, bg, fg, (landscape ? 9.5f : 10f) * dp);
+        }
+    }
+
+    private void drawHelpModal(Canvas c, float w, float h, float dp) {
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(0xC810141A);
+        c.drawRect(0, 0, w, h, mPaint);
+
+        float mw = Math.min(w * 0.94f, 640f * dp);
+        float mh = Math.min(h * 0.92f, 470f * dp);
+        mModalRect.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
+
+        mPaint.setColor(COL_CARD_BG);
+        c.drawRoundRect(mModalRect, 12f * dp, 12f * dp, mPaint);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(2f * dp);
+        mPaint.setColor(COL_GOLD_ACCENT);
+        c.drawRoundRect(mModalRect, 12f * dp, 12f * dp, mPaint);
+
+        float tx = mModalRect.left + 14f * dp;
+        float ty = mModalRect.top + 22f * dp;
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
-        mTextPaint.setTextSize(16f * dp);
+        mTextPaint.setTextSize(14.5f * dp);
         mTextPaint.setColor(COL_INK_DARK);
-        c.drawText("SIGHTREAD — TREBLE CLEF & GUITAR GUIDE", tx, ty, mTextPaint);
+        AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
+                tx, ty, mTextPaint, mw - 28f * dp);
 
-        String[] lines = {
-            "1. TREBLE CLEF NOTATION: Standard guitar 8vb Treble Staff with",
-            "   automatic ledger lines. The gold column highlights the active note.",
-            "2. KEY SIGNATURES & POSITIONS: Practice in 7 Major Keys (C, G, D, A,",
-            "   E, F, Bb) across 5 guitar neck positions (OPEN, POS 2, 5, 7, 9).",
-            "3. INTERACTIVE FRETBOARD: Tap the matching string & fret directly on",
-            "   the 6-string rosewood guitar neck to sight-read each note.",
-            "4. PRACTICE MODES: Etude shows guided fretboard hints; Quiz hides",
-            "   hints for pure sight-reading; Flow auto-advances with the click.",
-            "5. AUDIO SYNTH: Tap PLAY to hear the 2-bar etude at the selected BPM,",
-            "   or tap SOUND/MUTED to toggle real-time guitar synthesis."
+        Context ctx = getContext();
+        String[] titles = {
+            AppI18n.str(ctx, R.string.help_sec1_title),
+            AppI18n.str(ctx, R.string.help_sec2_title),
+            AppI18n.str(ctx, R.string.help_sec3_title),
+            AppI18n.str(ctx, R.string.help_sec4_title)
         };
-        mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
-        mTextPaint.setTextSize(11.5f * dp);
-        mTextPaint.setColor(COL_INK_DARK);
-        ty += 22f * dp;
-        float lineStep = Math.min(24f * dp, (mh - 92f * dp) / lines.length);
-        for (String line : lines) {
-            c.drawText(line, tx, ty, mTextPaint);
-            ty += lineStep;
-        }
+        String[] bodies = {
+            AppI18n.str(ctx, R.string.help_sec1_body),
+            AppI18n.str(ctx, R.string.help_sec2_body),
+            AppI18n.str(ctx, R.string.help_sec3_body),
+            AppI18n.str(ctx, R.string.help_sec4_body)
+        };
+        int[] titleCols = { COL_HEADER_BG, COL_BLUE_INFO, COL_GREEN_OK, COL_HEADER_BG };
 
-        float bw = 120f * dp;
-        float bh = 34f * dp;
-        mModalCloseBtn.set(mModalRect.centerX() - bw * 0.5f, mModalRect.bottom - bh - 12f * dp,
-                mModalRect.centerX() + bw * 0.5f, mModalRect.bottom - 12f * dp);
-        drawPillButton(c, mModalCloseBtn, "GOT IT", COL_GOLD_ACCENT, COL_HEADER_BG, 12f * dp);
+        float bw = 136f * dp;
+        float bh = 28f * dp;
+        mModalCloseBtn.set(mModalRect.centerX() - bw * 0.5f, mModalRect.bottom - bh - 7f * dp,
+                mModalRect.centerX() + bw * 0.5f, mModalRect.bottom - 7f * dp);
+        drawPillButton(c, mModalCloseBtn, AppI18n.str(ctx, R.string.got_it),
+                COL_GOLD_ACCENT, COL_HEADER_BG, 11.5f * dp);
+
+        mModalViewportRect.set(mModalRect.left + 10f * dp, mModalRect.top + 30f * dp,
+                mModalRect.right - 10f * dp, mModalCloseBtn.top - 6f * dp);
+        mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
+        mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
+                c, mModalViewportRect, titles, bodies, titleCols,
+                COL_INK_DARK, 0xFFF3EBDD, 0xFFD2C5B0, COL_HEADER_BG,
+                11.0f * dp, 9.8f * dp, mHelpScrollY, mTextPaint, mPaint);
+        mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 
     private void drawPillButton(Canvas c, RectF r, String text, int bg, int fg, float textSize) {
@@ -692,22 +801,58 @@ public class SightReadView extends View {
         mTextPaint.setTextSize(textSize);
         mTextPaint.setColor(fg);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
-        c.drawText(text, r.centerX(), r.centerY() + textSize * 0.35f, mTextPaint);
+        AppI18n.drawText(c, text, r.centerX(), r.centerY() + textSize * 0.35f, mTextPaint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_DOWN) return true;
+        int action = event.getActionMasked();
         float x = event.getX();
         float y = event.getY();
 
         if (mShowHelp) {
-            mShowHelp = false;
+            if (action == MotionEvent.ACTION_DOWN) {
+                mHelpTouchStartY = y;
+                mHelpLastTouchY = y;
+                mHelpDragging = false;
+                if (mModalCloseBtn.contains(x, y) || !mModalRect.contains(x, y)) {
+                    mShowHelp = false;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_MOVE) {
+                float dy = mHelpLastTouchY - y;
+                if (Math.abs(y - mHelpTouchStartY) > 10f) {
+                    mHelpDragging = true;
+                }
+                if (mHelpDragging && mHelpMaxScrollY > 0f) {
+                    mHelpScrollY = Math.max(0f, Math.min(mHelpMaxScrollY, mHelpScrollY + dy));
+                    mHelpLastTouchY = y;
+                    invalidate();
+                }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHelpDragging = false;
+            }
+            return true;
+        }
+
+        if (action != MotionEvent.ACTION_DOWN) return true;
+
+        if (mShowExercisePicker) {
+            for (int i = 0; i < SightReadTheory.NUM_EXERCISES; i++) {
+                if (mExerciseBtns[i].contains(x, y)) {
+                    mExerciseNum = i + 1;
+                    loadPiece();
+                    break;
+                }
+            }
+            mShowExercisePicker = false;
             invalidate();
             return true;
         }
+
         if (mBtnHelp.contains(x, y)) {
             mShowHelp = true;
+            mHelpScrollY = 0f;
             invalidate();
             return true;
         }
@@ -721,7 +866,7 @@ public class SightReadView extends View {
             return true;
         }
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < mCtrlBtns.length; i++) {
             if (mCtrlBtns[i].contains(x, y)) {
                 handleControlTap(i);
                 return true;
@@ -729,10 +874,10 @@ public class SightReadView extends View {
         }
 
         if (mNeckRect.contains(x, y)) {
-            float topPad = 16f * getResources().getDisplayMetrics().density;
-            float rowH = Math.max(1f, (mNeckRect.height() - topPad) / 6f);
+            float vertPad = 5f * getResources().getDisplayMetrics().density;
+            float rowH = Math.max(1f, (mNeckRect.height() - 2f * vertPad) / 6f);
             int col = Math.min(4, Math.max(0, (int) ((x - mNeckRect.left) / (mNeckRect.width() / 5f))));
-            int row = Math.min(5, Math.max(0, (int) ((y - (mNeckRect.top + topPad)) / rowH)));
+            int row = Math.min(5, Math.max(0, (int) ((y - (mNeckRect.top + vertPad)) / rowH)));
             int str = 5 - row;
             NeckPosition pos = SightReadTheory.POSITIONS[mPosIdx];
             int fret = (col == 0) ? 0 : (pos.baseFret + col - 1);
@@ -747,11 +892,10 @@ public class SightReadView extends View {
             case 0: mKeyIdx = (mKeyIdx + 1) % SightReadTheory.NUM_KEYS; loadPiece(); break;
             case 1: mPosIdx = (mPosIdx + 1) % SightReadTheory.NUM_POSITIONS; loadPiece(); break;
             case 2: mPracticeMode = (mPracticeMode + 1) % SightReadTheory.NUM_MODES; break;
-            case 3: mExerciseNum = (mExerciseNum <= 1) ? 24 : (mExerciseNum - 1); loadPiece(); break;
-            case 4: mExerciseNum = (mExerciseNum % 24) + 1; loadPiece(); break;
-            case 5: mBpm = (mBpm >= 160) ? 60 : (mBpm + 20); break;
-            case 6: mShowHints = !mShowHints; break;
-            case 7: mExerciseNum = (mExerciseNum % 24) + 1; loadPiece(); break;
+            case 3: mShowExercisePicker = true; break;
+            case 4: mBpm = (mBpm >= 160) ? 60 : (mBpm + 20); break;
+            case 5: mShowHints = !mShowHints; break;
+            case 6: mExerciseNum = (mExerciseNum % SightReadTheory.NUM_EXERCISES) + 1; loadPiece(); break;
         }
         invalidate();
     }

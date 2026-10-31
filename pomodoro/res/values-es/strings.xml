@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Focus</string>
+    <string name="working_dnd">TRABAJANDO: NO MOLESTAR</string>
+    <string name="short_break_relax">PAUSA CORTA: DESCANSA</string>
+    <string name="long_break_rest">PAUSA LARGA: DESCANSO</string>
+    <string name="paused_stopped">PAUSADO: TEMPORIZADOR DETENIDO</string>
+    <string name="ready_to_focus">LISTO PARA ENFOCARSE</string>
+    <string name="reset">REINICIAR</string>
+    <string name="skip_btn">SALTAR &gt;&gt;</string>
+    <string name="start_focus">INICIAR FOCO</string>
+    <string name="resume">REANUDAR</string>
+    <string name="bg_sound">Sonido de fondo</string>
+    <string name="amb_off">NO</string>
+    <string name="amb_soft_tick">TIC SUAVE</string>
+    <string name="amb_rain">LLUVIA</string>
+    <string name="amb_brown_noise">RUIDO MARRÓN</string>
+    <string name="duration_presets">PREAJUSTES DE DURACIÓN (FOCO / CORTA / LARGA)</string>
+    <string name="all_time_total">TOTAL HISTÓRICO</string>
+    <string name="current_session">SESIÓN ACTUAL</string>
+    <string name="focus_session">SESIÓN DE FOCO</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">TEMPORIZADOR POMODORO Y REGISTRO DE TRABAJO</string>
+    <string name="help_sec1_title">1. EL CICLO DE 4 POMODOROS</string>
+    <string name="help_sec1_body">• Concéntrate sin interrupciones durante 1 Pomodoro (25 min por defecto).\n• Toma un Descanso Corto (5 min) para relajarte y recargar energías.\n• Cada 4 sesiones de Foco completadas, toma un Descanso Largo (15 min).</string>
+    <string name="help_sec2_title">2. CONTROLES TÁCTILES Y DE TECLADO / D-PAD</string>
+    <string name="help_sec2_body">• Toca el Dial Central / INICIAR (o ESPACIO / INTRO): Iniciar o Pausar.\n• Toca -5m / -1m / +1m / +5m (o flechas ARRIBA / ABAJO): Ajustar duración.\n• Toca los Ajustes (o tecla P): Alternar Clásico, Profundo, Estudio y Sprint.\n• Toca Sonidos Ambientales (o tecla M): Tic-tac suave, Lluvia o Ruido Marrón.\n• Toca SALTAR &gt;&gt; (N) para avanzar de fase; REINICIAR (R) para rebobinar.</string>
+    <string name="help_sec3_title">3. REGISTRO AUTOMÁTICO DE HORAS DE TRABAJO</string>
+    <string name="help_sec3_body">• Cada segundo dedicado en una sesión de Foco activa se registra automáticamente en los totales de Hoy y Total Histórico.</string>
+</resources>

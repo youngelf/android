@@ -1,0 +1,124 @@
+{
+  "localizations": [
+    {
+      "languageCode": "en-US",
+      "appName": "Metronome: Pendulum & Tempo",
+      "shortDescription": "Precision pendulum metronome with odd meters, polyrhythms, and speed coach.",
+      "fullDescription": "Lock in rock-solid timing, master complex odd meters and polyrhythms, and build effortless playing speed with Metronome — Precision Pendulum & Speed Coach. Engineered from the ground up for serious instrumentalists, drummers, guitarists, pianists, and ensemble musicians, this metronome runs on a sample-accurate 44.1 kHz PCM audio synthesis engine that eliminates the timing jitter of standard mobile timers.\n\nWhether you are practicing classical repertoire, shedding progressive rock odd time signatures, internalizing 3-against-2 or 5-against-4 polyrhythms, or testing your internal clock with muted bars, Metronome delivers studio-grade precision and high-visibility visual feedback.\n\nSAMPLE-ACCURATE 44.1 kHz TIMING & VISUAL PENDULUM\n• Zero-Jitter Audio Engine: Every click, accent, and subdivision is calculated at the individual audio sample level at 44.1 kHz so the groove never drifts, even during long practice sessions.\n• High-Contrast Pendulum & Beat Matrix: Follow the smooth, physics-inspired swinging pendulum arm and high-visibility beat LEDs from across the music stand or drum kit.\n• Tap Tempo & Fine BPM Controls: Tap in any groove on the fly or use the -5, -1, +1, and +5 BPM steppers across a wide 20 BPM to 260 BPM range, complete with traditional Italian tempo markings (Largo, Adagio, Andante, Moderato, Allegro, Presto).\n\n12 TIME SIGNATURES, ODD METERS & 6 SUBDIVISIONS\n• Standard & Odd Time Signatures: Switch effortlessly between 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, and odd meters including 5/4, 5/8, 7/4, 7/8, 11/8, and 13/8.\n• Interactive Per-Beat Accent Sequencer: Tap any beat column to cycle between STRONG ACCENT, NORMAL BEAT, SUB-ACCENT, and MUTE to program custom clave patterns, asymmetric Balkan/prog groupings (such as 2+2+3 or 3+3+2), or backbeat grooves.\n• 6 Rhythmic Subdivisions: Quarter notes, Eighth notes, Triplets, Sixteenth notes, Dotted Eighths (Swing/Shuffle), and Quintuplets.\n\nDUAL-RING POLYRHYTHM GENERATOR\n• Hear and See Cross-Rhythms: Activate Polyrhythm Mode to layer two independent rhythmic cycles simultaneously—including 3:2, 4:3, 5:3, 5:4, 7:4, and custom ratios—with distinct left/right pitch timbres and synchronized visual beat rings.\n\nSPEED COACH & BAR DROPPER (MUTED-BAR TRAINER)\n• Automated Speed Trainer: Automatically increment the tempo by +1 to +5 BPM every N bars so you can gradually push difficult passages past your target tempo without noticing the jumps.\n• Bar Dropper (Internal Clock Test): Play 3 bars audible and mute 1 bar (or customize N bars on / M bars muted) to verify whether you rush or drag when the reference click disappears—the ultimate drill for studio and live tightness.\n\n5 DISTINCT CLICK TIMBRES & STAGE-READY DESIGN\n• Choose from Mechanical Woodblock, Classic Pendulum Click, Studio Cowbell, Electronic Beep, and Drum Kit Rimshot voices to cut through any acoustic or amplified instrument.\n• Keeps the screen awake while running, adapts seamlessly to Portrait and Landscape orientations, requires zero permissions, and operates 100% offline with zero ads."
+    },
+    {
+      "languageCode": "fr-FR",
+      "appName": "Métronome : Pendule & Tempo",
+      "shortDescription": "Métronome pendulaire de précision, mesures asymétriques, polyrythmie et coach.",
+      "fullDescription": "Verrouillez un sens du rythme irréprochable, maîtrisez les mesures asymétriques et les polyrythmies, et développez votre vitesse avec Métronome : Pendule de Précision & Coach de Vitesse. Conçu pour les instrumentistes, batteurs, guitaristes et pianistes exigeants, ce métronome repose sur un moteur de synthèse audio PCM à 44,1 kHz précis à l'échantillon près.\n\nPRÉCISION À L'ÉCHANTILLON PRÈS (44,1 kHz) ET PENDULE VISUEL\n• Moteur audio sans gigue (Zero-Jitter) : Chaque clic, accent et subdivision est calculé au niveau de l'échantillon audio à 44,1 kHz.\n• Balancier physique et matrice de temps haute visibilité.\n• Tap Tempo et réglages fins (-5, -1, +1, +5 BPM) de 20 à 260 BPM avec indications italiennes traditionnelles (Largo, Adagio, Andante, Moderato, Allegro, Presto).\n\n12 SIGNATURES RYTHMIQUES, MESURES IMPAIRES ET 6 SUBDIVISIONS\n• Signatures courantes et asymétriques : 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 et 13/8.\n• Séquenceur d'accents par temps : Touchez n'importe quelle colonne pour alterner entre ACCENT FORT, TEMPS NORMAL, SOUS-ACCENT et MUET.\n• 6 subdivisions rythmiques : Noires, Croches, Triolets, Doubles croches, Croches pointées (Swing) et Quintolets.\n\nPOLYRYTHMIE, COACH DE VITESSE ET MESURES MUETTES\n• Générateur de polyrythmies à double anneau (3:2, 4:3, 5:3, 5:4, 7:4).\n• Coach d'accélération (+1 à +5 BPM toutes les N mesures) et Silenceur de mesures (Bar Dropper) pour tester votre horloge interne.\n• 5 timbres de clic, écran maintenu allumé, modes Portrait/Paysage, 100 % hors ligne et sans publicité."
+    },
+    {
+      "languageCode": "it-IT",
+      "appName": "Metronomo: Pendolo e Poliritmi",
+      "shortDescription": "Metronomo a pendolo di precisione con tempi dispari, poliritmi e speed coach.",
+      "fullDescription": "Costruisci un timing granitico, padroneggia i tempi dispari e i poliritmi e aumenta la tua velocità con Metronomo: Pendolo di Precisione e Speed Coach. Progettato per strumentisti, batteristi, chitarristi e pianisti, questo metronomo utilizza un motore di sintesi audio PCM a 44,1 kHz preciso al singolo campione.\n\nPRECISIONE AL CAMPIONE A 44,1 kHz E PENDOLO VISIVO\n• Motore Audio Zero-Jitter: Ogni clic, accento e suddivisione è calcolato a livello del singolo campione audio a 44,1 kHz.\n• Pendolo oscillante ad alto contrasto e matrice dei battiti ben visibile dal leggio.\n• Tap Tempo e controlli BPM (-5, -1, +1, +5) da 20 a 260 BPM con indicazioni agogiche italiane (Largo, Adagio, Andante, Moderato, Allegro, Presto).\n\n12 INDICAZIONI DI TEMPO, TEMPI DISPARI E 6 SUDDIVISIONI\n• Metri standard e dispari: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 e 13/8.\n• Sequencer di Accenti per Battito: Tocca qualsiasi colonna per ciclare tra ACCENTO FORTE, NORMALE, SUB-ACCENTO e MUTO.\n• 6 Suddivisioni Ritmiche: Quarti, Ottavi, Terzine, Sedicesimi, Ottavi puntati (Swing) e Quintine.\n\nGENERATORE DI POLIRITMI, SPEED COACH E BATTUTE MUTE\n• Poliritmi a doppio anello (3:2, 4:3, 5:3, 5:4, 7:4) con timbri distinti.\n• Speed Trainer automatico (+BPM ogni N battute) e Bar Dropper (battute mute) per verificare il tuo tempo interno.\n• 5 timbri di clic, schermo sempre attivo, Portrait e Landscape, 100% offline e zero pubblicità."
+    },
+    {
+      "languageCode": "de-DE",
+      "appName": "Metronom: Pendel & Polyrhyth.",
+      "shortDescription": "Präzisions-Pendelmetronom mit ungeraden Takten, Polyrhythmen und Tempotrainer.",
+      "fullDescription": "Entwickeln Sie ein felsenfestes Timing, meistern Sie ungerade Taktarten sowie Polyrhythmen und steigern Sie Ihre Spielgeschwindigkeit mit Metronom: Präzisions-Pendel & Speed-Coach. Entwickelt für Instrumentalisten, Schlagzeuger, Gitarristen und Pianisten, arbeitet dieses Metronom mit einer samplegenauen 44,1-kHz-PCM-Klangsynthese ohne Timing-Jitter.\n\nSAMPLEGENAUES 44,1-kHz-TIMING & VISUELLES PENDEL\n• Zero-Jitter-Audio-Engine: Jeder Klick, Akzent und jede Unterteilung wird exakt auf Sample-Ebene bei 44,1 kHz berechnet.\n• Kontrastreiches Pendel und leuchtstarke Schlag-Matrix.\n• Tap-Tempo und feine BPM-Schritte (-5, -1, +1, +5) von 20 bis 260 BPM inklusive klassischer Tempobezeichnungen (Largo, Adagio, Andante, Moderato, Allegro, Presto).\n\n12 TAKTARTEN, UNGERADE METREN & 6 UNTERTEILUNGEN\n• Standard- und ungerade Takte: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8 sowie 5/4, 5/8, 7/4, 7/8, 11/8 und 13/8.\n• Interaktiver Schlag-Akzent-Sequenzer: Tippen Sie auf eine Schlagspalte, um zwischen STARKER AKZENT, NORMAL, NEBENAKZENT und STUMM zu wechseln.\n• 6 rhythmische Unterteilungen: Viertel, Achtel, Triolen, Sechzehntel, punktierte Achtel (Swing) und Quintolen.\n\nPOLYRHYTHMIK-GENERATOR, SPEED-COACH & STUMME TAKTE\n• Zwei-Ring-Polyrhythmik (3:2, 4:3, 5:3, 5:4, 7:4).\n• Automatischer Tempotrainer (+BPM alle N Takte) und Taktaussetzer (Bar Dropper) zum Training der inneren Uhr.\n• 5 Klick-Klangfarben, Display bleibt beim Üben aktiv, Hoch-/Querformat, 100 % offline und werbefrei."
+    },
+    {
+      "languageCode": "es-ES",
+      "appName": "Metrónomo: Péndulo y Compás",
+      "shortDescription": "Metrónomo de péndulo de precisión con compases irregulares, polirritmos y BPM.",
+      "fullDescription": "Consigue un tempo sólido como una roca, domina compases irregulares y polirritmos, y desarrolla velocidad sin esfuerzo con Metrónomo: Péndulo de Precisión y Entrenador de Velocidad. Diseñado para instrumentistas, bateristas, guitarristas y pianistas, este metrónomo funciona con un motor de síntesis de audio PCM a 44,1 kHz con precisión de muestra que elimina cualquier fluctuación de tiempo.\n\nPRECISIÓN DE MUESTRA A 44,1 kHz Y PÉNDULO VISUAL\n• Motor de Audio sin Jitter: Cada clic, acento y subdivisión se calcula a nivel de muestra individual a 44,1 kHz.\n• Péndulo visual fluido y matriz de pulsos de alto contraste.\n• Tap Tempo y controles finos (-5, -1, +1 y +5 BPM) de 20 a 260 BPM con indicaciones italianas clásicas (Largo, Adagio, Andante, Moderato, Allegro, Presto).\n\n12 COMPASES, MÉTRICAS IRREGULARES Y 6 SUBDIVISIONES\n• Compases estándar e irregulares: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 y 13/8.\n• Secuenciador de Acentos por Pulso: Toca cualquier pulso para alternar entre ACENTO FUERTE, PULSO NORMAL, SUBACENTO y SILENCIO.\n• 6 Subdivisiones Rítmicas: Negras, Corcheas, Tresillos, Semicorcheas, Corcheas con puntillo (Swing) y Quintillos.\n\nGENERADOR DE POLIRRITMOS, ENTRENADOR DE VELOCIDAD Y COMPASES MUDOS\n• Modo Polirritmia de doble anillo (3:2, 4:3, 5:3, 5:4, 7:4).\n• Entrenador automático de velocidad (+BPM cada N compases) y Silenciador de compases (Bar Dropper) para poner a prueba tu reloj interno.\n• 5 timbres de clic, pantalla siempre encendida, Vertical/Horizontal, 100 % offline y sin anuncios."
+    },
+    {
+      "languageCode": "zh-CN",
+      "appName": "精准节拍器 (Metronome)",
+      "shortDescription": "采样级精准物理摆锤节拍器，支持复合/奇数拍号、多节奏型与自动提速失落小节训练。",
+      "fullDescription": "使用《精准节拍器 (Metronome — Precision Pendulum & Speed Coach)》练就稳如磐石的节奏感，轻松攻克复杂奇数拍号与多节奏型（Polyrhythm），并循序渐进提升演奏速度。专为器乐演奏者、鼓手、吉他手、钢琴手与乐队乐手打造，采用 44.1 kHz 采样级精度 PCM 实时音频合成引擎，彻底消除普通手机定时器的节拍抖动（Jitter）。\n\n44.1 kHz 采样级精度与高对比度物理摆锤\n• 零抖动音频引擎：每一次击拍、重音与细分音符均在 44.1 kHz 单个音频采样级别精准计算，长时间练习绝不跑拍。\n• 流畅的物理摆锤动画与高亮节拍矩阵，放在谱架或鼓组旁一目了然。\n• 支持点按测速（Tap Tempo）及 -5、-1、+1、+5 BPM 微调（20–260 BPM），并附带传统意大利速度术语（Largo、Adagio、Andante、Moderato、Allegro、Presto）。\n\n12 种常规/奇数拍号与 6 种节奏细分\n• 涵盖 4/4、3/4、2/4、6/8、9/8、12/8 以及 5/4、5/8、7/4、7/8、11/8、13/8 等奇数复合拍号。\n• 交互式每拍重音编辑器：点击任意拍列即可在强重音、普通拍、次重音与静音拍之间切换。\n• 6 种节奏细分：四分音符、八分音符、三连音、十六分音符、附点八分摇摆（Swing）与五连音。\n\n双环多节奏生成器、阶梯提速教练与静音小节训练\n• 多节奏模式（Polyrhythm）：同步叠加 3:2、4:3、5:3、5:4、7:4 等跨节奏循环。\n• 自动提速教练（每隔 N 小节自动 +BPM）与静音小节训练（演奏 3 小节静音 1 小节），全面检验内在律动稳定性。\n• 内置木鱼、机械摆锤、牛铃、电子滴声与军鼓边击 5 种音色，保持屏幕常亮，100% 离线无广告。"
+    },
+    {
+      "languageCode": "ja-JP",
+      "appName": "高精度メトロノーム (Metronome)",
+      "shortDescription": "変拍子、ポリリズム、自動テンポアップ、ミュート小節練習を備えた高精度振り子メトロノーム。",
+      "fullDescription": "『Metronome — 高精度振り子メトロノーム＆スピードコーチ』で、揺るぎないタイム感、複雑な変拍子やポリリズム、そして確実なスピードアップを身につけましょう。ギタリスト、ドラマー、ピアニスト、吹奏楽・アンサンブル奏者のために設計され、44.1 kHz サンプル精度のPCM音声合成エンジンによりモバイル機器特有のタイミングの揺らぎ（ジッター）を完全に排除しています。\n\n44.1 kHz サンプル精度のタイミング＆視覚的な振り子アニメーション\n• ゼロジッター・オーディオエンジン：すべてのクリック、アクセント、サブディビジョンを 44.1 kHz の1サンプル単位で正確に計算。\n• 譜面台からでも見やすいハイコントラストな振り子アニメーションとビートLEDマトリクス。\n• タップテンポおよび -5 / -1 / +1 / +5 BPM の微調整（20〜260 BPM）、イタリア語速度標語（Largo〜Presto）を表示。\n\n12種類の拍子記号（変拍子対応）＆ 6種類のサブディビジョン\n• 4/4, 3/4, 2/4, 6/8, 9/8, 12/8 に加え、5/4, 5/8, 7/4, 7/8, 11/8, 13/8 などの変拍子に対応。\n• 拍ごとのアクセントシーケンサー：各拍をタップして強アクセント、通常拍、中アクセント、ミュートを自在に設定。\n• 4分音符、8分音符、3連符、16分音符、付点8分（スウィング）、5連符の6種類の分割に対応。\n\nポリリズム生成、スピードトレーナー＆ミュート小節（バードロッパー）\n• 3:2、4:3、5:3、5:4、7:4 などのポリリズムを視覚と音で同時に確認。\n• N小節ごとに自動でテンポを引き上げるスピードコーチと、数小節おきにクリックを消して体内時計を鍛えるミュート小節モードを搭載。\n• 5種類のクリック音色、練習中の画面スリープ防止、縦・横画面対応、100%オフライン・広告なし。"
+    },
+    {
+      "languageCode": "ko-KR",
+      "appName": "정밀 메트로놈 (Metronome)",
+      "shortDescription": "변박자, 폴리리듬, 자동 속도 코치 및 무음 마디 훈련을 지원하는 정밀 진자 메트로놈.",
+      "fullDescription": "『Metronome — 정밀 진자 메트로놈 & 스피드 코치』로 흔들림 없는 타임감, 복잡한 변박자와 폴리리듬, 흔들리지 않는 연주 속도를 완성하세요. 연주자, 드러머, 기타리스트, 피아니스트를 위해 설계된 이 메트로놈은 44.1 kHz 샘플 단위 정밀도의 PCM 오디오 합성 엔진으로 모바일 타이머의 박자 밀림(Jitter)을 완벽히 제거했습니다.\n\n44.1 kHz 샘플 정밀도 타이밍 & 고대비 진자 애니메이션\n• 제로 지터(Zero-Jitter) 오디오 엔진: 모든 클릭, 악센트, 세부 리듬 분할을 44.1 kHz 오디오 샘플 단위로 정확하게 계산합니다.\n• 보면대나 드럼 세트 너머에서도 한눈에 들어오는 부드러운 진자 움직임과 고휘도 비트 매트릭스.\n• 탭 템포(Tap Tempo)와 -5, -1, +1, +5 BPM 미세 조절(20~260 BPM) 및 정통 이탈리아 템포 용어(Largo~Presto) 표시.\n\n12가지 박자표(변박자 포함) & 6가지 리듬 분할\n• 4/4, 3/4, 2/4, 6/8, 9/8, 12/8 및 5/4, 5/8, 7/4, 7/8, 11/8, 13/8 등 다양한 변박자 지원.\n• 박자별 악센트 시퀀서: 각 박자 기둥을 탭하여 강박(STRONG), 보통(NORMAL), 중강박(SUB), 무음(MUTE)을 자유롭게 프로그래밍하세요.\n• 4분음표, 8분음표, 셋잇단음표, 16분음표, 점8분음표(스윙), 다섯잇단음표 분할 지원.\n\n듀얼 링 폴리리듬 생성기, 스피드 코치 & 무음 마디 훈련\n• 3:2, 4:3, 5:3, 5:4, 7:4 등 복합 폴리리듬을 시각적 듀얼 링과 좌/우 음색으로 동시에 연습.\n• N마디마다 자동으로 템포를 높이는 스피드 트레이너 및 3마디 재생 후 1마디를 무음 처리하여 내면의 박자감을 테스트하는 바 드로퍼(Bar Dropper) 내장.\n• 5가지 클릭 음색, 화면 켜짐 유지, 세로/가로 화면 지원, 100% 오프라인 및 무광고."
+    },
+    {
+      "languageCode": "pt-BR",
+      "appName": "Metrônomo: Pêndulo e Ritmo",
+      "shortDescription": "Metrônomo de pêndulo preciso com compassos ímpares, polirritmia e treinador BPM.",
+      "fullDescription": "Desenvolva um tempo impecável, domine compassos ímpares e polirritmias e aumente sua velocidade com Metrônomo: Pêndulo de Precisão e Treinador de Velocidade. Baseado em um motor de áudio PCM a 44,1 kHz com precisão de amostra (zero jitter).\n\nDESTAQUES\n• Pêndulo visual de alto contraste, Tap Tempo e ajustes de 20 a 260 BPM.\n• 12 fórmulas de compasso (4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8, 13/8) e 6 subdivisões com editor de acentos por tempo (FORTE, NORMAL, SUB, MUDO).\n• Gerador de Polirritmia de anel duplo (3:2, 4:3, 5:3, 5:4, 7:4), Treinador de Velocidade (+BPM a cada N compassos) e Compassos Mudos (Bar Dropper).\n• 5 timbres de clique, mantém a tela acesa, 100% offline e sem anúncios."
+    },
+    {
+      "languageCode": "ru-RU",
+      "appName": "Метроном: Маятник и Полиритмия",
+      "shortDescription": "Точный маятниковый метроном со сложными размерами, полиритмией и тренером BPM.",
+      "fullDescription": "Выработайте безупречное чувство ритма, освойте нечетные размеры и полиритмию с приложением Метроном: Точный Маятник и Тренер Скорости. Работает на базе PCM-синтезатора 44,1 кГц с точностью до одного аудиосэмпла.\n\nОСНОВНЫЕ ВОЗМОЖНОСТИ\n• Плавный визуальный маятник, Tap Tempo и диапазон от 20 до 260 BPM.\n• 12 тактовых размеров (включая 5/4, 5/8, 7/4, 7/8, 11/8, 13/8), 6 длительностей подразделений и редактор акцентов каждой доли.\n• Двухкольцевой генератор полиритмии (3:2, 4:3, 5:3, 5:4, 7:4), автоматический тренер ускорения (+BPM каждые N тактов) и режим глушения тактов (Bar Dropper).\n• 5 тембров клика, удержание экрана включенным, 100% офлайн и без рекламы."
+    },
+    {
+      "languageCode": "ar",
+      "appName": "الميترونوم: بندول وإيقاع دقيق",
+      "shortDescription": "ميترونوم بندولي فائق الدقة مع الموازين الفردية والإيقاعات المتعددة ومدرب السرعة.",
+      "fullDescription": "اضبط توقيتك الموسيقي بدقة متناهية وأتقن الموازين المركبة والإيقاعات المتعددة (Polyrhythms) مع الميترونوم: البندول الدقيق ومدرب السرعة. يعمل بمحرك صوتي PCM بتردد 44.1 كيلوهرتز بدقة العينة الصوتية الواحدة.\n\nالمميزات الرئيسية\n• بندول بصري عالي التباين، وتحديد السرعة باللمس (Tap Tempo) من 20 إلى 260 BPM.\n• 12 ميزاناً إيقاعياً (بما فيها 5/4 و7/8 و11/8 و13/8) و6 تقسيمات فرعية مع تحكم في النبر لكل نبضة.\n• مولد إيقاعات متعددة بحلقتين (3:2، 4:3، 5:4، 7:4)، ومدرب زيادة السرعة التلقائي، ووضع كتم الموازير لاختبار ساعتك الداخلية.\n• 5 أصوات نقر، شاشة مضاءة دائماً أثناء التدريب، 100% بدون إنترنت وبدون إعلانات."
+    },
+    {
+      "languageCode": "hi-IN",
+      "appName": "Metronome: पेंडुलम व टेम्पो",
+      "shortDescription": "विषम ताल (Odd Meters), पॉलीरिदम और स्पीड कोच के साथ सटीक पेंडुलम मेट्रोनोम।",
+      "fullDescription": "Metronome: प्रिसिजन पेंडुलम और स्पीड कोच के साथ अपनी टाइमिंग मजबूत करें, विषम ताल (Odd Meters) और पॉलीरिदम में महारत हासिल करें। यह 44.1 kHz सैंपल-सटीक ऑडियो सिंथेसिस इंजन पर चलता है।\n\nमुख्य विशेषताएं\n• हाई-कंट्रास्ट पेंडुलम, टैप टेम्पो और 20 से 260 BPM रेंज।\n• 12 टाइम सिग्नेचर (4/4, 3/4, 6/8, 5/4, 7/8, 11/8, 13/8 आदि) और 6 सबडिविज़न, प्रति-बीट एक्सेंट एडिटर के साथ।\n• डुअल-रिंग पॉलीरिदम जनरेटर (3:2, 4:3, 5:4, 7:4), ऑटोमैटिक स्पीड कोच और बार ड्रॉपर (म्यूट बार ट्रेनर)।\n• 5 क्लिक साउंड्स, स्क्रीन हमेशा ऑन, 100% ऑफ़लाइन और विज्ञापन-मुक्त।"
+    },
+    {
+      "languageCode": "bn-BD",
+      "appName": "Metronome: পেন্ডুলাম ও টেম্পো",
+      "shortDescription": "অড মিটার, পলিরিদম এবং স্পিড কোচ সহ নিখুঁত পেন্ডুলাম মেট্রোনম।",
+      "fullDescription": "Metronome: প্রিসিশন পেন্ডুলাম ও স্পিড কোচ অ্যাপের মাধ্যমে নিখুঁত টাইমিং, অড মিটার এবং পলিরিদম অনুশীলন করুন। এটি ৪৪.১ kHz স্যাম্পল-নির্ভুল অডিও ইঞ্জিনে চলে।\n\nমূল বৈশিষ্ট্যসমূহ\n• ভিজ্যুয়াল পেন্ডুলাম, ট্যাপ টেম্পো এবং ২০–২৬০ BPM রেঞ্জ।\n• ১২টি টাইম সিগনেচার (৫/৪, ৭/৮, ১১/৮ সহ) এবং ৬টি সাবডিভিশন ও বিট অ্যাকসেন্ট এডিটর।\n• পলিরিদম জেনারেটর (৩:২, ৪:৩, ৫:৪, ৭:৪), অটোমেটিক স্পিড ট্রেনার এবং বার ড্রপার (মিউট বার প্র্যাকটিস)।\n• ৫টি ক্লিক সাউন্ড, ১০০% অফলাইন এবং সম্পূর্ণ বিজ্ঞাপনমুক্ত।"
+    },
+    {
+      "languageCode": "id",
+      "appName": "Metronom: Bandul & Poliritme",
+      "shortDescription": "Metronom bandul presisi dengan birama ganjil, poliritme, dan pelatih kecepatan.",
+      "fullDescription": "Kunci ketepatan tempo Anda, kuasai birama ganjil serta poliritme, dan tingkatkan kecepatan bermain dengan Metronom: Bandul Presisi & Pelatih Kecepatan. Ditenagai mesin audio PCM 44,1 kHz presisi sampel tanpa jitter.\n\nFITUR UTAMA\n• Animasi bandul kontras tinggi, Tap Tempo, dan rentang 20–260 BPM.\n• 12 tanda birama (termasuk 5/4, 5/8, 7/4, 7/8, 11/8, 13/8) dan 6 subdivisi ritme dengan editor aksen per ketukan.\n• Generator Poliritme dua cincin (3:2, 4:3, 5:3, 5:4, 7:4), Speed Trainer otomatis (+BPM setiap N birama), dan Bar Dropper (birama bisu).\n• 5 suara klik, layar tetap menyala, 100% offline dan tanpa iklan."
+    },
+    {
+      "languageCode": "tr-TR",
+      "appName": "Metronom: Sarkaç ve Poliritim",
+      "shortDescription": "Aksak ölçüler, poliritimler ve hız koçu içeren hassas sarkaçlı metronom.",
+      "fullDescription": "Metronom: Hassas Sarkaç ve Hız Koçu ile zamanlamanızı sağlamlaştırın, aksak ölçüleri (5/4, 7/8, 9/8, 11/8) ve poliritimleri (3:2, 4:3, 5:4, 7:4) ustalıkla çalın. 44,1 kHz örneklem hassasiyetinde ses motoru, 20–260 BPM aralığı, Tap Tempo, vuruş vurgu düzenleyicisi, Otomatik Hız Koçu ve Sessiz Ölçü (Bar Dropper) трениörü içerir. %100 çevrimdışı ve reklamsız."
+    },
+    {
+      "languageCode": "vi",
+      "appName": "Metronome: Máy Đếm Nhịp Chuẩn",
+      "shortDescription": "Máy đếm nhịp con lắc chính xác với nhịp lẻ, đa tiết tấu và huấn luyện tốc độ.",
+      "fullDescription": "Rèn luyện nhịp điệu vững chắc, làm chủ nhịp lẻ (5/4, 7/8, 9/8, 11/8) và đa tiết tấu (Polyrhythm 3:2, 4:3, 5:4, 7:4) với Metronome: Con Lắc Chính Xác & Huấn Luyện Tốc Độ. Động cơ âm thanh PCM 44,1 kHz chính xác từng mẫu, dải 20–260 BPM, Tap Tempo, chỉnh trọng âm từng phách, Tăng tốc tự động và Tắt tiếng ô nhịp (Bar Dropper). 100% ngoại tuyến, không quảng cáo."
+    },
+    {
+      "languageCode": "pl-PL",
+      "appName": "Metronom: Wahadło i Polirytmia",
+      "shortDescription": "Prezyzyjny metronom wahadłowy z metrum nieparzystym, polirytmią i trenerem BPM.",
+      "fullDescription": "Zbuduj perfekcyjne poczucie rytmu, opanuj metrum nieparzyste (5/4, 7/8, 9/8, 11/8) oraz polirytmie (3:2, 4:3, 5:4, 7:4) dzięki aplikacji Metronom: Precyzyjne Wahadło i Trener Szybkości. Silnik audio 44,1 kHz bez jittera, zakres 20–260 BPM, Tap Tempo, akcenty na każdą miarę, Trener Szybkości i wyciszanie taktów (Bar Dropper). 100% offline i bez reklam."
+    },
+    {
+      "languageCode": "nl-NL",
+      "appName": "Metronoom: Slinger & Poliritme",
+      "shortDescription": "Precisie-slingermetronoom met onregelmatige maatsoorten, poliritiek en BPM-coach",
+      "fullDescription": "Ontwikkel een rotsvaste timing, beheers onregelmatige maatsoorten (5/4, 7/8, 9/8, 11/8) en poliritmes (3:2, 4:3, 5:4, 7:4) met Metronoom: Precisieslinger & Snelheidscoach. Sample-nauwkeurige 44,1 kHz audio-engine, 20–260 BPM, Tap Tempo, accentsequencer per tel, automatische Snelheidstrainer en stille maten (Bar Dropper). 100% offline en reclamevrij."
+    },
+    {
+      "languageCode": "th",
+      "appName": "Metronome: เมโทรนอมลูกตุ้ม",
+      "shortDescription": "เมโทรนอมลูกตุ้มความแม่นยำสูง รองรับจังหวะคี่ โพลีริทึม และโค้ชเพิ่มความเร็ว BPM",
+      "fullDescription": "ฝึกจังหวะให้แม่นยำด้วย Metronome: เมโทรนอมลูกตุ้มและโค้ชฝึกความเร็ว ขับเคลื่อนด้วยเอนจินเสียง 44.1 kHz แม่นยำระดับแซมเพิล ช่วงความเร็ว 20–260 BPM รองรับ 12 เครื่องหมายกำหนดจังหวะ (รวม 5/4, 7/8, 11/8) การแบ่งจังหวะย่อย 6 แบบ โพลีริทึมวงแหวนคู่ (3:2, 4:3, 5:4, 7:4) โค้ชไต่ความเร็วอัตโนมัติ และโหมดตัดเสียงบางห้อง (Bar Dropper) ทำงานออฟไลน์ 100% ไม่มีโฆษณา"
+    },
+    {
+      "languageCode": "uk",
+      "appName": "Метроном: Маятник і Поліритмія",
+      "shortDescription": "Точний маятниковий метроном зі складними розмірами, поліритмією та тренером BPM.",
+      "fullDescription": "Виробіть бездоганне відчуття ритму, опануйте непарні розміри (5/4, 7/8, 9/8, 11/8) та поліритмію (3:2, 4:3, 5:4, 7:4) з додатком Метроном: Точний Маятник і Тренер Швидкості. Аудіосинтез 44,1 кГц з точністю до семпла, 20–260 BPM, Tap Tempo, редактор акцентів, Тренер прискорення та режим глушіння тактів (Bar Dropper). 100% офлайн і без реклами."
+    }
+  ]
+}

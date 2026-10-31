@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">安眠时钟</string>
+    <string name="cloudDesc">雨云（白噪音）</string>
+    <string name="noteDesc">音符（助眠音乐）</string>
+    <string name="playing_music">正在播放助眠音乐</string>
+</resources>

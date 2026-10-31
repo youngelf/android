@@ -1,32 +1,21 @@
-# Privacy Policy — Metronome — Precision Pendulum, Polyrhythm & Speed Trainer (`com.eggwall.metronome`)
+# Privacy Policy — Metronome — Precision Pendulum & Speed Coach (`com.eggwall.metronome`)
 
-**Effective Date:** October 23, 2026  
-**Package Name:** `com.eggwall.metronome`
+**Effective Date:** October 27, 2026  
+**Developer:** Eggwall / Vikram Aggarwal
 
----
+## 1. Overview
+**Metronome — Precision Pendulum & Speed Coach** (`com.eggwall.metronome`) is an offline-first Android application. We respect your privacy completely: the application does **not** collect, transmit, store on external servers, sell, or share any personal data, device identifiers, location data, or usage analytics.
 
-## 1. Summary: Zero Data Collection
+## 2. Data Collection & Permissions
+- **No Personal Data Collected:** The app does not ask for your name, email address, phone number, account credentials, or payment details.
+- **No Internet or Network Access:** The app requests **zero** network permissions (`android.permission.INTERNET` is not requested in `AndroidManifest.xml`). All audio synthesis, music theory rendering, and interactive features run 100% locally on your device.
+- **No Third-Party SDKs or Ads:** The app contains no advertising SDKs, no crash-reporting trackers, and no third-party analytics libraries.
 
-**Metronome — Precision Pendulum, Polyrhythm & Speed Trainer** operates **100% offline** on your Android device. We do **not** collect, transmit, store on external servers, or share any personal data, usage analytics, audio recordings, or device identifiers.
+## 3. Local Device Storage
+User preferences and practice state (such as selected key, tempo, preset, or session statistics) are stored strictly locally on your device using Android's standard sandboxed `SharedPreferences`. You can clear this local data at any time via **Android Settings → Apps → Metronome → Storage → Clear Data** or by uninstalling the application.
 
----
+## 4. Children's Privacy
+Because the application collects no personal information of any kind and operates entirely offline, it is safe for users of all ages and complies with COPPA and GDPR requirements.
 
-## 2. Zero Android Permissions
-
-As verified directly in [`AndroidManifest.xml`](AndroidManifest.xml), this application declares **zero `<uses-permission>` tags**:
-
-- **No Internet Access (`android.permission.INTERNET` is NOT requested)**: The app cannot make network connections or transmit any data off your device.
-- **No Microphone Access (`android.permission.RECORD_AUDIO` is NOT requested)**: All musical tones, clicks, and soundscapes are synthesized mathematically in memory by [`MetronomeSynthEngine.java`](src/com/eggwall/metronome/MetronomeSynthEngine.java).
-- **No Location, Contacts, Camera, or Storage Access**: The app never accesses your personal files, photos, or sensors.
-
----
-
-## 3. Local-Only Preferences
-
-Your selected settings (such as mode, key, tempo, or session counters) are stored strictly locally on your device using Android's standard sandboxed `SharedPreferences` inside [`MetronomeView.java`](src/com/eggwall/metronome/MetronomeView.java) and [`MetronomeActivity.java`](src/com/eggwall/metronome/MetronomeActivity.java). Clearing the app's data or uninstalling the app permanently removes these preferences.
-
----
-
-## 4. Zero Third-Party SDKs or Trackers
-
-As verified in [`build.gradle`](build.gradle), the compiled application contains **zero third-party runtime dependencies**, advertising SDKs, crash reporters, or telemetry libraries (only `junit:junit:4.13.2` is used for local build-time unit testing in [`MetronomeTheoryTest.java`](test/com/eggwall/metronome/MetronomeTheoryTest.java)).
+## 5. Contact
+If you have any questions about this Privacy Policy, you may inspect the open-source source code included with this distribution or contact the developer through the Google Play Store listing page.

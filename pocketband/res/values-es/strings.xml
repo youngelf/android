@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketBand</string>
+    <string name="band_title">Banda</string>
+    <string name="play">TOCAR</string>
+    <string name="stop">PARAR</string>
+    <string name="fill">REDOBLE</string>
+    <string name="auto_on">AUTO:SÍ</string>
+    <string name="auto_off">AUTO:NO</string>
+    <string name="rst">INI</string>
+    <string name="key">TONALIDAD</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">BATERÍA</string>
+    <string name="bass">BAJO</string>
+    <string name="chords">ACORDES</string>
+    <string name="on">ACTIVO</string>
+    <string name="mute">MUDO</string>
+    <string name="prog_grid_header">CUADRÍCULA DE ACORDES (TOCA UN COMPÁS PARA OÍR)</string>
+    <string name="step_seq">SECUENC.</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">Blues de 12 Compases ▾</string>
+    <string name="legend_right">ORO=Tono  VERDE=Acorde  ROSA=Blue  CIAN=Escala</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">Band — GUÍA RÁPIDA Y CONTROLES</string>
+    <string name="help_sec1_title">1. ESTILOS DE ACOMPAÑAMIENTO, PROGRESIONES Y TONO</string>
+    <string name="help_sec1_body">Toca Estilo, Progresión o Tono en la barra superior para abrir el menú desplegable, o usa - / + en TEMPO para ajustar la velocidad.</string>
+    <string name="help_sec2_title">2. COMPASES DE ACORDES INTERACTIVOS</string>
+    <string name="help_sec2_body">Toca cualquier tarjeta de compás en la cuadrícula para escuchar el acorde y recorrer 22 armonías diatónicas, dominantes 7ª, menores 7ª y jazz.</string>
+    <string name="help_sec3_title">3. SECUENCIADOR POR PASOS DE 5 PISTAS</string>
+    <string name="help_sec3_body">Toca las celdas de Bombo, Caja o Charles para alternar OFF -&gt; ON -&gt; ACENTO. Toca las celdas de Bajo para cambiar el grado: Silencio (.) -&gt; Tónica (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MEZCLADOR, REDOBLES Y MAPA DE SOLO DE 12 TRASTES</string>
+    <string name="help_sec4_body">Activa/silencia BATERÍA / BAJO / ACORDES o toca % para cambiar el volumen. Toca FILL para programar un redoble, o RST para restaurar el ritmo. Improvisa en el mástil de 12 trastes: ORO = Tónica, VERDE = Raíz del acorde activo.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cep Orkestrası</string>
+    <string name="band_title">Grup</string>
+    <string name="play">OYNAT</string>
+    <string name="stop">DUR</string>
+    <string name="fill">ATAK</string>
+    <string name="auto_on">OTO:AÇIK</string>
+    <string name="auto_off">OTO:KAPALI</string>
+    <string name="rst">SFR</string>
+    <string name="key">TON</string>
+    <string name="tempo">TEMPO</string>
+    <string name="drums">DAVUL</string>
+    <string name="bass">BAS</string>
+    <string name="chords">AKORLAR</string>
+    <string name="on">AÇIK</string>
+    <string name="mute">SESSİZ</string>
+    <string name="prog_grid_header">AKOR DİZİLİMİ (DİNLEMEK İÇİN ÖLÇÜYE DOKUNUN)</string>
+    <string name="step_seq">SEKANS</string>
+    <string name="style_blues">Blues Shuffle 4/4 ▾</string>
+    <string name="prog_12bar">12 Ölçülük Blues ▾</string>
+    <string name="legend_right">ALTIN=Ton  YEŞİL=Akor  PEMBE=Blue  CAM=Gam</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">Band — HIZLI KILAVUZ VE KONTROLLER</string>
+    <string name="help_sec1_title">1. EŞLİK STİLLERİ, DİZİLİMLER VE TON</string>
+    <string name="help_sec1_body">Açılır menüyü görmek için üst çubukta Stil, Dizilim veya Ton\'a dokunun ya da hızı ayarlamak için TEMPO üzerindeki - / + düğmelerini kullanın.</string>
+    <string name="help_sec2_title">2. ETKİLEŞİMLİ AKOR ÖLÇÜLERİ</string>
+    <string name="help_sec2_body">Akoru dinlemek ve 22 diyatonik, dominant 7, minör 7 ve caz armonisi arasında geçiş yapmak için herhangi bir Ölçü kartına dokunun.</string>
+    <string name="help_sec3_title">3. 5 KANALLI ADIM SEKANSERI</string>
+    <string name="help_sec3_body">Kick, Trampet veya Hi-Hat hücrelerine dokunarak KAPALI -&gt; AÇIK -&gt; VURGU seçin. Bas hücrelerine dokunarak akor derecelerini değiştirin: Sus (.) -&gt; Kök (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. MİKSER, ATAKLAR VE 12 PERDE SOLO GAM HARİTASI</string>
+    <string name="help_sec4_body">DAVUL / BAS / AKOR kanallarını açıp kapatın veya ses seviyesi için % düğmesine dokunun. Sonraki ölçüde davul atağı için ATAK\'a dokunun. 12 perdeli sap üzerinde solo çalın: ALTIN = Ton Kökü, YEŞİL = Aktif Akor Kökü.</string>
+</resources>

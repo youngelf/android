@@ -1,0 +1,29 @@
+# Pomodoro — Focus Timer & Ambient Soundscapes (`com.eggwall.pomodoro`) — Full Play Store Description (3279 / 4000 characters)
+
+Reclaim your deep concentration for music practice, songwriting, studying, and software engineering with Pomodoro — Focus Timer & Ambient Soundscapes. Designed with a calm, high-contrast studio interface and a built-in real-time procedural audio synthesizer, Pomodoro eliminates visual clutter and notification fatigue so you can enter a state of effortless flow.
+
+Unlike bloated productivity apps that require accounts, subscriptions, cloud syncing, or endless task-list management, Pomodoro launches instantaneously into a distraction-free countdown ring paired with soothing background soundscapes and automatic local work-hour tracking.
+
+HIGH-VISIBILITY FOCUS RING & DO-NOT-DISTURB BANNER
+• Clear At-a-Glance Status Header: Displays a bold, unmistakable banner along the top of the screen—WORKING: DO NOT DISTURB during active focus sessions, BREAK: RECHARGE during rest intervals, and READY TO FOCUS when paused—so both you and anyone around your desk or studio know when you are in a deep-focus block.
+• Precision Circular Countdown Dial: A clean, distraction-free progress ring surrounds the large monospace countdown readout, accompanied by a standard || Pause / Play transport button, quick -5m, -1m, +1m, and +5m duration adjusters, and a single-tap speaker mute/unmute icon tucked neatly into the lower-right corner.
+• Seamless Phase Transitions: Automatically alternates between Focus Work intervals, Short Breaks, and Long Breaks with gentle synthesized singing-bowl chimes at the end of each phase, or lets you skip ahead to the next phase at any time.
+
+REAL-TIME PROCEDURAL BACKGROUND SOUND GENERATOR
+Mask distracting room noise, office chatter, or street traffic using three real-time 44.1 kHz synthesized background soundscapes—generated mathematically on the fly with zero looping audio seams and zero network streaming:
+• SOFT TICK: A warm, subtle mechanical watch escapement pulse that gently anchors your sense of passing time.
+• RAIN: Richly textured pink-noise rainfall with organic droplet modulation for calm, sustained concentration.
+• BROWN NOISE: Deep, low-frequency waterfall warmth that masks external distractions and reduces auditory fatigue during long coding, reading, or instrument practice sessions.
+• One-Tap Mute Toggle: Use the corner speaker button (green when active, crossed-out when muted) to silence or restore sound instantaneously.
+
+4 WORKFLOW PRESETS + FLEXIBLE DURATION TUNING
+Switch between four proven focus cadences with a single tap, and fine-tune any timer on the fly:
+• Classic (25m Work / 5m Short Break / 15m Long Break)
+• Deep Work (50m Work / 10m Short Break / 20m Long Break)
+• Studio Practice (45m Work / 15m Short Break / 30m Long Break)
+• Quick Sprint (15m Work / 3m Short Break / 10m Long Break)
+
+LOCAL WORK LOG & PRIVACY-FIRST ARCHITECTURE
+• Automatic Focus Telemetry: Tracks your completed sessions and total focused hours for Today and All-Time directly on your device so you can measure consistent daily progress.
+• Adaptive Portrait & Landscape Layouts: Looks sharp on phones and tablets held vertically or placed horizontally on a desk stand or music stand.
+• 100% Offline & Private: Requires zero permissions, collects zero personal data, shows zero ads, and keeps your screen awake while the timer is active.

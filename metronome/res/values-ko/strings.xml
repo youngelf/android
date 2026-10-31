@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">정밀 메트로놈</string>
+    <string name="header_title">정밀 메트로놈</string>
+    <string name="tap_tempo">탭 템포</string>
+    <string name="time_signature">박자표</string>
+    <string name="subdivision">세분박 (서브디비전)</string>
+    <string name="stealth_drop">무작위 묵음 %</string>
+    <string name="speed_trainer">스피드 트레이너</string>
+    <string name="start_metronome">▶   메트로놈 시작</string>
+    <string name="stop_metronome">■   메트로놈 정지</string>
+    <string name="steady_click"> 정박 클릭</string>
+    <string name="close">닫기</string>
+    <string name="got_it">확인</string>
+    <string name="help_title">정밀 메트로놈 • 빠른 가이드</string>
+    <string name="help_sec1_title">1. 샘플 단위 정밀 클럭 및 사운드 키트</string>
+    <string name="help_sec1_body">0.03ms 미만의 지터를 보장하는 44.1kHz PCM 신시사이저입니다. 우측 상단 \'음색\'을 탭해 V90 클릭, 우드블록, 림샷, 사인파를 전환하세요.</string>
+    <string name="help_sec2_title">2. 박자 강세(Accent) 오브 설정</string>
+    <string name="help_sec2_body">번호가 매겨진 박자 원(1..12)을 탭하여 강박(코랄), 보통(시안), 중강박(앰버), 음소거(뮤트) 상태를 순환 전환하세요.</string>
+    <string name="help_sec3_title">3. BPM 다이얼 및 탭 템포 (TAP TEMPO)</string>
+    <string name="help_sec3_body">원형 BPM 링을 드래그하거나 -5 / -1 / +1 / +5 버튼을 사용하고, \'탭 템포\'를 반복해서 탭하여 실제 곡의 템포를 즉시 찾아내세요.</string>
+    <string name="help_sec4_title">4. 스텔스 무음 확률(%) 및 스피드 트레이너</string>
+    <string name="help_sec4_body">\'무음 확률 %\'는 4마디 동안 박자를 고정한 뒤 무작위로 클릭음을 생략하여 내면의 박자감을 길러줍니다. \'속도 트레이너\'는 4마디마다 BPM을 자동 증가(+2/+4/+5)시킵니다.</string>
+</resources>

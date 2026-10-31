@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">초견 시창 트레이너</string>
+    <string name="header_title">악보 초견</string>
+    <string name="play">재생</string>
+    <string name="stop">정지</string>
+    <string name="sound">소리 켜짐</string>
+    <string name="muted">음소거</string>
+    <string name="new_piece">새 연습곡</string>
+    <string name="hint_on">힌트: 켜짐</string>
+    <string name="hint_off">힌트: 꺼짐</string>
+    <string name="mode_etude">모드: 에튀드</string>
+    <string name="mode_quiz">모드: 퀴즈</string>
+    <string name="mode_flow">모드: 연속 연주</string>
+    <string name="got_it">확인</string>
+    <string name="close">닫기</string>
+    <string name="help_title">초견 시창 트레이너 — 높은음자리표 &amp; 기타 가이드</string>
+    <string name="help_sec1_title">1. 높은음자리표 오선보 표기</string>
+    <string name="help_sec1_body">자동 덧줄이 포함된 표준 기타 높은음자리표(8vb) 오선보를 표시합니다. 금색 열이 현재 연주할 목표 음표를 강조합니다.</string>
+    <string name="help_sec2_title">2. 7개 조표 및 5개 지판 포지션</string>
+    <string name="help_sec2_body">7개 장조(C, G, D, A, E, F, Bb)와 5개 기타 지판 포지션(오픈, 2, 5, 7, 9포지션) 및 24개 단계별 에튀드로 연습하세요.</string>
+    <string name="help_sec3_title">3. 대화형 지판 응답 및 3가지 연습 모드</string>
+    <string name="help_sec3_body">6현 로즈우드 기타 지판에서 해당 줄과 프렛을 직접 탭해 악보를 읽으세요. \'에튀드\' 모드는 지판 가이드를 표시하고, \'퀴즈\' 모드는 힌트를 숨기며, \'플로우\' 모드는 메트로놈 박자에 맞춰 자동 진행합니다.</string>
+    <string name="help_sec4_title">4. 오디오 신스 및 에튀드 자동 재생</string>
+    <string name="help_sec4_body">\'재생\'을 탭하면 선택한 BPM으로 2마디 에튀드 시범 연주를 들을 수 있으며, 상단 바의 \'소리 켬 / 음소거\'로 실시간 기타 합성음을 켜고 끌 수 있습니다.</string>
+</resources>

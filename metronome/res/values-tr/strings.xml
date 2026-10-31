@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metronom</string>
+    <string name="header_title">HASSAS METRONOM</string>
+    <string name="tap_tempo">TEMPO TUT</string>
+    <string name="time_signature">ÖLÇÜ BİRİMİ</string>
+    <string name="subdivision">ALT BÖLÜM</string>
+    <string name="stealth_drop">GİZLİ SUS %</string>
+    <string name="speed_trainer">HIZ EĞİTMENİ</string>
+    <string name="start_metronome">▶   METRONOMU BAŞLAT</string>
+    <string name="stop_metronome">■   METRONOMU DURDUR</string>
+    <string name="steady_click"> SABİT TIK</string>
+    <string name="close">KAPAT</string>
+    <string name="got_it">ANLADIM</string>
+    <string name="help_title">HASSAS METRONOM • HIZLI KILAVUZ</string>
+    <string name="help_sec1_title">1. ÖRNEKLEME HASSASİYETLİ SAAT VE SES KİTLERİ</string>
+    <string name="help_sec1_body">&lt;0,03 ms sapmalı 44,1 kHz PCM sentezleyici. V90, Tahta Blok, Rimshot veya Sinüs arasında geçiş için sağ üstteki \'KİT\' düğmesine dokunun.</string>
+    <string name="help_sec2_title">2. VURUŞ VURGU KÜRELERİ</string>
+    <string name="help_sec2_body">VURGU (Mercan), NORMAL (Camgöbeği), ALT VURGU (Kehribar) ve SESSİZ arasında geçiş yapmak için numaralı vuruş dairelerine (1..12) dokunun.</string>
+    <string name="help_sec3_title">3. BPM KADRANI VE TEMPO TUTMA</string>
+    <string name="help_sec3_body">Dairesel BPM halkasını sürükleyin, -5 / -1 / +1 / +5 düğmelerini kullanın veya herhangi bir şarkının hızını yakalamak için \'TEMPO TUT\'a dokunun.</string>
+    <string name="help_sec4_title">4. GİZLİ SUSMA % VE HIZ EĞİTMENİ</string>
+    <string name="help_sec4_body">GİZLİ SUSMA % 4 tam ölçü çaldıktan sonra içsel ritminizi test etmek için tıklamaları rastgele susturur. HIZ EĞİTMENİ her 4 ölçüde bir BPM\'i otomatik artırır (+2 / +4 / +5).</string>
+</resources>

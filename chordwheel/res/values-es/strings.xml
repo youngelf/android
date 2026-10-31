@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Círculo de Quintas</string>
+    <string name="lock">BLOQ.</string>
+    <string name="key_prefix">TONO </string>
+    <string name="sevenths">7ª</string>
+    <string name="triads">TRÍADAS</string>
+    <string name="tap_swipe">TOCAR / DESLIZAR</string>
+    <string name="voicing_1">&lt; 1/3 Abierto/CAGED &gt;</string>
+    <string name="voicing_2">&lt; 2/3 Cejilla Mi (6c) &gt;</string>
+    <string name="voicing_3">&lt; 3/3 Cejilla La (5c) &gt;</string>
+    <string name="loop_play">&gt; BUCLE</string>
+    <string name="loop_pause">|| PAUSA</string>
+    <string name="add_prog">+PROG</string>
+    <string name="presets">AJUSTES</string>
+    <string name="close">CERRAR</string>
+    <string name="func_tonic_maj">Tónica Mayor</string>
+    <string name="func_subdominant">Subdominante</string>
+    <string name="func_dominant">Dominante</string>
+    <string name="func_rel_min">Relativo Menor</string>
+    <string name="func_supertonic">Supertónica Men</string>
+    <string name="func_mediant">Mediante Menor</string>
+    <string name="func_leading_dim">Sensible Disminuida</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_guide_title">CÓMO FUNCIONA EL CÍRCULO DE QUINTAS</string>
+    <string name="help_guide_sec1_title">1. LA RUEDA Y LOS ANILLOS ARMÓNICOS</string>
+    <string name="help_guide_sec1_body">Exterior = 12 acordes Mayores | Interior = 12 Menores relativos | Centro = Tonalidad y vii° dism. Oro = Tónica (I/vi), Azul = Subdominante (IV/ii), Verde = Dominante (V/iii).</string>
+    <string name="help_guide_sec2_title">2. TONO: GIRAR vs. BLOQUEADO</string>
+    <string name="help_guide_sec2_body">Desbloqueado, tocar un acorde gira la tonalidad activa y transpone el bucle. Toca BLOQ. arriba a la derecha para fijar la tonalidad y explorar acordes.</string>
+    <string name="help_guide_sec3_title">3. NOTAS DEL ACORDE Y GRADOS DE LA ESCALA</string>
+    <string name="help_guide_sec3_body">Muestra las notas del acorde y los grados en la tonalidad activa (ej. Do = 1-3-5). Toca TRÍADAS / 7ª para alternar acordes de séptima de 4 notas.</string>
+    <string name="help_guide_sec4_title">4. DIAPASÓN DE GUITARRA Y ALTAVOZ</string>
+    <string name="help_guide_sec4_body">Toca \'&lt; 1/3 Abierto/CAGED &gt;\' o desliza para alternar 3 posiciones de guitarra. Desliza sobre las 6 cuerdas o toca el icono verde del altavoz para rasguear.</string>
+    <string name="help_guide_sec5_title">5. LOOPER DE 4 COMPASES Y AJUSTES</string>
+    <string name="help_guide_sec5_body">Toca \'&gt; BUCLE\' para reproducir los 4 compases, \'+PROG\' para insertar el acorde activo en la ranura seleccionada, o \'AJUSTES\' para cargar progresiones.</string>
+    <string name="help_presets_title">AJUSTES DE PROGRESIÓN Y GUÍA</string>
+    <string name="help_looper_play">&gt; REPRODUCIR BUCLE AUTO DE 4 COMPASES</string>
+    <string name="help_looper_pause">|| PAUSAR BUCLE AUTO DE 4 COMPASES</string>
+    <string name="help_presets_touch">TÁCTIL: Tocar/Arrastrar Rueda | Rasguear Cuerdas | Deslizar Voicing</string>
+    <string name="help_presets_keys">TECLAS: DPAD=Rueda  A=Rasguear  B=7ª  L1/R1=Voicing  X=+Prog  SEL=Bloq.</string>
+</resources>

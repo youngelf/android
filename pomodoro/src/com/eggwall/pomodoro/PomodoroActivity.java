@@ -71,6 +71,8 @@ public final class PomodoroActivity extends Activity {
     }
 
     private void handleIntentExtras(Intent intent) {
+        AppI18n.initFromIntent(this, intent);
+        if (mView != null) mView.invalidate();
         if (intent == null || intent.getExtras() == null) {
             return;
         }

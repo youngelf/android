@@ -1,0 +1,6 @@
+Kuasai pembacaan ritme, subdivisi nilai nada, dan birama ganjil dengan Pelatih Ritme (Rhythm Trainer). Memainkan setiap ritme tertulis dengan nada referensi 440 Hz jernih setelah hitungan masuk 4..3..2..1.
+
+FITUR UTAMA
+• Not & Tanda Istirahat Lengkap: Penuh, Setengah, Seperempat, Seperdelapan, dan Seperenambelas.
+• 5 Tanda Birama (4/4, 3/4, 2/2, 5/4, 7/4) dan Mode Edit interaktif.
+• 100% offline dan tanpa iklan.

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">فرقة الجيب</string>
+    <string name="band_title">فرقة</string>
+    <string name="play">تشغيل</string>
+    <string name="stop">إيقاف</string>
+    <string name="fill">فيل</string>
+    <string name="auto_on">تلقائي:مفعل</string>
+    <string name="auto_off">تلقائي:معطل</string>
+    <string name="rst">إعادة</string>
+    <string name="key">المفتاح</string>
+    <string name="tempo">السرعة</string>
+    <string name="drums">طبول</string>
+    <string name="bass">باص</string>
+    <string name="chords">أوتار</string>
+    <string name="on">مفعل</string>
+    <string name="mute">كتم</string>
+    <string name="prog_grid_header">شبكة تسلسل الأوتار (انقر على المازورة للاستماع)</string>
+    <string name="step_seq">مرتب خطوات</string>
+    <string name="style_blues">بلوز شافل 4/4 ▾</string>
+    <string name="prog_12bar">بلوز 12 مازورة ▾</string>
+    <string name="legend_right">ذهبي=مفتاح  أخضر=وتر  وردي=بلوز  سماوي=سلم</string>
+    <string name="close">إغلاق</string>
+    <string name="got_it">حسناً</string>
+    <string name="help_title">Band — دليل سريع وعناصر التحكم</string>
+    <string name="help_sec1_title">1. أنماط المرافقة والتقدمات والمفتاح</string>
+    <string name="help_sec1_body">انقر على النمط أو التقدم أو المفتاح في الشريط العلوي لفتح القائمة المنسدلة، أو استخدم - / + لتعديل السرعة.</string>
+    <string name="help_sec2_title">2. موازير الأوتار التفاعلية</string>
+    <string name="help_sec2_body">انقر على أي بطاقة مازورة في شبكة التقدم لسماع الوتر والتبديل بين 22 تناغماً دياتونياً وسباعياً وجاز.</string>
+    <string name="help_sec3_title">3. متسلسل الخطوات ذو 5 مسارات</string>
+    <string name="help_sec3_body">انقر على خلايا الطبول للتبديل بين إيقاف -&gt; تشغيل -&gt; نبر. انقر على خلايا الباص لتغيير درجة الوتر: سكتة (.) -&gt; قرار (R) -&gt; 3 -&gt; 5 -&gt; 6 -&gt; b7 -&gt; 8.</string>
+    <string name="help_sec4_title">4. المازج والفواصل وخريطة السولو (12 فريت)</string>
+    <string name="help_sec4_body">فعّل أو اكتم الطبول / الباص / الأوتار أو انقر على % لتغيير مستوى الصوت. انقر على «فاصل» لإضافة فاصل طبول، وتدرّب على الارتجال عبر عنق الجيتار (12 فريت): الذهبي = أساس المفتاح، الأخضر = أساس الوتر.</string>
+</resources>

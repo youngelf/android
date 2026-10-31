@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sono Tranquilo</string>
+    <string name="cloudDesc">nuvem de chuva (ruído branco)</string>
+    <string name="noteDesc">nota musical</string>
+    <string name="playing_music">Reproduzindo música</string>
+</resources>

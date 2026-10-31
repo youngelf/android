@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نوم هادئ</string>
+    <string name="cloudDesc">سحابة مطر (ضوضاء بيضاء)</string>
+    <string name="noteDesc">نوتة موسيقية</string>
+    <string name="playing_music">جاري تشغيل الموسيقى</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trening Słuchu</string>
+    <string name="mode_intervals">INTERWAŁY</string>
+    <string name="mode_chords">AKORDY</string>
+    <string name="mode_solfege">SOLFEŻ</string>
+    <string name="mode_melodic">MELODYCZNE</string>
+    <string name="tier_easy">ŁATWY</string>
+    <string name="tier_medium">ŚREDNI</string>
+    <string name="tier_all_12">WSZYSTKIE 12</string>
+    <string name="replay">POWTÓRZ</string>
+    <string name="root_note">PRYMA</string>
+    <string name="style">STYL</string>
+    <string name="hint_minus_2">PODPOWIEDŹ</string>
+    <string name="next">DALEJ &gt;&gt;</string>
+    <string name="skip">POMIŃ &gt;&gt;</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">STUDIO KSZTAŁCENIA SŁUCHU — PRZEWODNIK</string>
+    <string name="help_sec1_title">1. CZTERY TRYBY ĆWICZEŃ (Przycisk TRYB w lewym górnym rogu)</string>
+    <string name="help_sec1_body">• INTERWAŁY: 12 interwałów chromatycznych (m2..P8) w górę, w dół, harmonicznie lub mieszanie.\n• AKORDY: 12 typów trójdźwięków i septymowych (dur, mol, zm., zw., sus2/4, Dom7, Maj7, m7).\n• SOLFEŻ: Chromatyczne stopnie skali na tle kadencji I-IV-V-I lub prymy.\n• MELODYKA: 3-dźwiękowe motywy i 3-akordowe kadencje (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. ZASADA 3 PRÓB I ODSŁUCH PORÓWNAWCZY</string>
+    <string name="help_sec2_body">• Masz 3 próby na pytanie. Użyj PODPOWIEDŹ (-2), aby odrzucić dwie błędne odpowiedzi.\n• Po odkryciu odpowiedzi dotknij DOWOLNEGO z 12 padów, aby porównać interwały lub akordy na gryfie i klawiaturze pianina!</string>
+    <string name="help_sec3_title">3. INTERAKTYWNE PIANINO I GRYF GITARY</string>
+    <string name="help_sec3_body">Dotknij dowolnego klawisza na 2-oktawowym pianinie lub struny/progu na 6-strunowym gryfie, aby zagrać dźwięki i sprawdzić interwały.</string>
+</resources>

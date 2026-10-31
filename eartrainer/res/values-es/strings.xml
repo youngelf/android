@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entrenamiento Auditivo</string>
+    <string name="mode_intervals">INTERVALOS</string>
+    <string name="mode_chords">ACORDES</string>
+    <string name="mode_solfege">SOLFEO</string>
+    <string name="mode_melodic">MELÓDICO</string>
+    <string name="tier_easy">FÁCIL</string>
+    <string name="tier_medium">MEDIO</string>
+    <string name="tier_all_12">LOS 12</string>
+    <string name="replay">REPETIR</string>
+    <string name="root_note">NOTA RAÍZ</string>
+    <string name="style">ESTILO</string>
+    <string name="hint_minus_2">PISTA (-2)</string>
+    <string name="next">SIGUIENTE &gt;&gt;</string>
+    <string name="skip">OMITIR &gt;&gt;</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">ESTUDIO DE ENTRENAMIENTO AUDITIVO — GUÍA</string>
+    <string name="help_sec1_title">1. CUATRO MODOS DE PRÁCTICA (Botón MODO arriba a la izq.)</string>
+    <string name="help_sec1_body">• INTERVALOS: 12 intervalos cromáticos (m2..P8) ascendentes, descendentes, armónicos o mixtos.\n• ACORDES: 12 cualidades de tríadas y 7ª (Mayor, Menor, dism, aum, sus2/4, Dom7, Maj7, m7).\n• SOLFEO: Grados cromáticos (Ra..Do\') sobre cadencia I-IV-V-I o nota tónica.\n• MELÓDICO: Células melódicas de 3 notas y cadencias armónicas (I-IV-V, ii-V-I).</string>
+    <string name="help_sec2_title">2. REGLA DE 3 INTENTOS Y AUDICIÓN COMPARATIVA</string>
+    <string name="help_sec2_body">• Tienes 3 intentos por pregunta. Usa PISTA (-2) para descartar dos opciones incorrectas.\n• Una vez revelado, toca CUALQUIERA de los 12 botones para escuchar y comparar intervalos o acordes en el diapasón y el piano.</string>
+    <string name="help_sec3_title">3. PIANO Y MÁSTIL DE GUITARRA INTERACTIVOS</string>
+    <string name="help_sec3_body">Toca cualquier tecla del piano de 2 octavas o cuerda/traste en el mástil de guitarra en cualquier momento para pulsar notas y verificar intervalos de oído.</string>
+</resources>

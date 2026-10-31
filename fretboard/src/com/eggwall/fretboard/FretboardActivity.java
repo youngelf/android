@@ -32,9 +32,14 @@ public final class FretboardActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        AppI18n.initFromIntent(this, getIntent());
         synthEngine = new GuitarSynthEngine();
         fretboardView = new FretboardView(this, synthEngine);
         fretboardView.loadState(this);
+        if (getIntent() != null && (getIntent().getBooleanExtra("show_help", false)
+                || getIntent().getBooleanExtra("demo_help", false))) {
+            fretboardView.setShowHelp(true);
+        }
         setContentView(wrapWithStatusBarInsets(fretboardView, 0xFF0D1117));
     }
 
@@ -69,6 +74,21 @@ public final class FretboardActivity extends Activity {
             });
         }
         return root;
+    }
+
+    @Override
+    protected void onNewIntent(android.content.Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        AppI18n.initFromIntent(this, intent);
+        if (fretboardView != null) {
+            fretboardView.loadState(this);
+            if (intent != null && (intent.getBooleanExtra("show_help", false)
+                    || intent.getBooleanExtra("demo_help", false))) {
+                fretboardView.setShowHelp(true);
+            }
+            fretboardView.invalidate();
+        }
     }
 
     @Override

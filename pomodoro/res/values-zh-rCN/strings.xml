@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">番茄专注时钟</string>
+    <string name="working_dnd">专注工作中：请勿打扰</string>
+    <string name="short_break_relax">短休息：放松充电</string>
+    <string name="long_break_rest">长休息：深度恢复</string>
+    <string name="paused_stopped">已暂停：计时停止</string>
+    <string name="ready_to_focus">准备开始专注</string>
+    <string name="reset">重置</string>
+    <string name="skip_btn">跳过 &gt;&gt;</string>
+    <string name="start_focus">开始专注</string>
+    <string name="resume">继续</string>
+    <string name="bg_sound">背景白噪音 / 音效</string>
+    <string name="amb_off">关闭</string>
+    <string name="amb_soft_tick">轻柔滴答</string>
+    <string name="amb_rain">细雨声</string>
+    <string name="amb_brown_noise">布朗噪音</string>
+    <string name="duration_presets">时长预设（专注 / 短休 / 长休）</string>
+    <string name="all_time_total">累计总时长</string>
+    <string name="current_session">当前阶段</string>
+    <string name="focus_session">专注时段</string>
+    <string name="close">关闭</string>
+    <string name="got_it">明白了</string>
+    <string name="help_title">番茄钟专注计时器与工时统计</string>
+    <string name="help_sec1_title">1. 四番茄钟高效工作循环</string>
+    <string name="help_sec1_body">• 全神贯注工作 1 个番茄钟（默认 25 分钟），期间不受干扰。\n• 随后进行短休息（5 分钟）放松身心。\n• 每完成 4 个专注时段后，享受一次长休息（15 分钟）。</string>
+    <string name="help_sec2_title">2. 触控与键盘 / 手柄操作指南</string>
+    <string name="help_sec2_body">• 点击中央表盘或“开始”按钮（或空格 / 回车键）：启动或暂停计时。\n• 点击 -5m / -1m / +1m / +5m（或上下方向键）：增减当前阶段时长。\n• 点击预设方案（或 P 键）：在经典、深度工作、工作室与冲刺模式间切换。\n• 点击环境白噪音（或 M 键）：切换轻柔滴答、雨声或布朗噪声。\n• 点击“跳过 &gt;&gt;”（N 键）跳至下一阶段；点击“重置”（R 键）归零。</string>
+    <string name="help_sec3_title">3. 自动专注工时统计</string>
+    <string name="help_sec3_body">• 在专注时段中度过的每一秒都会自动累计并持久化保存至“今日专注”与“累计总计”面板中。</string>
+</resources>

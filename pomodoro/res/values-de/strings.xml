@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Fokus</string>
+    <string name="working_dnd">ARBEITSPHASE: BITTE NICHT STÖREN</string>
+    <string name="short_break_relax">KURZE PAUSE: ENTSPANNEN</string>
+    <string name="long_break_rest">LANGE PAUSE: ERHOLUNG</string>
+    <string name="paused_stopped">PAUSIERT: TIMER ANGEHALTEN</string>
+    <string name="ready_to_focus">BEREIT FÜR FOKUS</string>
+    <string name="reset">RESET</string>
+    <string name="skip_btn">WEITER &gt;&gt;</string>
+    <string name="start_focus">FOKUS STARTEN</string>
+    <string name="resume">FORTSETZEN</string>
+    <string name="bg_sound">Hintergrundklang</string>
+    <string name="amb_off">AUS</string>
+    <string name="amb_soft_tick">SANFTES TICKEN</string>
+    <string name="amb_rain">REGEN</string>
+    <string name="amb_brown_noise">BRAUNES RAUSCHEN</string>
+    <string name="duration_presets">DAUER-PRESETS (FOKUS / KURZ / LANG)</string>
+    <string name="all_time_total">GESAMTSUMME</string>
+    <string name="current_session">AKTUELLE SITZUNG</string>
+    <string name="focus_session">FOKUS-SITZUNG</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="got_it">VERSTANDEN</string>
+    <string name="help_title">POMODORO-FOKUS-TIMER &amp; ARBEITSZEIT-TRACKER</string>
+    <string name="help_sec1_title">1. DER 4-POMODORO-ZYKLUS</string>
+    <string name="help_sec1_body">• Arbeite 1 Pomodoro lang konzentriert ohne Unterbrechung (Standard 25 Min.).\n• Mache eine Kurze Pause (5 Min.) zum Entspannen.\n• Nach jeweils 4 Fokus-Einheiten folgt eine Lange Pause (15 Min.).</string>
+    <string name="help_sec2_title">2. TOUCH- &amp; TASTATUR- / D-PAD-STEUERUNG</string>
+    <string name="help_sec2_body">• Tippe auf das Zifferblatt / START (oder LEERTASTE / ENTER): Start oder Pause.\n• Tippe auf -5m / -1m / +1m / +5m (oder AUF / AB): Phasendauer anpassen.\n• Tippe auf Presets (oder Taste P): Klassisch, Deep Work, Studio und Sprint.\n• Tippe auf Klangwelten (oder Taste M): Sanftes Ticken, Regen oder Braunes Rauschen.\n• Tippe auf WEITER &gt;&gt; (N) zum Überspringen; RESET (R) zum Zurücksetzen.</string>
+    <string name="help_sec3_title">3. AUTOMATISCHE ARBEITSZEIT-ERFASSUNG</string>
+    <string name="help_sec3_body">• Jede Sekunde einer aktiven Fokus-Sitzung wird automatisch für Heute und Gesamt protokolliert.</string>
+</resources>
