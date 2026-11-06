@@ -165,8 +165,9 @@ public class SightReadView extends View {
         if (mPiece.numNotes <= 0) return;
         int totalEighths = mPiece.numBars * 8;
         int curEighth = mStepEighthCursor % totalEighths;
+        boolean barBoundary = (curEighth % 8) == 0;
         if (curEighth % 2 == 0) {
-            mSynth.playMetronomeClick((curEighth % 8) == 0);
+            mSynth.playMetronomeClick(barBoundary);
         }
         for (int i = 0; i < mPiece.numNotes; i++) {
             StaffNote n = mPiece.notes[i];
@@ -175,21 +176,26 @@ public class SightReadView extends View {
                 mCurrentIdx = i;
                 int durMs = (int) ((30000L * n.durEighths) / Math.max(40, mBpm));
                 mSynth.playNote(n.midi, durMs);
-                mStatusText = "Playing " + n.label + " (Str " + (6 - n.str) + ", Fret " + n.fret + ")";
+                mStatusText = "Playing Bar " + (n.barIdx + 1) + "/" + mPiece.numBars
+                        + "  |  " + SightReadTheory.levelDescription(mPiece.level);
                 mStatusColor = COL_GOLD_ACCENT;
                 break;
             }
         }
         mStepEighthCursor++;
+        boolean pieceReloaded = false;
         if (mStepEighthCursor >= totalEighths) {
             if (mPracticeMode == SightReadTheory.MODE_SCROLL) {
                 mExerciseNum = (mExerciseNum % SightReadTheory.NUM_EXERCISES) + 1;
                 loadPiece();
+                pieceReloaded = true;
             } else {
                 mStepEighthCursor = 0;
             }
         }
-        invalidate();
+        if (barBoundary || pieceReloaded) {
+            invalidate();
+        }
     }
 
     private String[] buildControlLabels() {
@@ -443,6 +449,17 @@ public class SightReadView extends View {
 
         // Draw Notes on Treble Staff
         int nNotes = mPiece.numNotes;
+        int activePlayBar = mIsPlaying
+                ? (((mStepEighthCursor > 0 ? mStepEighthCursor - 1 : 0) / 8) % Math.max(1, mPiece.numBars))
+                : -1;
+        if (mIsPlaying) {
+            float hlBarLeft = (activePlayBar == 0) ? (notesStart - 4f * dp) : (barMidX + 4f * dp);
+            float hlBarRight = (activePlayBar == 0) ? (barMidX - 4f * dp) : (notesEnd - 4f * dp);
+            mPaint.setStyle(Paint.Style.FILL);
+            mPaint.setColor(COL_GOLD_SOFT);
+            mRect.set(hlBarLeft, topY - 12f * dp, hlBarRight, botY + 14f * dp);
+            c.drawRoundRect(mRect, 6f * dp, 6f * dp, mPaint);
+        }
         for (int i = 0; i < nNotes; i++) {
             StaffNote n = mPiece.notes[i];
             float barStart = (n.barIdx == 0) ? notesStart : barMidX + 8f * dp;
@@ -452,8 +469,8 @@ public class SightReadView extends View {
             int vStep = n.diatonicStep;
             float ny = centerStepY - vStep * halfSpace;
 
-            // Active Note Highlight Column
-            if (i == mCurrentIdx) {
+            // Active Note Highlight Column (when interactive / paused)
+            if (!mIsPlaying && i == mCurrentIdx) {
                 mPaint.setStyle(Paint.Style.FILL);
                 mPaint.setColor(COL_GOLD_SOFT);
                 float hlTop = Math.min(topY - 12f * dp, ny - 14f * dp);
@@ -473,8 +490,14 @@ public class SightReadView extends View {
             }
 
             // Notehead & Stem
-            int noteCol = (i < mCurrentIdx) ? COL_GREEN_OK
+            int noteCol;
+            if (mIsPlaying) {
+                noteCol = (n.barIdx < activePlayBar) ? COL_GREEN_OK
+                        : (n.barIdx == activePlayBar) ? COL_GOLD_ACCENT : COL_INK_DARK;
+            } else {
+                noteCol = (i < mCurrentIdx) ? COL_GREEN_OK
                         : (i == mCurrentIdx) ? COL_GOLD_ACCENT : COL_INK_DARK;
+            }
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setColor(noteCol);
             float rx = halfSpace * 1.32f;
@@ -653,7 +676,7 @@ public class SightReadView extends View {
                 int fretNum = (col == 0) ? 0 : (pos.baseFret + col - 1);
                 float cx = neck.left + (col + 0.5f) * colW;
 
-                boolean isTarget = target != null && target.str == str && target.fret == fretNum;
+                boolean isTarget = !mIsPlaying && target != null && target.str == str && target.fret == fretNum;
                 boolean isFlashed = flashActive && mFlashString == str && mFlashFret == fretNum;
 
                 if (isFlashed || (isTarget && mShowHints && mPracticeMode != SightReadTheory.MODE_QUIZ)) {
@@ -737,21 +760,21 @@ public class SightReadView extends View {
         c.drawRect(0, 0, w, h, mPaint);
 
         float mw = Math.min(w * 0.94f, 640f * dp);
-        float mh = Math.min(h * 0.92f, 470f * dp);
+        float mh = Math.min(h * 0.86f, 660f * dp);
         mModalRect.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
 
         mPaint.setColor(COL_CARD_BG);
-        c.drawRoundRect(mModalRect, 12f * dp, 12f * dp, mPaint);
+        c.drawRoundRect(mModalRect, 14f * dp, 14f * dp, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(2f * dp);
+        mPaint.setStrokeWidth(2.2f * dp);
         mPaint.setColor(COL_GOLD_ACCENT);
-        c.drawRoundRect(mModalRect, 12f * dp, 12f * dp, mPaint);
+        c.drawRoundRect(mModalRect, 14f * dp, 14f * dp, mPaint);
 
         float tx = mModalRect.left + 14f * dp;
-        float ty = mModalRect.top + 22f * dp;
+        float ty = mModalRect.top + 26f * dp;
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
-        mTextPaint.setTextSize(14.5f * dp);
+        mTextPaint.setTextSize(19.0f * dp);
         mTextPaint.setColor(COL_INK_DARK);
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
                 tx, ty, mTextPaint, mw - 28f * dp);
@@ -771,20 +794,20 @@ public class SightReadView extends View {
         };
         int[] titleCols = { COL_HEADER_BG, COL_BLUE_INFO, COL_GREEN_OK, COL_HEADER_BG };
 
-        float bw = 136f * dp;
-        float bh = 28f * dp;
-        mModalCloseBtn.set(mModalRect.centerX() - bw * 0.5f, mModalRect.bottom - bh - 7f * dp,
-                mModalRect.centerX() + bw * 0.5f, mModalRect.bottom - 7f * dp);
+        float bw = 158f * dp;
+        float bh = 36f * dp;
+        mModalCloseBtn.set(mModalRect.centerX() - bw * 0.5f, mModalRect.bottom - bh - 8f * dp,
+                mModalRect.centerX() + bw * 0.5f, mModalRect.bottom - 8f * dp);
         drawPillButton(c, mModalCloseBtn, AppI18n.str(ctx, R.string.got_it),
-                COL_GOLD_ACCENT, COL_HEADER_BG, 11.5f * dp);
+                COL_GOLD_ACCENT, COL_HEADER_BG, 15.0f * dp);
 
-        mModalViewportRect.set(mModalRect.left + 10f * dp, mModalRect.top + 30f * dp,
-                mModalRect.right - 10f * dp, mModalCloseBtn.top - 6f * dp);
+        mModalViewportRect.set(mModalRect.left + 12f * dp, mModalRect.top + 38f * dp,
+                mModalRect.right - 12f * dp, mModalCloseBtn.top - 8f * dp);
         mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mModalViewportRect, titles, bodies, titleCols,
                 COL_INK_DARK, 0xFFF3EBDD, 0xFFD2C5B0, COL_HEADER_BG,
-                11.0f * dp, 9.8f * dp, mHelpScrollY, mTextPaint, mPaint);
+                17.5f * dp, 15.8f * dp, mHelpScrollY, mTextPaint, mPaint);
         mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 

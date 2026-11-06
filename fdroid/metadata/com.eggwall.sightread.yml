@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+  - Science & Education
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/sightread
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/sightread
+
+AutoName: SightRead
+Summary: Learn treble clef sight-reading on a 6-string guitar fretboard across 6 keys
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: sightread-v1.0
+    subdir: sightread
+    gradle:
+      - yes
+
+  - versionName: '1.2'
+    versionCode: 2
+    commit: sightread-v1.2
+    subdir: sightread
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^sightread-v.+$
+CurrentVersion: '1.2'
+CurrentVersionCode: 2

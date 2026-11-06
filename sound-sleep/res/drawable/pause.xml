@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Left rounded bar -->
+    <path
+        android:fillColor="#C9D1D9"
+        android:pathData="M28,18 h14 a5,5 0 0,1 5,5 v50 a5,5 0 0,1 -5,5 h-14 a5,5 0 0,1 -5,-5 v-50 a5,5 0 0,1 5,-5 z" />
+    <!-- Right rounded bar -->
+    <path
+        android:fillColor="#C9D1D9"
+        android:pathData="M54,18 h14 a5,5 0 0,1 5,5 v50 a5,5 0 0,1 -5,5 h-14 a5,5 0 0,1 -5,-5 v-50 a5,5 0 0,1 5,-5 z" />
+</vector>

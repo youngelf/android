@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trener Rytmu</string>
+    <string name="subtitle_440">Ćwiczenie rytmu muzycznego o stałej częstotliwości (440 Hz)</string>
+    <string name="edit_mode">Tryb Edycji</string>
+    <string name="done_editing">Gotowe</string>
+    <string name="play">Graj</string>
+    <string name="pause">Pauza</string>
+    <string name="loop">Pętla</string>
+    <string name="edit_btn">Edytuj</string>
+    <string name="ready_hint">Gotowe. Naciśnij Graj, aby usłyszeć odliczanie 4..3..2..1 i rytm.</string>
+    <string name="add_bar">Dodaj Takt</string>
+    <string name="remove_bar">Usuń Takt</string>
+    <string name="randomize">Losuj</string>
+    <string name="quarter_notes">Ćwierćnuty</string>
+    <string name="exit_edit_mode">Zakończ Edycję</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="got_it">ROZUMIEM</string>
+    <string name="help_title">Trener Rytmu — Szybki Przewodnik</string>
+    <string name="help_sec1_title">1. Metrum i Tempo</string>
+    <string name="help_sec1_body">Wybierz metrum 4/4, 3/4, 2/2, 5/4 lub 7/4 w lewym górnym rogu, ustaw BPM od 40 do 200 suwakiem i włącz Pętlę.</string>
+    <string name="help_sec2_title">2. 4-Miarowe Odliczanie i Ton 440 Hz</string>
+    <string name="help_sec2_body">Naciśnij Graj, aby usłyszeć odliczanie 4..3..2..1, a następnie rytm grany czystym tonem 440 Hz z podświetlaniem aktywnej nuty.</string>
+    <string name="help_sec3_title">3. Interaktywny Edytor Rytmu i Losowanie</string>
+    <string name="help_sec3_body">Dotknij Edytuj, aby wejść w Tryb Edycji. Dotknij nuty lub pauzy na zapisie i przypisz całą, półnutę, ćwierćnutę, ósemkę lub szesnastkę. Dodawaj/usuwaj takty (1–4) lub dotknij Losuj.</string>
+</resources>

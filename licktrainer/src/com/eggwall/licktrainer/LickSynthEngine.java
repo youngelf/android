@@ -38,6 +38,11 @@ public final class LickSynthEngine {
     private static final int VOICE_BACKING_BASE = 2; // voices 2..5
     private static final int VOICE_PLUCK_BASE = 6;   // voices 6..11 (strings 0..5)
 
+    /** Callback invoked on the audio thread only when a bar/loop wraps around. */
+    public interface BarListener {
+        void onBarAdvanced(int barsPlayed, int newBpm);
+    }
+
     private static final class KsVoice {
         final short[] buf = new short[KS_MAX_DELAY];
         int length = 32;
@@ -46,6 +51,14 @@ public final class LickSynthEngine {
         int activeSamplesLeft = 0;
         int dampingQ15 = 32560;
         boolean active = false;
+
+        boolean needsExcite = false;
+        int pendingMidi = 60;
+        int pendingAmp = 25000;
+        int pendingDampingQ15 = 32560;
+        boolean pendingWarmLegato = false;
+        int pendingStartDelaySamples = 0;
+        int pendingDurationSamples = 0;
     }
 
     private final KsVoice[] mVoices = new KsVoice[TOTAL_VOICES];
@@ -58,6 +71,23 @@ public final class LickSynthEngine {
     private int mActiveClickType = 0; // 0 = none, 1 = normal, 2 = accent
     private int mActiveClickPos = 0;
     private int mLeadFlip = 0;
+
+    /* Background Sequencer State */
+    private boolean mPlaying = false;
+    private LickTheory.LickDef mLick = LickTheory.LICKS[0];
+    private int mKeyIdx = 5;
+    private int mBpm = 100;
+    private int mBaseBpm = 100;
+    private int mLadderIdx = 0;
+    private int mMixMode = LickTheory.MIX_TAB_BACK_CLICK;
+    private boolean mLoopSubRange = false;
+    private int mLoopStartStep = 0;
+    private int mLoopEndStep = 3;
+    private int mCurStep = 0;
+    private int mBarsPlayed = 0;
+    private int mStepSamplePos = 0;
+    private int mStepSampleLen = 11025;
+    private BarListener mBarListener;
 
     private final AtomicInteger mReqGen = new AtomicInteger(0);
     private volatile boolean mRunning = false;
@@ -118,6 +148,90 @@ public final class LickSynthEngine {
         }
     }
 
+    public void setBarListener(BarListener listener) {
+        mBarListener = listener;
+    }
+
+    private static int computeStepSamples(int bpm, int stepsPerBeat) {
+        int safeBpm = Math.max(40, Math.min(240, bpm));
+        int spb = Math.max(1, stepsPerBeat);
+        return Math.max(256, (int) Math.round((SAMPLE_RATE * 60.0) / ((double) safeBpm * spb)));
+    }
+
+    /**
+     * Synchronizes the musical exercise, key, tempo, Speed-Builder ladder, audio mix, and loop range
+     * with the background audio sequencer thread.
+     */
+    public void syncSequencerState(
+            LickTheory.LickDef lick,
+            int keyIdx,
+            int bpm,
+            int baseBpm,
+            int ladderIdx,
+            int mixMode,
+            boolean loopSubRange,
+            int loopStartStep,
+            int loopEndStep,
+            int barsPlayed) {
+        if (lick == null) return;
+        synchronized (mLock) {
+            mLick = lick;
+            mKeyIdx = LickTheory.clamp(keyIdx, 0, LickTheory.NUM_KEYS - 1);
+            mBpm = LickTheory.clamp(bpm, LickTheory.MIN_BPM, LickTheory.MAX_BPM);
+            mBaseBpm = LickTheory.clamp(baseBpm, LickTheory.MIN_BPM, LickTheory.MAX_BPM);
+            mLadderIdx = LickTheory.clamp(ladderIdx, 0, LickTheory.NUM_LADDERS - 1);
+            mMixMode = LickTheory.clamp(mixMode, 0, LickTheory.MIX_COUNT - 1);
+            mLoopSubRange = loopSubRange;
+            mLoopStartStep = LickTheory.clamp(loopStartStep, 0, lick.numSteps - 1);
+            mLoopEndStep = LickTheory.clamp(loopEndStep, mLoopStartStep, lick.numSteps - 1);
+            mBarsPlayed = Math.max(0, barsPlayed);
+            mStepSampleLen = computeStepSamples(mBpm, mLick.stepsPerBeat);
+            if (mCurStep >= mLick.numSteps) {
+                mCurStep = 0;
+            }
+        }
+    }
+
+    /**
+     * Starts or stops the sample-accurate background sequencer clock.
+     */
+    public void setPlaying(boolean playing, int startStep) {
+        synchronized (mLock) {
+            mPlaying = playing;
+            if (playing) {
+                int minStep = mLoopSubRange ? mLoopStartStep : 0;
+                int maxStep = mLoopSubRange ? mLoopEndStep : (mLick.numSteps - 1);
+                mCurStep = LickTheory.clamp(startStep, minStep, maxStep);
+                mStepSamplePos = 0;
+                mStepSampleLen = computeStepSamples(mBpm, mLick.stepsPerBeat);
+            } else {
+                for (int i = 0; i < TOTAL_VOICES; i++) {
+                    mVoices[i].active = false;
+                    mVoices[i].activeSamplesLeft = 0;
+                    mVoices[i].needsExcite = false;
+                }
+                mActiveClickType = 0;
+            }
+        }
+    }
+
+    private void scheduleVoiceExciteLocked(
+            KsVoice v,
+            int midiNote,
+            int amplitude,
+            int dampingQ15,
+            boolean warmLegato,
+            int startDelaySamples,
+            int durationSamples) {
+        v.pendingMidi = midiNote;
+        v.pendingAmp = amplitude;
+        v.pendingDampingQ15 = dampingQ15;
+        v.pendingWarmLegato = warmLegato;
+        v.pendingStartDelaySamples = startDelaySamples;
+        v.pendingDurationSamples = durationSamples;
+        v.needsExcite = true;
+    }
+
     /**
      * Triggers a lead guitar tablature note with articulation-sensitive excitation
      * ('D'/'U' crisp pick attack vs. 'H'/'P'/'/' warm legato excitation).
@@ -135,7 +249,7 @@ public final class LickSynthEngine {
             int voiceIdx = (mLeadFlip == 0) ? VOICE_LEAD_PRIMARY : VOICE_LEAD_SECONDARY;
             int amp = isLegato ? 21500 : 26500;
             int damping = isLegato ? 32605 : 32565;
-            exciteVoiceLocked(mVoices[voiceIdx], midiNote, amp, damping, isLegato, 0, (int) (SAMPLE_RATE * 0.85));
+            scheduleVoiceExciteLocked(mVoices[voiceIdx], midiNote, amp, damping, isLegato, 0, (int) (SAMPLE_RATE * 0.85));
         }
     }
 
@@ -150,7 +264,7 @@ public final class LickSynthEngine {
                 int midi = chordMidi[i];
                 if (midi < 34 || midi > 88) continue;
                 int delaySamples = i * ((SAMPLE_RATE * 16) / 1000);
-                exciteVoiceLocked(
+                scheduleVoiceExciteLocked(
                         mVoices[VOICE_BACKING_BASE + i],
                         midi,
                         10500,
@@ -180,7 +294,7 @@ public final class LickSynthEngine {
         if (stringIdx < 0 || stringIdx >= 6 || fret < 0 || fret > 24) return;
         int midi = LickTheory.OPEN_MIDI[stringIdx] + fret;
         synchronized (mLock) {
-            exciteVoiceLocked(
+            scheduleVoiceExciteLocked(
                     mVoices[VOICE_PLUCK_BASE + stringIdx],
                     midi,
                     25000,
@@ -195,11 +309,67 @@ public final class LickSynthEngine {
     public void silenceAll() {
         mReqGen.incrementAndGet();
         synchronized (mLock) {
+            mPlaying = false;
             for (int i = 0; i < TOTAL_VOICES; i++) {
                 mVoices[i].active = false;
                 mVoices[i].activeSamplesLeft = 0;
+                mVoices[i].needsExcite = false;
             }
             mActiveClickType = 0;
+        }
+    }
+
+    private void triggerSequencerStepLocked(int stepIdx) {
+        LickTheory.LickDef lick = mLick;
+        if (lick == null || stepIdx < 0 || stepIdx >= lick.numSteps) return;
+        LickTheory.LickStep st = lick.steps[stepIdx];
+        boolean isBeatStart = (stepIdx % lick.stepsPerBeat) == 0;
+        int beatIdx = stepIdx / lick.stepsPerBeat;
+
+        if (isBeatStart && mMixMode != LickTheory.MIX_TAB_ONLY) {
+            mActiveClickPos = 0;
+            mActiveClickType = (beatIdx == 0) ? 2 : 1;
+        }
+        if (isBeatStart && mMixMode == LickTheory.MIX_TAB_BACK_CLICK) {
+            int[] backing = LickTheory.getBackingChordMidi(lick, beatIdx, mKeyIdx);
+            if (backing != null) {
+                int count = Math.min(4, backing.length);
+                for (int i = 0; i < count; i++) {
+                    int midi = backing[i];
+                    if (midi < 34 || midi > 88) continue;
+                    int delaySamples = i * ((SAMPLE_RATE * 16) / 1000);
+                    exciteVoiceLocked(
+                            mVoices[VOICE_BACKING_BASE + i],
+                            midi,
+                            10500,
+                            32595,
+                            true,
+                            delaySamples,
+                            (int) (SAMPLE_RATE * 1.15));
+                }
+            }
+        }
+        if (st.str >= 0 && mMixMode != LickTheory.MIX_CLICK_ONLY) {
+            int midi = LickTheory.getStepMidi(st, mKeyIdx);
+            if (midi >= 34 && midi <= 92) {
+                boolean isLegato = (st.pick == 'H' || st.pick == 'P' || st.pick == '/');
+                int prevVoiceIdx = (mLeadFlip == 0) ? VOICE_LEAD_PRIMARY : VOICE_LEAD_SECONDARY;
+                if (mVoices[prevVoiceIdx].active) {
+                    mVoices[prevVoiceIdx].dampingQ15 = 31800;
+                }
+                mLeadFlip ^= 1;
+                int voiceIdx = (mLeadFlip == 0) ? VOICE_LEAD_PRIMARY : VOICE_LEAD_SECONDARY;
+                int amp = isLegato ? 21500 : 26500;
+                int damping = isLegato ? 32605 : 32565;
+                exciteVoiceLocked(
+                        mVoices[voiceIdx],
+                        midi,
+                        amp,
+                        damping,
+                        isLegato,
+                        0,
+                        (int) (SAMPLE_RATE * 0.85));
+            }
         }
     }
 
@@ -250,6 +420,33 @@ public final class LickSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -259,13 +456,7 @@ public final class LickSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {
@@ -280,8 +471,53 @@ public final class LickSynthEngine {
 
         while (mRunning) {
             boolean anyActive = false;
+            int notifyBarsPlayed = -1;
+            int notifyNewBpm = -1;
+
             synchronized (mLock) {
+                // Process any pending manual/preview excitations on the background audio thread
+                for (int i = 0; i < TOTAL_VOICES; i++) {
+                    KsVoice v = mVoices[i];
+                    if (v.needsExcite) {
+                        v.needsExcite = false;
+                        exciteVoiceLocked(
+                                v,
+                                v.pendingMidi,
+                                v.pendingAmp,
+                                v.pendingDampingQ15,
+                                v.pendingWarmLegato,
+                                v.pendingStartDelaySamples,
+                                v.pendingDurationSamples);
+                    }
+                }
+
                 for (int f = 0; f < CHUNK_FRAMES; f++) {
+                    if (mPlaying) {
+                        anyActive = true;
+                        if (mStepSamplePos == 0) {
+                            triggerSequencerStepLocked(mCurStep);
+                        }
+                        mStepSamplePos++;
+                        if (mStepSamplePos >= mStepSampleLen) {
+                            mStepSamplePos = 0;
+                            int minStep = mLoopSubRange ? mLoopStartStep : 0;
+                            int maxStep = mLoopSubRange ? mLoopEndStep : (mLick.numSteps - 1);
+                            mCurStep++;
+                            if (mCurStep > maxStep) {
+                                mCurStep = minStep;
+                                mBarsPlayed++;
+                                LickTheory.LadderPreset lp = LickTheory.LADDERS[mLadderIdx];
+                                if (lp.barsPerStep > 0 && (mBarsPlayed % lp.barsPerStep) == 0) {
+                                    int goal = Math.min(LickTheory.MAX_BPM, mBaseBpm + lp.goalOffset);
+                                    mBpm = Math.min(goal, mBpm + lp.bpmStep);
+                                }
+                                notifyBarsPlayed = mBarsPlayed;
+                                notifyNewBpm = mBpm;
+                            }
+                            mStepSampleLen = computeStepSamples(mBpm, mLick.stepsPerBeat);
+                        }
+                    }
+
                     int mix = 0;
 
                     for (int i = 0; i < TOTAL_VOICES; i++) {
@@ -326,6 +562,10 @@ public final class LickSynthEngine {
                     if (mix < -32767) mix = -32767;
                     outBuf[f] = (short) mix;
                 }
+            }
+
+            if (notifyBarsPlayed >= 0 && mBarListener != null) {
+                mBarListener.onBarAdvanced(notifyBarsPlayed, notifyNewBpm);
             }
 
             if (track != null) {

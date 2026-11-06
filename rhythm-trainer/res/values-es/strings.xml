@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entrenador de Ritmo</string>
+    <string name="subtitle_440">Práctica de ritmo musical de frecuencia fija (440 Hz)</string>
+    <string name="edit_mode">Modo Edición</string>
+    <string name="done_editing">Listo</string>
+    <string name="play">Reproducir</string>
+    <string name="pause">Pausa</string>
+    <string name="loop">Bucle</string>
+    <string name="edit_btn">Editar</string>
+    <string name="ready_hint">Listo para tocar. Pulsa Reproducir para una cuenta 4..3..2..1 seguida del ritmo.</string>
+    <string name="add_bar">Añadir Compás</string>
+    <string name="remove_bar">Quitar Compás</string>
+    <string name="randomize">Aleatorio</string>
+    <string name="quarter_notes">Negras (1/4)</string>
+    <string name="exit_edit_mode">Salir de Edición</string>
+    <string name="close">CERRAR</string>
+    <string name="got_it">ENTENDIDO</string>
+    <string name="help_title">Entrenador de Ritmo — Guía Rápida</string>
+    <string name="help_sec1_title">1. Compases y Tempo</string>
+    <string name="help_sec1_body">Elige el compás 4/4, 3/4, 2/2, 5/4 o 7/4 arriba a la izquierda, ajusta los BPM de 40 a 200 con el control deslizante y activa Bucle para práctica continua.</string>
+    <string name="help_sec2_title">2. Cuenta Regresiva de 4 Pulsos y Tono 440 Hz</string>
+    <string name="help_sec2_body">Pulsa Reproducir para escuchar una cuenta 4..3..2..1 seguida del ritmo en un tono claro de 440 Hz con seguimiento visual sincronizado.</string>
+    <string name="help_sec3_title">3. Editor de Ritmo Interactivo y Generador Aleatorio</string>
+    <string name="help_sec3_body">Toca Editar para abrir el Modo Edición. Toca cualquier nota o silencio en la partitura y asigna Redonda, Blanca, Negra, Corchea o Semicorchea. Añade/quita compases (1–4) o toca Aleatorio.</string>
+</resources>

@@ -1,0 +1,26 @@
+Maîtrisez l'harmonie musicale, la composition et les positions d'accords à la guitare sur un seul écran interactif avec ChordWheel : Cycle des Quintes & Boucleur Guitare. Conçu pour les guitaristes, auteurs-compositeurs, étudiants en musique et professeurs, ChordWheel transforme le classique cycle des quintes en un véritable instrument interactif et un atelier harmonique en temps réel.
+
+Que vous cherchiez les accords d'une tonalité, transposiez un morceau à la volée, exploriez les formes CAGED sur le manche ou improvisiez sur une grille de 4 mesures, ChordWheel offre un retour visuel et sonore immédiat, sans publicité et 100 % hors ligne.
+
+ROUE HARMONIQUE CONCENTRIQUE DU CYCLE DES QUINTES
+• Anneau majeur extérieur : Affiche les 12 tonalités majeures ordonnées par quintes (C, G, D, A, E, B/Cb, F#/Gb, Db, Ab, Eb, Bb, F) et met en évidence les degrés majeurs diatoniques (I, IV et V).
+• Anneau mineur relatif intérieur : Aligne chaque tonalité avec sa relative mineure et souligne les accords mineurs diatoniques (ii, iii et vi).
+• Secteur diminué central et chiffres romains : Identifie clairement l'accord diminué (vii°) et affiche la fonction harmonique en chiffres romains (I, ii, iii, IV, V, vi, vii°).
+• Modes ROTATION et VERROUILLAGE (LOCK) : Faites tourner la roue pour placer n'importe quelle tonalité à 12 heures, ou verrouillez Do (C) en haut tout en explorant librement les accords.
+
+FORMULES DE DEGRÉS ET EXTENSIONS D'ACCORDS
+• Formules de degrés en temps réel : Affiche les degrés exacts de l'accord sélectionné par rapport à la tonalité active (ex. I = 1 - 3 - 5, IV = 4 - 6 - 8, V7 = 5 - 7 - 9 - 11) ainsi que les notes individuelles.
+• Extensions de 7e : Basculez instantanément entre triades et accords de 7e (maj7, m7, dom7, m7b5) pour enrichir vos grilles pop, jazz ou neo-soul.
+
+DIAGRAMMES GUITARE CAGED ET SYNTHÈSE KARPLUS-STRONG
+• Trois positions jouables par accord : Alternez entre positions ouvertes/CAGED, barrés forme de Mi (corde 6) et barrés forme de La (corde 5).
+• Doigtés, barrés et cordes étouffées : Affiche les numéros de doigts (1–4), les barrés, les cordes à vide (O), les cordes étouffées (X) et les numéros de cases.
+• Synthèse acoustique 44,1 kHz : Touchez un accord ou glissez sur le diagramme du manche pour entendre un arpège ou un gratté de guitare modélisé physiquement (Karplus-Strong) en temps réel.
+
+BOUCLEUR DE COMPOSITIONS 4 MESURES ET PRÉRÉGLAGES
+• Séquenceur d'accords 4 mesures : Assignez n'importe quel accord aux mesures 1 à 4 pour esquisser couplets et refrains ou créer un accompagnement d'improvisation.
+• Grilles classiques intégrées : Chargez instantanément les progressions Pop I–V–vi–IV, Jazz ii–V–I–VI, Cadence andalouse, Doo-Wop ou Blues et transposez-les dans les 12 tonalités.
+
+CONÇU POUR LES MUSICIENS — CONFIDENTIALITÉ TOTALE ET 100 % HORS LIGNE
+• Interfaces Portrait et Paysage adaptatives pour téléphones et tablettes.
+• Zéro permission requise, aucune collecte de données, aucune publicité et fonctionnement 100 % hors ligne.

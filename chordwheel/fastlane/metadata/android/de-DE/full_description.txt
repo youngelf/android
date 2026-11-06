@@ -1,0 +1,26 @@
+Meistern Sie Harmonielehre, Songwriting und Gitarren-Voicings auf einem einzigen interaktiven Bildschirm mit ChordWheel: Quintenzirkel & Gitarren-Looper. Entwickelt für Gitarristen, Songwriter, Musikstudenten und Lehrer, verwandelt ChordWheel den klassischen Quintenzirkel in ein spielbares Echtzeit-Musikinstrument und Harmoniewerkzeug.
+
+Egal, ob Sie herausfinden möchten, welche Akkorde zu einer Tonart gehören, einen Song spontan transponieren, CAGED-Griffbilder auf dem Griffbrett erkunden oder über eine eigene 4-Takt-Akkordfolge jammen: ChordWheel liefert sofortiges visuelles und akustisches Feedback ohne Werbung und 100 % offline.
+
+KONZENTRISCHER QUINTENZIRKEL
+• Äußerer Dur-Ring: Zeigt alle 12 Dur-Tonarten im Quintabstand (C, G, D, A, E, B/Cb, F#/Gb, Db, Ab, Eb, Bb, F) und hebt die diatonischen Hauptdreiklänge (I, IV und V) der aktiven Tonart hervor.
+• Innerer Parallel-Moll-Ring: Ordnet jeder Dur-Tonart ihre parallele Moll-Tonart zu und markiert die diatonischen Moll-Akkorde (ii, iii und vi).
+• Verminderter Zentrumskeil & Stufenbezeichnungen: Kennzeichnet den verminderten Leittonakkord (vii°) und beschriftet jeden diatonischen Akkord mit seiner römischen Stufenfunktion (I, ii, iii, IV, V, vi, vii°).
+• Dreh- und Sperrmodus (ROTATE vs. LOCK): Drehen Sie das Rad stufenlos, um jede Tonart auf die 12-Uhr-Position zu bringen, oder fixieren Sie C im LOCK-Modus oben.
+
+TONLEITERSTUFEN-FORMELN & SEPTAKKORD-ERWEITERUNGEN
+• Echtzeit-Stufenformeln: Zeigt die exakten Tonleiterstufen des gewählten Akkords relativ zur aktiven Tonart (z. B. I = 1 - 3 - 5, IV = 4 - 6 - 8, V7 = 5 - 7 - 9 - 11) sowie alle Einzelnoten.
+• Septakkorde auf Knopfdruck: Erweitern Sie jeden Dreiklang sofort zu einem Septakkord (maj7, m7, dom7, m7b5) für reichhaltige Jazz-, Pop- und Soul-Klänge.
+
+VERSCHIEBBARE CAGED-GITARRENGRIFFE & KARPLUS-STRONG-SYNTHESE
+• Drei spielbare Griffbrett-Lagen pro Akkord: Wechseln Sie nahtlos zwischen offenen/CAGED-Griffen, E-Typ-Barrégrifften (6. Saite) und A-Typ-Barrégrifften (5. Saite).
+• Fingersätze, Barrés & gedämpfte Saiten: Jedes Griffbild zeigt empfohlene Fingerzahlen (1–4), Barré-Bögen, Leersaiten (O), gedämpfte Saiten (X) und Bundzahlen.
+• Echtzeit-Gitarrensynthese mit 44,1 kHz: Tippen Sie auf einen Akkordsektor oder streichen Sie über das Griffbrettdiagramm, um einen physikalisch modellierten 6-Saiten-Gitarrenanschlag (Karplus-Strong) zu hören.
+
+4-TAKT-SONGWRITING-LOOPER & GENRE-PRESETS
+• Programmierbarer 4-Takt-Akkordsequenzer: Weisen Sie den Takten 1 bis 4 beliebige Akkorde zu, um Songideen zu skizzieren oder eine Begleitschleife zum Solieren zu erstellen.
+• Integrierte Hit-Progressionen: Laden Sie Klassiker wie Pop I–V–vi–IV, Jazz ii–V–I–VI, Andalusische Kadenz, Doo-Wop oder Blues-Turnarounds und transponieren Sie diese sofort in alle 12 Tonarten.
+
+FÜR MUSIKER ENTWICKELT — DATENSCHUTZ & 100 % OFFLINE
+• Optimierte Hochformat- (Portrait) und Querformat-Layouts (Landscape) für Smartphones und Tablets.
+• Keine Berechtigungen erforderlich, keine Datenerfassung, keine Werbung und vollständig offline nutzbar.

@@ -615,33 +615,34 @@ public class PomodoroView extends View {
         mCardPaint.setColor(0xD8090C10);
         c.drawRect(0, 0, w, h, mCardPaint);
 
-        float mw = Math.min(w * 0.90f, 920f);
-        float mh = Math.min(h * 0.84f, 680f);
+        float minDim = Math.min(w, h);
+        float mw = Math.min(w * 0.92f, 960f);
+        float mh = Math.min(h * 0.84f, 1650f);
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
         mHelpModalRect.set(mx, my, mx + mw, my + mh);
         drawButtonSurface(c, mHelpModalRect, 0xFF161C28, getAccentColor(), 24f);
 
-        float pad = Math.max(14f, mw * 0.035f);
-        float hdrH = Math.max(46f, mh * 0.11f);
-        float closeW = Math.max(100f, mw * 0.18f);
-        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        float pad = Math.max(16f, mw * 0.035f);
+        float hdrH = Math.max(52f, Math.min(mh * 0.105f, minDim * 0.095f));
+        float closeW = Math.max(116f, mw * 0.21f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 12f, mx + mw - pad, my + 12f + hdrH - 6f);
         drawButtonSurface(c, mHelpCloseRect, 0xFF133329, 0xFF38D39F, (hdrH - 6f) * 0.30f);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize((hdrH - 6f) * 0.42f);
+        mTextPaint.setTextSize((hdrH - 6f) * 0.44f);
         mTextPaint.setColor(0xFF38D39F);
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.close),
                 mHelpCloseRect.centerX(), mHelpCloseRect.centerY() + mTextPaint.getTextSize() * 0.35f,
-                mTextPaint, mHelpCloseRect.width() - 12f);
+                mTextPaint, mHelpCloseRect.width() - 18f);
 
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setFakeBoldText(true);
-        mTextPaint.setTextSize(Math.min(hdrH * 0.48f, 24f));
+        mTextPaint.setTextSize(Math.max(20f, Math.min(hdrH * 0.50f, minDim * 0.048f)));
         mTextPaint.setColor(getAccentColor());
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
-                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mTextPaint,
-                mHelpCloseRect.left - (mx + pad + 12f));
+                mx + pad, my + 12f + (hdrH - 6f) * 0.68f, mTextPaint,
+                mHelpCloseRect.left - (mx + pad + 24f));
 
         Context ctx = getContext();
         String[] titles = {
@@ -656,12 +657,12 @@ public class PomodoroView extends View {
         };
         int[] titleCols = { 0xFFF2C94C, 0xFF38D39F, getAccentColor() };
 
-        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 14f);
-        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
-        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 12f, mx + mw - pad, my + mh - 16f);
+        float titleSz = Math.max(18f, Math.min(50f, minDim * 0.044f));
+        float bodySz = Math.max(16f, Math.min(45f, minDim * 0.039f));
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mHelpViewportRect, titles, bodies, titleCols,
-                0xFFD2DCE8, 0xFF202736, 0xFF343F54, getAccentColor(),
+                0xFFE6EDF3, 0xFF202736, 0xFF343F54, getAccentColor(),
                 titleSz, bodySz, mHelpScrollY, mTextPaint, mCardPaint);
         mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }

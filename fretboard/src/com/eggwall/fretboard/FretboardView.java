@@ -107,8 +107,7 @@ public final class FretboardView extends View {
     private final Runnable animTick = new Runnable() {
         @Override
         public void run() {
-            if (synth.isHighlightActive()
-                    || (quizFeedbackUntilMs > SystemClock.uptimeMillis())) {
+            if (quizFeedbackUntilMs > SystemClock.uptimeMillis()) {
                 invalidate();
                 postDelayed(this, 24L);
             }
@@ -191,7 +190,9 @@ public final class FretboardView extends View {
 
     private void scheduleHighlightLoop() {
         removeCallbacks(animTick);
-        postDelayed(animTick, 16L);
+        if (quizFeedbackUntilMs > SystemClock.uptimeMillis()) {
+            postDelayed(animTick, 16L);
+        }
         invalidate();
     }
 
@@ -461,9 +462,6 @@ public final class FretboardView extends View {
 
         /* Draw Note Dots across all 6 strings and 16 frets */
         float dotR = Math.min(fretColW * 0.37f, strRowH * 0.35f);
-        boolean hiActive = synth.isHighlightActive();
-        int hiStr = synth.getActivePlayString();
-        int hiFret = synth.getActivePlayFret();
 
         for (int s = 0; s < FretboardTheory.NUM_STRINGS; s++) {
             float sy = getStringCenterY(s);
@@ -476,8 +474,7 @@ public final class FretboardView extends View {
             for (int f = 0; f <= FretboardTheory.MAX_FRET; f++) {
                 int pc = FretboardTheory.getPitchClass(tuningIdx, s, f);
                 int relIv = (pc - rootPc + 12) % 12;
-                boolean isPlucked = hiActive && hiStr == s && hiFret == f;
-                drawFretNote(c, s, f, pc, relIv, boxLo, boxHi, dotR, isPlucked);
+                drawFretNote(c, s, f, pc, relIv, boxLo, boxHi, dotR, false);
             }
         }
     }
@@ -602,9 +599,6 @@ public final class FretboardView extends View {
 
         /* Draw Note Dots across all 6 strings and 16 frets */
         float dotR = Math.min(fretRowH * 0.36f, strColW * 0.34f);
-        boolean hiActive = synth.isHighlightActive();
-        int hiStr = synth.getActivePlayString();
-        int hiFret = synth.getActivePlayFret();
 
         for (int s = 0; s < FretboardTheory.NUM_STRINGS; s++) {
             float sx = getStringCoordX(s);
@@ -617,8 +611,7 @@ public final class FretboardView extends View {
             for (int f = 0; f <= FretboardTheory.MAX_FRET; f++) {
                 int pc = FretboardTheory.getPitchClass(tuningIdx, s, f);
                 int relIv = (pc - rootPc + 12) % 12;
-                boolean isPlucked = hiActive && hiStr == s && hiFret == f;
-                drawFretNote(c, s, f, pc, relIv, boxLo, boxHi, dotR, isPlucked);
+                drawFretNote(c, s, f, pc, relIv, boxLo, boxHi, dotR, false);
             }
         }
     }
@@ -1052,29 +1045,30 @@ public final class FretboardView extends View {
         paint.setColor(0xD806090F);
         c.drawRect(0, 0, w, h, paint);
 
-        float mw = Math.min(w * 0.94f, 880f);
-        float mh = Math.min(h * 0.92f, 700f);
+        float mw = Math.min(w * 0.94f, 980f);
+        float mh = Math.min(h * 0.84f, 1650f);
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
         helpModalRect.set(mx, my, mx + mw, my + mh);
         paint.setColor(0xFF151E2B);
-        c.drawRoundRect(helpModalRect, 16f, 16f, paint);
+        c.drawRoundRect(helpModalRect, 18f, 18f, paint);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(2.2f);
+        paint.setStrokeWidth(2.6f);
         paint.setColor(0xFF58A6FF);
-        c.drawRoundRect(helpModalRect, 16f, 16f, paint);
+        c.drawRoundRect(helpModalRect, 18f, 18f, paint);
         paint.setStyle(Paint.Style.FILL);
 
-        float hdrH = Math.max(40f, mh * 0.085f);
-        float closeW = Math.max(96f, mw * 0.19f);
-        helpCloseRect.set(mx + mw - closeW - 14f, my + 6f, mx + mw - 14f, my + hdrH - 2f);
+        float minDim = Math.min(w, h);
+        float hdrH = Math.max(54f, Math.min(mh * 0.11f, minDim * 0.096f));
+        float closeW = Math.max(116f, mw * 0.22f);
+        helpCloseRect.set(mx + mw - closeW - 16f, my + 10f, mx + mw - 16f, my + hdrH - 4f);
         drawPill(c, helpCloseRect, AppI18n.str(getContext(), R.string.close), true, 0xFF3A1E24, 0xFFF85149);
 
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setColor(0xFFF0883E);
-        textPaint.setTextSize(Math.min(hdrH * 0.44f, 20f));
+        textPaint.setTextSize(Math.max(20f, Math.min(hdrH * 0.50f, minDim * 0.048f)));
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
-                mx + 18f, my + hdrH * 0.66f, textPaint, helpCloseRect.left - (mx + 26f));
+                mx + 20f, my + hdrH * 0.66f, textPaint, helpCloseRect.left - (mx + 34f));
 
         Context ctx = getContext();
         String[] titles = {
@@ -1093,9 +1087,9 @@ public final class FretboardView extends View {
         };
         int[] titleCols = { 0xFF58A6FF, 0xFF3FB950, 0xFFF0883E, 0xFFD2A8FF, 0xFFFFD866 };
 
-        helpViewportRect.set(mx + 12f, my + hdrH + 2f, mx + mw - 12f, my + mh - 10f);
-        float titleSz = Math.max(12.2f, Math.min(15f, Math.min(w, h) * 0.023f));
-        float bodySz = Math.max(11.2f, Math.min(13.5f, Math.min(w, h) * 0.020f));
+        helpViewportRect.set(mx + 16f, my + hdrH + 6f, mx + mw - 16f, my + mh - 14f);
+        float titleSz = Math.max(18f, Math.min(50f, minDim * 0.044f));
+        float bodySz = Math.max(16f, Math.min(45f, minDim * 0.039f));
         helpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, helpViewportRect, titles, bodies, titleCols,
                 0xFFE6EDF3, 0xFF1D293A, 0xFF2E3F57, 0xFF58A6FF,
@@ -1347,6 +1341,11 @@ public final class FretboardView extends View {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (isShowingHelp()
+                && (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_ESCAPE)) {
+            dismissHelp();
+            return true;
+        }
         if (keyCode == KeyEvent.KEYCODE_SPACE) {
             triggerAudition();
             return true;

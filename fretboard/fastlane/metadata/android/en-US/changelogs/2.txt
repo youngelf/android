@@ -1,0 +1,1 @@
+v2.0: Complete 20-language localization (including localized Help guide modal), 15-fret interactive guitar neck in Portrait & Landscape, 14 scales & modes, 5 CAGED positions, 12 chord qualities, reverse chord finder, 6 tunings, and fretboard quizzes.

@@ -1,0 +1,13 @@
+Domina la lectura rítmica, la subdivisión de figuras musicales y el conteo en compases regulares e irregulares con Entrenador de Ritmo: Editor y Reproductor de Notación Rítmica. Diseñado para instrumentistas, cantantes, percusionistas, estudiantes y profesores de música, Entrenador de Ritmo reproduce cada figura escrita con un tono puro de referencia a 440 Hz precedido por una cuenta atrás de 4 tiempos.
+
+NOTACIÓN RÍTMICA ESTÁNDAR Y COMPASES IRREGULARES
+• Paleta Completa de Figuras y Silencios: Redondas, Blancas, Negras, Corcheas y Semicorcheas junto con sus silencios correspondientes.
+• 5 Compases Incluidos: 4/4, 3/4, 2/2, 5/4 y 7/4.
+
+EDITOR DE COMPASES INTERACTIVO
+• Entra en el Modo Edición para subdividir o combinar duraciones de notas y silencios, añadir compases o generar ritmos aleatorios.
+
+CUENTA ATRÁS DE 4 TIEMPOS Y REPRODUCCIÓN PRECISA A 440 Hz
+• Cuenta previa de 4..3..2..1 clics antes de iniciar el compás.
+• Tono sostenido a 440 Hz durante la duración exacta de cada figura y silencio exacto en cada pausa.
+• 100 % sin conexión, cero permisos y sin anuncios.

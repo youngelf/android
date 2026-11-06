@@ -1,0 +1,1 @@
+Temiz bir Pomodoro zamanlayıcısı, arka plan sesleri ve çalışma kaydı ile odaklan

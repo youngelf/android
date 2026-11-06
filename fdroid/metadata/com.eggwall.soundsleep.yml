@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+  - Time
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/sound-sleep
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/sound-sleep
+
+AutoName: Sound Sleep
+Summary: Minimalist all-night bedside clock with soothing white noise and sleep music
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '1.11'
+    versionCode: 11
+    commit: sound-sleep-v1.11
+    subdir: sound-sleep
+    gradle:
+      - yes
+
+  - versionName: '1.12'
+    versionCode: 12
+    commit: sound-sleep-v1.12
+    subdir: sound-sleep
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^sound-sleep-v.+$
+CurrentVersion: '1.12'
+CurrentVersionCode: 12

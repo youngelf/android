@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entraîneur de Rythme</string>
+    <string name="subtitle_440">Pratique du rythme musical à fréquence fixe (440 Hz)</string>
+    <string name="edit_mode">Mode Édition</string>
+    <string name="done_editing">Terminer</string>
+    <string name="play">Jouer</string>
+    <string name="pause">Pause</string>
+    <string name="loop">Boucle</string>
+    <string name="edit_btn">Éditer</string>
+    <string name="ready_hint">Prêt à jouer. Appuyez sur Jouer pour un décompte 4..3..2..1 suivi du rythme.</string>
+    <string name="add_bar">Ajouter Mesure</string>
+    <string name="remove_bar">Suppr. Mesure</string>
+    <string name="randomize">Aléatoire</string>
+    <string name="quarter_notes">Noires (1/4)</string>
+    <string name="exit_edit_mode">Quitter l\'édition</string>
+    <string name="close">FERMER</string>
+    <string name="got_it">COMPRIS</string>
+    <string name="help_title">Entraîneur de Rythme — Guide Rapide</string>
+    <string name="help_sec1_title">1. Signatures Rythmiques et Tempo</string>
+    <string name="help_sec1_body">Choisissez la mesure 4/4, 3/4, 2/2, 5/4 ou 7/4 en haut à gauche, réglez le tempo de 40 à 200 BPM avec le curseur et activez Boucle pour une pratique continue.</string>
+    <string name="help_sec2_title">2. Décompte 4 Temps et Lecture 440 Hz</string>
+    <string name="help_sec2_body">Appuyez sur Jouer pour entendre un décompte 4..3..2..1 suivi du rythme joué sur une tonalité de référence claire à 440 Hz avec suivi visuel.</string>
+    <string name="help_sec3_title">3. Éditeur de Rythme Interactif et Mode Aléatoire</string>
+    <string name="help_sec3_body">Touchez Éditer pour ouvrir le Mode Édition. Touchez une note ou un silence sur la partition, puis choisissez Ronde, Blanche, Noire, Croche ou Double-croche. Ajoutez/supprimez des mesures (1 à 4) ou touchez Aléatoire.</string>
+</resources>

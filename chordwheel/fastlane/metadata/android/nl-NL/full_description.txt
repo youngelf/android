@@ -1,0 +1,8 @@
+Beheers muziektheorie, harmonieleer en gitaarakkoorden op één interactief scherm met ChordWheel: Kwintencirkel & Gitaarlooper.
+
+BELANGRIJKSTE KENMERKEN
+• Concentrische Kwintencirkel: Buitenste ring voor alle 12 majeurtoonsoorten (I, IV, V), binnenste ring voor parallelle mineurakkoorden (ii, iii, vi), verminderd middensegment (vii°) en Romeinse cijfers.
+• Realtime toonladderformules (1 - 3 - 5, 4 - 6 - 8) en septiemakkoorden (maj7, m7, dom7, m7b5) met één tik.
+• 3 CAGED-posities per akkoord (Open/CAGED, E-barré en A-barré) met vingerzettingen (1–4) en 44,1 kHz Karplus-Strong gitaarsynthese.
+• 4-maats akkoordsequencer met Pop-, Jazz- en Blues-presets in alle 12 toonsoorten.
+• Portret- en landschapsmodus, 100% offline, geen rechten vereist en reclamevrij.

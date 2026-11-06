@@ -1,0 +1,21 @@
+Débloquez l'intégralité du manche 6 cordes avec Fretboard Explorer : Gammes et Accords de Guitare. Conçu pour les guitaristes débutants, intermédiaires et avancés, Fretboard Explorer affiche les gammes, modes, positions CAGED, accords transposables, accordages alternatifs et un détecteur d'accords inversé sur un manche interactif de 15 cases avec synthèse sonore Karplus-Strong en temps réel.
+
+Ne restez plus enfermé dans une seule position pentatonique à la 5e case. Visualisez comment les gammes, modes, arpèges et accords se connectent sur les 15 cases et les 6 cordes, en mode Portrait comme en mode Paysage.
+
+TROIS ATELIERS GUITARE INTÉGRÉS
+1. EXPLORATEUR DE GAMMES ET DE MODES
+• 14 gammes et modes essentiels : Majeur (Ionien), Mineur naturel (Éolien), Dorien, Phrygien, Lydien, Mixolydien, Locrien, Pentatonique mineure, Pentatonique majeure, Gamme Blues, Mineur harmonique, Mineur mélodique, Phrygien dominant et Gamme par tons.
+• Les 12 tonalités via menus déroulants rapides : Changez de tonalité (C à B) et de mode instantanément.
+• 5 positions CAGED + vue Tout Manche : Parcourez les positions CAGED 1 à 5 ou affichez tout le manche d'un coup.
+
+2. BIBLIOTHÈQUE D'ACCORDS TRANSPOSABLES
+• 12 qualités d'accords : Majeur, Mineur, 7e de dominante, Majeur 7, Mineur 7, m7b5, Diminué 7, Sus2, Sus4, Add9, Majeur 6 et Mineur 6.
+• 5 positions CAGED par accord avec doigtés (1–4), barrés, cordes à vide/étouffées et écoute en temps réel.
+
+3. DÉTECTEUR D'ACCORDS INTERACTIF (CHORD FINDER)
+• Touchez n'importe quelle combinaison de cases sur les 6 cordes pour identifier instantanément le nom exact de l'accord, ses renversements, sa formule d'intervalles et ses notes.
+
+ACCORDAGES MULTIPLES, GAUCHER ET QUIZ DU MANCHE
+• 6 accordages intégrés : Standard (E A D G B E), Drop D, Demi-ton plus bas (Eb), Ton entier plus bas (D), Open G et DADGAD.
+• Affichage par intervalles (F, b3, 5), notes ou degrés, mode gaucher/droitier et quiz interactif des notes et intervalles.
+• 100 % hors ligne, zéro permission et zéro publicité.

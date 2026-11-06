@@ -1,0 +1,3 @@
+b578209e1ede3ef92c54eddcfd2d287bbce5b1adaa02c84cd07792e441247e5b  rhythm-trainer-v1.2-playstore-release.aab
+2af8d96de94b31caa8ad0c331ecd6d3313a9120cea75192577cc29afef788579  rhythm-trainer-v1.2-release.apk
+4fb14650c415946d61268a56ced8a026179e9b114fde29265738678e83f9ac23  rhythm-trainer-v1.2-debug.apk

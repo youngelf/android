@@ -40,7 +40,12 @@ public final class MetronomeSynthEngine {
     /** Duration of an off-beat subdivision tick in milliseconds. */
     private static final int SUBDIV_CLICK_MS = 36;
 
+    public interface BarListener {
+        void onBarAdvanced(int measureCount, int effectiveBpm);
+    }
+
     private final Object mStateLock = new Object();
+    private volatile BarListener mBarListener;
 
     private volatile boolean mRunning = false;
     private volatile boolean mPlaying = false;
@@ -78,6 +83,10 @@ public final class MetronomeSynthEngine {
 
     public MetronomeSynthEngine() {
         applyTimeSignatureDefaultsLocked(0);
+    }
+
+    public void setBarListener(BarListener listener) {
+        mBarListener = listener;
     }
 
     public synchronized void start() {
@@ -342,6 +351,33 @@ public final class MetronomeSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -351,13 +387,7 @@ public final class MetronomeSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {
@@ -372,6 +402,8 @@ public final class MetronomeSynthEngine {
 
         while (mRunning) {
             boolean activeSound = false;
+            int notifyMeasure = -1;
+            int notifyBpm = -1;
             synchronized (mStateLock) {
                 double samplesPerBeat = MetronomeTheory.getSamplesPerBeat(mEffectiveBpm, SAMPLE_RATE);
                 double[] subdivOffsets = MetronomeTheory.SUBDIVISIONS[mSubdivIdx].pulseOffsets;
@@ -403,6 +435,8 @@ public final class MetronomeSynthEngine {
                                 mMeasureCount++;
                                 updateEffectiveBpmLocked();
                                 samplesPerBeat = MetronomeTheory.getSamplesPerBeat(mEffectiveBpm, SAMPLE_RATE);
+                                notifyMeasure = mMeasureCount;
+                                notifyBpm = mEffectiveBpm;
                             }
                             mLastBeatUptimeMs = SystemClock.uptimeMillis();
                             triggerBeatClickLocked(mBeatStates[mCurrentBeat]);
@@ -424,6 +458,13 @@ public final class MetronomeSynthEngine {
                     if (p < 0.0) p = 0.0;
                     if (p > 1.0) p = 1.0;
                     mBeatPhase0to1 = p;
+                }
+            }
+
+            if (notifyMeasure >= 0) {
+                BarListener listener = mBarListener;
+                if (listener != null) {
+                    listener.onBarAdvanced(notifyMeasure, notifyBpm);
                 }
             }
 

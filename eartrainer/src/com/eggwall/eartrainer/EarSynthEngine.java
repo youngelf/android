@@ -109,7 +109,7 @@ public final class EarSynthEngine {
     /** Plucks a single MIDI note immediately (e.g. when tapping the piano keyboard or fretboard). */
     public void playNoteImmediate(int midiNote, int durationMs) {
         synchronized (mLock) {
-            pluckVoiceImmediateLocked(midiNote, durationMs);
+            scheduleNoteLocked(midiNote, 0, durationMs);
         }
     }
 
@@ -269,6 +269,33 @@ public final class EarSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -278,13 +305,7 @@ public final class EarSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {

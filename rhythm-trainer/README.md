@@ -1,6 +1,6 @@
 # Rhythm Trainer (`com.eggwall.rhythmtrainer`)
 
-An Android musical rhythm training application written in Kotlin with Jetpack Compose and real-time `440 Hz` PCM audio synthesis.
+An Android musical rhythm training application written in pure Java (`minSdk = 19`) with a custom hardware-accelerated `Canvas` score renderer and real-time `440 Hz` PCM audio synthesis.
 
 <p align="center">
   <img src="docs/images/phone_portrait_1.png" alt="Rhythm Trainer Screenshot" width="320" />
@@ -16,7 +16,7 @@ An Android musical rhythm training application written in Kotlin with Jetpack Co
 - **Musician's Guide**: See **[`USER_GUIDE.md`](USER_GUIDE.md)** for full usage instructions.
 
 ### 2. For Software Engineers & Tinkerers (Modify & Build Your Own Apps)
-- **Clean, Hackable Architecture**: Separates pure rhythm-bar math ([`RhythmModels.kt`](app/src/main/java/com/eggwall/rhythmtrainer/RhythmModels.kt)), real-time `44.1 kHz` PCM synthesis ([`RhythmAudioEngine.kt`](app/src/main/java/com/eggwall/rhythmtrainer/RhythmAudioEngine.kt)), and vector notation rendering ([`NotationCanvas.kt`](app/src/main/java/com/eggwall/rhythmtrainer/NotationCanvas.kt)), verified by JUnit tests ([`RhythmTrainerTest.kt`](app/src/test/java/com/eggwall/rhythmtrainer/RhythmTrainerTest.kt)).
+- **Clean, Hackable Architecture**: Separates pure rhythm-bar math ([`RhythmBuilder.java`](src/com/eggwall/rhythmtrainer/RhythmBuilder.java)), real-time `44.1 kHz` PCM synthesis ([`RhythmAudioEngine.java`](src/com/eggwall/rhythmtrainer/RhythmAudioEngine.java)), and custom `Canvas` vector notation rendering ([`RhythmTrainerView.java`](src/com/eggwall/rhythmtrainer/RhythmTrainerView.java)), verified by JUnit tests ([`RhythmTrainerTest.java`](test/com/eggwall/rhythmtrainer/RhythmTrainerTest.java)).
 - **Developer Documentation**:
   - **[Developer & Customization Guide (`DEVELOPER_GUIDE.md`)](DEVELOPER_GUIDE.md)** — Module breakdown and customization recipes.
   - **[Suite Porting & Engineering Playbook (`../porting.md`)](../porting.md)** — Full architectural guide for building custom Android audio and music apps.
@@ -26,7 +26,7 @@ An Android musical rhythm training application written in Kotlin with Jetpack Co
 
 ## Internationalization (i18n) — Top 20 World Languages & EFIGSCJK Preview
 
-**Rhythm Trainer** is localized across the **top 20 world languages** via Android resource qualifiers (`app/src/main/res/values-<lang>/strings.xml`) and runtime canvas/UI localization (`AppI18n`):
+**Rhythm Trainer** is localized across the **top 20 world languages** via Android resource qualifiers (`res/values-<lang>/strings.xml`) and runtime canvas/UI localization (`AppI18n`):
 
 - **Supported 20 Languages:** English (`en-US`), French (`fr-FR`), Italian (`it-IT`), German (`de-DE`), Spanish (`es-ES`), Simplified Chinese (`zh-CN`), Japanese (`ja-JP`), Korean (`ko-KR`), Portuguese (`pt-BR`), Russian (`ru-RU`), Arabic (`ar`), Hindi (`hi-IN`), Bengali (`bn-BD`), Indonesian (`id`), Turkish (`tr-TR`), Vietnamese (`vi`), Polish (`pl-PL`), Dutch (`nl-NL`), Thai (`th`), and Ukrainian (`uk`).
 - **Google Play Console "Import translations with AI" (All 20 Languages):** Upload **[`PLAY_STORE_AI_IMPORT.csv`](PLAY_STORE_AI_IMPORT.csv)** (recommended), **[`PLAY_STORE_AI_IMPORT.md`](PLAY_STORE_AI_IMPORT.md)**, or **[`PLAY_STORE_AI_IMPORT.txt`](PLAY_STORE_AI_IMPORT.txt)** in **Grow users → Store presence → Store listings → Edit store listing → Import translations with AI** to populate **App name** (`≤ 30` chars), **Short description** (`≤ 80` chars), and **Full description** (`≤ 4000` chars) across all 20 languages in one step.

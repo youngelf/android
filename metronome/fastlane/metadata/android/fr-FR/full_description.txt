@@ -1,0 +1,16 @@
+Verrouillez un sens du rythme irréprochable, maîtrisez les mesures asymétriques et les polyrythmies, et développez votre vitesse avec Métronome : Pendule de Précision & Coach de Vitesse. Conçu pour les instrumentistes, batteurs, guitaristes et pianistes exigeants, ce métronome repose sur un moteur de synthèse audio PCM à 44,1 kHz précis à l'échantillon près.
+
+PRÉCISION À L'ÉCHANTILLON PRÈS (44,1 kHz) ET PENDULE VISUEL
+• Moteur audio sans gigue (Zero-Jitter) : Chaque clic, accent et subdivision est calculé au niveau de l'échantillon audio à 44,1 kHz.
+• Balancier physique et matrice de temps haute visibilité.
+• Tap Tempo et réglages fins (-5, -1, +1, +5 BPM) de 20 à 260 BPM avec indications italiennes traditionnelles (Largo, Adagio, Andante, Moderato, Allegro, Presto).
+
+12 SIGNATURES RYTHMIQUES, MESURES IMPAIRES ET 6 SUBDIVISIONS
+• Signatures courantes et asymétriques : 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 et 13/8.
+• Séquenceur d'accents par temps : Touchez n'importe quelle colonne pour alterner entre ACCENT FORT, TEMPS NORMAL, SOUS-ACCENT et MUET.
+• 6 subdivisions rythmiques : Noires, Croches, Triolets, Doubles croches, Croches pointées (Swing) et Quintolets.
+
+POLYRYTHMIE, COACH DE VITESSE ET MESURES MUETTES
+• Générateur de polyrythmies à double anneau (3:2, 4:3, 5:3, 5:4, 7:4).
+• Coach d'accélération (+1 à +5 BPM toutes les N mesures) et Silenceur de mesures (Bar Dropper) pour tester votre horloge interne.
+• 5 timbres de clic, écran maintenu allumé, modes Portrait/Paysage, 100 % hors ligne et sans publicité.

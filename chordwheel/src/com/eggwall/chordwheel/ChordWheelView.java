@@ -266,31 +266,18 @@ public class ChordWheelView extends View {
     public void strumCurrentSelection() {
         MusicTheory.resolveChordAt(mKeySector, mCurSector, mCurRing, mSeventhMode, mResolved);
         MusicTheory.buildGuitarVoicing(mResolved.rootPc, mResolved.qual, mVoicingIdx, mVoicing);
-        long now = System.currentTimeMillis();
-        int order = 0;
-        for (int s = 0; s < 6; s++) {
-            if (mVoicing.frets[s] >= 0) {
-                mStringPluckTimeMs[s] = now + order * 22L;
-                order++;
-            } else {
-                mStringPluckTimeMs[s] = 0L;
-            }
-        }
         if (mSynth != null) {
             mSynth.triggerStrum(mVoicing);
         }
-        postInvalidateDelayed(30);
     }
 
     private void pluckSingleString(int s) {
         MusicTheory.resolveChordAt(mKeySector, mCurSector, mCurRing, mSeventhMode, mResolved);
         MusicTheory.buildGuitarVoicing(mResolved.rootPc, mResolved.qual, mVoicingIdx, mVoicing);
         if (s >= 0 && s < 6 && mVoicing.frets[s] >= 0) {
-            mStringPluckTimeMs[s] = System.currentTimeMillis();
             if (mSynth != null) {
                 mSynth.pluckSingleString(s, mVoicing.frets[s]);
             }
-            invalidate();
         }
     }
 
@@ -412,15 +399,6 @@ public class ChordWheelView extends View {
             drawGuideModal(canvas, w, h);
         } else if (mShowHelp) {
             drawHelpModal(canvas, w, h);
-        }
-
-        /* Keep animating string glow for 220 ms after pluck */
-        long now = System.currentTimeMillis();
-        for (int s = 0; s < 6; s++) {
-            if (now >= mStringPluckTimeMs[s] && (now - mStringPluckTimeMs[s]) < 240L) {
-                postInvalidateDelayed(25);
-                break;
-            }
         }
     }
 
@@ -773,16 +751,14 @@ public class ChordWheelView extends View {
 
         boolean flats = MusicTheory.WHEEL[mKeySector].useFlats;
         String[] noteTbl = flats ? MusicTheory.NOTE_FLAT : MusicTheory.NOTE_SHARP;
-        long now = System.currentTimeMillis();
 
         /* 6 Guitar Strings + X/O Markers + Sounded Note Labels */
         for (int s = 0; s < 6; s++) {
             float sx = gridLeft + s * strDx;
             mStringX[s] = sx;
 
-            boolean vibrating = (now >= mStringPluckTimeMs[s] && (now - mStringPluckTimeMs[s]) < 220L);
-            int strCol = vibrating ? COL_GOLD : ((s < 3) ? 0xFFCBD5E1 : 0xFF94A3B8);
-            float strW = vibrating ? (2.2f * u) : ((s < 3) ? (1.5f * u) : (1.1f * u));
+            int strCol = (s < 3) ? 0xFFCBD5E1 : 0xFF94A3B8;
+            float strW = (s < 3) ? (1.5f * u) : (1.1f * u);
             mFillPaint.setColor(strCol);
             canvas.drawRect(sx - strW * 0.5f, gridTop, sx + strW * 0.5f, gridTop + gridH, mFillPaint);
 
@@ -927,12 +903,12 @@ public class ChordWheelView extends View {
 
     private void drawHelpModal(Canvas canvas, int w, int h) {
         /* Dim backdrop */
-        mFillPaint.setColor(0xCC060911);
+        mFillPaint.setColor(0xD8060911);
         canvas.drawRect(0, 0, w, h, mFillPaint);
 
         float u = Math.min(w / 320.0f, h / 240.0f);
-        float mw = Math.min(w - 20.0f * u, 310.0f * u);
-        float mh = Math.min(h - 16.0f * u, 224.0f * u);
+        float mw = Math.min(w - 16.0f * u, 310.0f * u);
+        float mh = Math.min(h - 16.0f * u, 240.0f * u);
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
 
@@ -940,23 +916,23 @@ public class ChordWheelView extends View {
         drawCard(canvas, mModalBoxRect, 0xFF0F1726, 0xFF60A5FA, u);
 
         /* Header Bar */
-        float hdrH = 22.0f * u;
+        float hdrH = 24.0f * u;
         mTmpRect.set(mx + 2.0f * u, my + 2.0f * u, mx + mw - 2.0f * u, my + 2.0f * u + hdrH);
         mFillPaint.setColor(0xFF1C273C);
         canvas.drawRect(mTmpRect, mFillPaint);
 
-        mModalCloseRect.set(mx + mw - 50.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
+        mModalCloseRect.set(mx + mw - 58.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
         drawPill(canvas, mModalCloseRect, 0xFF7F1D1D, 0xFFF87171, u);
-        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 8.5f * u, 0xFFFFFFFF);
+        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 10.2f * u, 0xFFFFFFFF);
 
-        mTextPaint.setTextSize(10.2f * u);
+        mTextPaint.setTextSize(12.2f * u);
         mTextPaint.setColor(COL_TEXT_MAIN);
         AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_title),
-                mx + 10.0f * u, my + 16.0f * u, mTextPaint, mModalCloseRect.left - (mx + 16.0f * u));
+                mx + 10.0f * u, my + 17.5f * u, mTextPaint, mModalCloseRect.left - (mx + 20.0f * u));
 
         /* Auto-Looper Start/Stop Button inside Modal */
         float py = my + hdrH + 6.0f * u;
-        float loopBtnH = 22.0f * u;
+        float loopBtnH = 23.0f * u;
         mModalLoopBtnRect.set(mx + 8.0f * u, py, mx + mw - 8.0f * u, py + loopBtnH);
         int lFill = mLoopPlaying ? COL_EMERALD : 0xFF172134;
         int lBdr  = mLoopPlaying ? 0xFF6EE7B7 : COL_SKY;
@@ -964,11 +940,11 @@ public class ChordWheelView extends View {
         drawCenteredText(canvas, mModalLoopBtnRect,
                 mLoopPlaying ? AppI18n.str(getContext(), R.string.help_looper_pause)
                              : AppI18n.str(getContext(), R.string.help_looper_play),
-                9.2f * u, 0xFFFFFFFF);
+                10.5f * u, 0xFFFFFFFF);
 
         /* 5 Tappable Progression Preset Rows */
         float presetTop = mModalLoopBtnRect.bottom + 5.0f * u;
-        float presetRowH = 19.5f * u;
+        float presetRowH = 20.5f * u;
         for (int i = 0; i < 5; i++) {
             float ry = presetTop + i * (presetRowH + 2.5f * u);
             mModalPresetRects[i].set(mx + 8.0f * u, ry, mx + mw - 8.0f * u, ry + presetRowH);
@@ -977,18 +953,18 @@ public class ChordWheelView extends View {
             int pBdr  = sel ? COL_GOLD : 0xFF334462;
             drawPill(canvas, mModalPresetRects[i], pFill, pBdr, u);
             drawCenteredText(canvas, mModalPresetRects[i],
-                    MusicTheory.PRESETS[i].name, 9.0f * uxOrU(u), sel ? COL_SEL_BDR : COL_TEXT_SUB);
+                    MusicTheory.PRESETS[i].name, 10.2f * uxOrU(u), sel ? COL_SEL_BDR : COL_TEXT_SUB);
         }
 
         /* Touch & Gesture Quick Summary Footer */
         float footY = mModalPresetRects[4].bottom + 6.0f * u;
-        mTextPaint.setTextSize(8.2f * u);
+        mTextPaint.setTextSize(9.5f * u);
         mTextPaint.setColor(COL_SKY_LIGHT);
         AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_touch),
-                mx + 10.0f * u, footY + 9.0f * u, mTextPaint, mw - 20.0f * u);
+                mx + 10.0f * u, footY + 10.0f * u, mTextPaint, mw - 20.0f * u);
         mTextPaint.setColor(COL_TEXT_MUTED);
         AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_presets_keys),
-                mx + 10.0f * u, footY + 20.0f * u, mTextPaint, mw - 20.0f * u);
+                mx + 10.0f * u, footY + 22.0f * u, mTextPaint, mw - 20.0f * u);
     }
 
     private float uxOrU(float u) {
@@ -997,12 +973,12 @@ public class ChordWheelView extends View {
 
     private void drawGuideModal(Canvas canvas, int w, int h) {
         /* Dim backdrop */
-        mFillPaint.setColor(0xCC060911);
+        mFillPaint.setColor(0xD8060911);
         canvas.drawRect(0, 0, w, h, mFillPaint);
 
         float u = Math.min(w / 320.0f, h / 240.0f);
         float mw = Math.min(w - 16.0f * u, 308.0f * u);
-        float mh = Math.min(h - 14.0f * u, 226.0f * u);
+        float mh = Math.min(h - 24.0f * u, Math.max(250.0f * u, h * 0.82f));
         float mx = (w - mw) * 0.5f;
         float my = (h - mh) * 0.5f;
 
@@ -1010,19 +986,19 @@ public class ChordWheelView extends View {
         drawCard(canvas, mModalBoxRect, 0xFF0F1726, 0xFF60A5FA, u);
 
         /* Header Bar */
-        float hdrH = 22.0f * u;
+        float hdrH = 26.0f * u;
         mTmpRect.set(mx + 2.0f * u, my + 2.0f * u, mx + mw - 2.0f * u, my + 2.0f * u + hdrH);
         mFillPaint.setColor(0xFF1C273C);
         canvas.drawRect(mTmpRect, mFillPaint);
 
-        mModalCloseRect.set(mx + mw - 56.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
+        mModalCloseRect.set(mx + mw - 62.0f * u, my + 4.0f * u, mx + mw - 6.0f * u, my + 4.0f * u + hdrH - 4.0f * u);
         drawPill(canvas, mModalCloseRect, 0xFF7F1D1D, 0xFFF87171, u);
-        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 8.5f * u, 0xFFFFFFFF);
+        drawCenteredText(canvas, mModalCloseRect, AppI18n.str(getContext(), R.string.close), 10.8f * u, 0xFFFFFFFF);
 
-        mTextPaint.setTextSize(10.0f * u);
+        mTextPaint.setTextSize(13.5f * u);
         mTextPaint.setColor(COL_TEXT_MAIN);
         AppI18n.drawTextFit(canvas, AppI18n.str(getContext(), R.string.help_guide_title),
-                mx + 10.0f * u, my + 16.0f * u, mTextPaint, mModalCloseRect.left - (mx + 16.0f * u));
+                mx + 10.0f * u, my + 18.8f * u, mTextPaint, mModalCloseRect.left - (mx + 20.0f * u));
 
         Context ctx = getContext();
         String[] titles = {
@@ -1044,8 +1020,8 @@ public class ChordWheelView extends View {
         mGuideViewportRect.set(mx + 6.0f * u, my + hdrH + 5.0f * u, mx + mw - 6.0f * u, my + mh - 6.0f * u);
         mGuideMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 canvas, mGuideViewportRect, titles, bodies, titleCols,
-                COL_TEXT_SUB, 0xFF151E30, 0xFF283753, COL_SKY,
-                9.0f * u, 8.2f * u, mGuideScrollY, mTextPaint, mFillPaint);
+                0xFFF1F5F9, 0xFF151E30, 0xFF283753, COL_SKY,
+                14.2f * u, 12.6f * u, mGuideScrollY, mTextPaint, mFillPaint);
         mGuideScrollY = Math.max(0.0f, Math.min(mGuideScrollY, mGuideMaxScrollY));
     }
 

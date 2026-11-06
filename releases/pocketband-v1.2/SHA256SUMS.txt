@@ -1,0 +1,3 @@
+d30b4751406ce75e4c1775f0011c85ee5b008504584b2f9a7b96e7b3e7484680  pocketband-v1.2-playstore-release.aab
+6d35465daa87add667505ddc89c11fef14fe0d48b07f7704d1fb0c07b6f693a1  pocketband-v1.2-release.apk
+d354f9630e9cb4307f73173bd86310cd81e94b34623ae90eff4a23785132ff04  pocketband-v1.2-debug.apk

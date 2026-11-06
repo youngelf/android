@@ -1,0 +1,1 @@
+v1.4: Complete 20-language localization (including localized Help guide modal), interactive Circle of Fifths with ROTATE/LOCK key modes, CAGED/barre guitar voicings with Karplus-Strong synthesis, and 4-bar chord progression looper.

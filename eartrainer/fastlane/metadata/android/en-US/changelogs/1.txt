@@ -1,0 +1,1 @@
+v1.0: Initial release with 4 progressive ear-training modules (Intervals, Chords, Solfege, Melodic & Harmonic Dictation), interactive 2-octave piano and 6-string guitar neck, and 20-language localization.

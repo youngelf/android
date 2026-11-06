@@ -1,0 +1,1 @@
+v1.11: Modernized for Android 14/15/16 (Scoped Storage MediaStore playback, foreground service media playback notifications, OLED burn-in protection drift, upward swipe gesture filtering, and 20-language store localization).

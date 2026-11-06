@@ -1,0 +1,1 @@
+v1.0.0: Initial release with interactive rhythm notation editor (Whole through Sixteenth notes and rests), 4/4, 3/4, 2/2, 5/4, and 7/4 time signatures, 4-beat click count-in with sustained 440 Hz tone playback, and 20-language localization.

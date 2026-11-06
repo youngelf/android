@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application' version '8.9.0'
+    id 'com.android.application' version '8.13.2'
 }
 
 def keystoreProps = new Properties()
@@ -17,8 +17,8 @@ android {
         applicationId = 'com.eggwall.chordwheel'
         minSdk = 19
         targetSdk = 36
-        versionCode = 4
-        versionName = '1.4'
+        versionCode = 5
+        versionName = '1.5'
     }
 
     sourceSets {
@@ -50,6 +50,11 @@ android {
             minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-project.txt'
         }
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 
     compileOptions {

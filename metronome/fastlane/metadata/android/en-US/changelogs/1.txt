@@ -1,0 +1,1 @@
+v1.0: Initial release with sample-accurate 44.1 kHz timing engine (20-260 BPM), 12 time signatures including odd meters, dual-ring polyrhythms (3:2, 4:3, 5:4, 7:4), Speed Coach, Bar Dropper, and 20-language localization.

@@ -29,7 +29,9 @@ import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
+import android.media.AudioFormat;
 import android.media.AudioManager;
+import android.media.AudioTrack;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -108,6 +110,18 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
 
     /** The object that actually plays the music on our behalf. */
     private MediaPlayer mPlayer;
+    /** Procedural real-time white/brownian sleep noise generator thread. */
+    private Thread mNoiseThread;
+    /** Active AudioTrack for procedural white/brownian sleep noise. */
+    private volatile AudioTrack mNoiseTrack;
+    /** Flag controlling the procedural white-noise synthesis loop. */
+    private volatile boolean mNoiseRunning;
+    /** Flag indicating procedural white-noise is temporarily paused due to transient audio focus loss. */
+    private volatile boolean mNoisePaused;
+    /** Volume multiplier for procedural white-noise (1.0f normal, 0.2f ducked). */
+    private volatile float mNoiseGain = 1.0f;
+    /** WakeLock held while procedural white-noise synthesis is active. */
+    private PowerManager.WakeLock mNoiseWakeLock;
     /** Set to {@link #SILENCE}, {@link #MUSIC}, or {@link #WHITE_NOISE}. */
     private int mTypePlaying = SILENCE;
     /** The actual directory that corresponds to the external SD card. */
@@ -179,6 +193,11 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
      */
     private void play(int type) {
         requestAudioFocus();
+        if (type == WHITE_NOISE) {
+            Log.v(TAG, "Starting procedural sleep white/brownian noise synthesis.");
+            startProceduralWhiteNoise();
+            return;
+        }
         if (type == MUSIC) {
             final MediaPlayer player = tryStartingMusic();
             if (player != null) {
@@ -188,17 +207,10 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
                 return;
             }
         }
-        // Either we weren't able to play custom music, or we were asked to play white noise.
-        final int resourceToPlay;
-        if (type == WHITE_NOISE) {
-            Log.v(TAG, "Playing white noise.");
-            resourceToPlay = R.raw.noise;
-        } else {
-            Log.v(TAG, "Playing included jingle.");
-            resourceToPlay = R.raw.jingle;
-        }
+        // Play the bundled public-domain Brahms Lullaby (res/raw/jingle.ogg) when no user music is found on SD card.
+        Log.v(TAG, "Playing included public-domain lullaby jingle.");
         try {
-            final AssetFileDescriptor d = getResources().openRawResourceFd(resourceToPlay);
+            final AssetFileDescriptor d = getResources().openRawResourceFd(R.raw.jingle);
             if (d == null) {
                 Log.wtf(TAG, "Could not open the file to play");
                 return;
@@ -207,7 +219,7 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
             mPlayer = getGenericMediaPlayer();
             mPlayer.setDataSource(fd, d.getStartOffset(), d.getLength());
             d.close();
-            // White noise or the default song is looped forever.
+            // The default lullaby is looped forever.
             mPlayer.setLooping(true);
         } catch (IOException e) {
             Log.e(TAG, "Could not create a media player instance. Full error below.");
@@ -216,6 +228,127 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
         }
         postSuccessMessage(mTypePlaying);
         mPlayer.prepareAsync();
+    }
+
+    /**
+     * Synthesizes warm, soothing brownian/pink sleep noise in real time using AudioTrack at 44.1 kHz
+     * with leaky-integrator low-pass filtering and a gentle ocean-breath envelope.
+     */
+    @SuppressWarnings("deprecation")
+    private void startProceduralWhiteNoise() {
+        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        if (pm != null) {
+            mNoiseWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, NAMESPACE + ":WhiteNoiseLock");
+            mNoiseWakeLock.setReferenceCounted(false);
+            mNoiseWakeLock.acquire();
+        }
+        mNoiseRunning = true;
+        mNoisePaused = false;
+        mNoiseGain = 1.0f;
+        setForegroundService();
+        postSuccessMessage(mTypePlaying);
+
+        mNoiseThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final int sampleRate = 44100;
+                final int minBufBytes = AudioTrack.getMinBufferSize(
+                        sampleRate,
+                        AudioFormat.CHANNEL_OUT_MONO,
+                        AudioFormat.ENCODING_PCM_16BIT);
+                final int bufferSamples = Math.max(4096, minBufBytes / 2);
+                final AudioTrack track;
+                if (SDK >= Build.VERSION_CODES.LOLLIPOP) {
+                    final AudioAttributes attrs = new AudioAttributes.Builder()
+                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .build();
+                    final AudioFormat format = new AudioFormat.Builder()
+                            .setSampleRate(sampleRate)
+                            .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                            .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                            .build();
+                    track = new AudioTrack(
+                            attrs,
+                            format,
+                            bufferSamples * 2,
+                            AudioTrack.MODE_STREAM,
+                            AudioManager.AUDIO_SESSION_ID_GENERATE);
+                } else {
+                    track = new AudioTrack(
+                            AudioManager.STREAM_MUSIC,
+                            sampleRate,
+                            AudioFormat.CHANNEL_OUT_MONO,
+                            AudioFormat.ENCODING_PCM_16BIT,
+                            bufferSamples * 2,
+                            AudioTrack.MODE_STREAM);
+                }
+                mNoiseTrack = track;
+                try {
+                    track.play();
+                } catch (IllegalStateException e) {
+                    Log.e(TAG, "Unable to start procedural noise AudioTrack", e);
+                    return;
+                }
+
+                final short[] pcm = new short[bufferSamples];
+                final Random rng = new Random(0x51EE7CAFE123L);
+                double brown = 0.0;
+                double lp1 = 0.0;
+                double lp2 = 0.0;
+                long sampleCounter = 0;
+                final double breathOmega = 2.0 * Math.PI * 0.14 / sampleRate; // ~7-second gentle wave cycle
+
+                while (mNoiseRunning) {
+                    if (mNoisePaused) {
+                        try {
+                            Thread.sleep(60);
+                        } catch (InterruptedException ie) {
+                            break;
+                        }
+                        continue;
+                    }
+                    final float gain = mNoiseGain;
+                    for (int i = 0; i < bufferSamples; i++) {
+                        // White excitation in [-1, 1]
+                        final double white = rng.nextDouble() * 2.0 - 1.0;
+                        // Leaky integrator for warm brownian spectral tilt (-6 dB/octave)
+                        brown = 0.985 * brown + 0.015 * white;
+                        // Blend 78% warm brownian with 22% soft pink/white detail and two-pole smoothing
+                        final double raw = 0.78 * (brown * 6.5) + 0.22 * (white * 0.18);
+                        lp1 += 0.12 * (raw - lp1);
+                        lp2 += 0.12 * (lp1 - lp2);
+                        // Subtle breathing swell (0.86 .. 1.00) so the noise feels organic like steady night rain
+                        final double breath = 0.93 + 0.07 * Math.sin(breathOmega * sampleCounter);
+                        sampleCounter++;
+                        // Soft 1.2s fade-in at startup
+                        final double fadeIn = (sampleCounter < sampleRate)
+                                ? (sampleCounter / (double) sampleRate)
+                                : 1.0;
+                        final double sampleVal = lp2 * breath * fadeIn * gain * 0.42;
+                        int s = (int) (sampleVal * 32767.0);
+                        if (s > 32767) {
+                            s = 32767;
+                        } else if (s < -32767) {
+                            s = -32767;
+                        }
+                        pcm[i] = (short) s;
+                    }
+                    try {
+                        track.write(pcm, 0, bufferSamples);
+                    } catch (IllegalStateException e) {
+                        break;
+                    }
+                }
+                try {
+                    track.stop();
+                } catch (IllegalStateException ignored) {
+                }
+                track.release();
+                mNoiseTrack = null;
+            }
+        }, "SoundSleep-ProceduralNoise");
+        mNoiseThread.start();
     }
 
     /**
@@ -283,7 +416,7 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
 
     @Override
     public void onAudioFocusChange(int focusChange) {
-        if (mPlayer == null) {
+        if (mPlayer == null && !mNoiseRunning) {
             return;
         }
         switch (focusChange) {
@@ -292,18 +425,26 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
                 stopSelf();
                 break;
             case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-                if (mPlayer.isPlaying()) {
+                if (mPlayer != null && mPlayer.isPlaying()) {
                     mPlayer.pause();
                 }
+                mNoisePaused = true;
                 break;
             case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                mPlayer.setVolume(0.2f, 0.2f);
+                if (mPlayer != null) {
+                    mPlayer.setVolume(0.2f, 0.2f);
+                }
+                mNoiseGain = 0.2f;
                 break;
             case AudioManager.AUDIOFOCUS_GAIN:
-                mPlayer.setVolume(1.0f, 1.0f);
-                if (!mPlayer.isPlaying()) {
-                    mPlayer.start();
+                if (mPlayer != null) {
+                    mPlayer.setVolume(1.0f, 1.0f);
+                    if (!mPlayer.isPlaying()) {
+                        mPlayer.start();
+                    }
                 }
+                mNoiseGain = 1.0f;
+                mNoisePaused = false;
                 break;
         }
     }
@@ -505,11 +646,25 @@ public class AudioService extends Service implements MediaPlayer.OnErrorListener
     }
 
     /**
-     * Close the music player, if any, and remove our reference to it.
+     * Close the music player or procedural white-noise synthesizer, if any, and remove our reference to it.
      */
     private void releasePlayer() {
+        mNoiseRunning = false;
+        mNoisePaused = false;
+        final Thread t = mNoiseThread;
+        mNoiseThread = null;
+        if (t != null) {
+            t.interrupt();
+        }
+        if (mNoiseWakeLock != null && mNoiseWakeLock.isHeld()) {
+            mNoiseWakeLock.release();
+        }
+        mNoiseWakeLock = null;
         if (mPlayer != null) {
-            mPlayer.stop();
+            try {
+                mPlayer.stop();
+            } catch (IllegalStateException ignored) {
+            }
             mPlayer.release();
             mPlayer = null;
         }

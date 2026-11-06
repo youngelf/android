@@ -1,0 +1,1 @@
+Minuteur Pomodoro épuré avec sons d'ambiance synthétisés et journal de travail.

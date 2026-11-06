@@ -1,27 +1,15 @@
-Music used in this program is available in the pubic domain.
-The default music file is Mildred Bailey's song, "All of me" available at:
-http://archive.org/details/PaulWhitemanwithMildredBailey
-The recording was made in 1932, and is out of copyright in the US. Local laws may differ.
+Copyright 2013-2026 Vikram Aggarwal
 
-Brownian noise is also downloaded from archive.org:
-http://archive.org/details/TenMinutesOfWhiteNoisePinkNoiseAndBrownianNoise
-The file is under a Creative Commons license and might be reduced in length to reduce
-file size.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at:
 
-The cloud icon is courtesy Aha-Soft Team, whose icons are made available free of charge
-for non-commercial use:
-http://www.iconarchive.com/show/large-weather-icons-by-large-icons/rain-icon.html
+    http://www.apache.org/licenses/LICENSE-2.0
 
-The musical note icon is courtesy Wallec, whose icon is available under the Creative
-Commons Attribution-Noncommercial-No Derivative license:
-http://www.iconarchive.com/show/iwindows-icons-by-wwalczyszyn/Music-Library-icon.html
+All source code, UI vector drawables, launcher icons (`rain`, `music`, `pause`,
+`ic_launcher`), and real-time procedural brownian/white sleep noise synthesis
+are original works licensed under the Apache License, Version 2.0.
 
-The cloudy night icon is free for non-commercial use, and is available here:
-http://www.iconarchive.com/show/large-weather-icons-by-large-icons/cloudy-night-icon.html
-
-The pause icon is free for non-commercial usage and is available here:
-http://www.iconarchive.com/show/play-stop-pause-icons-by-icons-land/Pause-Disabled-icon.html
-
-The warm and relaxing Jingle music by Lohstana David is the default music. It
-is free for personal use and non-commercial use, and is available here:
-http://www.jamendo.com/en/track/785408/jingle-02-instrumental-version
+The bundled fallback sleep lullaby (`res/raw/jingle.ogg`) is a synthesized
+arrangement of Johannes Brahms's "Wiegenlied" (Lullaby, Op. 49, No. 4, 1868),
+which is in the worldwide Public Domain (CC0 1.0 Universal).

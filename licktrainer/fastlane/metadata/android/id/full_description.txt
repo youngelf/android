@@ -1,0 +1,7 @@
+Bangun kosakata melodi gitar utama (lead guitar), teknik petikan bersih, dan kecepatan solo dengan LickTrainer: Tab Gitar & Pelatih Kecepatan. Menggabungkan 33 lick gitar pilihan dari 6 genre (Blues, Rock, Jazz/Bebop, Country, Neo-Soul/Funk, Shred/Metal) dengan tab 6 senar bergulir, fretboard 15 fret real-time, dan Tangga Kecepatan BPM otomatis (Speed Ladder).
+
+FITUR UTAMA
+• 33 Lick Gitar di 6 Genre lengkap dengan simbol Hammer-On (H), Pull-Off (P), Slide, Bending (b), dan Vibrato (~).
+• Transposisi instan ke semua 12 nada dasar.
+• Speed Ladder otomatis (+2 atau +5 BPM setiap N pengulangan), pengulang bagian A–B, iringan drum/metronom, dan sintesis gitar Karplus-Strong 44,1 kHz.
+• Layar tetap menyala saat latihan, Potret & Lanskap, 100% offline dan tanpa iklan.

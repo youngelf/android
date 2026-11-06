@@ -1,0 +1,16 @@
+Une la lectura en pentagrama con el mástil de 6 cuerdas con SightRead: Lectura Musical para Guitarra. SightRead combina un pentagrama vectorial en clave de sol con un diapasón interactivo de 12 trastes y síntesis de guitarra acústica en tiempo real.
+
+PLAN DE ESTUDIOS PROGRESIVO EN 5 NIVELES
+• Nivel 1 — Pentagrama Medio (G4 a D5): Notas esenciales en primera posición.
+• Nivel 2 — Pentagrama Completo (E4 a F5): Todas las líneas y espacios de la clave de sol.
+• Nivel 3 — Líneas Adicionales Graves (E3 a D4): Registro grave en las cuerdas 6, 5 y 4.
+• Nivel 4 — Líneas Adicionales Agudas (G5 a A5): Notas agudas hasta el traste 12.
+• Nivel 5 — Rango Completo de Guitarra (E3 a A5): Más de dos octavas y media en las 6 cuerdas.
+
+6 ARMADURAS DE CLAVE Y POSICIONES EQUIVALENTES
+• Practica en Do Mayor (0 #/b), Sol (1#), Re (2#), La (3#), Fa (1b) y Sib (2b).
+• Reconoce todas las posiciones válidas de una misma altura en el mástil y reproduce cada nota mediante síntesis Karplus-Strong a 44,1 kHz.
+
+3 MODOS DE PRÁCTICA
+• Modo Práctica (Drill), Modo Contrarreloj de 60 Segundos (Blitz) y Modo Estudio.
+• Diseño Vertical y Horizontal, 100 % sin conexión, sin permisos y sin anuncios.

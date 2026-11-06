@@ -1,0 +1,1 @@
+Editor notasi ritme musik frekuensi tunggal (440 Hz) dan pemutar latihan.

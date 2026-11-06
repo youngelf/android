@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rhythm Trainer</string>
+    <string name="subtitle_440">Pratica ritmica musicale a frequenza fissa (440 Hz)</string>
+    <string name="edit_mode">Modifica</string>
+    <string name="done_editing">Fine Modifica</string>
+    <string name="play">Avvia</string>
+    <string name="pause">Pausa</string>
+    <string name="loop">Loop</string>
+    <string name="edit_btn">Modifica</string>
+    <string name="ready_hint">Pronto. Premi Avvia per il conteggio 4..3..2..1 seguito dal ritmo.</string>
+    <string name="add_bar">Aggiungi Battuta</string>
+    <string name="remove_bar">Rimuovi Battuta</string>
+    <string name="randomize">Casuale</string>
+    <string name="quarter_notes">Semiminime</string>
+    <string name="exit_edit_mode">Esci da Modifica</string>
+    <string name="close">CHIUDI</string>
+    <string name="got_it">HO CAPITO</string>
+    <string name="help_title">Rhythm Trainer — Guida Rapida</string>
+    <string name="help_sec1_title">1. Indicazioni di Tempo e BPM</string>
+    <string name="help_sec1_body">Scegli il tempo 4/4, 3/4, 2/2, 5/4 o 7/4 in alto a sinistra, regola i BPM da 40 a 200 col cursore e attiva Loop per esercitarti continuamente.</string>
+    <string name="help_sec2_title">2. Conteggio 4 Movimenti e Riproduzione 440 Hz</string>
+    <string name="help_sec2_body">Premi Avvia per sentire il conteggio 4..3..2..1 seguito dal ritmo riprodotto su un tono di riferimento a 440 Hz con cursore sincronizzato.</string>
+    <string name="help_sec3_title">3. Editor Ritmico Interattivo e Generatore Casuale</string>
+    <string name="help_sec3_body">Tocca Modifica per entrare in Modalità Modifica. Tocca una nota o pausa sullo spartito e assegna Semibreve, Minima, Semiminima, Croma o Semicroma. Aggiungi/rimuovi battute (1–4) o tocca Casuale.</string>
+</resources>

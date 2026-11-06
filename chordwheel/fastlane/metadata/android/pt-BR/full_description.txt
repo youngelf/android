@@ -1,0 +1,20 @@
+Domine a teoria musical, a harmonia de composição e os acordes de guitarra/violão em uma única tela interativa com ChordWheel: Círculo de Quintas e Looper de Guitarra. Projetado para guitarristas, violonistas, compositores, estudantes e professores de música, o ChordWheel transforma o clássico Círculo de Quintas em um instrumento musical interativo em tempo real.
+
+RODA HARMÔNICA CONCÊNTRICA DO CÍRCULO DE QUINTAS
+• Anel Maior Externo: Exibe todas as 12 tonalidades maiores ordenadas por quintas (C, G, D, A, E, B/Cb, F#/Gb, Db, Ab, Eb, Bb, F) e destaca os acordes maiores diatônicos principais (I, IV e V).
+• Anel Menor Relativo Interno: Alinha cada tom com seu relativo menor e destaca os acordes menores diatônicos (ii, iii e vi).
+• Setor Diminuto Central e Algarismos Romanos: Marca claramente o acorde diminuto (vii°) e identifica a função harmônica (I, ii, iii, IV, V, vi, vii°).
+• Modos GIRAR e TRAVAR (LOCK): Gire a roda para colocar qualquer tonalidade no topo (12 horas) ou trave Dó (C) no topo enquanto explora qualquer acorde.
+
+FÓRMULAS DE GRAUS DA ESCALA E EXTENSÕES DE SÉTIMA
+• Leitura de Graus em Tempo Real: Mostra os graus exatos do acorde selecionado em relação à tonalidade ativa (ex.: I = 1 - 3 - 5, IV = 4 - 6 - 8, V7 = 5 - 7 - 9 - 11) junto com os nomes das notas.
+• Acordes com Sétima num Toque: Expanda qualquer tríade para um acorde com sétima (maj7, m7, dom7, m7b5) instantaneamente.
+
+VOICINGS CAGED NO BRAÇO E SÍNTESE KARPLUS-STRONG
+• Três Posições por Acorde: Alterne entre formas Abertas/CAGED, pestanas na forma de Mi (6ª corda) e pestanas na forma de Lá (5ª corda).
+• Digitações, Pestanas e Cordas Abafadas: Indica os dedos (1–4), pestanas, cordas soltas (O), cordas abafadas (X) e casas.
+• Síntese de Violão em Tempo Real a 44,1 kHz: Toque em qualquer setor ou deslize pelo diagrama do braço para ouvir uma batida de violão de 6 cordas modelada fisicamente (Karplus-Strong).
+
+LOOPER DE 4 COMPASSOS E PROGRESSÕES PRONTAS
+• Sequenciador de 4 Compassos: Programe os compassos 1 a 4 e carregue progressões clássicas de Pop (I–V–vi–IV), Jazz (ii–V–I–VI), Cadência Andaluza, Doo-Wop e Blues em qualquer um dos 12 tons.
+• Modos Retrato e Paisagem, zero permissões, sem anúncios e 100% offline.

@@ -1,0 +1,13 @@
+Padroneggia la lettura ritmica, la suddivisione dei valori musicali e il solfeggio ritmico nei tempi standard e dispari con Rhythm Trainer: Editor e Lettore di Notazione Ritmica. Creato per strumentisti, cantanti, percussionisti, studenti e insegnanti di musica, Rhythm Trainer isola la pura notazione ritmica dall'altezza melodica riproducendo ogni ritmo scritto con un tono di riferimento a 440 Hz preceduto da un conteggio di 4 battiti.
+
+NOTAZIONE RITMICA STANDARD E TEMPI DISPARI
+• Tavolozza Completa di Note e Pause: Semibrevi (4/4), Minime (1/2), Semiminime (1/4), Crome (1/8) e Semicrome (1/16) con le relative pause.
+• 5 Indicazioni di Tempo: 4/4, 3/4, 2/2, 5/4 e 7/4.
+
+EDITOR DI BATTUTE INTERATTIVO
+• Entra in Modalità Modifica per suddividere o unire note e pause, aggiungere battute o generare pattern ritmici casuali.
+
+CONTEGGIO 4..3..2..1 E RIPRODUZIONE A 440 Hz
+• Conteggio preparatorio di 4 clic prima della riproduzione.
+• Tono continuo a 440 Hz per l'esatta durata scritta di ogni nota, insegnando sia l'attacco sia il rilascio preciso.
+• 100% offline, zero permessi e zero pubblicità.

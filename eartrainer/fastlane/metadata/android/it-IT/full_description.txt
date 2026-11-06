@@ -1,0 +1,20 @@
+Sviluppa un orecchio relativo infallibile, il riconoscimento armonico e la memoria musicale con EarTrainer: Palestra per l'Orecchio Musicale. Creato per chitarristi, pianisti, cantanti e studenti di musica, EarTrainer unisce quattro moduli progressivi di ear training con una tastiera interattiva a 2 ottave, tre timbri strumentali sintetizzati e statistiche di precisione in tempo reale.
+
+QUATTRO MODULI COMPLETI DI EAR TRAINING
+1. RICONOSCIMENTO DEGLI INTERVALLI
+• Tutti i 13 intervalli cromatici: Dalla seconda minore (m2) fino all'ottava giusta (P8), inclusi tritono (TT) e quinta giusta (P5).
+• 3 direzioni di ascolto: Ascendente, Discendente o Armonico (note simultanee).
+
+2. IDENTIFICAZIONE DELLA QUALITÀ DEGLI ACCORDI
+• 9 qualità di triadi e accordi di settima: Maggiore, Minore, Diminuito, Aumentato, Sus2, Sus4, Settima di Dominante, Maj7 e m7.
+
+3. SCALE E MODI
+• 8 scale e modi ecclesiastici: Maggiore (Ionico), Minore Naturale, Minore Armonica, Minore Melodica, Dorico, Misolidio, Lidio e Frigio.
+
+4. DETTATO MELODICO
+• Ascolta brevi frasi melodiche da 3 a 5 note e riproducile nota per nota.
+
+PIANOFORTE INTERATTIVO A 2 OTTAVE E 3 TIMBRI REAL-TIME
+• Tastiera suonabile (C4–C6) con evidenziazione visiva della tonica e dell'intervallo in semitoni.
+• 3 timbri a 44,1 kHz: Pianoforte a Coda, Chitarra Acustica (Karplus-Strong) e Organo Caldo.
+• Layout Verticale e Orizzontale, 100% offline, zero permessi e zero pubblicità.

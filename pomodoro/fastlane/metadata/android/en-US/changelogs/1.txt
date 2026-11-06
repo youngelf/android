@@ -1,0 +1,1 @@
+v1.0: Initial release with distraction-free Pomodoro countdown ring, procedural Soft Tick / Rain / Brown Noise background soundscapes, 4 duration presets, automatic Today & All-Time telemetry, and 20-language localization.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Soft rear cloud puff -->
+    <path
+        android:fillColor="#4A7C9B"
+        android:pathData="M34,26a16,16 0 0,1 30,-4a13,13 0 0,1 16,14a11,11 0 0,1 -6,20H24a13,13 0 0,1 -4,-25a14,14 0 0,1 14,-5z" />
+    <!-- Main foreground cloud body -->
+    <path
+        android:fillColor="#7CC4E8"
+        android:pathData="M26,58h44a12,12 0 0,0 2,-23.8A16,16 0 0,0 42,26a14,14 0 0,0 -13.6,10.6A11,11 0 0,0 26,58z" />
+    <!-- Gentle rain streaks -->
+    <path
+        android:strokeColor="#63B3ED"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:pathData="M30,65 L26,80 M42,65 L38,84 M54,65 L50,80 M66,65 L62,84" />
+</vector>

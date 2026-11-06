@@ -1,0 +1,16 @@
+Recupera tu concentración profunda para practicar música, estudiar y programar con Pomodoro: Temporizador de Enfoque y Sonidos de Fondo. Diseñado con una interfaz de estudio limpia de alto contraste y un sintetizador de audio procedimental en tiempo real, Pomodoro elimina las distracciones visuales.
+
+ANILLO DE CUENTA ATRÁS Y BANNER DE NO MOLESTAR
+• Encabezado de Estado Claro: Muestra TRABAJANDO: NO MOLESTAR durante las sesiones de enfoque, DESCANSO: RECARGAR en las pausas y LISTO PARA ENFOCAR en espera.
+• Dial circular con ajustes rápidos de -5m, -1m, +1m y +5m e icono de altavoz en la esquina inferior derecha.
+
+GENERADOR DE SONIDO DE FONDO EN TIEMPO REAL (44,1 kHz)
+Bloquea el ruido ambiental con tres paisajes sonoros generados matemáticamente al instante sin conexión:
+• TIC SUAVE: Pulso mecánico cálido y sutil.
+• LLUVIA: Lluvia relajante con modulación orgánica de gotas.
+• RUIDO MARRÓN: Calidez de baja frecuencia ideal para largas sesiones de programación, lectura o estudio musical.
+
+4 PREAJUSTES DE DURACIÓN Y REGISTRO DE HORAS LOCAL
+• Clásico (25/5/15), Profundo (50/10/20), Estudio (45/15/30) y Sprint (15/3/10).
+• Registra automáticamente tus sesiones y horas enfocadas de Hoy y Totales en tu dispositivo.
+• Diseño Vertical y Horizontal, 100 % offline, sin permisos y sin anuncios.

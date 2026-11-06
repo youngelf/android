@@ -1,0 +1,20 @@
+Desarrolla un oído relativo preciso, reconocimiento armónico y memoria musical con EarTrainer: Gimnasio Auditivo de Intervalos, Acordes y Escalas. Diseñado para guitarristas, pianistas, cantantes y estudiantes de música, EarTrainer combina cuatro módulos progresivos de entrenamiento auditivo con un teclado interactivo de 2 octavas, tres timbres de instrumentos sintetizados y estadísticas de precisión.
+
+CUATRO MÓDULOS DE ENTRENAMIENTO AUDITIVO
+1. RECONOCIMIENTO DE INTERVALOS
+• Los 13 intervalos cromáticos: Desde la 2.ª menor (m2) hasta la Octava justa (P8), pasando por el Tritono (TT) y la 5.ª justa (P5).
+• 3 direcciones de reproducción: Ascendente, Descendente o Armónico (simultáneo).
+
+2. IDENTIFICACIÓN DE ACORDES
+• 9 cualidades de tríadas y séptimas: Mayor, Menor, Disminuido, Aumentado, Sus2, Sus4, 7.ª Dominante, Maj7 y m7.
+
+3. ESCALAS Y MODOS
+• 8 escalas y modos: Mayor (Jónico), Menor Natural, Menor Armónica, Menor Melódica, Dórico, Mixolidio, Lidio y Frigio.
+
+4. DICTADO MELÓDICO
+• Escucha frases melódicas de 3 a 5 notas y tócalas nota por nota.
+
+PIANO INTERACTIVO DE 2 OCTAVAS Y 3 TIMBRES EN TIEMPO REAL
+• Teclado interactivo (C4–C6) con desglose visual de la respuesta en semitonos.
+• 3 timbres sintetizados a 44,1 kHz: Piano de Cola, Guitarra Acústica (Karplus-Strong) y Órgano Cálido.
+• Diseño Vertical y Horizontal, 100 % sin conexión, cero permisos y sin anuncios.

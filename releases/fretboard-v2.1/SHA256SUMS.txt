@@ -1,0 +1,3 @@
+a64a76865f32d7739a51aa0008a25a5c5b86893e55c740a5a7ce68012e88a2fc  fretboard-v2.1-playstore-release.aab
+682c9bd91e35831c11149292fec8ee210bcea71a4e9568bc31712c107e519c85  fretboard-v2.1-release.apk
+bfd5d8d99886f3c9effd823668be2618cd41aff8bd6f7b58bf9a9d7b5730c512  fretboard-v2.1-debug.apk

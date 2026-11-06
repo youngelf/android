@@ -13,7 +13,7 @@
 ![Top Half Sleep Music Zone](docs/images/seg_header_controls.png)
 
 - **Top Half of Screen (Music Note Icon)**: The entire upper half of the display acts as a giant invisible button (`@+id/startMusic` in [`res/layout/main.xml`](res/layout/main.xml#L14-L22)) so you can operate it in a dark room without hunting for small targets.
-- **Custom `Music/sleeping` Folder or Built-In Lullaby**: Tapping anywhere on the top half plays shuffled audio tracks from your device's `Music/sleeping` directory (if present), or automatically falls back to the bundled looping lullaby jingle (`res/raw/jingle.mp3`).
+- **Custom `Music/sleeping` Folder or Built-In Public-Domain Lullaby**: Tapping anywhere on the top half plays shuffled audio tracks from your device's `Music/sleeping` directory (if present), or automatically falls back to the bundled public-domain Brahms Lullaby (`res/raw/jingle.ogg`).
 
 ### All-Night Clock Display (`@+id/clock`)
 ![All-Night Clock Display](docs/images/seg_core_canvas.png)
@@ -24,7 +24,7 @@
 ### Bottom Half — White Noise Control Zone (`@+id/cloud`)
 ![Bottom Half White Noise Zone](docs/images/seg_bottom_dock.png)
 
-- **Bottom Half of Screen (Rain Cloud Icon)**: Tap anywhere on the lower half of the display (`@+id/startWhiteNoise` in [`res/layout/main.xml`](res/layout/main.xml#L23-L31)) to start continuous, seamless white noise (`res/raw/noise.ogg`).
+- **Bottom Half of Screen (Rain Cloud Icon)**: Tap anywhere on the lower half of the display (`@+id/startWhiteNoise` in [`res/layout/main.xml`](res/layout/main.xml#L23-L31)) to start continuous, real-time procedural brownian/white sleep noise synthesized via `AudioTrack`.
 
 ### Active Playback Pause Indicator (`||`)
 ![Active Playback Pause State](docs/images/seg_help_modal.png)

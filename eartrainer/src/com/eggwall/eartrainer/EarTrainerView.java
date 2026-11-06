@@ -704,7 +704,7 @@ public final class EarTrainerView extends View {
 
     private void drawHelpModal(Canvas c, int w, int h) {
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(0xD8080B12);
+        mPaint.setColor(0xEC080B12);
         c.drawRect(0, 0, w, h, mPaint);
 
         float mw = w * 0.90f;
@@ -721,20 +721,21 @@ public final class EarTrainerView extends View {
         c.drawRoundRect(mHelpModalRect, 18f, 18f, mPaint);
         mPaint.setStyle(Paint.Style.FILL);
 
-        float pad = Math.max(14f, mw * 0.03f);
-        float hdrH = Math.max(44f, mh * 0.105f);
-        float closeW = Math.max(96f, mw * 0.18f);
-        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        float minDim = Math.min(w, h);
+        float pad = Math.max(16f, mw * 0.032f);
+        float hdrH = Math.max(52f, Math.min(mh * 0.105f, minDim * 0.095f));
+        float closeW = Math.max(114f, mw * 0.21f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 12f, mx + mw - pad, my + 12f + hdrH - 6f);
         drawPill(c, mHelpCloseRect, AppI18n.str(getContext(), R.string.close), 0xFF3A1A22, 0xFFFF6B6B, 0xFFFFFFFF);
 
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setTextAlign(Paint.Align.LEFT);
         mPaint.setTypeface(Typeface.DEFAULT_BOLD);
-        mPaint.setTextSize(Math.min(hdrH * 0.46f, 22f));
+        mPaint.setTextSize(Math.max(20f, Math.min(hdrH * 0.50f, minDim * 0.048f)));
         mPaint.setColor(0xFF6BFFB8);
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
-                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mPaint,
-                mHelpCloseRect.left - (mx + pad + 12f));
+                mx + pad, my + 12f + (hdrH - 6f) * 0.68f, mPaint,
+                mHelpCloseRect.left - (mx + pad + 24f));
 
         Context ctx = getContext();
         String[] titles = {
@@ -749,9 +750,9 @@ public final class EarTrainerView extends View {
         };
         int[] titleCols = { 0xFF6EC6FF, 0xFFFFC042, 0xFF5CE6B0 };
 
-        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 12f);
-        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
-        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 12f, mx + mw - pad, my + mh - 14f);
+        float titleSz = Math.max(18f, Math.min(50f, minDim * 0.044f));
+        float bodySz = Math.max(16f, Math.min(45f, minDim * 0.039f));
         Paint fillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mHelpViewportRect, titles, bodies, titleCols,

@@ -1,0 +1,1 @@
+Metrónomo de péndulo de precisión con compases irregulares, polirritmos y BPM.

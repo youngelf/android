@@ -1,0 +1,26 @@
+Padroneggia la teoria musicale, l'armonia e i voicing per chitarra su un unico schermo interattivo con ChordWheel: Circolo delle Quinte e Looper per Chitarra. Creato per chitarristi, cantautori, studenti di musica e insegnanti, ChordWheel trasforma il classico Circolo delle Quinte in uno strumento musicale suonabile in tempo reale.
+
+Che tu stia cercando gli accordi di una tonalità, trasponendo un brano al volo, esplorando le forme CAGED lungo la tastiera o improvvisando su un giro armonico di 4 battute, ChordWheel ti offre un feedback visivo e sonoro immediato, senza pubblicità e completamente offline.
+
+RUOTA ARMONICA CONCENTRICA DEL CIRCOLO DELLE QUINTE
+• Anello Maggiore Esterno: Mostra tutte le 12 tonalità maggiori ordinate per quinte (C, G, D, A, E, B/Cb, F#/Gb, Db, Ab, Eb, Bb, F) ed evidenzia gli accordi maggiori diatonici principali (I, IV e V).
+• Anello Minore Relativo Interno: Allinea ogni tonalità con la sua relativa minore ed evidenzia gli accordi minori diatonici (ii, iii e vi).
+• Settore Diminuito Centrale e Numeri Romani: Indica chiaramente l'accordo diminuito sul settimo grado (vii°) ed etichetta ogni accordo con la sua funzione armonica (I, ii, iii, IV, V, vi, vii°).
+• Modalità RUOTA e BLOCCA (LOCK): Ruota la ghiera per portare qualsiasi tonalità a ore 12, oppure blocca il Do (C) in alto toccando liberamente gli accordi lungo il perimetro.
+
+FORMULE DEI GRADI DELLA SCALA ED ESTENSIONI DI SETTIMA
+• Lettura in Tempo Reale dei Gradi: Visualizza i gradi esatti dell'accordo selezionato rispetto alla tonalità attiva (ad es. I = 1 - 3 - 5, IV = 4 - 6 - 8, V7 = 5 - 7 - 9 - 11) insieme ai nomi delle singole note.
+• Accordi di Settima Istantanei: Espandi qualsiasi triade in un accordo di settima (maj7, m7, dom7, m7b5) con un solo tocco.
+
+VOICING CHITARRA CAGED E SINTESI KARPLUS-STRONG
+• Tre Posizioni sul Manico per Accordo: Passa istantaneamente tra forme Aperte/CAGED, barrè in forma di Mi (6ª corda) e barrè in forma di La (5ª corda).
+• Diteggiature, Barrè e Corde Stoppate: Ogni diagramma mostra i numeri delle dita (1–4), gli archi del barrè, le corde a vuoto (O), le corde stoppate (X) e il numero del tasto.
+• Sintesi Chitarra Acustica a 44,1 kHz: Tocca uno spicchio della ruota o scorri sul diagramma del manico per ascoltare una pennata di chitarra a 6 corde modellata fisicamente (Karplus-Strong) in tempo reale.
+
+LOOPER A 4 BATTUTE E PROGRESSIONI PRESET
+• Sequencer Armonico a 4 Battute: Assegna qualsiasi accordo alle battute 1–4 per comporre strofe e ritornelli o creare una base per l'improvvisazione.
+• Progressioni Classiche Integrate: Carica all'istante giri Pop I–V–vi–IV, Jazz ii–V–I–VI, Cadenza Andalusa, Doo-Wop e Blues, trasponendoli in tutte le 12 tonalità.
+
+PROGETTATO PER I MUSICISTI — PRIVACY TOTALE E 100% OFFLINE
+• Layout Verticale (Portrait) e Orizzontale (Landscape) ottimizzati per smartphone e tablet.
+• Zero autorizzazioni richieste, nessuna raccolta dati, zero pubblicità e funzionamento 100% offline.

@@ -16,8 +16,8 @@
 - **Immersive Fullscreen**: Hides the title/action bar, system status bar, and on-screen navigation buttons (Home, Recents, Back) so the clock uses the entire screen without bright system UI chrome.
 - **Screen Burn-In Protection & Progressive Dimming**: Every 10 minutes, the clock and control icons smoothly animate to new random positions on screen, and the icons progressively dim so the display becomes as dark as possible overnight. Touching a control restores icon brightness.
 - **White Noise & Sleep Music**:
-  - **Top half of screen (Music Note)**: Plays random tracks from `[ExternalStorage]/Music/sleeping` if present, or falls back to a bundled looping jingle (`res/raw/jingle.mp3`).
-  - **Bottom half of screen (Rain Cloud)**: Loops bundled white noise (`res/raw/noise.ogg`).
+  - **Top half of screen (Music Note)**: Plays random tracks from `[ExternalStorage]/Music/sleeping` if present, or falls back to a bundled public-domain Brahms Lullaby (`res/raw/jingle.ogg`).
+  - **Bottom half of screen (Rain Cloud)**: Synthesizes warm, soothing brownian/white sleep noise in real time via `AudioTrack`.
   - Tapping the active half a second time stops playback and returns to silence.
 
 ---

@@ -1,0 +1,1 @@
+v1.0: Initial release featuring 12 backing styles, 9 chord progressions, 5-track 16-step drum & bass sequencer, 3-channel mixer, 12-fret guitar solo scale map, real-time 44.1 kHz synthesis, and 20-language localization.

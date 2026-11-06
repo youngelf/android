@@ -1,0 +1,20 @@
+Développez une oreille relative précise, la reconnaissance harmonique et votre mémoire musicale avec EarTrainer : Entraînement de l'Oreille Musicale. Conçu pour les guitaristes, pianistes, chanteurs et étudiants en musique, EarTrainer réunit 4 modules progressifs, un clavier interactif de 2 octaves, 3 timbres d'instruments synthétisés et un suivi de précision en temps réel.
+
+QUATRE MODULES COMPLETS D'ENTRAÎNEMENT AUDITIF
+1. RECONNAISSANCE DES INTERVALLES
+• Les 13 intervalles chromatiques : De la seconde mineure (m2) à l'octave juste (P8) en passant par le triton (TT) et la quinte juste (P5).
+• 3 modes d'écoute : Ascendant, Descendant ou Harmonique (notes jouées simultanément).
+
+2. IDENTIFICATION DES ACCORDS
+• 9 qualités d'accords essentiels : Majeur, Mineur, Diminué, Augmenté, Sus2, Sus4, 7e de dominante, Majeur 7 et Mineur 7.
+
+3. GAMMES ET MODES
+• 8 gammes et modes : Majeur (Ionien), Mineur naturel, Mineur harmonique, Mineur mélodique, Dorien, Mixolydien, Lydien et Phrygien.
+
+4. DICTÉE MÉLODIQUE
+• Écoutez de courtes phrases mélodiques de 3 à 5 notes et rejouez-les note par note pour développer vos réflexes de transcription.
+
+PIANO INTERACTIF 2 OCTAVES ET 3 TIMBRES D'INSTRUMENTS
+• Clavier jouable (C4–C6) avec affichage visuel des intervalles en demi-tons après chaque réponse.
+• 3 timbres synthétisés en temps réel à 44,1 kHz : Piano à queue, Guitare acoustique (Karplus-Strong) et Orgue de studio.
+• Portrait et Paysage, 100 % hors ligne, zéro permission et sans publicité.

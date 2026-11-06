@@ -23,7 +23,7 @@ import android.view.View;
  * Tap Tempo, 4-bar Lock-In / Drop% inner-clock trainer, and an in-app Help
  * overlay modal (`[?]`).
  */
-public final class MetronomeView extends View {
+public final class MetronomeView extends View implements MetronomeSynthEngine.BarListener {
 
     private static final String PREFS_NAME = "metronome_prefs";
     private static final String KEY_BPM = "bpm";
@@ -95,6 +95,12 @@ public final class MetronomeView extends View {
 
         mTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
         loadPreferences();
+        mEngine.setBarListener(this);
+    }
+
+    @Override
+    public void onBarAdvanced(int measureCount, int effectiveBpm) {
+        postInvalidateOnAnimation();
     }
 
     private void loadPreferences() {
@@ -169,10 +175,6 @@ public final class MetronomeView extends View {
 
         if (mShowHelpModal) {
             drawHelpModal(canvas, w, h);
-        }
-
-        if (mEngine.isPlaying()) {
-            postInvalidateOnAnimation();
         }
     }
 
@@ -272,16 +274,14 @@ public final class MetronomeView extends View {
         c.drawArc(arcRect, 270f - maxDeg, maxDeg * 2f, false, mPaint);
 
         float angleDeg = 0f;
-        if (mEngine.isPlaying()) {
-            angleDeg = MetronomeTheory.computePendulumAngleDeg(
-                    mEngine.getCurrentBeat(), mEngine.getBeatPhase0to1(), maxDeg);
-        }
         double rad = Math.toRadians(angleDeg);
         float tipX = cx + (float) Math.sin(rad) * armLen;
         float tipY = pivotY - (float) Math.cos(rad) * armLen;
 
+        int drop = mEngine.getDropPct();
+        int bar = mEngine.getMeasureCount();
         int armColor = mEngine.isPlaying()
-                ? (mEngine.isLastBeatDropped() ? COL_PURPLE : (mEngine.getCurrentBeat() == 0 ? COL_CORAL : COL_CYAN))
+                ? ((drop > 0 && bar >= MetronomeTheory.LOCK_IN_MEASURES) ? COL_PURPLE : COL_EMERALD)
                 : COL_AMBER;
 
         mPaint.setColor(armColor);
@@ -300,12 +300,10 @@ public final class MetronomeView extends View {
         MetronomeTheory.TimeSignature ts = MetronomeTheory.TIME_SIGNATURES[mEngine.getTimeSignatureIndex()];
         drawLeftText(c, ts.name + " " + ts.feelName.toUpperCase(), r.left + dp(12f), r.top + dp(18f), dp(11f), COL_CYAN);
 
-        int drop = mEngine.getDropPct();
-        int bar = mEngine.getMeasureCount();
         String lockLabel = (drop == 0) ? " STEADY CLICK"
                 : (bar < MetronomeTheory.LOCK_IN_MEASURES
                         ? ("LOCK-IN " + (bar + 1) + "/4")
-                        : (mEngine.isLastBeatDropped() ? "STEALTH DROP!" : ("DROP " + drop + "% ACTIVE")));
+                        : ("DROP " + drop + "% ACTIVE"));
         int lockCol = (drop > 0 && bar >= 4) ? COL_PURPLE : COL_SUBTEXT;
         drawRightText(c, lockLabel, r.right - dp(12f), r.top + dp(18f), dp(11f), lockCol);
     }
@@ -318,10 +316,6 @@ public final class MetronomeView extends View {
         float slotW = availW / beats;
         float orbR = Math.min(dp(18f), Math.min(slotW * 0.38f, r.height() * 0.28f));
 
-        long elapsedMs = SystemClock.uptimeMillis() - mEngine.getLastBeatUptimeMs();
-        float pulseScale = (mEngine.isPlaying() && elapsedMs >= 0 && elapsedMs < 140)
-                ? (1.0f + 0.22f * (1.0f - elapsedMs / 140f)) : 1.0f;
-
         for (int i = 0; i < mBeatRects.length; i++) {
             if (i >= beats) {
                 mBeatRects[i].setEmpty();
@@ -332,27 +326,25 @@ public final class MetronomeView extends View {
             mBeatRects[i].set(cx - slotW * 0.48f, r.top + dp(4f), cx + slotW * 0.48f, r.bottom - dp(4f));
 
             int state = mEngine.getBeatState(i);
-            boolean active = mEngine.isPlaying() && (mEngine.getCurrentBeat() == i);
             int baseCol = (state == MetronomeTheory.BEAT_ACCENT) ? COL_CORAL
                     : (state == MetronomeTheory.BEAT_SUB_ACCENT) ? COL_AMBER
                     : (state == MetronomeTheory.BEAT_NORMAL) ? COL_CYAN : COL_MUTED;
 
-            float drawR = active ? orbR * pulseScale : orbR;
-            if (active) {
+            if (mEngine.isPlaying() && state != MetronomeTheory.BEAT_MUTE) {
                 mPaint.setStyle(Paint.Style.FILL);
-                mPaint.setColor((baseCol & 0x00FFFFFF) | 0x44000000);
-                c.drawCircle(cx, cy, drawR * 1.38f, mPaint);
+                mPaint.setColor((baseCol & 0x00FFFFFF) | 0x2A000000);
+                c.drawCircle(cx, cy, orbR * 1.24f, mPaint);
             }
 
             mPaint.setStyle(state == MetronomeTheory.BEAT_MUTE ? Paint.Style.STROKE : Paint.Style.FILL);
             mPaint.setStrokeWidth(dp(2f));
             mPaint.setColor(baseCol);
-            c.drawCircle(cx, cy, drawR, mPaint);
+            c.drawCircle(cx, cy, orbR, mPaint);
 
             int numCol = (state == MetronomeTheory.BEAT_MUTE) ? COL_SUBTEXT : COL_BG_TOP;
             drawCenteredText(c, String.valueOf(i + 1), cx, cy, dp(11.5f), numCol);
             drawCenteredText(c, MetronomeTheory.getBeatStateLabel(state),
-                    cx, r.bottom - dp(10f), dp(8.5f), active ? COL_TEXT : COL_SUBTEXT);
+                    cx, r.bottom - dp(10f), dp(8.5f), COL_SUBTEXT);
         }
     }
 
@@ -451,18 +443,18 @@ public final class MetronomeView extends View {
         mPaint.setColor(0xD8050811);
         c.drawRect(0, 0, w, h, mPaint);
 
-        float mw = Math.min(w - dp(24f), dp(520f));
-        float mh = Math.min(h - dp(28f), dp(480f));
+        float mw = Math.min(w - dp(20f), dp(540f));
+        float mh = Math.min(h * 0.84f, dp(640f));
         mModalCardRect.set((w - mw) * 0.5f, (h - mh) * 0.5f, (w + mw) * 0.5f, (h + mh) * 0.5f);
         RectF card = mModalCardRect;
         drawRoundCard(c, card, dp(18f), COL_CARD, COL_CYAN, dp(2f));
 
         String titleText = AppI18n.str(getContext(), R.string.help_title);
-        mTextPaint.setTextSize(dp(15f));
+        mTextPaint.setTextSize(dp(19.5f));
         mTextPaint.setColor(COL_CYAN);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
-        AppI18n.drawTextFit(c, titleText, card.centerX(), card.top + dp(26f) - (fm.ascent + fm.descent) * 0.5f,
+        AppI18n.drawTextFit(c, titleText, card.centerX(), card.top + dp(29f) - (fm.ascent + fm.descent) * 0.5f,
                 mTextPaint, card.width() - dp(28f));
 
         Context ctx = getContext();
@@ -480,18 +472,18 @@ public final class MetronomeView extends View {
         };
         int[] titleCols = { COL_CYAN, COL_CORAL, COL_AMBER, COL_EMERALD };
 
-        mModalCloseRect.set(card.centerX() - dp(96f), card.bottom - dp(44f),
-                card.centerX() + dp(96f), card.bottom - dp(10f));
+        mModalCloseRect.set(card.centerX() - dp(108f), card.bottom - dp(50f),
+                card.centerX() + dp(108f), card.bottom - dp(10f));
         drawRoundCard(c, mModalCloseRect, dp(10f), COL_CYAN, COL_TEXT, dp(1f));
         drawCenteredText(c, AppI18n.str(ctx, R.string.got_it),
-                mModalCloseRect.centerX(), mModalCloseRect.centerY(), dp(12.5f), COL_BG_TOP);
+                mModalCloseRect.centerX(), mModalCloseRect.centerY(), dp(15.5f), COL_BG_TOP);
 
-        mModalViewportRect.set(card.left + dp(12f), card.top + dp(46f),
-                card.right - dp(12f), mModalCloseRect.top - dp(8f));
+        mModalViewportRect.set(card.left + dp(12f), card.top + dp(52f),
+                card.right - dp(12f), mModalCloseRect.top - dp(10f));
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mModalViewportRect, titles, bodies, titleCols,
                 COL_TEXT, COL_CARD_ALT, COL_BORDER, COL_CYAN,
-                dp(12.5f), dp(11.2f), mHelpScrollY, mTextPaint, mPaint);
+                dp(17.5f), dp(15.8f), mHelpScrollY, mTextPaint, mPaint);
         mHelpScrollY = Math.max(0f, Math.min(mHelpScrollY, mHelpMaxScrollY));
     }
 

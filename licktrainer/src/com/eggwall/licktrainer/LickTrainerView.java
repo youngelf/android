@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
-import android.os.SystemClock;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,7 +22,7 @@ import android.view.View;
  *   <li>Responsive Portrait (vertical stack) and Landscape (two-pane split) layouts</li>
  * </ul>
  */
-public class LickTrainerView extends View {
+public class LickTrainerView extends View implements LickSynthEngine.BarListener {
 
     private static final String PREFS_NAME = "licktrainer_prefs";
 
@@ -62,26 +61,32 @@ public class LickTrainerView extends View {
     private boolean mShowHelp = false;
     private int mHelpTab = 0;
 
-    private long mLastTickMs = 0L;
-    private double mStepAccumMs = 0.0;
-
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
+    private final RectF mRectHeader   = new RectF();
     private final RectF mRectHelpPill = new RectF();
     private final RectF mRectCatPrev  = new RectF();
     private final RectF mRectCatNext  = new RectF();
+    private final RectF mRectCatMid   = new RectF();
     private final RectF mRectLickPrev = new RectF();
     private final RectF mRectLickNext = new RectF();
+    private final RectF mRectLickMid  = new RectF();
     private final RectF mRectKeyPill  = new RectF();
     private final RectF mRectMixPill  = new RectF();
     private final RectF mRectTabPanel = new RectF();
     private final RectF mRectNeckPanel = new RectF();
+    private final RectF mRectInspCard = new RectF();
+    private final RectF mRectDockCard = new RectF();
     private final RectF mRectPlayBtn  = new RectF();
     private final RectF mRectBpmMinus = new RectF();
     private final RectF mRectBpmPlus  = new RectF();
+    private final RectF mRectBpmMid   = new RectF();
     private final RectF mRectLadderBtn = new RectF();
     private final RectF mRectLoopBtn  = new RectF();
+    private final RectF mRectTabHighlight = new RectF();
+    private final RectF mRectNumBg    = new RectF();
+    private final RectF mRectBadge    = new RectF();
     private final RectF mRectModalClose = new RectF();
     private final RectF mRectModalTab0  = new RectF();
     private final RectF mRectModalTab1  = new RectF();
@@ -103,6 +108,19 @@ public class LickTrainerView extends View {
 
     public void setSynthEngine(LickSynthEngine synth) {
         mSynth = synth;
+        if (mSynth != null) {
+            mSynth.setBarListener(this);
+            pushStateToSynth();
+        }
+    }
+
+    @Override
+    public void onBarAdvanced(int barsPlayed, int newBpm) {
+        mBarsPlayed = barsPlayed;
+        if (mBpm != newBpm) {
+            mBpm = newBpm;
+        }
+        postInvalidateOnAnimation();
     }
 
     private LickTheory.LickDef currentLick() {
@@ -115,8 +133,24 @@ public class LickTrainerView extends View {
         mBaseBpm = mBpm;
         mCurStep = 0;
         mLoopStartStep = 0;
-        mLoopEndStep = Math.min(lick.numSteps - 1, lick.stepsPerBeat * 2 - 1);
+        mLoopEndStep = Math.min(lick.numSteps - 1, lick.stepsPerBeat - 1);
         mBarsPlayed = 0;
+        pushStateToSynth();
+    }
+
+    private void pushStateToSynth() {
+        if (mSynth == null) return;
+        mSynth.syncSequencerState(
+                currentLick(),
+                mKeyIdx,
+                mBpm,
+                mBaseBpm,
+                mLadderIdx,
+                mMixMode,
+                mLoopSubRange,
+                mLoopStartStep,
+                mLoopEndStep,
+                mBarsPlayed);
     }
 
     public void loadState(Context ctx) {
@@ -129,6 +163,7 @@ public class LickTrainerView extends View {
         syncLickDefaults();
         mBpm = LickTheory.clamp(sp.getInt("bpm", mBpm), LickTheory.MIN_BPM, LickTheory.MAX_BPM);
         mBaseBpm = mBpm;
+        pushStateToSynth();
     }
 
     public void saveState(Context ctx) {
@@ -159,7 +194,10 @@ public class LickTrainerView extends View {
         mLoopSubRange = !loopBar;
         mShowHelp = showHelp;
         mPlaying = playing;
-        mLastTickMs = SystemClock.uptimeMillis();
+        pushStateToSynth();
+        if (mSynth != null) {
+            mSynth.setPlaying(mPlaying, mCurStep);
+        }
         invalidate();
     }
 
@@ -170,66 +208,13 @@ public class LickTrainerView extends View {
     }
 
     public void previewCurrentStep() {
-        if (mSynth == null) return;
+        if (mSynth == null || mPlaying) return;
         LickTheory.LickDef lick = currentLick();
         LickTheory.LickStep st = lick.steps[LickTheory.clamp(mCurStep, 0, lick.numSteps - 1)];
         int midi = LickTheory.getStepMidi(st, mKeyIdx);
         if (midi > 0 && mMixMode != LickTheory.MIX_CLICK_ONLY) {
             mSynth.triggerLeadNote(midi, st.pick);
         }
-    }
-
-    private void triggerSequencerStep(int stepIdx) {
-        if (mSynth == null) return;
-        LickTheory.LickDef lick = currentLick();
-        LickTheory.LickStep st = lick.steps[stepIdx];
-        boolean isBeatStart = (stepIdx % lick.stepsPerBeat) == 0;
-        int beatIdx = stepIdx / lick.stepsPerBeat;
-
-        if (isBeatStart && mMixMode != LickTheory.MIX_TAB_ONLY) {
-            mSynth.triggerMetronomeClick(beatIdx == 0);
-        }
-        if (isBeatStart && mMixMode == LickTheory.MIX_TAB_BACK_CLICK) {
-            int[] backing = LickTheory.getBackingChordMidi(lick, beatIdx, mKeyIdx);
-            mSynth.triggerBackingChord(backing);
-        }
-        if (st.str >= 0 && mMixMode != LickTheory.MIX_CLICK_ONLY) {
-            int midi = LickTheory.getStepMidi(st, mKeyIdx);
-            mSynth.triggerLeadNote(midi, st.pick);
-        }
-    }
-
-    private void advanceSequencerClock() {
-        if (!mPlaying) return;
-        long now = SystemClock.uptimeMillis();
-        if (mLastTickMs == 0L) {
-            mLastTickMs = now;
-            return;
-        }
-        long dt = now - mLastTickMs;
-        mLastTickMs = now;
-        if (dt > 200L) dt = 200L;
-
-        LickTheory.LickDef lick = currentLick();
-        double stepDurMs = (60000.0 / Math.max(40, mBpm)) / lick.stepsPerBeat;
-        mStepAccumMs += dt;
-        while (mStepAccumMs >= stepDurMs) {
-            mStepAccumMs -= stepDurMs;
-            int minStep = mLoopSubRange ? mLoopStartStep : 0;
-            int maxStep = mLoopSubRange ? mLoopEndStep : (lick.numSteps - 1);
-            mCurStep++;
-            if (mCurStep > maxStep) {
-                mCurStep = minStep;
-                mBarsPlayed++;
-                LickTheory.LadderPreset lp = LickTheory.LADDERS[mLadderIdx];
-                if (lp.barsPerStep > 0 && (mBarsPlayed % lp.barsPerStep) == 0) {
-                    int goal = Math.min(LickTheory.MAX_BPM, mBaseBpm + lp.goalOffset);
-                    mBpm = Math.min(goal, mBpm + lp.bpmStep);
-                }
-            }
-            triggerSequencerStep(mCurStep);
-        }
-        postInvalidateOnAnimation();
     }
 
     @Override
@@ -256,7 +241,6 @@ public class LickTrainerView extends View {
 
             // Compact horizontal Tablature (top) + compact horizontal Fretboard (bottom) on left pane
             float tabH = (contentH - pad) * 0.50f;
-            float neckH = contentH - tabH - pad;
 
             mRectTabPanel.set(pad, contentTop, pad + leftW, contentTop + tabH);
             drawTabPanel(canvas, mRectTabPanel);
@@ -266,11 +250,11 @@ public class LickTrainerView extends View {
 
             // Right pane: Step/Finger Inspector card on top + Transport/Speed-Ladder cards below
             float inspH = contentH * 0.44f;
-            RectF inspRect = new RectF(rightX, contentTop, rightX + rightW, contentTop + inspH);
-            drawInspectorCard(canvas, inspRect);
+            mRectInspCard.set(rightX, contentTop, rightX + rightW, contentTop + inspH);
+            drawInspectorCard(canvas, mRectInspCard);
 
-            RectF dockRect = new RectF(rightX, inspRect.bottom + pad, rightX + rightW, contentTop + contentH);
-            drawTransportDock(canvas, dockRect, true);
+            mRectDockCard.set(rightX, mRectInspCard.bottom + pad, rightX + rightW, contentTop + contentH);
+            drawTransportDock(canvas, mRectDockCard, true);
         } else {
             // Portrait:
             // 1. Sleek 2-row Header (11.5% of h)
@@ -288,8 +272,8 @@ public class LickTrainerView extends View {
 
             // 3. Step, Note, Picking & Left-Hand Finger Legend Inspector Card (~19% of remH)
             float inspH = remH * 0.19f;
-            RectF inspRect = new RectF(pad, y, w - pad, y + inspH);
-            drawInspectorCard(canvas, inspRect);
+            mRectInspCard.set(pad, y, w - pad, y + inspH);
+            drawInspectorCard(canvas, mRectInspCard);
             y += inspH + pad;
 
             // 4. Compact 6-String Guitar Fretboard (~24.5% of remH)
@@ -299,25 +283,23 @@ public class LickTrainerView extends View {
             y += neckH + pad;
 
             // 5. Prominent Two-Row Transport & Speed-Builder Dock at bottom
-            RectF dockRect = new RectF(pad, y, w - pad, h - pad);
-            drawTransportDock(canvas, dockRect, false);
+            mRectDockCard.set(pad, y, w - pad, h - pad);
+            drawTransportDock(canvas, mRectDockCard, false);
         }
 
         if (mShowHelp) {
             drawHelpModal(canvas, w, h);
         }
-        if (mPlaying) {
-            advanceSequencerClock();
-        }
     }
 
     private void drawHeader(Canvas c, float x, float y, float w, float h) {
+        mRectHeader.set(x, y, x + w, y + h);
         mPaint.setColor(COL_PANEL);
-        c.drawRoundRect(new RectF(x, y, x + w, y + h), 14f, 14f, mPaint);
+        c.drawRoundRect(mRectHeader, 14f, 14f, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(2f);
         mPaint.setColor(COL_BORDER);
-        c.drawRoundRect(new RectF(x, y, x + w, y + h), 14f, 14f, mPaint);
+        c.drawRoundRect(mRectHeader, 14f, 14f, mPaint);
         mPaint.setStyle(Paint.Style.FILL);
 
         float rowH = (h - 16f) * 0.5f;
@@ -336,8 +318,8 @@ public class LickTrainerView extends View {
         mRectCatNext.set(catX + catW - arrowW, r1Y, catX + catW, r1Y + rowH);
         drawPill(c, mRectCatPrev, "<", COL_PANEL_ALT, COL_TEXT, rowH * 0.42f);
         drawPill(c, mRectCatNext, ">", COL_PANEL_ALT, COL_TEXT, rowH * 0.42f);
-        RectF catMid = new RectF(mRectCatPrev.right + 4f, r1Y, mRectCatNext.left - 4f, r1Y + rowH);
-        drawPill(c, catMid, LickTheory.CATEGORY_NAMES[mCatIdx], COL_BG, COL_GOLD, rowH * 0.36f);
+        mRectCatMid.set(mRectCatPrev.right + 4f, r1Y, mRectCatNext.left - 4f, r1Y + rowH);
+        drawPill(c, mRectCatMid, LickTheory.CATEGORY_NAMES[mCatIdx], COL_BG, COL_GOLD, rowH * 0.36f);
 
         // Key Pill & Audio Mix Pill on right of row 1
         float rightW = (x + w - 8f) - (catX + catW + 8f);
@@ -356,9 +338,9 @@ public class LickTrainerView extends View {
         drawPill(c, mRectLickPrev, "<", COL_PANEL_ALT, COL_CYAN, rowH * 0.42f);
         drawPill(c, mRectLickNext, ">", COL_PANEL_ALT, COL_CYAN, rowH * 0.42f);
 
-        RectF lickMid = new RectF(mRectLickPrev.right + 6f, r2Y, mRectLickNext.left - 6f, r2Y + rowH);
+        mRectLickMid.set(mRectLickPrev.right + 6f, r2Y, mRectLickNext.left - 6f, r2Y + rowH);
         String title = String.format("#%02d %s  •  %s", globalIdx + 1, lick.title, lick.subtitle);
-        drawPill(c, lickMid, title, COL_BG, COL_TEXT, rowH * 0.34f);
+        drawPill(c, mRectLickMid, title, COL_BG, COL_TEXT, rowH * 0.34f);
     }
 
     private void drawTabPanel(Canvas c, RectF r) {
@@ -366,7 +348,7 @@ public class LickTrainerView extends View {
         c.drawRoundRect(r, 14f, 14f, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(2f);
-        mPaint.setColor(COL_BORDER);
+        mPaint.setColor(mPlaying ? COL_GREEN : COL_BORDER);
         c.drawRoundRect(r, 14f, 14f, mPaint);
         mPaint.setStyle(Paint.Style.FILL);
 
@@ -383,13 +365,25 @@ public class LickTrainerView extends View {
         float botY = r.bottom - botPad;
         float strSpacing = (botY - topY) / 5f;
 
-        // Beat headers, vertical beat dividers & active step column highlight
+        if (mPlaying) {
+            // Calm bar-wide highlight over the active bar/loop span
+            int minStep = mLoopSubRange ? mLoopStartStep : 0;
+            int maxStep = mLoopSubRange ? mLoopEndStep : (nSteps - 1);
+            float activeLeft = leftMargin + minStep * colW;
+            float activeRight = leftMargin + (maxStep + 1) * colW;
+            mPaint.setColor(0x163CDC82);
+            mRectTabHighlight.set(activeLeft, r.top + 4f, activeRight, r.bottom - 4f);
+            c.drawRoundRect(mRectTabHighlight, 8f, 8f, mPaint);
+        }
+
+        // Beat headers, vertical beat dividers & step/loop shading
         for (int s = 0; s < nSteps; s++) {
             float cx = leftMargin + (s + 0.5f) * colW;
             boolean inLoop = !mLoopSubRange || (s >= mLoopStartStep && s <= mLoopEndStep);
-            if (s == mCurStep) {
+            if (!mPlaying && s == mCurStep) {
                 mPaint.setColor(0x3632D2FF);
-                c.drawRoundRect(new RectF(cx - colW * 0.48f, r.top + 4f, cx + colW * 0.48f, r.bottom - 4f), 8f, 8f, mPaint);
+                mRectTabHighlight.set(cx - colW * 0.48f, r.top + 4f, cx + colW * 0.48f, r.bottom - 4f);
+                c.drawRoundRect(mRectTabHighlight, 8f, 8f, mPaint);
             } else if (!inLoop) {
                 mPaint.setColor(0x55000000);
                 c.drawRect(cx - colW * 0.5f, topY - 8f, cx + colW * 0.5f, botY + 8f, mPaint);
@@ -433,26 +427,35 @@ public class LickTrainerView extends View {
         for (int s = 0; s < nSteps; s++) {
             LickTheory.LickStep st = lick.steps[s];
             float cx = leftMargin + (s + 0.5f) * colW;
+            boolean inLoop = !mLoopSubRange || (s >= mLoopStartStep && s <= mLoopEndStep);
             if (st.str >= 0) {
                 int row = 5 - st.str;
                 float sy = topY + row * strSpacing;
                 int fret = LickTheory.getActualFret(st, mKeyIdx);
                 String fretStr = String.valueOf(fret);
                 int fCol = FINGER_COLS[LickTheory.clamp(st.finger, 0, 4)];
-                boolean isCur = (s == mCurStep);
+                boolean isInspectedStep = (!mPlaying && s == mCurStep);
+                boolean isBarHighlighted = (mPlaying && inLoop);
 
                 mTextPaint.setTextSize(numTs);
                 float tw = mTextPaint.measureText(fretStr);
                 float boxHalfW = Math.max(tw * 0.58f + 5f, numTs * 0.42f);
                 float boxHalfH = numTs * 0.50f;
-                RectF numBg = new RectF(cx - boxHalfW, sy - boxHalfH, cx + boxHalfW, sy + boxHalfH);
+                mRectNumBg.set(cx - boxHalfW, sy - boxHalfH, cx + boxHalfW, sy + boxHalfH);
 
                 // Clean rectangular backing so the string line does not strike through the fret number
                 mPaint.setStyle(Paint.Style.FILL);
-                mPaint.setColor(isCur ? COL_GOLD : COL_PANEL);
-                c.drawRoundRect(numBg, 6f, 6f, mPaint);
+                mPaint.setColor(isInspectedStep ? COL_GOLD : (isBarHighlighted ? COL_PANEL_ALT : COL_PANEL));
+                c.drawRoundRect(mRectNumBg, 6f, 6f, mPaint);
+                if (isBarHighlighted) {
+                    mPaint.setStyle(Paint.Style.STROKE);
+                    mPaint.setStrokeWidth(1.5f);
+                    mPaint.setColor(fCol);
+                    c.drawRoundRect(mRectNumBg, 6f, 6f, mPaint);
+                    mPaint.setStyle(Paint.Style.FILL);
+                }
 
-                mTextPaint.setColor(isCur ? COL_BG : fCol);
+                mTextPaint.setColor(isInspectedStep ? COL_BG : fCol);
                 mTextPaint.setTextAlign(Paint.Align.CENTER);
                 Paint.FontMetrics fm = mTextPaint.getFontMetrics();
                 AppI18n.drawText(c, fretStr, cx, sy - (fm.ascent + fm.descent) * 0.5f, mTextPaint);
@@ -478,42 +481,62 @@ public class LickTrainerView extends View {
 
         LickTheory.LickDef lick = currentLick();
         LickTheory.LickStep cur = lick.steps[LickTheory.clamp(mCurStep, 0, lick.numSteps - 1)];
-        int midi = LickTheory.getStepMidi(cur, mKeyIdx);
-        String noteName = LickTheory.getNoteNameForMidi(midi);
-        int fret = cur.str >= 0 ? LickTheory.getActualFret(cur, mKeyIdx) : 0;
-        String strName = cur.str >= 0 ? String.valueOf(LickTheory.STR_LABELS[cur.str]) : "-";
-        String fingerName = LickTheory.FINGER_NAMES[LickTheory.clamp(cur.finger, 0, 4)];
-        String pickDesc = (cur.pick == 'D') ? "DOWN (D)"
-                : (cur.pick == 'U') ? "UP (U)"
-                : (cur.pick == 'H') ? "HAMMER (H)"
-                : (cur.pick == 'P') ? "PULL (P)" : "SLIDE (/)";
 
         float pad = 10f;
         float topRowH = (r.height() - pad * 3f) * 0.54f;
         float botRowH = r.height() - topRowH - pad * 3f;
 
-        // Top row: 4 status badges (STEP, NOTE/FRET, FINGER, PICK/TONE)
         float cellGap = 8f;
         float cellW = (r.width() - pad * 2f - cellGap * 3f) / 4f;
         float y1 = r.top + pad;
-        String[] topLabels = {
-            String.format("STEP %02d/%02d", mCurStep + 1, lick.numSteps),
-            "NOTE: " + noteName + " (" + strName + ":" + fret + "fr)",
-            "FINGER: " + fingerName,
-            lick.isJazz7ths()
-                    ? ("TONE: " + LickTheory.getJazzStepIntervalLabel(lick, mCurStep, mKeyIdx))
-                    : ("PICK: " + pickDesc)
-        };
-        int[] topCols = {
-            COL_CYAN,
-            COL_GOLD,
-            FINGER_COLS[LickTheory.clamp(cur.finger, 0, 4)],
-            cur.pick == 'D' ? COL_CYAN : (cur.pick == 'U' ? COL_GOLD : COL_PURPLE)
-        };
-        for (int i = 0; i < 4; i++) {
-            float bx = r.left + pad + i * (cellW + cellGap);
-            RectF br = new RectF(bx, y1, bx + cellW, y1 + topRowH);
-            drawPill(c, br, topLabels[i], COL_PANEL_ALT, topCols[i], topRowH * 0.38f);
+
+        if (mPlaying) {
+            // Calm bar-level summary during playback (no per-16th-note flashing)
+            LickTheory.KeyAnchor ka = LickTheory.KEYS[mKeyIdx];
+            String feelLbl = (lick.stepsPerBeat == 3) ? "TRIPLET (12)" : "16THS (16)";
+            String[] topLabels = {
+                "BAR " + (mBarsPlayed + 1),
+                "KEY: " + ka.name + " (" + ka.anchorFret + "fr)",
+                "FEEL: " + feelLbl,
+                "TEMPO: " + mBpm + " BPM"
+            };
+            int[] topCols = { COL_GREEN, COL_GOLD, COL_CYAN, COL_PURPLE };
+            for (int i = 0; i < 4; i++) {
+                float bx = r.left + pad + i * (cellW + cellGap);
+                mRectBadge.set(bx, y1, bx + cellW, y1 + topRowH);
+                drawPill(c, mRectBadge, topLabels[i], COL_PANEL_ALT, topCols[i], topRowH * 0.38f);
+            }
+        } else {
+            // Paused / Step-Inspection Mode: detailed single-step readout
+            int midi = LickTheory.getStepMidi(cur, mKeyIdx);
+            String noteName = LickTheory.getNoteNameForMidi(midi);
+            int fret = cur.str >= 0 ? LickTheory.getActualFret(cur, mKeyIdx) : 0;
+            String strName = cur.str >= 0 ? String.valueOf(LickTheory.STR_LABELS[cur.str]) : "-";
+            String fingerName = LickTheory.FINGER_NAMES[LickTheory.clamp(cur.finger, 0, 4)];
+            String pickDesc = (cur.pick == 'D') ? "DOWN (D)"
+                    : (cur.pick == 'U') ? "UP (U)"
+                    : (cur.pick == 'H') ? "HAMMER (H)"
+                    : (cur.pick == 'P') ? "PULL (P)" : "SLIDE (/)";
+
+            String[] topLabels = {
+                String.format("STEP %02d/%02d", mCurStep + 1, lick.numSteps),
+                "NOTE: " + noteName + " (" + strName + ":" + fret + "fr)",
+                "FINGER: " + fingerName,
+                lick.isJazz7ths()
+                        ? ("TONE: " + LickTheory.getJazzStepIntervalLabel(lick, mCurStep, mKeyIdx))
+                        : ("PICK: " + pickDesc)
+            };
+            int[] topCols = {
+                COL_CYAN,
+                COL_GOLD,
+                FINGER_COLS[LickTheory.clamp(cur.finger, 0, 4)],
+                cur.pick == 'D' ? COL_CYAN : (cur.pick == 'U' ? COL_GOLD : COL_PURPLE)
+            };
+            for (int i = 0; i < 4; i++) {
+                float bx = r.left + pad + i * (cellW + cellGap);
+                mRectBadge.set(bx, y1, bx + cellW, y1 + topRowH);
+                drawPill(c, mRectBadge, topLabels[i], COL_PANEL_ALT, topCols[i], topRowH * 0.38f);
+            }
         }
 
         // Bottom row: Left-Hand Finger Color Legend (1:Index, 2:Middle, 3:Ring, 4:Pinky)
@@ -522,9 +545,9 @@ public class LickTrainerView extends View {
         for (int i = 0; i < 4; i++) {
             int fNum = i + 1;
             float bx = r.left + pad + i * (cellW + cellGap);
-            RectF br = new RectF(bx, y2, bx + cellW, y2 + botRowH);
-            boolean activeFinger = (cur.finger == fNum);
-            drawPill(c, br, fNames[i],
+            mRectBadge.set(bx, y2, bx + cellW, y2 + botRowH);
+            boolean activeFinger = (!mPlaying && cur.finger == fNum);
+            drawPill(c, mRectBadge, fNames[i],
                     activeFinger ? FINGER_COLS[fNum] : COL_BG,
                     activeFinger ? COL_BG : FINGER_COLS[fNum],
                     botRowH * 0.40f);
@@ -595,11 +618,13 @@ public class LickTrainerView extends View {
             AppI18n.drawText(c, String.valueOf(LickTheory.STR_LABELS[strIdx]), r.left + 21f, sy + strLabelTs * 0.35f, mTextPaint);
         }
 
-        // Ghost dots for non-active steps first, then active step on top
+        // During playback: highlight all notes in the active bar/loop steadily without a jumping dot.
+        // When paused: ghost dots for non-active steps first, then the inspected step on top.
         float dotR = Math.min(fretW * 0.34f, strH * 0.44f);
         for (int pass = 0; pass < 2; pass++) {
             for (int s = 0; s < lick.numSteps; s++) {
-                boolean isActive = (s == mCurStep);
+                boolean inLoop = !mLoopSubRange || (s >= mLoopStartStep && s <= mLoopEndStep);
+                boolean isActive = mPlaying ? inLoop : (s == mCurStep);
                 if ((pass == 0 && isActive) || (pass == 1 && !isActive)) continue;
                 LickTheory.LickStep st = lick.steps[s];
                 if (st.str < 0) continue;
@@ -609,13 +634,13 @@ public class LickTrainerView extends View {
                 float cx = (relFret == 0) ? (leftX - dotR * 0.4f) : (leftX + (relFret - 0.5f) * fretW);
                 float cy = topY + (5 - st.str) * strH;
                 int fCol = FINGER_COLS[LickTheory.clamp(st.finger, 0, 4)];
-                float rad = isActive ? dotR * 1.16f : dotR * 0.86f;
+                float rad = isActive ? (mPlaying ? dotR * 1.00f : dotR * 1.16f) : dotR * 0.86f;
 
                 mPaint.setStyle(Paint.Style.FILL);
                 mPaint.setColor(isActive ? fCol : 0xCC161C28);
                 c.drawCircle(cx, cy, rad, mPaint);
                 mPaint.setStyle(Paint.Style.STROKE);
-                mPaint.setStrokeWidth(isActive ? 3f : 2f);
+                mPaint.setStrokeWidth(isActive ? 2.5f : 2f);
                 mPaint.setColor(isActive ? COL_TEXT : fCol);
                 c.drawCircle(cx, cy, rad, mPaint);
                 mPaint.setStyle(Paint.Style.FILL);
@@ -659,9 +684,9 @@ public class LickTrainerView extends View {
         float stepBtnW = bpmW * 0.26f;
         mRectBpmMinus.set(bpmX, r1Y, bpmX + stepBtnW, r1Y + rowH);
         mRectBpmPlus.set(bpmX + bpmW - stepBtnW, r1Y, bpmX + bpmW, r1Y + rowH);
-        RectF bpmMid = new RectF(mRectBpmMinus.right + 6f, r1Y, mRectBpmPlus.left - 6f, r1Y + rowH);
+        mRectBpmMid.set(mRectBpmMinus.right + 6f, r1Y, mRectBpmPlus.left - 6f, r1Y + rowH);
         drawPill(c, mRectBpmMinus, "- 5", COL_PANEL_ALT, COL_CYAN, rowH * 0.36f);
-        drawPill(c, bpmMid, mBpm + " BPM", COL_BG, COL_GOLD, rowH * 0.38f);
+        drawPill(c, mRectBpmMid, mBpm + " BPM", COL_BG, COL_GOLD, rowH * 0.38f);
         drawPill(c, mRectBpmPlus, "+ 5", COL_PANEL_ALT, COL_CYAN, rowH * 0.36f);
 
         // Row 2: Prominent Speed-Builder LADDER selector + Sub-Range LOOP toggle
@@ -693,24 +718,26 @@ public class LickTrainerView extends View {
         c.drawRoundRect(mr, 18f, 18f, mPaint);
         mPaint.setStyle(Paint.Style.FILL);
 
-        float pad = Math.max(12f, mw * 0.025f);
-        float hdrH = Math.max(42f, mh * 0.105f);
-        float closeW = Math.max(96f, mw * 0.18f);
-        float availTabsW = mw - pad * 3f - closeW - 10f;
-        float tabW = Math.min(240f, availTabsW * 0.48f);
+        float minDim = Math.min(w, h);
+        float pad = Math.max(14f, mw * 0.028f);
+        float hdrH = Math.max(50f, Math.min(mh * 0.105f, minDim * 0.092f));
+        float closeW = Math.max(108f, mw * 0.20f);
+        float availTabsW = mw - pad * 3f - closeW - 14f;
+        float tabW = Math.min(350f, availTabsW * 0.49f);
 
         mRectModalTab0.set(mr.left + pad, mr.top + 12f, mr.left + pad + tabW, mr.top + 12f + hdrH);
         mRectModalTab1.set(mRectModalTab0.right + 10f, mr.top + 12f, mRectModalTab0.right + 10f + tabW, mr.top + 12f + hdrH);
         mRectModalClose.set(mr.right - pad - closeW, mr.top + 12f, mr.right - pad, mr.top + 12f + hdrH);
 
+        float tabTs = Math.max(16f, Math.min(38f, minDim * 0.035f));
         Context ctx = getContext();
         drawPill(c, mRectModalTab0, AppI18n.str(ctx, R.string.help_tab_howto),
                 mHelpTab == 0 ? COL_CYAN : COL_PANEL_ALT,
-                mHelpTab == 0 ? COL_BG : COL_TEXT, 18f);
+                mHelpTab == 0 ? COL_BG : COL_TEXT, tabTs);
         drawPill(c, mRectModalTab1, AppI18n.str(ctx, R.string.help_tab_jazz),
                 mHelpTab == 1 ? COL_CYAN : COL_PANEL_ALT,
-                mHelpTab == 1 ? COL_BG : COL_TEXT, 18f);
-        drawPill(c, mRectModalClose, AppI18n.str(ctx, R.string.close), COL_CORAL, COL_BG, 18f);
+                mHelpTab == 1 ? COL_BG : COL_TEXT, tabTs);
+        drawPill(c, mRectModalClose, AppI18n.str(ctx, R.string.close), COL_CORAL, COL_BG, tabTs);
 
         String[] titles;
         String[] bodies;
@@ -743,9 +770,9 @@ public class LickTrainerView extends View {
             titleCols = new int[]{ COL_GOLD, COL_CYAN, COL_GREEN };
         }
 
-        mRectModalViewport.set(mr.left + pad, mRectModalClose.bottom + 10f, mr.right - pad, mr.bottom - 12f);
-        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
-        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mRectModalViewport.set(mr.left + pad, mRectModalClose.bottom + 12f, mr.right - pad, mr.bottom - 14f);
+        float titleSz = Math.max(18f, Math.min(50f, minDim * 0.044f));
+        float bodySz = Math.max(16f, Math.min(45f, minDim * 0.039f));
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mRectModalViewport, titles, bodies, titleCols,
                 COL_TEXT, COL_PANEL_ALT, COL_BORDER, COL_CYAN,
@@ -766,7 +793,7 @@ public class LickTrainerView extends View {
         mTextPaint.setColor(fgCol);
         float ts = Math.min(textSize, r.height() * 0.44f);
         mTextPaint.setTextSize(ts);
-        float maxW = Math.max(12f, r.width() - 12f);
+        float maxW = Math.max(12f, r.width() - 26f);
         float measured = mTextPaint.measureText(text);
         if (measured > maxW && measured > 0f) {
             ts = ts * (maxW / measured);
@@ -859,24 +886,23 @@ public class LickTrainerView extends View {
         }
         if (mRectKeyPill.contains(x, y)) {
             mKeyIdx = (mKeyIdx + 1) % LickTheory.NUM_KEYS;
+            pushStateToSynth();
             previewCurrentStep();
             invalidate();
             return true;
         }
         if (mRectMixPill.contains(x, y)) {
             mMixMode = (mMixMode + 1) % LickTheory.MIX_COUNT;
+            pushStateToSynth();
             previewCurrentStep();
             invalidate();
             return true;
         }
         if (mRectPlayBtn.contains(x, y)) {
             mPlaying = !mPlaying;
-            mLastTickMs = SystemClock.uptimeMillis();
-            mStepAccumMs = 0.0;
-            if (mPlaying) {
-                triggerSequencerStep(mCurStep);
-            } else if (mSynth != null) {
-                mSynth.silenceAll();
+            pushStateToSynth();
+            if (mSynth != null) {
+                mSynth.setPlaying(mPlaying, mCurStep);
             }
             invalidate();
             return true;
@@ -884,18 +910,21 @@ public class LickTrainerView extends View {
         if (mRectBpmMinus.contains(x, y)) {
             mBpm = LickTheory.clamp(mBpm - 5, LickTheory.MIN_BPM, LickTheory.MAX_BPM);
             mBaseBpm = mBpm;
+            pushStateToSynth();
             invalidate();
             return true;
         }
         if (mRectBpmPlus.contains(x, y)) {
             mBpm = LickTheory.clamp(mBpm + 5, LickTheory.MIN_BPM, LickTheory.MAX_BPM);
             mBaseBpm = mBpm;
+            pushStateToSynth();
             invalidate();
             return true;
         }
         if (mRectLadderBtn.contains(x, y)) {
             mLadderIdx = (mLadderIdx + 1) % LickTheory.NUM_LADDERS;
             mBarsPlayed = 0;
+            pushStateToSynth();
             invalidate();
             return true;
         }
@@ -903,6 +932,7 @@ public class LickTrainerView extends View {
             mLoopSubRange = !mLoopSubRange;
             mLoopStartStep = 0;
             mLoopEndStep = currentLick().stepsPerBeat - 1;
+            pushStateToSynth();
             invalidate();
             return true;
         }
@@ -912,6 +942,12 @@ public class LickTrainerView extends View {
             float gridW = Math.max(10f, (mRectTabPanel.right - 14f) - leftMargin);
             int step = (int) ((x - leftMargin) / (gridW / lick.numSteps));
             mCurStep = LickTheory.clamp(step, 0, lick.numSteps - 1);
+            if (mPlaying) {
+                mPlaying = false;
+                if (mSynth != null) {
+                    mSynth.setPlaying(false, mCurStep);
+                }
+            }
             previewCurrentStep();
             invalidate();
             return true;
@@ -929,7 +965,6 @@ public class LickTrainerView extends View {
             int row = LickTheory.clamp(Math.round(((y - topY) / (botY - topY)) * 5f), 0, 5);
             int strIdx = 5 - row;
             mSynth.pluckFretboardNote(strIdx, startFret + relFret);
-            invalidate();
             return true;
         }
         return true;
@@ -939,7 +974,10 @@ public class LickTrainerView extends View {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SPACE || keyCode == KeyEvent.KEYCODE_ENTER) {
             mPlaying = !mPlaying;
-            mLastTickMs = SystemClock.uptimeMillis();
+            pushStateToSynth();
+            if (mSynth != null) {
+                mSynth.setPlaying(mPlaying, mCurStep);
+            }
             invalidate();
             return true;
         }

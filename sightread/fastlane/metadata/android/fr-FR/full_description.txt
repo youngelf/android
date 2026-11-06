@@ -1,0 +1,16 @@
+Faites le lien entre la partition en clé de sol et le manche de guitare 6 cordes avec SightRead : Lecture à Vue Guitare. De nombreux guitaristes ne lisent que les tablatures car la notation standard n'indique pas où se trouvent les notes sur les différentes cordes. SightRead résout ce problème en associant une portée vectorielle en clé de sol à un manche de guitare interactif de 12 cases.
+
+PROGRAMME PROGRESSIF EN 5 NIVEAUX
+• Niveau 1 — Milieu de portée (G4 à D5) : Notes de base en première position.
+• Niveau 2 — Portée complète (E4 à F5) : Toutes les lignes et interlignes de la clé de sol.
+• Niveau 3 — Lignes supplémentaires graves (E3 à D4) : Cordes graves (Mi, La, Ré).
+• Niveau 4 — Lignes supplémentaires aiguës (G5 à A5) : Positions hautes jusqu'à la 12e case.
+• Niveau 5 — Tessiture complète de la guitare (E3 à A5) : Plus de deux octaves et demie sur les 6 cordes.
+
+6 ARMURES DE TONALITÉ ET POSITIONS ÉQUIVALENTES
+• Entraînez-vous en Do majeur (0 #/b), Sol (1#), Ré (2#), La (3#), Fa (1b) et Sib (2b).
+• Reconnaît toutes les positions valides d'une même hauteur sur le manche et joue chaque note avec une synthèse guitare Karplus-Strong à 44,1 kHz.
+
+3 MODES D'ENTRAÎNEMENT
+• Mode Exercice (Drill), Mode Chrono 60 secondes (Blitz) et Mode Étude (Référence).
+• Portrait et Paysage, 100 % hors ligne, zéro permission et sans publicité.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">रिदम ट्रेनर</string>
+    <string name="subtitle_440">एकल-आवृत्ति संगीत ताल अभ्यास (440 Hz)</string>
+    <string name="edit_mode">एडिट मोड</string>
+    <string name="done_editing">संपादन पूर्ण</string>
+    <string name="play">चलाएं</string>
+    <string name="pause">रोकें</string>
+    <string name="loop">लूप</string>
+    <string name="edit_btn">बदलें</string>
+    <string name="ready_hint">तैयार है। 4..3..2..1 काउंट-इन और ताल सुनने के लिए चलाएं दबाएं।</string>
+    <string name="add_bar">बार जोड़ें</string>
+    <string name="remove_bar">बार हटाएं</string>
+    <string name="randomize">रैंडम</string>
+    <string name="quarter_notes">चौथाई स्वर</string>
+    <string name="exit_edit_mode">एडिट मोड से बाहर</string>
+    <string name="close">बंद करें</string>
+    <string name="got_it">समझ गया</string>
+    <string name="help_title">रिदम ट्रेनर — त्वरित गाइड</string>
+    <string name="help_sec1_title">1. टाइम सिग्नेचर और टेम्पो</string>
+    <string name="help_sec1_body">ऊपर बाईं ओर से 4/4, 3/4, 2/2, 5/4 या 7/4 चुनें, स्लाइडर से 40 से 200 BPM समायोजित करें, और निरंतर अभ्यास के लिए \'लूप\' चालू करें।</string>
+    <string name="help_sec2_title">2. 4-बीट काउंट-इन और 440 Hz प्लेबैक</string>
+    <string name="help_sec2_body">4..3..2..1 काउंट-इन और सिंक्रोनाइज़्ड बीट-कर्सर के साथ स्पष्ट 440 Hz स्वर पर ताल सुनने के लिए \'चलाएं\' दबाएं।</string>
+    <string name="help_sec3_title">3. इंटरैक्टिव रिदम एडिटर और रैंडमाइज़र</string>
+    <string name="help_sec3_body">एडिट मोड के लिए \'बदलें\' टैप करें। स्कोर पर किसी भी स्वर या विश्राम को टैप करें और पूर्ण, आधा, चौथाई, आठवां या सोलहवां स्वर चुनें। बार जोड़ें/हटाएं (1–4) या नए ताल के लिए \'रैंडम\' टैप करें।</string>
+</resources>

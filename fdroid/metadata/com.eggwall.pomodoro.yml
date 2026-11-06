@@ -1,0 +1,35 @@
+Categories:
+  - Time
+  - Multimedia
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/pomodoro
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/pomodoro
+
+AutoName: Pomodoro Focus
+Summary: Stay focused with a clean Pomodoro timer, ambient soundscapes, and work log
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: pomodoro-v1.0
+    subdir: pomodoro
+    gradle:
+      - yes
+
+  - versionName: '1.2'
+    versionCode: 2
+    commit: pomodoro-v1.2
+    subdir: pomodoro
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^pomodoro-v.+$
+CurrentVersion: '1.2'
+CurrentVersionCode: 2

@@ -1,0 +1,1 @@
+Máy đếm nhịp con lắc chính xác với nhịp lẻ, đa tiết tấu và huấn luyện tốc độ.

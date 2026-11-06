@@ -66,6 +66,35 @@ esac
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
+# Auto-select JDK 21 (or JDK 17) when JAVA_HOME is not explicitly set.
+# Why this is needed:
+#   1. Newer Linux distros (e.g. Ubuntu 26.04 with OpenJDK 26, or systems with
+#      JDK 25+) default to Java class file major versions 69/70, which causes
+#      Gradle 8.x's bundled Groovy/ASM parser to fail with:
+#        "BUG! exception in phase 'semantic analysis' in source unit '_BuildScript_'
+#         Unsupported class file major version 70"
+#   2. Android Gradle Plugin 8.x's JdkImageTransform (jlink) also requires
+#      JDK 21 or JDK 17 when transforming android-35/36 core-for-system-modules.jar.
+# Exporting JAVA_HOME and prepending $JAVA_HOME/bin to PATH ensures both the
+# Gradle wrapper launcher and the spawned Gradle daemon use the compatible JDK.
+if [ -z "$JAVA_HOME" ] ; then
+    for candidate_jdk in \
+        /usr/lib/jvm/java-21-openjdk-amd64 \
+        /usr/lib/jvm/java-21-openjdk-arm64 \
+        /usr/lib/jvm/temurin-21-jdk-amd64 \
+        /usr/lib/jvm/java-17-openjdk-amd64 \
+        /usr/lib/jvm/java-17-openjdk-arm64
+    do
+        if [ -x "$candidate_jdk/bin/java" ] ; then
+            JAVA_HOME="$candidate_jdk"
+            export JAVA_HOME
+            PATH="$JAVA_HOME/bin:$PATH"
+            export PATH
+            break
+        fi
+    done
+fi
+
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pelatih Ritme</string>
+    <string name="subtitle_440">Latihan Ritme Musik Frekuensi Tunggal (440 Hz)</string>
+    <string name="edit_mode">Mode Edit</string>
+    <string name="done_editing">Selesai</string>
+    <string name="play">Mainkan</string>
+    <string name="pause">Jeda</string>
+    <string name="loop">Ulang</string>
+    <string name="edit_btn">Edit</string>
+    <string name="ready_hint">Siap dimainkan. Tekan Mainkan untuk hitungan 4..3..2..1 diikuti ritme.</string>
+    <string name="add_bar">Tambah Bar</string>
+    <string name="remove_bar">Hapus Bar</string>
+    <string name="randomize">Acak</string>
+    <string name="quarter_notes">Not Seperempat</string>
+    <string name="exit_edit_mode">Keluar Edit</string>
+    <string name="close">TUTUP</string>
+    <string name="got_it">MENGERTI</string>
+    <string name="help_title">Pelatih Ritme — Panduan Cepat</string>
+    <string name="help_sec1_title">1. Birama &amp; Tempo</string>
+    <string name="help_sec1_body">Pilih birama 4/4, 3/4, 2/2, 5/4, atau 7/4 di kiri atas, atur BPM dari 40 hingga 200 dengan penggeser, dan aktifkan Ulang.</string>
+    <string name="help_sec2_title">2. Hitungan Masuk 4-Ketuk &amp; Nada 440 Hz</string>
+    <string name="help_sec2_body">Tekan Mainkan untuk mendengar hitungan 4..3..2..1 diikuti ritme pada nada referensi 440 Hz dengan penyorotan kursor.</string>
+    <string name="help_sec3_title">3. Editor Ritme Interaktif &amp; Pengacak</string>
+    <string name="help_sec3_body">Ketuk Edit untuk masuk Mode Edit. Ketuk not atau tanda istirahat pada partitur, lalu pilih durasi Penuh, Setengah, Seperempat, Seperdelapan, atau Seperenambelas. Tambah/hapus bar (1–4) atau ketuk Acak.</string>
+</resources>

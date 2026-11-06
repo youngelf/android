@@ -39,6 +39,9 @@ public final class GuitarSynthEngine {
         int startDelaySamples = 0;
         int activeSamplesLeft = 0;
         boolean active = false;
+        boolean needsExcite = false;
+        int pendingFret = 0;
+        int pendingDelaySamples = 0;
     }
 
     private final KsString[] mStrings = new KsString[6];
@@ -100,10 +103,13 @@ public final class GuitarSynthEngine {
                 if (frets[s] < 0) {
                     ks.active = false;
                     ks.activeSamplesLeft = 0;
+                    ks.needsExcite = false;
                     continue;
                 }
                 int delaySamples = activeOrder * ((SAMPLE_RATE * 22) / 1000);
-                exciteStringLocked(ks, s, frets[s], delaySamples);
+                ks.pendingFret = frets[s];
+                ks.pendingDelaySamples = delaySamples;
+                ks.needsExcite = true;
                 activeOrder++;
             }
         }
@@ -116,7 +122,10 @@ public final class GuitarSynthEngine {
     public void pluckSingleString(int stringIdx, int fret) {
         if (stringIdx < 0 || stringIdx >= 6 || fret < 0) return;
         synchronized (mStringLock) {
-            exciteStringLocked(mStrings[stringIdx], stringIdx, fret, 0);
+            KsString ks = mStrings[stringIdx];
+            ks.pendingFret = fret;
+            ks.pendingDelaySamples = 0;
+            ks.needsExcite = true;
         }
     }
 
@@ -127,6 +136,7 @@ public final class GuitarSynthEngine {
             for (int s = 0; s < 6; s++) {
                 mStrings[s].active = false;
                 mStrings[s].activeSamplesLeft = 0;
+                mStrings[s].needsExcite = false;
             }
         }
     }
@@ -171,6 +181,33 @@ public final class GuitarSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -180,13 +217,7 @@ public final class GuitarSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {
@@ -202,6 +233,13 @@ public final class GuitarSynthEngine {
         while (mRunning) {
             boolean anyActive = false;
             synchronized (mStringLock) {
+                for (int s = 0; s < 6; s++) {
+                    KsString ks = mStrings[s];
+                    if (ks.needsExcite) {
+                        ks.needsExcite = false;
+                        exciteStringLocked(ks, s, ks.pendingFret, ks.pendingDelaySamples);
+                    }
+                }
                 for (int f = 0; f < CHUNK_FRAMES; f++) {
                     int mix = 0;
                     for (int s = 0; s < 6; s++) {

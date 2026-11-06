@@ -111,11 +111,12 @@ public final class FretboardActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed() {
-        if (fretboardView != null && fretboardView.isShowingHelp()) {
+    public boolean onKeyDown(int keyCode, android.view.KeyEvent event) {
+        if (keyCode == android.view.KeyEvent.KEYCODE_BACK
+                && fretboardView != null && fretboardView.isShowingHelp()) {
             fretboardView.dismissHelp();
-            return;
+            return true;
         }
-        super.onBackPressed();
+        return super.onKeyDown(keyCode, event);
     }
 }

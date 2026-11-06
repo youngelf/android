@@ -1,0 +1,1 @@
+Edytor notacji rytmicznej i odtwarzacz ćwiczeń ze stałym tonem 440 Hz.

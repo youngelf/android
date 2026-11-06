@@ -1,0 +1,3 @@
+4b83895e3e9b7c9e4f19b296336b6210fe8618fb26e92f86c412196dbd880716  chordwheel-v1.5-playstore-release.aab
+396bd81db4661e5ab2ff34669916b8a623af6808f68dfc6d94090732ea829fa0  chordwheel-v1.5-release.apk
+c45f5ba2b471408929d7bf25502fd2f736b2578c791866adab61029fafdf773d  chordwheel-v1.5-debug.apk

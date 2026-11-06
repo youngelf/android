@@ -1,0 +1,7 @@
+Recupere sua concentração profunda para estudo musical, leitura e programação com Pomodoro: Timer de Foco e Sons Ambientes. Interface limpa de alto contraste com sintetizador de som ambiente em tempo real a 44,1 kHz.
+
+DESTAQUES
+• Banner de status claro (TRABALHANDO: NÃO PERTURBE / PAUSA: RECARREGAR), anel de contagem regressiva, ajustes rápidos (-5m, -1m, +1m, +5m) e botão de mudo no canto inferior direito.
+• 3 Sons de Fundo Procedurais sem loops: Tique Suave, Chuva e Ruído Marrom.
+• 4 Predefinições (Clássico 25/5/15, Trabalho Profundo 50/10/20, Estúdio 45/15/30 e Sprint 15/3/10) e registro automático de horas Hoje e Total.
+• Retrato e Paisagem, 100% offline, zero permissões e sem anúncios.

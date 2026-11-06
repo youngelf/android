@@ -296,7 +296,6 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         float textX = mBtnHelp.right + 10f;
         float availTextW = Math.max(40f, mBtnPlay.left - textX - 10f);
         int curBar = mEngine.getCurBar();
-        int curStep = mEngine.getCurStep();
         BandTheory.BarChord curBc = (mBars != null && curBar < mBars.length) ? mBars[curBar] : null;
         String chordLbl = BandTheory.formatChordLabel(mKeyPc, curBc);
         String title = AppI18n.tr("Band");
@@ -315,7 +314,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mMonoPaint.setTextSize(subTs);
         mMonoPaint.setTextAlign(Paint.Align.LEFT);
         String sub = chordLbl + " (" + BandTheory.formatChordNotes(mKeyPc, curBc)
-                + ")  BAR " + (curBar + 1) + "/" + mBars.length + "  BEAT " + ((curStep / 2) + 1);
+                + ")  BAR " + (curBar + 1) + "/" + mBars.length;
         sub = AppI18n.tr(sub);
         float subW = mMonoPaint.measureText(sub);
         if (subW > availTextW && subW > 0f) {
@@ -468,33 +467,12 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         drawCard(c, x, y, x + w, y + h, COL_PANEL, COL_BORDER);
         int n = mBars.length;
         int curBar = mEngine.getCurBar();
-        int curStep = mEngine.getCurStep();
-        int spb = BandTheory.STYLES[mStyleIdx].stepsPerBar;
 
         float headerH = h * 0.22f;
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_DIM);
         mTextPaint.setTextSize(Math.min(headerH * 0.46f, w * 0.023f));
         AppI18n.drawText(c, "CHORD PROGRESSION GRID (TAP BAR TO AUDITION)", x + 10f, y + headerH * 0.72f, mTextPaint);
-
-        // 16-segment / bar-beat LED strip along top-right of progression card
-        int totalBeats = 16;
-        float ledAreaW = w * 0.34f;
-        float ledW = (ledAreaW - (totalBeats - 1) * 3f) / totalBeats;
-        float ledH = headerH * 0.46f;
-        float ledX0 = x + w - ledAreaW - 10f;
-        float ledY0 = y + (headerH - ledH) * 0.5f;
-        int activeStep16 = ((curBar * spb + curStep) * 2) % totalBeats;
-        for (int i = 0; i < totalBeats; i++) {
-            float lx = ledX0 + i * (ledW + 3f);
-            mPaint.setStyle(Paint.Style.FILL);
-            if (i == activeStep16 || i == activeStep16 + 1) {
-                mPaint.setColor((i % 4 == 0) ? COL_GOLD : COL_EMERALD);
-            } else {
-                mPaint.setColor((i % 4 == 0) ? 0xFF2C3E66 : 0xFF19233A);
-            }
-            c.drawRoundRect(lx, ledY0, lx + ledW, ledY0 + ledH, 3f, 3f, mPaint);
-        }
 
         int cols = (n <= 4) ? n : 4;
         int rows = (n + cols - 1) / cols;
@@ -530,17 +508,6 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
             mTextPaint.setColor(COL_TEXT);
             mTextPaint.setTextSize(cellH * 0.44f);
             AppI18n.drawText(c, BandTheory.formatChordLabel(mKeyPc, bc), bx + cellW * 0.5f, by + cellH * 0.76f, mTextPaint);
-
-            // Beat progress dots inside active bar
-            if (isCur) {
-                int beats = spb / 2;
-                int curBeat = curStep / 2;
-                float dotR = Math.max(2.5f, cellH * 0.055f);
-                for (int b = 0; b < beats; b++) {
-                    mPaint.setColor(b == curBeat ? COL_GOLD : 0xFF3A506B);
-                    c.drawCircle(bx + 12f + b * (dotR * 3.0f), by + cellH - dotR * 1.8f, dotR, mPaint);
-                }
-            }
         }
     }
 
@@ -548,7 +515,6 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         drawCard(c, x, y, x + w, y + h, COL_PANEL, COL_BORDER);
         BandTheory.StylePreset st = BandTheory.STYLES[mStyleIdx];
         int spb = st.stepsPerBar;
-        int curStep = mEngine.getCurStep();
 
         float pad = 7f;
         float headerH = h * 0.16f;
@@ -565,13 +531,13 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mTextPaint.setTextSize(Math.min(headerH * 0.48f, labelW * 0.16f));
         AppI18n.drawText(c, "STEP SEQ", x + pad, y + headerH * 0.76f, mTextPaint);
 
-        // Step header labels: 1 & 2 & 3 & 4 &
+        // Step header labels: 1 & 2 & 3 & 4 & (steady, non-flashing)
         mMonoPaint.setTextAlign(Paint.Align.CENTER);
         mMonoPaint.setTextSize(Math.min(headerH * 0.52f, cellW * 0.42f));
+        mMonoPaint.setColor(COL_DIM);
         for (int s = 0; s < spb; s++) {
             float sx = x + pad + labelW + s * (cellW + stepGap) + cellW * 0.5f;
             String lbl = (s % 2 == 0) ? String.valueOf((s / 2) + 1) : "&";
-            mMonoPaint.setColor(s == curStep ? COL_GOLD : COL_DIM);
             AppI18n.drawText(c, lbl, sx, y + headerH * 0.80f, mMonoPaint);
         }
 
@@ -591,7 +557,6 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
                 mStepRects[t][s].set(sx, ry, sx + cellW, ry + cellH);
 
                 int val = mEngine.getStepValue(mStyleIdx, t, s);
-                boolean isCur = (s == curStep);
                 int bg = COL_CARD;
                 int fg = COL_DIM;
                 String txt;
@@ -613,7 +578,7 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
                     }
                 }
 
-                drawCard(c, sx, ry, sx + cellW, ry + cellH, bg, isCur ? COL_GOLD : COL_BORDER);
+                drawCard(c, sx, ry, sx + cellW, ry + cellH, bg, COL_BORDER);
                 mMonoPaint.setColor(fg);
                 mMonoPaint.setTextSize(cellH * 0.46f);
                 mMonoPaint.setTextAlign(Paint.Align.CENTER);
@@ -711,19 +676,20 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         mHelpModalRect.set(mx, my, mx + mw, my + mh);
         drawCard(c, mx, my, mx + mw, my + mh, COL_PANEL, COL_GOLD);
 
-        float pad = Math.max(14f, mw * 0.03f);
-        float hdrH = Math.max(44f, mh * 0.105f);
-        float closeW = Math.max(96f, mw * 0.18f);
-        mHelpCloseRect.set(mx + mw - pad - closeW, my + 10f, mx + mw - pad, my + 10f + hdrH - 6f);
+        float minDim = Math.min(w, h);
+        float pad = Math.max(16f, mw * 0.032f);
+        float hdrH = Math.max(52f, Math.min(mh * 0.105f, minDim * 0.095f));
+        float closeW = Math.max(114f, mw * 0.21f);
+        mHelpCloseRect.set(mx + mw - pad - closeW, my + 12f, mx + mw - pad, my + 12f + hdrH - 6f);
         drawPillButton(c, mHelpCloseRect, AppI18n.str(getContext(), R.string.close),
-                0xFF3A1E24, 0xFFF85149, (hdrH - 6f) * 0.42f);
+                0xFF3A1E24, 0xFFF85149, (hdrH - 6f) * 0.44f);
 
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(COL_GOLD);
-        mTextPaint.setTextSize(Math.min(hdrH * 0.48f, 24f));
+        mTextPaint.setTextSize(Math.max(20f, Math.min(hdrH * 0.50f, minDim * 0.048f)));
         AppI18n.drawTextFit(c, AppI18n.str(getContext(), R.string.help_title),
-                mx + pad, my + 10f + (hdrH - 6f) * 0.68f, mTextPaint,
-                mHelpCloseRect.left - (mx + pad + 12f));
+                mx + pad, my + 12f + (hdrH - 6f) * 0.68f, mTextPaint,
+                mHelpCloseRect.left - (mx + pad + 24f));
 
         Context ctx = getContext();
         String[] titles = {
@@ -740,9 +706,9 @@ public class PocketBandView extends View implements BandSynthEngine.StepListener
         };
         int[] titleCols = { COL_GOLD, COL_CYAN, COL_EMERALD, COL_GOLD };
 
-        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 8f, mx + mw - pad, my + mh - 12f);
-        float titleSz = Math.max(15f, Math.min(20f, Math.min(w, h) * 0.032f));
-        float bodySz = Math.max(13.5f, Math.min(18f, Math.min(w, h) * 0.028f));
+        mHelpViewportRect.set(mx + pad, mHelpCloseRect.bottom + 12f, mx + mw - pad, my + mh - 14f);
+        float titleSz = Math.max(18f, Math.min(50f, minDim * 0.044f));
+        float bodySz = Math.max(16f, Math.min(45f, minDim * 0.039f));
         mHelpMaxScrollY = AppI18n.drawScrollableHelpBlock(
                 c, mHelpViewportRect, titles, bodies, titleCols,
                 COL_TEXT, COL_CARD, 0xFF283448, COL_GOLD,

@@ -3722,6 +3722,36 @@ public final class AppI18n {
     private static volatile String sCachedResLang = "";
     private static volatile android.content.res.Resources sCachedRes = null;
 
+    @SuppressWarnings("deprecation")
+    private static Locale resolveLocale(String lang) {
+        switch (lang) {
+            case "en": return Locale.ENGLISH;
+            case "fr": return Locale.FRENCH;
+            case "it": return Locale.ITALIAN;
+            case "de": return Locale.GERMAN;
+            case "zh": return Locale.SIMPLIFIED_CHINESE;
+            case "ja": return Locale.JAPANESE;
+            case "ko": return Locale.KOREAN;
+            default: break;
+        }
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            if ("pt".equals(lang)) {
+                return Locale.forLanguageTag("pt-BR");
+            }
+            if ("in".equals(lang) || "id".equals(lang)) {
+                return Locale.forLanguageTag("id");
+            }
+            return Locale.forLanguageTag(lang);
+        }
+        if ("pt".equals(lang)) {
+            return new Locale("pt", "BR");
+        }
+        if ("in".equals(lang) || "id".equals(lang)) {
+            return new Locale("in");
+        }
+        return new Locale(lang);
+    }
+
     public static String str(Context context, int resId) {
         if (context == null) return "";
         try {
@@ -3731,16 +3761,7 @@ public final class AppI18n {
             if (res == null || !lang.equals(sCachedResLang)) {
                 android.content.res.Configuration cfg =
                         new android.content.res.Configuration(context.getResources().getConfiguration());
-                Locale loc;
-                if ("zh".equals(lang)) {
-                    loc = Locale.SIMPLIFIED_CHINESE;
-                } else if ("pt".equals(lang)) {
-                    loc = new Locale("pt", "BR");
-                } else if ("in".equals(lang) || "id".equals(lang)) {
-                    loc = new Locale("in");
-                } else {
-                    loc = new Locale(lang);
-                }
+                Locale loc = resolveLocale(lang);
                 cfg.setLocale(loc);
                 res = context.createConfigurationContext(cfg).getResources();
                 sCachedRes = res;
@@ -3806,14 +3827,13 @@ public final class AppI18n {
             float bodySize,
             float dp,
             float scrollY) {
-        float sbWidth = 6.5f * dp;
-        float sbMargin = 7.0f * dp;
-        float cardPadX = 12.0f * dp;
-        float cardPadY = 10.0f * dp;
-        float secGap = 8.5f * dp;
+        float sbWidth = 8.0f * dp;
+        float sbMargin = 8.5f * dp;
+        float cardPadX = 13.0f * dp;
+        float cardPadY = 11.0f * dp;
+        float secGap = 9.5f * dp;
         float cardLeft = viewport.left;
-        float cardRight = viewport.right - sbWidth - sbMargin;
-        float textMaxW = Math.max(48f, (cardRight - cardLeft) - cardPadX * 2.0f);
+        float viewH = Math.max(1f, viewport.height());
 
         float titleLineH = titleSize * 1.30f;
         float bodyLineH = bodySize * 1.38f;
@@ -3822,32 +3842,48 @@ public final class AppI18n {
         java.util.List<java.util.List<String>> wrappedTitles = new java.util.ArrayList<>(n);
         java.util.List<java.util.List<String>> wrappedBodies = new java.util.ArrayList<>(n);
         float[] cardHeights = new float[n];
-        float totalH = 0f;
 
         boolean origBold = textPaint.isFakeBoldText();
         float origSize = textPaint.getTextSize();
         Paint.Align origAlign = textPaint.getTextAlign();
 
-        for (int i = 0; i < n; i++) {
-            textPaint.setFakeBoldText(true);
-            textPaint.setTextSize(titleSize);
-            java.util.List<String> tLines = wrapText(titles[i], textPaint, textMaxW);
-            wrappedTitles.add(tLines);
+        float cardRight = viewport.right;
+        float totalH = 0f;
+        boolean needsScroll = false;
+        for (int pass = 0; pass < 2; pass++) {
+            wrappedTitles.clear();
+            wrappedBodies.clear();
+            totalH = 0f;
+            float textMaxW = Math.max(48f, (cardRight - cardLeft) - cardPadX * 2.0f);
+            for (int i = 0; i < n; i++) {
+                textPaint.setFakeBoldText(true);
+                textPaint.setTextSize(titleSize);
+                java.util.List<String> tLines = wrapText(titles[i], textPaint, textMaxW);
+                wrappedTitles.add(tLines);
 
-            textPaint.setFakeBoldText(false);
-            textPaint.setTextSize(bodySize);
-            java.util.List<String> bLines = wrapText(bodies[i], textPaint, textMaxW);
-            wrappedBodies.add(bLines);
+                textPaint.setFakeBoldText(false);
+                textPaint.setTextSize(bodySize);
+                java.util.List<String> bLines = wrapText(bodies[i], textPaint, textMaxW);
+                wrappedBodies.add(bLines);
 
-            float ch = cardPadY * 2.0f + tLines.size() * titleLineH + 5.0f * dp + bLines.size() * bodyLineH;
-            cardHeights[i] = ch;
-            totalH += ch;
-            if (i < n - 1) totalH += secGap;
+                float ch = cardPadY * 2.0f + tLines.size() * titleLineH + 6.0f * dp + bLines.size() * bodyLineH;
+                cardHeights[i] = ch;
+                totalH += ch;
+                if (i < n - 1) totalH += secGap;
+            }
+            totalH += 4.0f * dp;
+            if (pass == 0) {
+                if (totalH > viewH + 1.0f) {
+                    needsScroll = true;
+                    cardRight = viewport.right - sbWidth - sbMargin;
+                } else {
+                    needsScroll = false;
+                    break;
+                }
+            }
         }
-        totalH += 4.0f * dp;
 
-        float viewH = Math.max(1f, viewport.height());
-        float maxScroll = Math.max(0f, totalH - viewH);
+        float maxScroll = needsScroll ? Math.max(0f, totalH - viewH) : 0f;
         float curScroll = Math.max(0f, Math.min(scrollY, maxScroll));
 
         int save = canvas.save();
@@ -3861,14 +3897,14 @@ public final class AppI18n {
                 cardRect.set(cardLeft, curY, cardRight, curY + ch);
                 fillPaint.setStyle(Paint.Style.FILL);
                 fillPaint.setColor(cardFillColor);
-                canvas.drawRoundRect(cardRect, 8.0f * dp, 8.0f * dp, fillPaint);
+                canvas.drawRoundRect(cardRect, 9.0f * dp, 9.0f * dp, fillPaint);
 
                 strokePaint.setStyle(Paint.Style.STROKE);
-                strokePaint.setStrokeWidth(1.2f * dp);
+                strokePaint.setStrokeWidth(1.4f * dp);
                 strokePaint.setColor(cardBorderColor);
-                canvas.drawRoundRect(cardRect, 8.0f * dp, 8.0f * dp, strokePaint);
+                canvas.drawRoundRect(cardRect, 9.0f * dp, 9.0f * dp, strokePaint);
 
-                float ty = curY + cardPadY + titleSize * 0.86f;
+                float ty = curY + cardPadY + titleSize * 0.88f;
                 textPaint.setTextAlign(Paint.Align.LEFT);
                 textPaint.setFakeBoldText(true);
                 textPaint.setTextSize(titleSize);
@@ -3878,7 +3914,7 @@ public final class AppI18n {
                     ty += titleLineH;
                 }
 
-                ty += 5.0f * dp - (titleLineH - bodyLineH) * 0.25f;
+                ty += 6.0f * dp - (titleLineH - bodyLineH) * 0.20f;
                 textPaint.setFakeBoldText(false);
                 textPaint.setTextSize(bodySize);
                 textPaint.setColor(bodyColor);
@@ -3891,22 +3927,24 @@ public final class AppI18n {
         }
         canvas.restoreToCount(save);
 
-        /* Draw Vertical Scrollbar Track & Thumb */
-        android.graphics.RectF trackRect = new android.graphics.RectF(
-                viewport.right - sbWidth, viewport.top, viewport.right, viewport.bottom);
-        fillPaint.setStyle(Paint.Style.FILL);
-        fillPaint.setColor(trackColor);
-        canvas.drawRoundRect(trackRect, sbWidth * 0.5f, sbWidth * 0.5f, fillPaint);
+        /* Draw Vertical Scrollbar Track & Thumb only when content exceeds viewport height */
+        if (needsScroll && maxScroll > 0f) {
+            android.graphics.RectF trackRect = new android.graphics.RectF(
+                    viewport.right - sbWidth, viewport.top, viewport.right, viewport.bottom);
+            fillPaint.setStyle(Paint.Style.FILL);
+            fillPaint.setColor(trackColor);
+            canvas.drawRoundRect(trackRect, sbWidth * 0.5f, sbWidth * 0.5f, fillPaint);
 
-        float ratio = (totalH > viewH) ? (viewH / totalH) : 0.78f;
-        float thumbH = Math.max(28.0f * dp, Math.min(viewH, viewH * ratio));
-        float availTrack = Math.max(0f, viewH - thumbH);
-        float scrollFrac = (maxScroll > 0f) ? (curScroll / maxScroll) : 0f;
-        float thumbTop = viewport.top + availTrack * scrollFrac;
-        android.graphics.RectF thumbRect = new android.graphics.RectF(
-                viewport.right - sbWidth, thumbTop, viewport.right, thumbTop + thumbH);
-        fillPaint.setColor(thumbColor);
-        canvas.drawRoundRect(thumbRect, sbWidth * 0.5f, sbWidth * 0.5f, fillPaint);
+            float ratio = Math.min(0.85f, Math.max(0.18f, viewH / totalH));
+            float thumbH = Math.max(32.0f * dp, Math.min(viewH, viewH * ratio));
+            float availTrack = Math.max(0f, viewH - thumbH);
+            float scrollFrac = (maxScroll > 0f) ? (curScroll / maxScroll) : 0f;
+            float thumbTop = viewport.top + availTrack * scrollFrac;
+            android.graphics.RectF thumbRect = new android.graphics.RectF(
+                    viewport.right - sbWidth, thumbTop, viewport.right, thumbTop + thumbH);
+            fillPaint.setColor(thumbColor);
+            canvas.drawRoundRect(thumbRect, sbWidth * 0.5f, sbWidth * 0.5f, fillPaint);
+        }
 
         textPaint.setFakeBoldText(origBold);
         textPaint.setTextSize(origSize);
@@ -3929,8 +3967,8 @@ public final class AppI18n {
             float scrollY,
             Paint textPaint,
             Paint fillPaint) {
-        float dp = Math.max(1.0f, bodySize / 11.2f);
-        int trackColor = (cardBorderColor & 0x00FFFFFF) | 0x66000000;
+        float dp = Math.max(1.0f, bodySize / 16.5f);
+        int trackColor = (cardBorderColor & 0x00FFFFFF) | 0x88000000;
         return drawScrollableHelpBlock(
                 canvas, viewport, titles, bodies, titleColors,
                 bodyColor, cardFillColor, cardBorderColor, trackColor, thumbColor,

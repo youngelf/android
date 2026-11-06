@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ritmetrainer</string>
+    <string name="subtitle_440">Muzikale ritme-oefening op vaste frequentie (440 Hz)</string>
+    <string name="edit_mode">Bewerken</string>
+    <string name="done_editing">Klaar</string>
+    <string name="play">Speel</string>
+    <string name="pause">Pauze</string>
+    <string name="loop">Lus</string>
+    <string name="edit_btn">Bewerk</string>
+    <string name="ready_hint">Klaar om te spelen. Druk op Speel voor 4..3..2..1 voorafgaand aan het ritme.</string>
+    <string name="add_bar">Maat +</string>
+    <string name="remove_bar">Maat -</string>
+    <string name="randomize">Willekeurig</string>
+    <string name="quarter_notes">Kwartnoten</string>
+    <string name="exit_edit_mode">Sluit Bewerken</string>
+    <string name="close">SLUITEN</string>
+    <string name="got_it">BEGREPEN</string>
+    <string name="help_title">Ritmetrainer — Snelle Gids</string>
+    <string name="help_sec1_title">1. Maatsoorten &amp; Tempo</string>
+    <string name="help_sec1_body">Kies linksboven 4/4, 3/4, 2/2, 5/4 of 7/4, stel het tempo in van 40 tot 200 BPM met de schuifregelaar en schakel Lus in.</string>
+    <string name="help_sec2_title">2. 4-Tels Aftelling &amp; 440 Hz Weergave</string>
+    <string name="help_sec2_body">Druk op Speel voor een 4..3..2..1 aftelling gevolgd door het ritme op een heldere 440 Hz referentietoon met synchrone cursor.</string>
+    <string name="help_sec3_title">3. Interactieve Ritme-editor &amp; Willekeurig Patroon</string>
+    <string name="help_sec3_body">Tik op Bewerk voor de Bewerkingsmodus. Tik op een noot of rust in de partituur en kies Hele, Halve, Kwart, Achtste of Zestiende. Voeg maten toe (1–4) of tik op Willekeurig.</string>
+</resources>

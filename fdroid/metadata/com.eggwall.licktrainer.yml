@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+  - Science & Education
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/licktrainer
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/licktrainer
+
+AutoName: Guitar Lick Trainer
+Summary: Practice 33 guitar licks with interactive tab, fretboard, and BPM speed ladders
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: licktrainer-v1.0
+    subdir: licktrainer
+    gradle:
+      - yes
+
+  - versionName: '1.2'
+    versionCode: 2
+    commit: licktrainer-v1.2
+    subdir: licktrainer
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^licktrainer-v.+$
+CurrentVersion: '1.2'
+CurrentVersionCode: 2

@@ -1,0 +1,3 @@
+d2c2943993710467cbc269a5bda70a67f76f87bb59d001690d58f932730642d0  metronome-v1.2-playstore-release.aab
+12e8051208d66eef6cff44a78ebd7ed504bd716ed6c8fd6ace161b3f5894a567  metronome-v1.2-release.apk
+0594f4533baa960c0f423215460fd599f5892cf1d969449e30fa2dcfa21d4d94  metronome-v1.2-debug.apk

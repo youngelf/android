@@ -1,0 +1,13 @@
+Maîtrisez la lecture rythmique, la subdivision des valeurs de notes et le solfège rythmique dans les mesures courantes et asymétriques avec Entraîneur de Rythme : Éditeur et Lecteur de Notation Rythmique. Conçu pour les instrumentistes, chanteurs, percussionnistes, étudiants en musique et professeurs, l'application isole le rythme pur de la hauteur mélodique en faisant sonner chaque durée écrite sur une fréquence de référence claire à 440 Hz (La4) précédée d'un décompte de 4 temps.
+
+NOTATION RYTHMIQUE STANDARD ET MESURES ASYMÉTRIQUES
+• Palette complète de notes et silences : Rondes, Blanches, Noires, Croches et Doubles croches ainsi que leurs silences respectifs.
+• 5 signatures rythmiques intégrées : 4/4, 3/4, 2/2, 5/4 et 7/4 avec vérification mathématique automatique de chaque mesure.
+
+ÉDITEUR DE MESURES INTERACTIF
+• Passez en Mode Édition pour subdiviser ou combiner les durées de notes et de silences, ajouter des mesures ou générer des rythmes aléatoires.
+
+DÉCOMPTE DE 4 TEMPS ET LECTURE PRÉCISE À 440 Hz
+• Décompte préparatoire 4..3..2..1 au clic avant le début de la lecture.
+• Son tenu à 440 Hz pendant la durée exacte de chaque note et silence exact pendant chaque soupir.
+• 100 % hors ligne, zéro permission et sans publicité.

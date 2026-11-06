@@ -132,7 +132,7 @@ public final class GuitarSynthEngine {
         synchronized (mLock) {
             mQueueHead = 0;
             mQueueCount = 0;
-            exciteStringLocked(stringIdx, fret, midi);
+            enqueueLocked(stringIdx, fret, midi, 0);
         }
     }
 
@@ -259,6 +259,33 @@ public final class GuitarSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -268,13 +295,7 @@ public final class GuitarSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {

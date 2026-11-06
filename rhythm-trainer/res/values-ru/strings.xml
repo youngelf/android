@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренажёр ритма</string>
+    <string name="subtitle_440">Практика музыкального ритма на одной частоте (440 Гц)</string>
+    <string name="edit_mode">Редактор</string>
+    <string name="done_editing">Готово</string>
+    <string name="play">Пуск</string>
+    <string name="pause">Пауза</string>
+    <string name="loop">Цикл</string>
+    <string name="edit_btn">Изм.</string>
+    <string name="ready_hint">Готово. Нажмите «Пуск» для отсчёта 4..3..2..1 и воспроизведения ритма.</string>
+    <string name="add_bar">Добавить такт</string>
+    <string name="remove_bar">Удалить такт</string>
+    <string name="randomize">Случайно</string>
+    <string name="quarter_notes">Четвертные</string>
+    <string name="exit_edit_mode">Выйти из ред.</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="got_it">ПОНЯТНО</string>
+    <string name="help_title">Тренажёр ритма — Краткое руководство</string>
+    <string name="help_sec1_title">1. Тактовые размеры и темп</string>
+    <string name="help_sec1_body">Выберите размер 4/4, 3/4, 2/2, 5/4 или 7/4 слева вверху, настройте темп от 40 до 200 BPM ползунком и включите «Цикл» для повтора.</string>
+    <string name="help_sec2_title">2. 4-дольный отсчёт и тон 440 Гц</string>
+    <string name="help_sec2_body">Нажмите «Пуск» для отсчёта метронома 4..3..2..1 и воспроизведения ритма чистым тоном 440 Гц с синхронной подсветкой нот.</string>
+    <string name="help_sec3_title">3. Интерактивный редактор ритма и генератор</string>
+    <string name="help_sec3_body">Нажмите «Изм.» для входа в редактор. Выберите любую ноту или паузу на нотоносце и назначьте целую, половинную, четвертную, восьмую или шестнадцатую. Добавляйте такты (1–4) или нажмите «Случайно».</string>
+</resources>

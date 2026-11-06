@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+  - Science & Education
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/fretboard
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/fretboard
+
+AutoName: Fretboard Explorer
+Summary: Master guitar scales, CAGED boxes, chord voicings, and fretboard note quizzes
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '2.0'
+    versionCode: 2
+    commit: fretboard-v2.0
+    subdir: fretboard
+    gradle:
+      - yes
+
+  - versionName: '2.1'
+    versionCode: 3
+    commit: fretboard-v2.1
+    subdir: fretboard
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^fretboard-v.+$
+CurrentVersion: '2.1'
+CurrentVersionCode: 3

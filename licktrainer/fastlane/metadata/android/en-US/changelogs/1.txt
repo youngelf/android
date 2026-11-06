@@ -1,0 +1,1 @@
+v1.0: Initial release with 33 curated lead guitar licks across 6 genres (Blues, Rock, Jazz, Country, Funk, Metal), synchronized scrolling tablature and 15-fret fretboard, automated BPM speed ladder coach, and 20-language localization.

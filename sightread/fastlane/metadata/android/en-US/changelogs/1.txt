@@ -1,0 +1,1 @@
+v1.0: Initial release with 24 progressive treble-clef guitar sight-reading etudes across 7 keys and 5 neck positions, Etude/Quiz/Flow practice modes, Karplus-Strong guitar synthesis, and 20-language localization.

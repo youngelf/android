@@ -1,0 +1,1 @@
+Beheers het lezen van ritmes, nootwaarden en maatsoorten met Ritmetrainer (Rhythm Trainer). Speelt elk genoteerd ritme af op een zuivere 440 Hz-toon na een 4-tels vooraftelling. Bevat hele, halve, kwart-, achtste en zestiende noten en rusten, 5 maatsoorten (4/4, 3/4, 2/2, 5/4, 7/4) en een interactieve Bewerkingsmodus. 100% offline en reclamevrij.

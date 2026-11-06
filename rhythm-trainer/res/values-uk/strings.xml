@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренажер ритму</string>
+    <string name="subtitle_440">Практика музичного ритму на одній частоті (440 Гц)</string>
+    <string name="edit_mode">Редактор</string>
+    <string name="done_editing">Готово</string>
+    <string name="play">Пуск</string>
+    <string name="pause">Пауза</string>
+    <string name="loop">Цикл</string>
+    <string name="edit_btn">Змін.</string>
+    <string name="ready_hint">Готово. Натисніть «Пуск» для відліку 4..3..2..1 та відтворення ритму.</string>
+    <string name="add_bar">Додати такт</string>
+    <string name="remove_bar">Видалити такт</string>
+    <string name="randomize">Випадково</string>
+    <string name="quarter_notes">Чвертні ноти</string>
+    <string name="exit_edit_mode">Вийти з ред.</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="got_it">ЗРОЗУМІЛО</string>
+    <string name="help_title">Тренажер ритму — Короткий посібник</string>
+    <string name="help_sec1_title">1. Тактові розміри та темп</string>
+    <string name="help_sec1_body">Виберіть розмір 4/4, 3/4, 2/2, 5/4 або 7/4 ліворуч угорі, налаштуйте темп від 40 до 200 BPM повзунком та увімкніть «Цикл».</string>
+    <string name="help_sec2_title">2. 4-дольний відлік і тон 440 Гц</string>
+    <string name="help_sec2_body">Натисніть «Пуск» для відліку метронома 4..3..2..1 і відтворення ритму чистим тоном 440 Гц із синхронним підсвічуванням нот.</string>
+    <string name="help_sec3_title">3. Інтерактивний редактор ритму та генератор</string>
+    <string name="help_sec3_body">Натисніть «Змін.» для входу в редактор. Виберіть будь-яку ноту чи паузу та призначте цілу, половинну, чвертну, восьму або шістнадцяту. Додавайте такти (1–4) або натисніть «Випадково».</string>
+</resources>

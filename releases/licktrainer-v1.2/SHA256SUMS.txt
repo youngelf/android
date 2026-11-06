@@ -1,0 +1,3 @@
+5727db4b31e82732c8261f74d985318030e4eb1ce8424d620e330784824b4edb  licktrainer-v1.2-playstore-release.aab
+be2cabe4cdfaf62f644b8dc8dd99b6ce82f525d96cd869e8508b2ed56ef26fc0  licktrainer-v1.2-release.apk
+67ce0d2f838aef611b169136a6617e03e84d8f4517fd331d5a0070d04795b164  licktrainer-v1.2-debug.apk

@@ -1,0 +1,10 @@
+Desenvolva ouvido relativo preciso, reconhecimento harmônico e memória musical com EarTrainer: Academia de Perceção Musical. Criado para guitarristas, pianistas, cantores e estudantes de música, o EarTrainer reúne 4 módulos progressivos, um teclado interativo de 2 oitavas (C4–C6), 3 timbres sintetizados em tempo real e estatísticas de precisão.
+
+QUATRO MÓDULOS DE PERCEPÇÃO MUSICAL
+1. Reconhecimento de Intervalos: Todos os 13 intervalos cromáticos (de 2ª menor a Oitava justa) nos modos Ascendente, Descendente e Harmônico.
+2. Identificação de Acordes: 9 qualidades de tríades e tétrades (Maior, Menor, Diminuto, Aumentado, Sus2, Sus4, Dom7, Maj7, m7).
+3. Escalas e Modos: 8 escalas e modos gregorianos.
+4. Ditado Melódico: Ouça frases de 3 a 5 notas e reproduza nota por nota no teclado.
+
+PIANO DE 2 OITAVAS E 3 TIMBRES EM TEMPO REAL (44,1 kHz)
+• Alterne entre Piano de Cauda, Violão (Karplus-Strong) e Órgão de Estúdio. 100% offline e sem anúncios.

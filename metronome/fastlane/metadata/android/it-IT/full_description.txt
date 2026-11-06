@@ -1,0 +1,16 @@
+Costruisci un timing granitico, padroneggia i tempi dispari e i poliritmi e aumenta la tua velocità con Metronomo: Pendolo di Precisione e Speed Coach. Progettato per strumentisti, batteristi, chitarristi e pianisti, questo metronomo utilizza un motore di sintesi audio PCM a 44,1 kHz preciso al singolo campione.
+
+PRECISIONE AL CAMPIONE A 44,1 kHz E PENDOLO VISIVO
+• Motore Audio Zero-Jitter: Ogni clic, accento e suddivisione è calcolato a livello del singolo campione audio a 44,1 kHz.
+• Pendolo oscillante ad alto contrasto e matrice dei battiti ben visibile dal leggio.
+• Tap Tempo e controlli BPM (-5, -1, +1, +5) da 20 a 260 BPM con indicazioni agogiche italiane (Largo, Adagio, Andante, Moderato, Allegro, Presto).
+
+12 INDICAZIONI DI TEMPO, TEMPI DISPARI E 6 SUDDIVISIONI
+• Metri standard e dispari: 4/4, 3/4, 2/4, 6/8, 9/8, 12/8, 5/4, 5/8, 7/4, 7/8, 11/8 e 13/8.
+• Sequencer di Accenti per Battito: Tocca qualsiasi colonna per ciclare tra ACCENTO FORTE, NORMALE, SUB-ACCENTO e MUTO.
+• 6 Suddivisioni Ritmiche: Quarti, Ottavi, Terzine, Sedicesimi, Ottavi puntati (Swing) e Quintine.
+
+GENERATORE DI POLIRITMI, SPEED COACH E BATTUTE MUTE
+• Poliritmi a doppio anello (3:2, 4:3, 5:3, 5:4, 7:4) con timbri distinti.
+• Speed Trainer automatico (+BPM ogni N battute) e Bar Dropper (battute mute) per verificare il tuo tempo interno.
+• 5 timbri di clic, schermo sempre attivo, Portrait e Landscape, 100% offline e zero pubblicità.

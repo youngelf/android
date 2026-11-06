@@ -1,0 +1,35 @@
+Categories:
+  - Multimedia
+  - Science & Education
+License: Apache-2.0
+AuthorName: Vikram Aggarwal
+WebSite: https://github.com/youngelf/aaxx/tree/main/chordwheel
+SourceCode: https://github.com/youngelf/aaxx
+IssueTracker: https://github.com/youngelf/aaxx/issues
+Changelog: https://github.com/youngelf/aaxx/commits/main/chordwheel
+
+AutoName: ChordWheel
+Summary: Interactive Circle of Fifths, CAGED guitar voicings, and 4-bar chord looper
+
+RepoType: git
+Repo: https://github.com/youngelf/aaxx.git
+
+Builds:
+  - versionName: '1.4'
+    versionCode: 4
+    commit: chordwheel-v1.4
+    subdir: chordwheel
+    gradle:
+      - yes
+
+  - versionName: '1.5'
+    versionCode: 5
+    commit: chordwheel-v1.5
+    subdir: chordwheel
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^chordwheel-v.+$
+CurrentVersion: '1.5'
+CurrentVersionCode: 5

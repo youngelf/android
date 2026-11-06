@@ -45,7 +45,7 @@ public final class BandSynthEngine {
     private final Object mStateLock = new Object();
 
     private volatile boolean mRunning = false;
-    private volatile boolean mPlaying = true;
+    private volatile boolean mPlaying = false;
     private Thread mAudioThread;
     private StepListener mStepListener;
 
@@ -366,6 +366,33 @@ public final class BandSynthEngine {
     }
 
     @SuppressWarnings("deprecation")
+    private static AudioTrack createAudioTrack(int trackBufBytes) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            android.media.AudioAttributes attrs = new android.media.AudioAttributes.Builder()
+                    .setUsage(android.media.AudioAttributes.USAGE_MEDIA)
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            AudioFormat format = new AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                    .build();
+            return new AudioTrack(
+                    attrs,
+                    format,
+                    trackBufBytes,
+                    AudioTrack.MODE_STREAM,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE);
+        }
+        return new AudioTrack(
+                AudioManager.STREAM_MUSIC,
+                SAMPLE_RATE,
+                AudioFormat.CHANNEL_OUT_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                trackBufBytes,
+                AudioTrack.MODE_STREAM);
+    }
+
     private void audioLoop() {
         int minBufBytes = AudioTrack.getMinBufferSize(
                 SAMPLE_RATE,
@@ -375,13 +402,7 @@ public final class BandSynthEngine {
 
         AudioTrack track = null;
         try {
-            track = new AudioTrack(
-                    AudioManager.STREAM_MUSIC,
-                    SAMPLE_RATE,
-                    AudioFormat.CHANNEL_OUT_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    trackBufBytes,
-                    AudioTrack.MODE_STREAM);
+            track = createAudioTrack(trackBufBytes);
             if (track.getState() == AudioTrack.STATE_INITIALIZED) {
                 track.play();
             } else {
@@ -403,8 +424,10 @@ public final class BandSynthEngine {
                     if (mPlaying) {
                         if (mStepSamplePos == 0) {
                             triggerStepVoicesLocked(mStyleIdx, mCurBar, mCurStep);
-                            notifyBar = mCurBar;
-                            notifyStep = mCurStep;
+                            if (mCurStep == 0) {
+                                notifyBar = mCurBar;
+                                notifyStep = 0;
+                            }
                         }
                         mStepSamplePos++;
                         if (mStepSamplePos >= mStepSampleLen) {

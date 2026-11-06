@@ -1,0 +1,19 @@
+Sblocca l'intera tastiera a 6 corde con Fretboard Explorer: Scale e Accordi per Chitarra. Progettato per chitarristi principianti, intermedi e avanzati, Fretboard Explorer mappa scale, modi, posizioni CAGED, accordi mobili, accordature alternative e riconoscimento inverso degli accordi su un manico interattivo a 15 tasti con sintesi sonora Karplus-Strong in tempo reale.
+
+TRE WORKSTATION INTEGRATE PER CHITARRA
+1. ESPLORATORE DI SCALE E MODI
+• 14 Scale e Modi Essenziali: Maggiore (Ionico), Minore Naturale (Eolio), Dorico, Frigio, Lidio, Misolidio, Locrio, Pentatonica Minore, Pentatonica Maggiore, Scala Blues, Minore Armonica, Minore Melodica, Frigio Dominante e Esatonale.
+• Tutte le 12 Tonalità tramite menu a tendina rapidi.
+• 5 Box CAGED + Vista Tutta la Tastiera: Scorri tra le 5 posizioni CAGED o visualizza l'intero manico.
+
+2. LIBRERIA DI ACCORDI MOBILI
+• 12 Qualità di Accordi: Maggiore, Minore, Settima di Dominante, Maj7, m7, m7b5, dim7, Sus2, Sus4, Add9, Maj6 e m6.
+• 5 Voicing CAGED per ogni accordo con diteggiature (1–4), indicatori di barrè e ascolto immediato.
+
+3. TROVA ACCORDI INTERATTIVO (CHORD FINDER)
+• Tocca qualsiasi combinazione di tasti sulle 6 corde per identificare all'istante il nome dell'accordo, i rivolti, la formula intervallare e le note.
+
+ACCORDATURE PERSONALIZZABILI E QUIZ SULLA TASTIERA
+• 6 Accordature Integrate: Standard (E A D G B E), Drop D, Eb, D Standard, Open G e DADGAD.
+• Etichette per Intervalli, Note o Gradi, modalità Mancino/Destro e Quiz interattivo per memorizzare note e intervalli.
+• Layout Verticale e Orizzontale, 100% offline, zero permessi e zero pubblicità.
